@@ -7,5 +7,6 @@ class Case < ActiveRecord::Base
   has_one :i131
   has_one :i485
   has_one :i765
+  has_one :application
   has_many :options
 end

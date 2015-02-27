@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150227012840) do
+ActiveRecord::Schema.define(version: 20150227013618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,42 @@ ActiveRecord::Schema.define(version: 20150227012840) do
 
   add_index "general_informations", ["case_id"], name: "index_general_informations_on_case_id", using: :btree
 
+  create_table "i130s", force: :cascade do |t|
+    t.string   "address"
+    t.integer  "case_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "i130s", ["case_id"], name: "index_i130s_on_case_id", using: :btree
+
+  create_table "i131s", force: :cascade do |t|
+    t.string   "address"
+    t.integer  "case_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "i131s", ["case_id"], name: "index_i131s_on_case_id", using: :btree
+
+  create_table "i485s", force: :cascade do |t|
+    t.string   "address"
+    t.integer  "case_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "i485s", ["case_id"], name: "index_i485s_on_case_id", using: :btree
+
+  create_table "i765s", force: :cascade do |t|
+    t.string   "address"
+    t.integer  "case_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "i765s", ["case_id"], name: "index_i765s_on_case_id", using: :btree
+
   create_table "options", force: :cascade do |t|
     t.string   "form_id"
     t.string   "form"
@@ -55,6 +91,17 @@ ActiveRecord::Schema.define(version: 20150227012840) do
   end
 
   add_index "options", ["case_id"], name: "index_options_on_case_id", using: :btree
+
+  create_table "statuses", force: :cascade do |t|
+    t.boolean  "filling"
+    t.boolean  "payment"
+    t.boolean  "complete"
+    t.integer  "case_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "statuses", ["case_id"], name: "index_statuses_on_case_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "firstname"
@@ -68,5 +115,10 @@ ActiveRecord::Schema.define(version: 20150227012840) do
   add_foreign_key "cases", "users"
   add_foreign_key "form_informations", "cases"
   add_foreign_key "general_informations", "cases"
+  add_foreign_key "i130s", "cases"
+  add_foreign_key "i131s", "cases"
+  add_foreign_key "i485s", "cases"
+  add_foreign_key "i765s", "cases"
   add_foreign_key "options", "cases"
+  add_foreign_key "statuses", "cases"
 end

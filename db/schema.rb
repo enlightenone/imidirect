@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150227014504) do
+ActiveRecord::Schema.define(version: 20150227022132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "app_forms", force: :cascade do |t|
+    t.integer  "form_id"
+    t.integer  "application_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "app_forms", ["application_id"], name: "index_app_forms_on_application_id", using: :btree
+  add_index "app_forms", ["form_id"], name: "index_app_forms_on_form_id", using: :btree
 
   create_table "applications", force: :cascade do |t|
     t.string   "app_id"
@@ -35,6 +45,17 @@ ActiveRecord::Schema.define(version: 20150227014504) do
 
   add_index "cases", ["user_id"], name: "index_cases_on_user_id", using: :btree
 
+  create_table "documents", force: :cascade do |t|
+    t.string   "description"
+    t.integer  "form_id"
+    t.integer  "application_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "documents", ["application_id"], name: "index_documents_on_application_id", using: :btree
+  add_index "documents", ["form_id"], name: "index_documents_on_form_id", using: :btree
+
   create_table "form_informations", force: :cascade do |t|
     t.string   "address"
     t.integer  "case_id"
@@ -43,6 +64,16 @@ ActiveRecord::Schema.define(version: 20150227014504) do
   end
 
   add_index "form_informations", ["case_id"], name: "index_form_informations_on_case_id", using: :btree
+
+  create_table "forms", force: :cascade do |t|
+    t.string   "form_id"
+    t.string   "form_name"
+    t.string   "description"
+    t.float    "fee"
+    t.string   "path"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "general_informations", force: :cascade do |t|
     t.string   "address"
@@ -120,7 +151,11 @@ ActiveRecord::Schema.define(version: 20150227014504) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "app_forms", "applications"
+  add_foreign_key "app_forms", "forms"
   add_foreign_key "cases", "users"
+  add_foreign_key "documents", "applications"
+  add_foreign_key "documents", "forms"
   add_foreign_key "form_informations", "cases"
   add_foreign_key "general_informations", "cases"
   add_foreign_key "i130s", "cases"

@@ -5,9 +5,8 @@ class FormsController < ApplicationController
   end
 
   def create
-    @user = User.create(firstname: "Jason", lastname: "Lee", email: "jason@gmail.com", password_digest: "121212")
+    @user = User.create(firstname: "Larry", lastname: "Jacobson", email: "jason@gmail.com", password_digest: "121212")
     
-    if 
   end
 
   private

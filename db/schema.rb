@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150228213350) do
+ActiveRecord::Schema.define(version: 20150228215524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -159,8 +159,53 @@ ActiveRecord::Schema.define(version: 20150228213350) do
   create_table "i130s", force: :cascade do |t|
     t.string   "address"
     t.integer  "case_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.string   "i130_my_relative"
+    t.string   "i130_adoption"
+    t.string   "i130_residence_through_adoption"
+    t.string   "i130_sponsor_first_name"
+    t.string   "i130_sponsor_last_name"
+    t.string   "i130_sponsor_middle_name"
+    t.string   "i130_sponsor_other_name"
+    t.string   "i130_sponsor_street"
+    t.string   "i130_sponsor_apt_suit"
+    t.string   "i130_sponsor_city"
+    t.string   "i130_sponsor_state"
+    t.string   "i130_sponsor_country"
+    t.string   "i130_sponsor_zip_code"
+    t.string   "i130_sponsor_co"
+    t.string   "i130_sponsor_phone"
+    t.string   "i130_sponsor_dob"
+    t.string   "i130_sponsor_pob_town"
+    t.string   "i130_sponsor_pob_state"
+    t.string   "i130_sponsor_pob_country"
+    t.string   "i130_sponsor_nationality"
+    t.string   "i130_sponsor_gender_male"
+    t.string   "i130_sponsor_gender_female"
+    t.string   "i130_sponsor_marital_status_married"
+    t.string   "i130_sponsor_marital_status_widowed"
+    t.string   "i130_sponsor_marital_status_single"
+    t.string   "i130_sponsor_marital_status_divorced"
+    t.string   "i130_sponsor_ssn"
+    t.string   "i130_sponsor_a_registration_number"
+    t.string   "i130_sponsor_date_of_present_marriage"
+    t.string   "i130_sponsor_place_of_present_marriage"
+    t.string   "i130_sponsor_name_of_prior_spouse"
+    t.string   "i130_sponsor_date_of_end_of_prior_marriage"
+    t.string   "i130_sponsor_citizenship_birth"
+    t.string   "i130_sponsor_citizenship_naturalization"
+    t.string   "i130_sponsor_naturalization_number"
+    t.string   "i130_sponsor_naturalization_place_of_issuance"
+    t.string   "i130_sponsor_pr_date_of_admission"
+    t.string   "i130_sponsor_pr_place_of_admission"
+    t.string   "i130_sponsor_pr_class_of_admission"
+    t.string   "i130_sponsored_intended_residence_adddress"
+    t.string   "i130_sponsored_intended_residence_city"
+    t.string   "i130_sponsored_intended_residence_state"
+    t.string   "i130_sponsored_full_address_abroad"
+    t.string   "i130_sponsored_full_address_native_language"
+    t.string   "i130_sponsored_name_native_language"
   end
 
   add_index "i130s", ["case_id"], name: "index_i130s_on_case_id", using: :btree
@@ -177,8 +222,13 @@ ActiveRecord::Schema.define(version: 20150228213350) do
   create_table "i485s", force: :cascade do |t|
     t.string   "address"
     t.integer  "case_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "i485_application_type"
+    t.string   "i485_applicant_current_occupation"
+    t.string   "i485_applicant_mother_first_name"
+    t.string   "i485_applicant_father_first_name"
+    t.string   "i485_applicant_i94_exact_name"
   end
 
   add_index "i485s", ["case_id"], name: "index_i485s_on_case_id", using: :btree
@@ -186,8 +236,13 @@ ActiveRecord::Schema.define(version: 20150228213350) do
   create_table "i765s", force: :cascade do |t|
     t.string   "address"
     t.integer  "case_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "i765_application_type"
+    t.string   "i765_previous_application"
+    t.string   "i765_office"
+    t.string   "i765_date_of_previous_application"
+    t.string   "i765_result_of_previous_application"
   end
 
   add_index "i765s", ["case_id"], name: "index_i765s_on_case_id", using: :btree

@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.create(firstname: "Jason", lastname: "Lee", email: "larry@gmail.com", password_digest: "1234567")
 
 f130 = Form.create(form_id: "i130", form_name: "I-130", description: "Petition for Alien Relative", fee: 420.00 , path: "#{Rails.root}/lib/pdf_templates/i130.pdf")
 f765 = Form.create(form_id: "i765", form_name: "I-765", description: "Application For Employment Authorization", fee: 465.00 , path: "#{Rails.root}/lib/pdf_templates/i765.pdf")
@@ -20,7 +21,10 @@ applcation8 = Application.create(app_id: "f2pr", description: "Unmarried child o
 applcation9 = Application.create(app_id: "f3pr", description: "Unmarried son or daughter of Resident  age 21 or older", fee: 500.00)
 
 
-
+AppForm.create(form_id: 1, application_id: 1)
+AppForm.create(form_id: 2, application_id: 1)
+AppForm.create(form_id: 1, application_id: 2)
+AppForm.create(form_id: 2, application_id: 2)
 AppForm.create(form_id: 1, application_id: 3)
 AppForm.create(form_id: 2, application_id: 3)
 AppForm.create(form_id: 1, application_id: 4)

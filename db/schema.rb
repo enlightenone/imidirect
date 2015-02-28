@@ -56,15 +56,6 @@ ActiveRecord::Schema.define(version: 20150227022132) do
   add_index "documents", ["application_id"], name: "index_documents_on_application_id", using: :btree
   add_index "documents", ["form_id"], name: "index_documents_on_form_id", using: :btree
 
-  create_table "form_informations", force: :cascade do |t|
-    t.string   "address"
-    t.integer  "case_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "form_informations", ["case_id"], name: "index_form_informations_on_case_id", using: :btree
-
   create_table "forms", force: :cascade do |t|
     t.string   "form_id"
     t.string   "form_name"
@@ -156,7 +147,6 @@ ActiveRecord::Schema.define(version: 20150227022132) do
   add_foreign_key "cases", "users"
   add_foreign_key "documents", "applications"
   add_foreign_key "documents", "forms"
-  add_foreign_key "form_informations", "cases"
   add_foreign_key "general_informations", "cases"
   add_foreign_key "i130s", "cases"
   add_foreign_key "i131s", "cases"

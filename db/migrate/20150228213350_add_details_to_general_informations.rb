@@ -1,0 +1,44 @@
+class AddDetailsToGeneralInformations < ActiveRecord::Migration
+  def change
+    add_column :general_informations, :general_applicant_child_first_name_1, :string
+    add_column :general_informations, :general_applicant_child_last_name_1, :string
+    add_column :general_informations, :general_applicant_child_middle_name_1, :string
+    add_column :general_informations, :general_applicant_child_relationship_1, :string
+    add_column :general_informations, :general_applicant_child_dob_1, :string
+    add_column :general_informations, :general_applicant_child_cob_1, :string
+    add_column :general_informations, :general_applicant_child_a_number_1, :string
+    add_column :general_informations, :general_applicant_child_application_1, :string
+    add_column :general_informations, :general_applicant_child_first_name_2, :string
+    add_column :general_informations, :general_applicant_child_last_name_2, :string
+    add_column :general_informations, :general_applicant_child_middle_name_2, :string
+    add_column :general_informations, :general_applicant_child_relationship_2, :string
+    add_column :general_informations, :general_applicant_child_dob_2, :string
+    add_column :general_informations, :general_applicant_child_cob_2, :string
+    add_column :general_informations, :general_applicant_child_a_number_2, :string
+    add_column :general_informations, :general_applicant_child_application_2, :string
+    add_column :general_informations, :general_applicant_child_first_name_3, :string
+    add_column :general_informations, :general_applicant_child_last_name_3, :string
+    add_column :general_informations, :general_applicant_child_middle_name_3, :string
+    add_column :general_informations, :general_applicant_child_relationship_3, :string
+    add_column :general_informations, :general_applicant_child_dob_3, :string
+    add_column :general_informations, :general_applicant_child_cob_3, :string
+    add_column :general_informations, :general_applicant_child_a_number_3, :string
+    add_column :general_informations, :general_applicant_child_application_3, :string
+    add_column :general_informations, :general_applicant_child_first_name_4, :string
+    add_column :general_informations, :general_applicant_child_last_name_4, :string
+    add_column :general_informations, :general_applicant_child_middle_name_4, :string
+    add_column :general_informations, :general_applicant_child_relationship_4, :string
+    add_column :general_informations, :general_applicant_child_dob_4, :string
+    add_column :general_informations, :general_applicant_child_cob_4, :string
+    add_column :general_informations, :general_applicant_child_a_number_4, :string
+    add_column :general_informations, :general_applicant_child_application_4, :string
+    add_column :general_informations, :general_applicant_child_first_name_5, :string
+    add_column :general_informations, :general_applicant_child_last_name_5, :string
+    add_column :general_informations, :general_applicant_child_middle_name_5, :string
+    add_column :general_informations, :general_applicant_child_relationship_5, :string
+    add_column :general_informations, :general_applicant_child_dob_5, :string
+    add_column :general_informations, :general_applicant_child_cob_5, :string
+    add_column :general_informations, :general_applicant_child_a_number_5, :string
+    add_column :general_informations, :general_applicant_child_application_5, :string
+  end
+end

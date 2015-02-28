@@ -7,6 +7,7 @@ class FormsController < ApplicationController
   def create
     @user = User.create(firstname: "Larry", lastname: "Jacobson", email: "jason@gmail.com", password_digest: "121212")
     
+    
   end
 
   private

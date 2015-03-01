@@ -2,25 +2,32 @@ require 'SecureRandom'
 class FormsController < ApplicationController
 
   def index
-    user = User.create
+    user = User.new
     @case = user.cases.new()
   end
 
   def new_case
+
+    
     user = User.first
-    application = Application.first 
-    id = SecureRandom.hex
+    application_description = Application.find_by_app_id(params[:category]).description
+    case_id = SecureRandom.hex
     # params = ActionController::Parameters.new(case_id: id , description: application.description)
     # raise params.inspect
     # @case = user.cases.new(params.require(:case).permit(:case_id, :description, :total))
-     @case = user.cases.new(case_id: id, description: application.description)
-
-    
-
-    if @case.save
-      redirect_to "http://yahoo.com"
+     @case = user.cases.new(case_id: case_id, description: application_description )
+     
+    # determine the optional applications to file
+    if params[:i765_option]
+     @case.options.new(form_id: "i765", form: "I-765", include: true)
     else
-      render :index
+     @case.options.new(form_id: "i765", form: "I-765", include: false)
+    end
+      
+    if @case.save
+      redirect_to forms_path
+    else
+      redirect_to "http://facebook.com"
     end
   end
 

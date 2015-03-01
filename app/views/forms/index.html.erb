@@ -1,0 +1,45 @@
+<h1>Please choose the category of your immigration application:</h1>
+<%=form_tag(new_form_path , method: "get") do %>
+<p>
+<%= radio_button_tag(:category, "f1us") %>
+<%= label_tag(:age_f1us, "Spouse of US Citizens") %>
+</p>
+<p>
+<%= radio_button_tag(:category, "f2us") %>
+<%= label_tag(:category_f2us, "Unmarried child of US Citizens under age 21") %>
+</p>
+<p>
+<%= radio_button_tag(:category, "f3us") %>
+<%= label_tag(:category_f3us, "Unmarried son or daughter of US Citizens age 21 or older") %>
+</p>
+<p>
+<%= radio_button_tag(:category, "f4us") %>
+<%= label_tag(:category_f4us, "Married son or daughter of US Citizens of any age") %>
+</p>
+<p>
+<%= radio_button_tag(:category, "f5us") %>
+<%= label_tag(:category_f5us, "Siblings of US Citizens") %>
+</p>
+<p>
+<%= radio_button_tag(:category, "f1pr") %>
+<%= label_tag(:category_f1pr, "Spouse of Permanent Resident") %>
+</p>
+<p>
+<%= radio_button_tag(:category, "f2pr") %>
+<%= label_tag(:category_f2pr, "Unmarried child of Permanent Resident under age 21") %>
+</p>
+<p>
+<%= radio_button_tag(:category, "f3pr") %>
+<%= label_tag(:category_f3pr, "Unmarried son or daughter of Resident  age 21 or older") %>
+</p>
+<%= submit_tag("Submit") %>
+<% end %>
+
+
+
+
+
+
+
+
+

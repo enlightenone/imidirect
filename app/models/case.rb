@@ -1,5 +1,6 @@
 class Case < ActiveRecord::Base
   belongs_to :user
+  belongs_to :application
   has_one :general_information
   has_one :form_information
   has_one :status
@@ -7,6 +8,7 @@ class Case < ActiveRecord::Base
   has_one :i131
   has_one :i485
   has_one :i765
-  has_one :application
   has_many :options
 end
+
+

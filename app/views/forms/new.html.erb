@@ -1,1 +1,15 @@
-<h1>Form</h1>
+<h1>Please choose additional forms</h1>
+<%= form_for(@case , url: "forms/:id/new_case" ) do %>
+  <%= hidden_field_tag(:category, params[:category]) %>
+  <p> 
+  <%= check_box_tag(:i485_option) %>
+  <%= label_tag(:i485_option, "Adjustment of Status") %>
+  </p>
+  <p>
+  <%= check_box_tag(:i765_option) %>
+  <%= label_tag(:i765_option, "Authorization of Employment") %>
+  </p>
+  <p>
+  <%= submit_tag("Submit") %>
+  </p>
+<% end %>

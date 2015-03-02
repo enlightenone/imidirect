@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302063917) do
+ActiveRecord::Schema.define(version: 20150302181616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,8 +70,8 @@ ActiveRecord::Schema.define(version: 20150302063917) do
 
   create_table "general_informations", force: :cascade do |t|
     t.integer  "case_id"
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.string   "general_applicant_child_first_name_1"
     t.string   "general_applicant_child_last_name_1"
     t.string   "general_applicant_child_middle_name_1"
@@ -153,6 +153,9 @@ ActiveRecord::Schema.define(version: 20150302063917) do
     t.string   "general_applicant_spouse_cob"
     t.string   "general_applicant_spouse_a_number"
     t.string   "general_applicant_spouse_application"
+    t.string   "general_applicant_marital_status_single"
+    t.string   "general_applicant_marital_status_widowed"
+    t.string   "general_applicant_marital_status_divorced"
   end
 
   add_index "general_informations", ["case_id"], name: "index_general_informations_on_case_id", using: :btree

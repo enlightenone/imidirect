@@ -13,6 +13,110 @@
   <p>Town/City of Birth: <%= g.text_field :general_applicant_pob_town %> State/Province of Birth: <%= g.text_field :general_applicant_pob_state %> Country of Birth: <%= g.text_field :general_applicant_pob_country %> </p>
   <h3>Gender</h3>
   <p><%= check_box_tag(:general_applicant_gender_male) %> Male <%= check_box_tag(:general_applicant_gender_female) %> Female </p>
+  <h3>Marital Status</h3>
+  <p><%= check_box_tag(:general_applicant_marital_status_single) %> Single <%= check_box_tag(:general_applicant_marital_status_married) %> Married 
+    <%= check_box_tag(:general_applicant_marital_status_widowed) %> Widowed 
+    <%= check_box_tag(:general_applicant_marital_status_divorced) %> Divorced
+  </p>
+  <h3>Immigration Information</h3>
+  <p>
+    Social Security Number: <%= g.text_field :general_applicant_ssn %> Alien Number: <%= g.text_field :general_applicant_alien_number %>
+    I-94: <%= g.text_field :general_applicant_i_94 %>  Date of Last Arrival: <%= g.text_field :general_applicant_date_of_last_arrival %> </p>
+    <p>
+    USCIS Status: <%= g.text_field :general_applicant_uscis_status %> Expiration Date: <%= g.text_field :status_expiration_date %>   Visa Number: <%= g.text_field :general_applicant_visa_number %> 
+  </p>
+  <p>
+   Place of Last Entry:<%= g.text_field :general_applicant_place_last_entry %> Consulate: <%= g.text_field :general_applicant_consulate %>
+    Entry of Inspection: <%= g.text_field :general_applicant_entry_inspection %>
+  </p>
+
+  <h3>Dependants Information</h3>
+   
+  <h4>Spouse</h4>
+  <p> 
+  First Name: <%= g.text_field :general_applicant_spouse_first_name %> Last Name: <%= g.text_field :general_applicant_spouse_last_name %>
+  Middle Name: <%= g.text_field :general_applicant_spouse_middle_name %>
+  </p>
+  <p>
+  Date of Birth of your spouse: <%= g.text_field :general_applicant_spouse_dob %>
+  Country of Birth of your spouse: <%= g.text_field :general_applicant_spouse_cob %>
+  </p>
+  <p>
+  Alien Number of your spouse: <%= g.text_field :general_applicant_spouse_a_number %>
+  Country of Birth of your spouse: <%= g.text_field :general_applicant_spouse_cob %>
+  Application of your spouse: <%= g.text_field :general_applicant_spouse_application %>
+  </p>
+  <p>
+   Relationship: <%= g.text_field :general_applicant_spouse_relationship %>
+  </p>
+  <p>
+  <h4>Marriage</h4>
+  Date of Present Marriage: <%= g.text_field :general_applicant_date_present_marriage %>
+  Place of Present Marriage: <%= g.text_field :general_applicant_place_present_marriage %>
+  </p>
+
+  <h4>Children</h4>
+  <h5>Child 1</h5>
+  <p>
+  First Name: <%= g.text_field :general_applicant_child_first_name_1 %> Last Name: <%= g.text_field :general_applicant_child_last_name_1 %>
+  Middle Name: <%= g.text_field :general_applicant_child_middle_name_1 %> 
+  </p>
+  <p>
+  Child Relationship: <%= g.text_field :general_applicant_child_relationship_1 %> Date of Birth <%= g.text_field :general_applicant_child_dob_1 %> Coutry of Birth: <%= g.text_field :general_applicant_child_cob_1 %>
+  </p>
+  <p>
+  Alien Number: <%= g.text_field :general_applicant_child_a_number_1 %> Application <%= g.text_field :general_applicant_child_application_1 %> Coutry of Birth: <%= g.text_field :general_applicant_child_cob_1 %>
+  </p>
+  <h5>Child 2</h5>
+  <p>
+  First Name: <%= g.text_field :general_applicant_child_first_name_2 %> Last Name: <%= g.text_field :general_applicant_child_last_name_2 %>
+  Middle Name: <%= g.text_field :general_applicant_child_middle_name_2 %> 
+  </p>
+  <p>
+  Child Relationship: <%= g.text_field :general_applicant_child_relationship_2 %> Date of Birth <%= g.text_field :general_applicant_child_dob_2 %> Coutry of Birth: <%= g.text_field :general_applicant_child_cob_2 %>
+  </p>
+  <p>
+  Alien Number: <%= g.text_field :general_applicant_child_a_number_2 %> Application <%= g.text_field :general_applicant_child_application_2 %> Coutry of Birth: <%= g.text_field :general_applicant_child_cob_2 %>
+  </p>
+  <h5>Child 3</h5>
+  <p>
+  First Name: <%= g.text_field :general_applicant_child_first_name_3 %> Last Name: <%= g.text_field :general_applicant_child_last_name_3 %>
+  Middle Name: <%= g.text_field :general_applicant_child_middle_name_3 %> 
+  </p>
+  <p>
+  Child Relationship: <%= g.text_field :general_applicant_child_relationship_3 %> Date of Birth <%= g.text_field :general_applicant_child_dob_3 %> Coutry of Birth: <%= g.text_field :general_applicant_child_cob_3 %>
+  </p>
+  <p>
+  Alien Number: <%= g.text_field :general_applicant_child_a_number_3 %> Application <%= g.text_field :general_applicant_child_application_3 %> Coutry of Birth: <%= g.text_field :general_applicant_child_cob_3 %>
+  </p>
+    <h5>Child 4</h5>
+  <p>
+  First Name: <%= g.text_field :general_applicant_child_first_name_4 %> Last Name: <%= g.text_field :general_applicant_child_last_name_4 %>
+  Middle Name: <%= g.text_field :general_applicant_child_middle_name_4 %> 
+  </p>
+  <p>
+  Child Relationship: <%= g.text_field :general_applicant_child_relationship_4 %> Date of Birth <%= g.text_field :general_applicant_child_dob_4 %> Coutry of Birth: <%= g.text_field :general_applicant_child_cob_4 %>
+  </p>
+  <p>
+  Alien Number: <%= g.text_field :general_applicant_child_a_number_4 %> Application <%= g.text_field :general_applicant_child_application_4 %> Coutry of Birth: <%= g.text_field :general_applicant_child_cob_4 %>
+  </p>
+      <h5>Child 5</h5>
+  <p>
+  First Name: <%= g.text_field :general_applicant_child_first_name_5 %> Last Name: <%= g.text_field :general_applicant_child_last_name_5 %>
+  Middle Name: <%= g.text_field :general_applicant_child_middle_name_5 %> 
+  </p>
+  <p>
+  Child Relationship: <%= g.text_field :general_applicant_child_relationship_5 %> Date of Birth <%= g.text_field :general_applicant_child_dob_5 %> Coutry of Birth: <%= g.text_field :general_applicant_child_cob_5 %>
+  </p>
+  <p>
+  Alien Number: <%= g.text_field :general_applicant_child_a_number_5 %> Application <%= g.text_field :general_applicant_child_application_5 %> Coutry of Birth: <%= g.text_field :general_applicant_child_cob_5 %>
+  </p>
   <% end %>
+
+  <%= f.fields_for :i130 do |g| %>
+
+  <% end %>
+
+
   <%= f.submit %>
 <% end %>

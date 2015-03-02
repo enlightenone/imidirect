@@ -2,13 +2,15 @@ require 'SecureRandom'
 class FormsController < ApplicationController
 
   def index
+
+  end
+
+  def new
     user = User.new
     @case = user.cases.new()
   end
 
-  def new_case
-
-    
+  def new_case    
     user = User.first
     application_description = Application.find_by_app_id(params[:category]).description
     case_id = SecureRandom.hex
@@ -25,18 +27,15 @@ class FormsController < ApplicationController
     end
       
     if @case.save
-      redirect_to forms_path
+      redirect_to new_application_form_path
     else
       redirect_to "http://facebook.com"
     end
   end
 
-  def new
-    @case = Case.new
+  def new_application_form
 
-    @test = params[:test]
   end
-
 
 
   def create
@@ -44,10 +43,4 @@ class FormsController < ApplicationController
     
   end
 
-  # private
-  #   def case_params(application_option)
-  #     id = SecureRandom.hex
-  #     params = ActionController::Parameters.new(case_id: id , description: )
-  #     params.require(:case).permit(:case_id, :description, :total)
-  #   end
 end

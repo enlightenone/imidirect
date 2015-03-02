@@ -41,7 +41,7 @@ class FormsController < ApplicationController
 
 
   def create 
-      @test = "params test success"
+  
   end
 
 end

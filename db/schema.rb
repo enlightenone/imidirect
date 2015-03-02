@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150301004825) do
+ActiveRecord::Schema.define(version: 20150302063917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,10 +69,9 @@ ActiveRecord::Schema.define(version: 20150301004825) do
   end
 
   create_table "general_informations", force: :cascade do |t|
-    t.string   "address"
     t.integer  "case_id"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.string   "general_applicant_child_first_name_1"
     t.string   "general_applicant_child_last_name_1"
     t.string   "general_applicant_child_middle_name_1"
@@ -113,6 +112,47 @@ ActiveRecord::Schema.define(version: 20150301004825) do
     t.string   "general_applicant_child_cob_5"
     t.string   "general_applicant_child_a_number_5"
     t.string   "general_applicant_child_application_5"
+    t.string   "general_applicant_first_name"
+    t.string   "general_applicant_last_name"
+    t.string   "general_applicant_middle_name"
+    t.string   "general_applicant_other_name"
+    t.string   "general_applicant_street"
+    t.string   "general_applicant_apt_suit"
+    t.string   "general_applicant_city"
+    t.string   "general_applicant_state"
+    t.string   "general_applicant_country"
+    t.string   "general_applicant_zip_code"
+    t.string   "general_applicant_co"
+    t.string   "general_applicant_phone"
+    t.string   "general_applicant_dob"
+    t.string   "general_applicant_pob_town"
+    t.string   "general_applicant_pob_state"
+    t.string   "general_applicant_pob_country"
+    t.string   "general_applicant_nationality"
+    t.string   "general_applicant_gender_male"
+    t.string   "general_applicant_gender_female"
+    t.string   "general_applicant_marital_status_married"
+    t.string   "general_applicant_ssn"
+    t.string   "general_applicant_alien_number"
+    t.string   "general_applicant_i_94"
+    t.string   "general_applicant_date_of_last_arrival"
+    t.string   "general_applicant_uscis_status"
+    t.string   "general_applicant_status_expiration_date"
+    t.string   "general_applicant_visa_number"
+    t.string   "general_applicant_last_entry"
+    t.string   "general_applicant_place_of_last_entry"
+    t.string   "general_applicant_consulate"
+    t.string   "general_applicant_entry_inspection"
+    t.string   "general_applicant_date_present_marriage"
+    t.string   "general_applicant_place_present_marriage"
+    t.string   "general_applicant_spouse_first_name"
+    t.string   "general_applicant_spouse_last_name"
+    t.string   "general_applicant_spouse_middle_name"
+    t.string   "general_applicant_spouse_relationship"
+    t.string   "general_applicant_spouse_dob"
+    t.string   "general_applicant_spouse_cob"
+    t.string   "general_applicant_spouse_a_number"
+    t.string   "general_applicant_spouse_application"
   end
 
   add_index "general_informations", ["case_id"], name: "index_general_informations_on_case_id", using: :btree

@@ -1,8 +1,18 @@
 <%= form_for(@form_case , url: forms_path, method: :post )  do |f| %>
-    <%= f.fields_for :general_information do |g| %>
-    Address: <%= g.text_field :address %><br>
-    Child First Name: <%= g.text_field :general_applicant_child_first_name_1 %><br>
-    Child Last Name: <%= g.text_field :general_applicant_child_last_name_1 %><br>
-    <% end %>
+  <h3>Applicant</h3>
+  <%= f.fields_for :general_information do |g| %>
+  <p>First Name: <%= g.text_field :general_applicant_first_name %> Last Name: <%= g.text_field :general_applicant_first_name %> Middle Name: <%= g.text_field :general_applicant_middle_name %> Other Name: <%= g.text_field :general_applicant_other_name %></p>
+  <h3>Address</h3>
+  <p>C/O: <%= g.text_field :general_applicant_co %> </p>
+  <p>Street Address: <%= g.text_field :general_applicant_street%> Apt/St: <%= g.text_field :general_applicant_apt_suit%>
+  City: <%= g.text_field :general_applicant_city%> State: <%= g.text_field :general_applicant_state %> 
+    Zip Code: <%= g.text_field :general_applicant_zip_code %> Country: <%= g.text_field :general_applicant_country %>  </p>
+  <p>Phone: <%= g.text_field :general_applicant_phone %></p>
+  <h3>Other Information</h3>
+  <p>Date of Birth: <%= g.text_field :general_applicant_dob %></p>
+  <p>Town/City of Birth: <%= g.text_field :general_applicant_pob_town %> State/Province of Birth: <%= g.text_field :general_applicant_pob_state %> Country of Birth: <%= g.text_field :general_applicant_pob_country %> </p>
+  <h3>Gender</h3>
+  <p><%= check_box_tag(:general_applicant_gender_male) %> Male <%= check_box_tag(:general_applicant_gender_female) %> Female </p>
+  <% end %>
   <%= f.submit %>
 <% end %>

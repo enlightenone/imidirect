@@ -1,0 +1,8 @@
+<%= form_for(@form_case , url: forms_path, method: :post )  do |f| %>
+    <%= f.fields_for :general_information do |g| %>
+    Address: <%= g.text_field :address %><br>
+    Child First Name: <%= g.text_field :general_applicant_child_first_name_1 %><br>
+    Child Last Name: <%= g.text_field :general_applicant_child_last_name_1 %><br>
+    <% end %>
+  <%= f.submit %>
+<% end %>

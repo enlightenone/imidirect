@@ -27,20 +27,21 @@ class FormsController < ApplicationController
     end
       
     if @case.save
-      redirect_to new_application_form_path
+      redirect_to new_application_form_path(user_id: user.id, case_id: case_id)
     else
       redirect_to "http://facebook.com"
     end
   end
 
   def new_application_form
-
+       user = User.find(params[:user_id])
+       @form_case = user.cases.find_by_case_id(params[:case_id])
+       @general_info = @form_case.build_general_information
   end
 
 
-  def create
-    
-    
+  def create 
+      @test = "params test success"
   end
 
 end

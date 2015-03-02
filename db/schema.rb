@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302200410) do
+ActiveRecord::Schema.define(version: 20150302215754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -240,15 +240,16 @@ ActiveRecord::Schema.define(version: 20150302200410) do
   add_index "i485s", ["case_id"], name: "index_i485s_on_case_id", using: :btree
 
   create_table "i765s", force: :cascade do |t|
-    t.string   "address"
     t.integer  "case_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "i765_application_type"
     t.string   "i765_previous_application"
     t.string   "i765_office"
     t.string   "i765_date_of_previous_application"
     t.string   "i765_result_of_previous_application"
+    t.boolean  "i765_application_employment"
+    t.boolean  "i765_application_replacement"
+    t.boolean  "i765_application_renewal"
   end
 
   add_index "i765s", ["case_id"], name: "index_i765s_on_case_id", using: :btree

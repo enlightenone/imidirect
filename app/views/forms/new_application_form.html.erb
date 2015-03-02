@@ -115,10 +115,103 @@
 
 <hr>
 <h4>I-130 Information<h4>
-  <%= f.fields_for :i130 do |i130| %>
-  <%= i130.text_field :i130_my_relative%>
+<%= f.fields_for :i130 do |i130| %>
+<p>
+Did you gain permanent residence through adoption?<br>
+<%= i130.radio_button_tag(:i130_adoption, "yes") %> Yes <%= i130.radio_button_tag(:i130_adoption, "no") %> No
+</p>
+<p>
+Are you related by adoption?<br>
+<%= i130.radio_button_tag(:i130_residence_through_adoption, "yes") %> Yes <%= i130.radio_button_tag(:i130_residence_through_adoption, "no") %> No
+</p>
 
+<h4>Sponsor Information</h4>
+<p>
+First Name: <%= i130.text_field :i130_sponsor_first_name %> Last Name: <%= i130.text_field :i130_sponsor_last_name %> 
+Middle Name: <%= i130.text_field :i130_sponsor_middle_name %> Other Name: <%= i130.text_field :i130_sponsor_other_name %>
+</p>
+<h4>Address</h4>
+<p>
+  CO: <%= i130.text_field :i130_sponsor_co %>
+</p>
+<p>
+Street: <%= i130.text_field :i130_sponsor_street %> Apt/Ste: <%= i130.text_field :i130_sponsor_apt_suit %> 
+</p>
+<p>
+City: <%= i130.text_field :i130_sponsor_city %> State: <%= i130.text_field :i130_sponsor_state %> Zip Code: <%= i130.text_field :i130_zip_code %>  
+</p>
+<p>
+Telephone: <%= i130.text_field :i130_phone%> 
+</p>
+<p>
+ Date of Birth: <%= i130.text_field :i130_sponsor_dob%> 
+ Town/City of Birth: <%= i130.text_field :i130_sponsor_pob_town%> 
+ State/Province of Birth: <%= i130.text_field :i130_sponsor_pob_state%> 
+ Country of Birth: <%= i130.text_field :i130_sponsor_pob_country%> 
+</p>
+<p>
+  Nationality: <%= i130.text_field :i130_sponsor_nationality %> 
+</p>
+<p>
+  <%= check_box_tag(:i130_sponsor_gender_male) %> Male <%= check_box_tag(:i130_sponsor_gender_female) %> Female 
+</p>
+<p>
+<h4>Marital Status</h4>
+  <%= check_box_tag(:i130_sponsor_marital_status_married) %> Married <%= check_box_tag(:i130_sponsor_marital_status_widowed) %> Widowed 
+  <%= check_box_tag(:i130_sponsor_marital_status_single) %> Single <%= check_box_tag(:i130_sponsor_marital_status_divorced) %> Divorced
+</p>
+<h4>Other Information</h4>
+<p>
+  Social Security Number: <%= i130.text_field :i130_sponsor_ssn %> 
+  Alien Registration Number: <%= i130.text_field :i130_sponsor_a_registration_number %> 
+</p>
+<h4>Marriage</h4>
+<p>
+Date of present marriage: <%= i130.text_field :i130_sponsor_date_of_present_marriage %> 
+Place of present marriage: <%= i130.text_field :i130_sponsor_place_of_present_marriage %>
+</p>
+<h4>Previous Spouse</h4>
+<p>
+Name of previous spouse: <%= i130.text_field :i130_sponsor_name_of_prior_spouse %>
+End date of previous marriage: <%= i130.text_field :i130_sponsor_date_of_end_of_prior_marriage %>
+</p>
+<h4>Citizenship</h4>
+<p>
+<%= check_box_tag(:i130_sponsor_citizenship_birth) %> Citizenship by birth
+<%= check_box_tag(:i130_sponsor_citizenship_naturalization) %> Citizenship by naturalization
+</p>
+<h4>Naturalization Information</h4>
+<p>
+Naturalization Number: <%= i130.text_field(:i130_sponsor_naturalization_number) %> 
+Naturalization Place of Issuance: <%= i130.text_field(:i130_sponsor_naturalization_place_of_issuance) %> 
+</p>
+<h4>Permanent Residence</h4>
+<p>
+Date of admission: <%= i130.text_field(:i130_sponsor_pr_date_of_admission) %> 
+Place of admission: <%= i130.text_field(:i130_sponsor_pr_place_of_admission) %> 
+Class of admission: <%= i130.text_field(:i130_sponsor_pr_class_of_admission) %> 
+</p>
+<h4>Sponsored relative's residency and address information</h4>
+<p>
+Sponsored relative's intended residency's city: <%= i130.text_field(:i130_sponsored_intended_residence_city) %> 
+Sponsored relative's intended residency's state: <%= i130.text_field(:i130_sponsored_intended_residence_state) %> 
+Sponsored relative's full address abroad: <%= i130.text_field(:i130_sponsored_full_address_abroad) %> 
+</p>
 
+<h4>Sponsored relative's native language information</h4>
+<p>
+Sponsored relative's full address in native language: <%= i130.text_field(:i130_sponsored_full_address_native_language) %> 
+Sponsored relative's name in native language: <%= i130.text_field(:i130_sponsored_name_native_language) %> 
+</p>
+<% end %>
+
+<% if @i765_option === true %>
+<h4>I765 Employment Authorization Application</h4>
+  Have you ever before applied for employment authorization from USCIS?<br>
+  <%= f.fields_for :i765 do |i765| %>
+     <%= i765.radio_button_tag(:i765_previous_application, "yes") %> Yes
+     <%= i765.radio_button_tag(:i765_previous_application, "no") %>  No
+  <% end %>
   <% end %>
 
 

@@ -37,6 +37,10 @@ class FormsController < ApplicationController
        user = User.find(params[:user_id])
        @form_case = user.cases.find_by_case_id(params[:case_id])
        @general_info = @form_case.build_general_information
+       @i130_info = @form_case.build_i130
+       @i765_info = @form_case.build_i765
+       @i765_option = @form_case.options.find_by(form_id: "i765").include
+
   end
 
 

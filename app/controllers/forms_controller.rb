@@ -40,11 +40,13 @@ class FormsController < ApplicationController
        @i130_info = @form_case.build_i130
        @i765_info = @form_case.build_i765
        @i765_option = @form_case.options.find_by(form_id: "i765").include
+       @current_case_id = @form_case.case_id
 
   end
 
-
   def create 
+
+      @current_id = params[:current_case_id]
   
   end
 

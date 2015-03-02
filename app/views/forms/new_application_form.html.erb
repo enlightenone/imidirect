@@ -1,4 +1,5 @@
 <%= form_for(@form_case , url: forms_path, method: :post )  do |f| %>
+<%= hidden_field_tag(:current_case_id, @current_case_id) %>
   <h3>Applicant</h3>
   <%= f.fields_for :general_information do |g| %>
   <p>First Name: <%= g.text_field :general_applicant_first_name %> Last Name: <%= g.text_field :general_applicant_first_name %> Middle Name: <%= g.text_field :general_applicant_middle_name %> Other Name: <%= g.text_field :general_applicant_other_name %></p>

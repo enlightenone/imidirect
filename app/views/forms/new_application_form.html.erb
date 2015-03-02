@@ -113,7 +113,11 @@
   </p>
   <% end %>
 
-  <%= f.fields_for :i130 do |g| %>
+<hr>
+<h4>I-130 Information<h4>
+  <%= f.fields_for :i130 do |i130| %>
+  <%= i130.text_field :i130_my_relative%>
+
 
   <% end %>
 

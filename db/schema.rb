@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302181616) do
+ActiveRecord::Schema.define(version: 20150302200410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -161,11 +161,9 @@ ActiveRecord::Schema.define(version: 20150302181616) do
   add_index "general_informations", ["case_id"], name: "index_general_informations_on_case_id", using: :btree
 
   create_table "i130s", force: :cascade do |t|
-    t.string   "address"
     t.integer  "case_id"
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
-    t.string   "i130_my_relative"
     t.string   "i130_adoption"
     t.string   "i130_residence_through_adoption"
     t.string   "i130_sponsor_first_name"
@@ -210,6 +208,10 @@ ActiveRecord::Schema.define(version: 20150302181616) do
     t.string   "i130_sponsored_full_address_abroad"
     t.string   "i130_sponsored_full_address_native_language"
     t.string   "i130_sponsored_name_native_language"
+    t.boolean  "i130_spouse"
+    t.boolean  "i130_parent"
+    t.boolean  "i130_BrotherSister"
+    t.boolean  "i130_child"
   end
 
   add_index "i130s", ["case_id"], name: "index_i130s_on_case_id", using: :btree

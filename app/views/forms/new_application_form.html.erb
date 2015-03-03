@@ -1,4 +1,4 @@
-<%= form_for(@form_case , url: pdfs_path, method: :post )  do |f| %>
+<%= form_for(@form_case , url: forms_path, method: :post )  do |f| %>
 <%= hidden_field_tag(:current_case_id, @current_case_id) %>
 <%= hidden_field_tag(:current_user_id, @current_user_id) %>
   <h3>Applicant</h3>
@@ -25,10 +25,10 @@
     Social Security Number: <%= g.text_field :general_applicant_ssn %> Alien Number: <%= g.text_field :general_applicant_alien_number %>
     I-94: <%= g.text_field :general_applicant_i_94 %>  Date of Last Arrival: <%= g.text_field :general_applicant_date_of_last_arrival %> </p>
     <p>
-    USCIS Status: <%= g.text_field :general_applicant_uscis_status %> Expiration Date: <%= g.text_field :status_expiration_date %>   Visa Number: <%= g.text_field :general_applicant_visa_number %> 
+    USCIS Status: <%= g.text_field :general_applicant_uscis_status %> Expiration Date: <%= g.text_field :general_applicant_status_expiration_date %>   Visa Number: <%= g.text_field :general_applicant_visa_number %> 
   </p>
   <p>
-   Place of Last Entry:<%= g.text_field :general_applicant_place_last_entry %> Consulate: <%= g.text_field :general_applicant_consulate %>
+   Place of Last Entry:<%= g.text_field :general_applicant_place_of_last_entry %> Consulate: <%= g.text_field :general_applicant_consulate %>
     Entry of Inspection: <%= g.text_field :general_applicant_entry_inspection %>
   </p>
 
@@ -140,10 +140,10 @@ Middle Name: <%= i130.text_field :i130_sponsor_middle_name %> Other Name: <%= i1
 Street: <%= i130.text_field :i130_sponsor_street %> Apt/Ste: <%= i130.text_field :i130_sponsor_apt_suit %> 
 </p>
 <p>
-City: <%= i130.text_field :i130_sponsor_city %> State: <%= i130.text_field :i130_sponsor_state %> Zip Code: <%= i130.text_field :i130_zip_code %>  
+City: <%= i130.text_field :i130_sponsor_city %> State: <%= i130.text_field :i130_sponsor_state %> Zip Code: <%= i130.text_field :i130_sponsor_zip_code %>  
 </p>
 <p>
-Telephone: <%= i130.text_field :i130_phone%> 
+Telephone: <%= i130.text_field :i130_sponsor_phone %> 
 </p>
 <p>
  Date of Birth: <%= i130.text_field :i130_sponsor_dob%> 

@@ -1,4 +1,6 @@
 require 'SecureRandom'
+require 'fillable_pdf_form'
+
 class FormsController < ApplicationController
 
   def index
@@ -19,7 +21,7 @@ class FormsController < ApplicationController
     # @case = user.cases.new(params.require(:case).permit(:case_id, :description, :total))
      @case = user.cases.new(case_id: case_id, description: application_description )
 
-    # add required main application form to the options table
+     #set up required form on options table
      @case.options.new(form_id: "i130", form: "I-130", include: true)
      
     # determine the optional applications to file
@@ -48,10 +50,66 @@ class FormsController < ApplicationController
   def create 
       @user = User.find(params[:current_user_id])
       @current_case = @user.cases.find_by_case_id(params[:current_case_id])
+      @current_case_id = params[:current_case_id]
       @current_case.build_general_information(general_information_params)
       @current_case.build_i130(i130_params)
       @current_case.build_i765(i765_params)
-      @current_case.save 
+
+    if @current_case.save
+
+        #generate pdf files
+
+        #create new directory and output path
+        @new_directory = "#{Rails.root}/tmp/pdfs/#{@current_case_id}"
+        Dir.mkdir(@new_directory) unless File.exists?(@new_directory)
+
+        current_options = @current_case.options
+
+         ####block to generate pdf form###
+         def pdftk
+            @pdftk ||= PdfForms.new(ENV['PDFTK_PATH'] || '/usr/local/bin/pdftk') # On my Mac, the location of pdftk was different than on my linux server.
+         end
+         ###### end of block ############
+
+        def generate(new_directory, form, attributes, case_id)
+
+            template_path =  "#{Rails.root}/lib/pdf_templates/#{form}.pdf" 
+            output_path = "#{@new_directory}/#{case_id}_#{form}.pdf" # make sure tmp/pdfs exists
+            pdftk.fill_form template_path, output_path, attributes
+            output_path
+        end
+
+
+        current_options.each do |option|
+            form_included = option.include
+            form_id = option.form_id # => 4
+            
+            if form_included
+              #merge general information table with individual form table information
+              general_information = @current_case.general_information
+              specific_case_attributes =  @current_case.send(form_id)
+
+              general_information = general_information.serializable_hash 
+              specific_case_attributes = specific_case_attributes.serializable_hash 
+              attributes = general_information.merge(specific_case_attributes)
+
+
+            ####block to generate pdf form###
+
+              generate(@new_directory, form_id, attributes, @current_case_id )
+
+
+            ###### end of block ############
+
+            end
+        end
+
+    # End of PDF block
+
+        redirect_to pdfs_path
+    else
+      redirect_to "http://facebook.com"
+    end
   end
 
 private  

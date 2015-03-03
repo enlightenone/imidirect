@@ -1,5 +1,6 @@
 <%= form_for(@form_case , url: forms_path, method: :post )  do |f| %>
 <%= hidden_field_tag(:current_case_id, @current_case_id) %>
+<%= hidden_field_tag(:current_user_id, @current_user_id) %>
   <h3>Applicant</h3>
   <%= f.fields_for :general_information do |g| %>
   <p>First Name: <%= g.text_field :general_applicant_first_name %> Last Name: <%= g.text_field :general_applicant_first_name %> Middle Name: <%= g.text_field :general_applicant_middle_name %> Other Name: <%= g.text_field :general_applicant_other_name %></p>
@@ -207,14 +208,32 @@ Sponsored relative's name in native language: <%= i130.text_field(:i130_sponsore
 <% end %>
 
 <% if @i765_option === true %>
+<hr>
 <h4>I765 Employment Authorization Application</h4>
-  Have you ever before applied for employment authorization from USCIS?<br>
   <%= f.fields_for :i765 do |i765| %>
+  <p>
+  I am applying for:<br>
+  <%= i765.check_box_tag(:i765_application_employment) %> New Employment <br> 
+   <%= i765.check_box_tag(:i765_application_replacement) %> Replacement <br> 
+   <%= i765.check_box_tag(:i765_application_renew) %> Renewal 
+ </p>
+  <p>
+   Have you ever before applied for employment authorization from USCIS?<br>
      <%= i765.radio_button_tag(:i765_previous_application, "yes") %> Yes
      <%= i765.radio_button_tag(:i765_previous_application, "no") %>  No
-  <% end %>
-  <% end %>
+  </p>
+  <p>
+   Which UCSIS office did you file and what date?<br>
+   USCIS Office: <%= i765.text_field(:i765_office)%><br><br>
+   Date of filing: <%= i765.text_field(:i765_date_of_previous_application)%><br><br>
+   Result of filing: <%= i765.text_field(:i765_result_of_previous_application)%>
 
 
+  </p>
+  <% end %>
+<% end %>
+
+  <p>
   <%= f.submit %>
+  </p>
 <% end %>

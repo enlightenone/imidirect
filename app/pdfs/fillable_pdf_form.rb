@@ -64,6 +64,7 @@ class CreatePdfForm < FillablePdfForm
       fill field, @user.send(field)
     end
     fill :age, case @user.age
+      
       when nil then nil
       when 0..17 then '0_17'
       when 18..34 then '18_34'

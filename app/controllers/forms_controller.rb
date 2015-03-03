@@ -18,6 +18,9 @@ class FormsController < ApplicationController
     # raise params.inspect
     # @case = user.cases.new(params.require(:case).permit(:case_id, :description, :total))
      @case = user.cases.new(case_id: case_id, description: application_description )
+
+    # add required main application form to the options table
+     @case.options.new(form_id: "i130", form: "I-130", include: true)
      
     # determine the optional applications to file
     if params[:i765_option]

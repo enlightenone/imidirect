@@ -79,6 +79,8 @@ class FormsController < ApplicationController
             output_path
         end
 
+        #instantiate combined pdf object
+        combined_pdf_file = CombinePDF.new
 
         current_options.each do |option|
             form_included = option.include
@@ -95,14 +97,21 @@ class FormsController < ApplicationController
 
 
             ####block to generate pdf form###
-
-              generate(@new_directory, form_id, attributes, @current_case_id )
-
-
+            prefilled_pdf_file = generate(@new_directory, form_id, attributes, @current_case_id )
             ###### end of block ############
+        
+            #add prefiled 
+            combined_pdf_file << CombinePDF.new(prefilled_pdf_file) 
 
+            ######## end of block ############
             end
         end
+
+        # combined pdf file path
+        combined_pdf_path = "#{Rails.root}/tmp/pdfs/#{@current_case_id}/#{@current_case_id}_combined.pdf"
+
+        # generate combined pdf file
+        combined_pdf_file.save combined_pdf_path
 
     # End of PDF block
 

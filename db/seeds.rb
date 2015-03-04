@@ -46,25 +46,30 @@ Document.create(form_id: f130.id , application_id: applcation3.id , description:
 Document.create(form_id: f130.id , application_id: applcation4.id , description:  "passport-style color photo of yourself" )
 Document.create(form_id: f130.id , application_id: applcation5.id , description: "Birth certificates of children born to you")
 Document.create(form_id: f130.id , application_id: applcation6.id , description: "a copy of the child  birth certificate showing both parent names and your marriage certificate")
-Document.create(form_id: f130.id , application_id: applcation7.id )
-Document.create(form_id: f130.id , application_id: applcation8.id )
+# Document.create(form_id: f130.id , application_id: applcation7.id )
+# Document.create(form_id: f130.id , application_id: applcation8.id )
 
-Document.create(form_id: f765.id , application_id: applcation1.id )
-Document.create(form_id: f765.id , application_id: applcation2.id )
-Document.create(form_id: f765.id , application_id: applcation3.id )
-Document.create(form_id: f765.id , application_id: applcation4.id )
-Document.create(form_id: f765.id , application_id: applcation5.id )
-Document.create(form_id: f765.id , application_id: applcation6.id )
-Document.create(form_id: f765.id , application_id: applcation7.id )
-Document.create(form_id: f765.id , application_id: applcation8.id )
+Document.create(form_id: f765.id , application_id: applcation1.id , description:  "A copy of Form I-94, Arrival-Departure Record" )
+Document.create(form_id: f765.id , application_id: applcation2.id , description: "A copy of your last EAD" )
+Document.create(form_id: f765.id , application_id: applcation3.id , description: "A copy of your USCIS receipt notice")
+# Document.create(form_id: f765.id , application_id: applcation4.id )
+# Document.create(form_id: f765.id , application_id: applcation5.id )
+# Document.create(form_id: f765.id , application_id: applcation6.id )
+# Document.create(form_id: f765.id , application_id: applcation7.id )
+# Document.create(form_id: f765.id , application_id: applcation8.id )
 
-Document.create(form_id: f485.id , application_id: applcation1.id )
-Document.create(form_id: f485.id , application_id: applcation2.id )
-Document.create(form_id: f485.id , application_id: applcation3.id )
-Document.create(form_id: f485.id , application_id: applcation4.id )
-Document.create(form_id: f485.id , application_id: applcation5.id )
-Document.create(form_id: f485.id , application_id: applcation6.id )
-Document.create(form_id: f485.id , application_id: applcation7.id )
-Document.create(form_id: f485.id , application_id: applcation8.id )
+Document.create(form_id: f485.id , application_id: applcation1.id, description: "two identical color photographs of yourself" )
+Document.create(form_id: f485.id , application_id: applcation2.id, description: "Copy of nonimmigrant visas from a U.S. Embassy or consulate abroad" )
+Document.create(form_id: f485.id , application_id: applcation3.id, description: "Report of Medical Examination and Vaccination Record" )
+Document.create(form_id: f485.id , application_id: applcation4.id, description: "Affidavit of Support Form I-864" )
+# Document.create(form_id: f485.id , application_id: applcation5.id )
+# Document.create(form_id: f485.id , application_id: applcation6.id )
+# Document.create(form_id: f485.id , application_id: applcation7.id )
+# Document.create(form_id: f485.id , application_id: applcation8.id )
+
+
+
+
+
 
 

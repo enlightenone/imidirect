@@ -82,9 +82,50 @@ class FormsController < ApplicationController
         #instantiate combined pdf object
         combined_pdf_file = CombinePDF.new
 
+        ###### List of Documentation ############
+
+        list_of_documents_pdf = Prawn::Document.new # instantiate Prawn object
+        list_of_documents_pdf.text "List of Documentation", :align => :center, :size => 25  # List of Documentation Header
+        list_of_documents_pdf.stroke_horizontal_rule # List of Documentation Header
+        list_of_documents_pdf.move_down 20;
+
+    
+        current_options.each do |option|  # To identify which form is included
+            form_included = option.include
+            form_id = option.form_id
+            documents = Document.all # documents information
+
+            case form_id   # Assign form table id 
+                when "i130"
+                    form_table_id = 1
+                when "i765"
+                    form_table_id = 2
+                when "i485"
+                    form_table_id = 3
+                else
+                    puts "Error Message"
+            end
+
+            # generate list of documents based on form
+
+            if form_included
+                documents.each do |document|
+                    if form_table_id === document.form_id 
+                        list_of_documents_pdf.text "- #{document.description}", :size =>12
+                    end
+                end
+            end
+        end
+
+        list_of_documents_pdf.render_file "#{@new_directory}/#{@current_case_id}_list_of_document.pdf"
+
+        combined_pdf_file << CombinePDF.new("#{@new_directory}/#{@current_case_id}_list_of_document.pdf") 
+        ###### End of List of Documentation #########
+
+        ####  PDF Form generation Block #####
         current_options.each do |option|
             form_included = option.include
-            form_id = option.form_id # => 4
+            form_id = option.form_id
             
             if form_included
               #merge general information table with individual form table information
@@ -106,6 +147,8 @@ class FormsController < ApplicationController
             ######## end of block ############
             end
         end
+
+        ####  End of PDF Form generation Block #####
 
         # combined pdf file path
         combined_pdf_path = "#{Rails.root}/tmp/pdfs/#{@current_case_id}/#{@current_case_id}_combined.pdf"

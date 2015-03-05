@@ -10,19 +10,21 @@ class FormsController < ApplicationController
   def new
     user = User.new
     @case = user.cases.new()
+    @step = Step.new()
+
   end
 
   def new_case    
+
     user = User.first
     application_description = Application.find_by_app_id(params[:category]).description
     case_id = SecureRandom.hex
-    # params = ActionController::Parameters.new(case_id: id , description: application.description)
-    # raise params.inspect
-    # @case = user.cases.new(params.require(:case).permit(:case_id, :description, :total))
-     @case = user.cases.new(case_id: case_id, description: application_description )
+    @case = user.cases.new(case_id: case_id, description: application_description )
+    @step = Step.new()
 
-     #set up required form on options table
-     @case.options.new(form_id: "i130", form: "I-130", include: true)
+
+    #set up required form on options table
+    @case.options.new(form_id: "i130", form: "I-130", include: true)
      
     # determine the optional applications to file
     if params[:i765_option]

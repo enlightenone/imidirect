@@ -1,0 +1,322 @@
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #31B0D5;
+  line-height: 60px;
+  color: white;
+}
+
+.header{  
+  background-color: #31B0D5;
+  width: 100%;
+  display: block;
+  height: 70px;
+  padding-top: 10px;
+}
+
+.map {
+  width: 100%;
+  height: 350px;
+
+
+}
+.white {
+  color: white;
+  font-size: 25px;
+}
+
+
+
+
+.bg-color {
+  background-color: #31B0D5;
+
+}
+
+.field_width{
+
+  width: 250px;
+}
+
+
+/* Result search display */
+
+/* Result Display List*/
+.resultdisplay { 
+  float: right;
+  overflow-x: scroll;
+  height: 600px; 
+  width: 700px; 
+  margin-bottom: 100px;
+}
+
+div.resultdisplay::-webkit-scrollbar { 
+    display: none; 
+}
+
+div.resultdisplay::-moz-scrollbars-vertical { 
+    display: none; 
+}
+
+
+.resultdisplay ul {
+  list-style: outside none none;
+  margin: 0;
+}
+
+
+.resultdisplay ul li .list_outerbox{
+    width: 650px; 
+    height: 120px; 
+}
+
+.resultdisplay ul li .list_outerbox .list_index{
+  float: left;
+  color: #AEB4B6;
+  width: 37px;
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.resultdisplay ul li .list_outerbox .list_content {
+  width: 100%;
+  margin: 0;
+}
+
+.resultdisplay ul li .list_outerbox .list_content .inner_col {
+  float: left;
+  width: 65%;
+  margin: 0;
+
+}
+
+.resultdisplay ul li .list_outerbox .list_content .inner_col  .business_name{
+  font-size: 20px;
+  color: #31B0D5;
+
+}
+
+.resultdisplay ul li .list_outerbox .list_content .inner_col  .business_name a {
+  font-size: 20px;
+  color: #31B0D5;
+
+}
+.resultdisplay ul li .list_outerbox .list_content .inner_col  .business_name a:hover{
+  font-size: 20px;
+  color: #31B0D5;
+  cursor:pointer;
+
+}
+
+.resultdisplay ul li .list_outerbox .list_content .inner_col  .business_meta .rate{
+  color: white;
+  background: #e74c3c;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 15px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  float: left;
+  margin:  10px 10px 20px;
+  
+}
+
+.resultdisplay ul li .list_outerbox .list_content .inner_col  .category{
+  color: #AEB4B6;
+  font-size: 15px;
+  text-align: left;
+  line-height: 30px;
+  padding-left: 20px;
+  
+}
+
+.resultdisplay ul li .list_outerbox  .list_content .inner_col  .business_meta .address{
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 30px;
+  color: #AEB4B6;
+}
+
+.resultdisplay ul li .list_outerbox .list_content .inner_col  .result_footer{
+  border-top: 1px solid #eaeaea;
+  clear: both;
+  overflow: hidden;
+}
+
+
+.resultdisplay ul li .list_outerbox .list_content .business_photo {
+  float: right;
+  margin: 0;
+}
+
+.resultdisplay ul li .list_outerbox .list_content .business_photo img:hover {
+  float: right;
+  margin: 0;
+  cursor:pointer;
+}
+
+.resultdisplay ul li .list_outerbox .list_content .business_photo img{
+  float: right;
+  margin: 0;
+  height: 110px;
+  width: 110px;
+
+}
+
+.resultdisplay ul li .list_outerbox .list_content .business_photo img:hover {
+  cursor:pointer;
+}
+
+
+
+
+/* Search Result Display Ends*/
+
+/* Display Individual Page */
+
+.venture_display {
+  width: 700px;
+}
+
+.venture_display .venture_row {
+  margin-bottom: 20px;
+    width: 700px;
+}
+
+.first_col{
+  width: 350px;
+  float: left;
+
+
+}
+ .second_col {
+  width: 350px;
+  height: 330px;
+  float: left ;
+  text-align: center;
+  margin: auto 0;
+  line-height: 330px;
+
+}
+
+.venture_name {
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+.venture_category {
+  font-size: 18px;
+  color: #AEB4CB
+}
+
+.venture_image {
+  width: 300px;
+  height:300px;
+  border-radius: 3%;
+
+}
+
+.venture_info {
+  font-size: 15px;
+  font-weight: bold;
+  padding-top: 10px;
+
+}
+
+.venture_comment_block {
+  width: 700px;
+  float: left;
+  margin: 20px 10px;
+}
+
+.venture_comment_block .img_block{
+  width: 90px;
+  height: 90px;
+  float: left; 
+
+}
+.venture_comment_block img {
+  width: 80px ;
+  border-radius: 5%;
+
+}
+
+.venture_comment_block span {
+  width: 500px ;
+  display: block;
+  float: left;
+  margin-left: 20px;
+  font-size: 15px;
+}
+
+
+/* Display Individual Page End */
+
+.filter_row_buffer {
+  width: 100%;
+  margin: 30px; 
+}
+
+.filter_title {
+ display: block;
+ color: #31B0D5;
+ font-size: 20px;
+ margin-bottom: 10px
+
+}
+
+.sort_pointer:hover{
+  cursor: pointer;
+}
+
+
+.info-rewrite{
+  background-color:#31B0D5;
+  border-color:#31B0D5;
+
+}
+
+.info-rewrite:hover, .info-rewrite:focus, 
+.info-rewrite.focus, .info-rewrite:active, 
+.info-rewrite.active {
+  background-color:#31B0D5;
+  border-color:#31B0D5;
+
+}
+
+
+// log in page
+
+.login_background {
+  background-image: image-url("cat.jpg") ;
+  background-size: cover;
+  height: 700px;
+  text-align: center;
+}
+
+.front_page_message {
+  color: white;
+  font-size: 80px;
+  font-weight: bold;
+  line-height: 600px;
+  text-shadow:2px 2px black;
+
+}

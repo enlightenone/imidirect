@@ -1,5 +1,3 @@
-require 'fillable_pdf_form'
-
 class PdfsController < ApplicationController
 
 

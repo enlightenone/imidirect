@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  
+    resources :apps
     resources :forms
     resources :pdfs
     post 'forms/:id/new_case' => 'forms#new_case', as: :new_case 

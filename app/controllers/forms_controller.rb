@@ -157,9 +157,11 @@ class FormsController < ApplicationController
         # generate combined pdf file
         combined_pdf_file.save combined_pdf_path
 
+        # render combined pdf file to browser
+        send_file combined_pdf_path, type: 'application/pdf', disposition: 'inline'
+
     # End of PDF block
 
-        redirect_to pdfs_path
     else
       redirect_to "http://facebook.com"
     end

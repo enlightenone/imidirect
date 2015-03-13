@@ -35,13 +35,16 @@ class FormsController < ApplicationController
     if @case.save
       redirect_to new_application_form_path(user_id: user.id, case_id: case_id)
     else
-      redirect_to "http://facebook.com"
+      redirect_to "http://uscis.gov"
     end
   end
 
   def new_application_form
        user = User.find(params[:user_id])
        @form_case = user.cases.find_by_case_id(params[:case_id])
+       @form_case.build_general_information
+       @form_case.build_i130
+       @form_case.build_i765
        @i765_option = @form_case.options.find_by(form_id: "i765").include
        @current_case_id = @form_case.case_id
        @current_user_id = params[:user_id]
@@ -54,7 +57,7 @@ class FormsController < ApplicationController
       @current_case_id = params[:current_case_id]
       @current_case.build_general_information(general_information_params)
       @current_case.build_i130(i130_params)
-      @current_case.build_i765(i765_params)
+      @current_case.build_i765(i765_params) if @current_case.options.find_by(form_id: "i765").include
 
     if @current_case.save
 

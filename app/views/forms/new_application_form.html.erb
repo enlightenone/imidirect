@@ -3,7 +3,7 @@
 <%= hidden_field_tag(:current_user_id, @current_user_id) %>
   <h3>Applicant</h3>
   <%= f.fields_for :general_information do |g| %>
-  <p>First Name: <%= g.text_field :general_applicant_first_name %> Last Name: <%= g.text_field :general_applicant_first_name %> Middle Name: <%= g.text_field :general_applicant_middle_name %> Other Name: <%= g.text_field :general_applicant_other_name %></p>
+  <p>First Name: <%= g.text_field :general_applicant_first_name %> Last Name: <%= g.text_field :general_applicant_last_name %> Middle Name: <%= g.text_field :general_applicant_middle_name %> Other Name: <%= g.text_field :general_applicant_other_name %></p>
   <h3>Address</h3>
   <p>C/O: <%= g.text_field :general_applicant_co %> </p>
   <p>Street Address: <%= g.text_field :general_applicant_street%> Apt/St: <%= g.text_field :general_applicant_apt_suit%>

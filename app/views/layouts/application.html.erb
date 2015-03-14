@@ -4,9 +4,10 @@
   <title>Imidirect</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.js"></script>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-app="formApp">
   <header class="header">
     <div class="row">
       <div class="container"> 

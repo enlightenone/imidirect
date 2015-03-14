@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-
   
+    get 'apps/index'
     resources :apps
     resources :forms
     resources :pdfs

@@ -21,6 +21,10 @@ gem 'angularjs-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
+# "angular ui router templates"
+gem 'angular-rails-templates'
+
+
 # Twitter-bootsrap
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

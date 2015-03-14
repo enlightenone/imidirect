@@ -9,9 +9,9 @@ angular.module('formApp', ['ngAnimate', 'ui.router', "templates"])
     
     $stateProvider
     
-        // route to show our basic form (/form)
+        // route to show our basic form (/form)section1&
         .state('form', {
-            url: '/form?form1&form2&form3&form4&form5&form6&form7',
+            url: '/form?section1&section2&section3&section4&section5',
             templateUrl: 'forms/form.html',
             controller: 'formController'
         })
@@ -19,56 +19,56 @@ angular.module('formApp', ['ngAnimate', 'ui.router', "templates"])
         // nested states 
         // each of these sections will have their own view
         // url will be nested (/form/profile)
-        .state('form.form1', {
-            url: '/form1',
-            templateUrl: 'cases/i130/form1.html'
+        .state('form.section1', {
+            url: '/section1',
+            templateUrl: 'cases/i130/section1.html'
 
         })
         
         // url will be /form/interests
-        .state('form.form2', {
-            url: '/form2',
-            templateUrl: 'cases/i130/form2.html'
+        .state('form.section2', {
+            url: '/section2',
+            templateUrl: 'cases/i130/section2.html'
 
         })
 
         // url will be /form/interests
-        .state('form.form3', {
-            url: '/form3',
-            templateUrl: 'cases/i130/form4.html'
+        .state('form.section3', {
+            url: '/section3',
+            templateUrl: 'cases/i130/section3.html'
 
         })
 
         // url will be /form/interests
-        .state('form.form4', {
-            url: '/form4',
-            templateUrl: 'cases/i130/form4.html'
+        .state('form.section4', {
+            url: '/section4',
+            templateUrl: 'cases/i130/section4.html'
 
         })
 
         // url will be /form/interests
-        .state('form.form5', {
-            url: '/form5',
-            templateUrl: 'cases/i130/form5.html'
+        .state('form.section5', {
+            url: '/section5',
+            templateUrl: 'forms/form-submit.html'
 
         })
 
         // url will be /form/interests
-        .state('form.form6', {
-            url: '/form6',
-            templateUrl: 'cases/i130/form6.html'
+        .state('form.section6', {
+            url: '/section6',
+            templateUrl: 'cases/i130/section6.html'
 
         })
         
         // url will be /form/payment
-        .state('form.form7', {
-            url: '/form7',
-            templateUrl: 'cases/i130/form7.html'
+        .state('form.section7', {
+            url: '/section7',
+            templateUrl: 'cases/i130/section7.html'
         });
         
     // catch all route
     // send users to the form page 
-    $urlRouterProvider.otherwise('form?form1&form2&form3&form4&form5&form6&form7/');
+    $urlRouterProvider.otherwise('form/section1?section1&section2&section3&section4&section5');
 })
 
 // our controller for the form

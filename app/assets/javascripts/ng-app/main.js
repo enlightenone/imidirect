@@ -1,19 +1,30 @@
 // app.js
 // create our angular app and inject ngAnimate and ui-router 
 // =============================================================================
-angular.module('formApp', ['ngAnimate', 'ui.router', "templates"])
+var app = angular.module('formApp', ['ngAnimate', 'ui.router', "templates"]);
+
+app.config(['$httpProvider',
+    function ($httpProvider) {
+      // send security token to rails with every angular http request
+      $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+}]);  // .config
 
 // configuring our routes 
 // =============================================================================
-.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider) {
     
     $stateProvider
     
         // route to show our basic form (/form)section1&
         .state('form', {
-            url: '/form?section1&section2&section3&section4&section5',
+            url: '/form?application_type=i130&section1&section2&section3&section4&section5',
             templateUrl: 'forms/form.html',
-            controller: 'formController'
+            controller: 'formController',
+             resolve: {
+                obj: function($stateParams){
+                    return $stateParams;
+                }
+            }
         })
         
         // nested states 
@@ -28,7 +39,24 @@ angular.module('formApp', ['ngAnimate', 'ui.router', "templates"])
         // url will be /form/interests
         .state('form.section2', {
             url: '/section2',
-            templateUrl: 'cases/i130/section2.html'
+
+            templateProvider: function($http, $stateParams){
+
+                var obj = $stateParams;
+                var templateName = "cases/" + obj.application_type + "/" + "section2.html" ;
+                console.log("template Name: " + templateName);
+                
+
+                    return $http
+                      .get(templateName)
+                      .then(function(tpl){
+                        return tpl.data;
+                      });
+
+                
+
+
+            }
 
         })
 
@@ -68,19 +96,15 @@ angular.module('formApp', ['ngAnimate', 'ui.router', "templates"])
         
     // catch all route
     // send users to the form page 
-    $urlRouterProvider.otherwise('form/section1?section1&section2&section3&section4&section5');
-})
+    $urlRouterProvider.otherwise('form/section1?application_type=i130&section1&section2&section3&section4&section5');
+});
 
-// our controller for the form
-// =============================================================================
-.controller('formController', function($scope, $stateParams) {
+
+app.controller("formController", function($scope, obj) {
     
     // we will store all of our form data in this object
-    $scope.formData = {};
+    $scope.formData = obj.section1;
 
-    $stateParams.flag = "yes" ;
-
-    console.log($stateParams.flag);
     
     // function to process the form
     $scope.processForm = function() {
@@ -88,4 +112,3 @@ angular.module('formApp', ['ngAnimate', 'ui.router', "templates"])
     };
     
 });
-

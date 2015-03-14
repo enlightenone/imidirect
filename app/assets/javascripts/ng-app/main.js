@@ -14,14 +14,20 @@ app.config(['$httpProvider',
 app.config(function($stateProvider, $urlRouterProvider) {
     
     $stateProvider
+        .state('option',{
+            url: '/option',
+            templateUrl: 'options/i130-option.html',
+            controller: 'formController'
+
+        })
     
         // route to show our basic form (/form)section1&
         .state('form', {
-            url: '/form?application_type=i130&section1&section2&section3&section4&section5',
+            url: '/form?application_type=i130&section1=hello1&section2=hello2&section3&section4&section5',
             templateUrl: 'forms/form.html',
             controller: 'formController',
              resolve: {
-                obj: function($stateParams){
+                obj2: function($stateParams){
                     return $stateParams;
                 }
             }
@@ -44,7 +50,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
                 var obj = $stateParams;
                 var templateName = "cases/" + obj.application_type + "/" + "section2.html" ;
-                console.log("template Name: " + templateName);
+                console.log("template Name: " + obj);
                 
 
                     return $http
@@ -52,10 +58,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
                       .then(function(tpl){
                         return tpl.data;
                       });
-
-                
-
-
             }
 
         })
@@ -96,14 +98,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
         
     // catch all route
     // send users to the form page 
-    $urlRouterProvider.otherwise('form/section1?application_type=i130&section1&section2&section3&section4&section5');
+    $urlRouterProvider.otherwise('form/section1?application_type&section1&section2&section3&section4&section5');
 });
 
 
-app.controller("formController", function($scope, obj) {
+app.controller("formController", function($scope, obj2) {
     
     // we will store all of our form data in this object
-    $scope.formData = obj.section1;
+    $scope.formData = obj2.section1;
 
     
     // function to process the form

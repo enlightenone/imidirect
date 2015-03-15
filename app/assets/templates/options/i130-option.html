@@ -15,19 +15,19 @@
     <label>I-130 Applicaiton Options </label>
     <div class="form-group">
         <label class="checkbox-inline">
-            <input type="checkbox" name="formOptions" ng-model="formOptions.i485"> 
+            <input type="checkbox" name="formOptions" ng-model="formOptions['i485-option']"> 
             I-485 Adjustment of Status
         </label>
         <br>
         <br>
         <label class="checkbox-inline">
-            <input type="checkbox" name="formOptions" ng-model="formOptions.i765"> 
+            <input type="checkbox" name="formOptions" ng-model="formOptions['i765-option']"> 
             I-765 Employment Permit
         </label>
         <br>
         <br>
         <label class="checkbox-inline">
-            <input type="checkbox" name="formOptions" ng-model="formOptions.i131">
+            <input type="checkbox" name="formOptions" ng-model="formOptions['i131-option']">
             I-131 Application For Travel Document
         </label>
     </div>
@@ -39,7 +39,7 @@
 
     <!-- show our formData as it is being typed -->
     <pre>
-        {{ formOptions }}
+        {{ test}}
     </pre>
 
 

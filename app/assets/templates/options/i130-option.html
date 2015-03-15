@@ -1,0 +1,47 @@
+<!-- Relative Immigration Form Options -->
+<div class="row">
+<div class="col-sm-8 col-sm-offset-2">
+
+    <div id="form-container">
+
+        <div class="page-header text-center">
+            <h2>I-130 Application Options</h2>
+        
+        <!-- use ng-submit to catch the form submission and use our Angular function -->
+        <form id="signup-form" ng-submit="chooseForm()">
+
+     
+                <!-- MULTIPLE CHECKBOXES -->
+    <label>I-130 Applicaiton Options </label>
+    <div class="form-group">
+        <label class="checkbox-inline">
+            <input type="checkbox" name="formOptions" ng-model="formOptions.i485"> 
+            I-485 Form
+        </label>
+        <br>
+        <br>
+        <label class="checkbox-inline">
+            <input type="checkbox" name="formOptions" ng-model="formOptions.i765"> 
+            I-765 Form
+        </label>
+        <br>
+        <br>
+        <label class="checkbox-inline">
+            <input type="checkbox" name="formOptions" ng-model="formOptions.i131">
+            I-131 Form
+        </label>
+    </div>
+
+        <button type="submit" class="btn btn-danger">Submit</button>
+        </form>
+
+    </div>
+
+    <!-- show our formData as it is being typed -->
+    <pre>
+        {{ formOptions }}
+    </pre>
+
+
+</div>
+</div>

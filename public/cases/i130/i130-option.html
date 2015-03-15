@@ -1,5 +1,5 @@
 <!-- form-profile.html -->
-<h4 style="color: white;">Section 1</h4>
+<h4 style="color: white;">I-130 Form Information</h4>
 <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" name="name" ng-model="formData.name">
@@ -12,13 +12,8 @@
 
 <div class="form-group row">
 <div class="col-xs-6 col-xs-offset-3">
-    <a ui-sref="form.section2" class="btn btn-block btn-info">
-    Next Section 2 <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    <a ui-sref="form.section3" class="btn btn-block btn-info">
+    Next Section<span class="glyphicon glyphicon-circle-arrow-right"></span>
     </a>
 </div>
 </div>
-
-    <!-- show our formData as it is being typed -->
-    <pre>
-        {{ formOptions }}
-    </pre>

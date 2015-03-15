@@ -109,7 +109,7 @@ app.controller("formController", function($scope) {
 
 
     //function to choose forms
-    $scope.chooseForm = function() {
+    $scope.chooseForm = function(category) {
         location.assign('/apps#/form/section1');
     };
     

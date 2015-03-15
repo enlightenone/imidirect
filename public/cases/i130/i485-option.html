@@ -9,11 +9,12 @@
     <label for="email">Email</label>
     <input type="text" class="form-control" name="email" ng-model="formData.email">
 </div>
+<pre>
+  Switches:  {{switchOptions}}
+</pre>
 
 <div class="form-group row">
-<div class="col-xs-6 col-xs-offset-3">
-    <a ui-sref="form.section3" class="btn btn-block btn-info">
-    Next Section<span class="glyphicon glyphicon-circle-arrow-right"></span>
-    </a>
-</div>
+<div ng-if="switchOptions['section4'] == 'i485-option'" ng-include="'/switches/switch-section5.html'"></div>
+<div ng-if="switchOptions['section5'] == 'i485-option'" ng-include="'/switches/switch-section6.html'"></div>
+<div ng-if="switchOptions['section6'] == 'i485-option'" ng-include="'/switches/switch-section7.html'"></div>
 </div>

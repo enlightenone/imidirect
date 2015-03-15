@@ -8,7 +8,7 @@
             <h2>I-130 Application Options</h2>
         
         <!-- use ng-submit to catch the form submission and use our Angular function -->
-        <form id="signup-form" ng-submit="chooseForm()">
+        <form id="signup-form" ng-submit="chooseForm('i130')">
 
      
                 <!-- MULTIPLE CHECKBOXES -->
@@ -16,19 +16,19 @@
     <div class="form-group">
         <label class="checkbox-inline">
             <input type="checkbox" name="formOptions" ng-model="formOptions.i485"> 
-            I-485 Form
+            I-485 Adjustment of Status
         </label>
         <br>
         <br>
         <label class="checkbox-inline">
             <input type="checkbox" name="formOptions" ng-model="formOptions.i765"> 
-            I-765 Form
+            I-765 Employment Permit
         </label>
         <br>
         <br>
         <label class="checkbox-inline">
             <input type="checkbox" name="formOptions" ng-model="formOptions.i131">
-            I-131 Form
+            I-131 Application For Travel Document
         </label>
     </div>
 

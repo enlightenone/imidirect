@@ -16,9 +16,9 @@ class FormsController < ApplicationController
   def new_case    
 
     user = User.first
-    application_description = Application.find_by_app_id(params[:category]).description
+    application_id = Application.find_by_app_id(params[:category]).id
     case_id = SecureRandom.hex
-    @case = user.cases.new(case_id: case_id, description: application_description )
+    @case = user.cases.new(case_id: case_id, application_id: application_id  )
     @step = Step.new()
 
 

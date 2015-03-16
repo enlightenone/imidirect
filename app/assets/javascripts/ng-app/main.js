@@ -24,7 +24,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         // route to show our basic form (/form)section1&
         .state('form', {
             url: '/form?application_type&section1&section2&section3&section4&section5&section6&section7&section8&section9',
-            // url: '/form',
             templateUrl: 'forms/form.html',
             controller: 'formController'
         })
@@ -34,16 +33,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         // url will be nested (/form/profile)
         .state('form.section1', {
             url: '/section1',
-            // templateUrl: 'cases/i130/section1.html'
             templateProvider: function($http, $stateParams){
 
                 var obj = $stateParams;
-                console.log("parameter type: " + obj.application_type )
-                console.log("parameter section: " + obj.section1 )
                 var templateName = "cases/" + obj.application_type + "/" + obj.section1 + ".html" ;
-                // var templateName = "cases/i130/i130-sponsor.html"
-                console.log("template Name: " + templateName);
-                
 
                     return $http
                       .get(templateName)
@@ -58,18 +51,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         // url will be /form/interests
         .state('form.section2', {
             url: '/section2',
-             // templateUrl: 'cases/i130/section2.html'
-
             templateProvider: function($http, $stateParams){
-
                 var obj = $stateParams;
-                console.log("parameter type: " + obj.application_type )
-                console.log("parameter section: " + obj.section2 )
                 var templateName = "cases/" + obj.application_type + "/" + obj.section2 + ".html" ;
-                // var templateName = "cases/i130/i130-sponsor.html"
-                console.log("template Name: " + templateName);
                 
-
                     return $http
                       .get(templateName)
                       .then(function(tpl){
@@ -83,13 +68,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         // url will be /form/interests
         .state('form.section3', {
             url: '/section3',
-            // templateUrl: 'cases/i130/section3.html'
             templateProvider: function($http, $stateParams){
 
                 var obj = $stateParams;
-                console.log("parameter type: " + obj.application_type)
                 var templateName = "cases/" + obj.application_type + "/" + obj.section3 +".html" ;
-                console.log("template Name: " + templateName);
                 
 
                     return $http
@@ -104,15 +86,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         // url will be /form/interests
         .state('form.section4', {
             url: '/section4',
-            // templateUrl: 'cases/i130/section4.html'
             templateProvider: function($http, $stateParams){
-
                 var obj = $stateParams;
-                console.log("parameter type: " + obj.application_type)
                 var templateName = "cases/" + obj.application_type + "/" + obj.section4 +".html" ;
-                console.log("template Name: " + templateName);
                 
-
                     return $http
                       .get(templateName)
                       .then(function(tpl){
@@ -127,12 +104,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('form.section5', {
             url: '/section5',
             templateProvider: function($http, $stateParams){
-
                 var obj = $stateParams;
-                console.log("parameter type: " + obj.application_type)
                 var templateName = "cases/" + obj.application_type + "/" + obj.section5 +".html" ;
-                console.log("template Name: " + templateName);
-                
 
                     return $http
                       .get(templateName)
@@ -150,11 +123,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateProvider: function($http, $stateParams){
 
                 var obj = $stateParams;
-                console.log("parameter type: " + obj.application_type)
                 var templateName = "cases/" + obj.application_type + "/" + obj.section6 +".html" ;
-                console.log("template Name: " + templateName);
                 
-
                     return $http
                       .get(templateName)
                       .then(function(tpl){
@@ -171,10 +141,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateProvider: function($http, $stateParams){
 
                 var obj = $stateParams;
-                console.log("parameter type: " + obj.application_type)
                 var templateName = "cases/" + obj.application_type + "/" + obj.section7 +".html" ;
-                console.log("template Name: " + templateName);
-                
 
                     return $http
                       .get(templateName)
@@ -191,10 +158,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateProvider: function($http, $stateParams){
 
                 var obj = $stateParams;
-                console.log("parameter type: " + obj.application_type)
                 var templateName = "cases/" + obj.application_type + "/" + obj.section8 +".html" ;
-                console.log("template Name: " + templateName);
-                
 
                     return $http
                       .get(templateName)
@@ -209,10 +173,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateProvider: function($http, $stateParams){
 
                 var obj = $stateParams;
-                console.log("parameter type: " + obj.application_type)
                 var templateName = "cases/" + obj.application_type + "/" + obj.section9 +".html" ;
-                console.log("template Name: " + templateName);
-                
 
                     return $http
                       .get(templateName)
@@ -234,9 +195,6 @@ app.controller("formController", function($scope ,  $stateParams) {
     //Object containing I-130 relative application options 
     $scope.formOptions = {} ; 
     $scope.switchOptions = $stateParams ; // To retain form options after the fomr has been submitted.
-
-    // we will store all of our form data in this object
-    // $scope.formData = obj2.section1;
 
 
     //function to choose forms
@@ -260,9 +218,6 @@ app.controller("formController", function($scope ,  $stateParams) {
     i++;
     $scope.switchButtons["section" + i] = "submit";
 
-    $scope.test = "test1" ;
-
-    console.log($scope.switchButtons);
     location.assign('#form/section1?application_type='+ $scope.switchButtons["application_type"] + '&section1=' + $scope.switchButtons["section1"] + '&section2=' + $scope.switchButtons["section2"]
                 + '&section3=' + $scope.switchButtons["section3"] + '&section4=' + $scope.switchButtons["section4"] + '&section5=' + $scope.switchButtons["section5"] 
                 + '&section6=' + $scope.switchButtons["section6"] + '&section7=' + $scope.switchButtons["section7"] + '&section8=' + $scope.switchButtons["section8"] 

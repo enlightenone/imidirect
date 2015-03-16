@@ -9,10 +9,6 @@
     <label for="email">Email</label>
     <input type="text" class="form-control" name="email" ng-model="formData.email">
 </div>
-<pre>
-  Switches:  {{switchOptions}}
-</pre>
-
 <div class="form-group row">
 <div ng-if="switchOptions['section4'] == 'i765-option'" ng-include="'/switches/switch-section5.html'"></div>
 <div ng-if="switchOptions['section5'] == 'i765-option'" ng-include="'/switches/switch-section6.html'"></div>

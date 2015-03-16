@@ -50,6 +50,13 @@ gem 'pdf-reader'
 
 gem 'combine_pdf'
 
+
+# API key encriptions 
+gem 'figaro'
+
+# Stripe payment gem
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

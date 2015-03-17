@@ -5,7 +5,37 @@ class PaymentsController < ApplicationController
 
   def new
       @user = User.first
-      @case = @user.cases(1)
+      @case =  @user.cases.find(2)
+      @application_fee = @case.application.fee
+      @app_description = @case.application.description
+      @i130_description = @case.application.forms.find_by_form_id('i130').description
+      @i130_fee =  @case.application.forms.find_by_form_id('i130').fee
+      @i1765_description =  @case.application.forms.find_by_form_id('i765').description
+      @i765_fee = @case.application.forms.find_by_form_id('i765').fee
+
+      @options = @case.options
+
+      @fees = [{description: "Online Process Fee", fee: @application_fee},
+              {description: @i130_description, fee: @i130_fee}]
+
+      # loop through options table to determine fee of additional form to be included.
+
+      @options.each do |option| 
+        if option.include == true
+          @fee =  @case.application.forms.find_by_form_id(option.form_id).fee
+          @description =  @case.application.forms.find_by_form_id(option.form_id).description
+          @fees.push({description: @description, fee: @fee})
+        end
+      end
+
+      @total_fee = 0
+
+      @fees.each do |f|
+        @total_fee += f[:fee]
+      end
+
+
+
   end
 
   def create

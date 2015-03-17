@@ -189,7 +189,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('form/section1?application_type=i130&section1&section2&section3&section4&section5&section6&section7&section8&section9');
 });
 
-
 app.controller("formController", function($scope ,  $stateParams) {
 
     //Object containing I-130 relative application options 

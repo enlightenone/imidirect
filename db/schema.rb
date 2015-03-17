@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316051829) do
+ActiveRecord::Schema.define(version: 20150317220753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -214,6 +214,23 @@ ActiveRecord::Schema.define(version: 20150316051829) do
   end
 
   add_index "i130s", ["case_id"], name: "index_i130s_on_case_id", using: :btree
+
+  create_table "i130tests", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "pod"
+    t.string   "dob"
+    t.string   "sponsor_name"
+    t.string   "nationality"
+    t.string   "country_of_destination"
+    t.string   "date_of_return"
+    t.string   "counsol"
+    t.string   "spouse"
+    t.string   "previous_application"
+    t.string   "office"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "i131s", force: :cascade do |t|
     t.string   "address"

@@ -6,6 +6,10 @@ Rails.application.routes.draw do
       resources :payments
     end
 
+    namespace :api do
+      resources :forms
+    end
+
     resources :apps
     resources :forms
     resources :pdfs

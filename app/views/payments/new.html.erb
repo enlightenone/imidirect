@@ -21,11 +21,15 @@
     </tr>
     <% end %>
 </table>
+<div style="clear: both;"></div>
+Current Case Id: <%= @current_case_id %>
 
-
+<%= form_tag form_payments_path do %>
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-name="Peter's Speakeasy"
           data-description="Immigration Application"
-          data-amount="<%= @total_fee*100 %>">
+          data-amount="120000">
       </script>
+
+  <% end %>

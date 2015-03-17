@@ -4,6 +4,7 @@ class PaymentsController < ApplicationController
   end
 
   def new
+      
       @user = User.first
       @case =  @user.cases.find(2)
       @application_fee = @case.application.fee
@@ -39,10 +40,11 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    @amount = 120000
+    @current_case_id = params[:form_id]
+    @amount = 155000
 
     customer = Stripe::Customer.create(
-      :email => 'test@email.com',
+      :email => 'schow617@yahoo.com',
       :card  => params[:stripeToken]
     )
 
@@ -53,17 +55,17 @@ class PaymentsController < ApplicationController
       :currency    => 'usd'
     )
 
-    respond_to do |format|
-      if @membership.save
-        format.html { redirect_to @membership, notice: "Membership was successfully created for #{@membership.name}." }
-      else
-        format.html { render :new }
-      end
-    end
+      # combined pdf file path
+        @combined_pdf_path = "#{Rails.root}/tmp/pdfs/#{@current_case_id}/#{@current_case_id}_combined.pdf"
+
+
+        # render combined pdf file to browser
+        send_file @combined_pdf_path, type: 'application/pdf', disposition: 'inline'
+        # redirect_to "http://yahoo.com"
 
   rescue Stripe::CardError => e
     flash[:notice] = e.message
-    redirect_to new_membership_path
+    redirect_to "http://facebook.com"
   end
 
 end

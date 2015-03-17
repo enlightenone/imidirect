@@ -161,7 +161,10 @@ class FormsController < ApplicationController
         combined_pdf_file.save combined_pdf_path
 
         # render combined pdf file to browser
-        send_file combined_pdf_path, type: 'application/pdf', disposition: 'inline'
+        # send_file combined_pdf_path, type: 'application/pdf', disposition: 'inline'
+
+        # redirect to credit card payment page
+        redirect_to new_form_payment_path(:form_id => @current_case_id)
 
     # End of PDF block
 

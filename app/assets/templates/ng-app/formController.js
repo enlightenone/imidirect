@@ -9,12 +9,10 @@ app.controller("formController", function($scope ,  $stateParams, $cookies, $coo
 
     //catch form fields data and assign to cookie
     $scope.catchData = function(name, form_data){
-        // $cookieStore.put('myFavorite', 'oatmeal');
-        $cookieStore.put(name, form_data);
-        var test = $cookieStore.get(name);
-        console.log(test);
-
+         $cookieStore.put(name, form_data);
     };
+
+
     //function to choose forms
     $scope.chooseForm = function(category) {
     // $scope.formData = {};
@@ -46,10 +44,18 @@ app.controller("formController", function($scope ,  $stateParams, $cookies, $coo
     
     // function to process the form
     $scope.processForm = function() {
-        alert('awesome!');
+        var count = 1 ;
+        var individualFieldData = $cookieStore.put('form' + '1') ;
+        $scope.fieldData = {} ;
 
-       $scope.test = $cookieStore.getAll();
-       console.log($scope.test);
+        while (individualFieldData){
+
+
+
+        }
+
+       // $scope.test = $cookieStore.get();
+       // console.log($scope.test);
     };
     
 });

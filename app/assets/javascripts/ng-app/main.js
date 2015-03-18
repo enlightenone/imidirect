@@ -1,7 +1,7 @@
 // app.js
 // create our angular app and inject ngAnimate and ui-router 
 // =============================================================================
-var app = angular.module('formApp', ['ngResource','ngAnimate', 'ui.router', "templates"]);
+var app = angular.module('formApp', ['ngCookies','ngResource','ngAnimate', 'ui.router', "templates"]);
 
 
 app.config(['$httpProvider',

@@ -1,7 +1,4 @@
-app.controller("formController", function($scope ,  $stateParams) {
-
-    //Form Data
-      $scope.formData = {};
+app.controller("formController", function($scope ,  $stateParams, $cookies, $cookieStore) {
 
 
 
@@ -10,6 +7,14 @@ app.controller("formController", function($scope ,  $stateParams) {
     $scope.switchOptions = $stateParams ; // To retain form options after the fomr has been submitted.
 
 
+    //catch form fields data and assign to cookie
+    $scope.catchData = function(name, form_data){
+        // $cookieStore.put('myFavorite', 'oatmeal');
+        $cookieStore.put(name, form_data);
+        var test = $cookieStore.get(name);
+        console.log(test);
+
+    };
     //function to choose forms
     $scope.chooseForm = function(category) {
     // $scope.formData = {};
@@ -42,6 +47,9 @@ app.controller("formController", function($scope ,  $stateParams) {
     // function to process the form
     $scope.processForm = function() {
         alert('awesome!');
+
+       $scope.test = $cookieStore.getAll();
+       console.log($scope.test);
     };
     
 });

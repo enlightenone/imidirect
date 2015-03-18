@@ -10,10 +10,19 @@
     <input type="text" class="form-control" name="email" ng-model="formData.email">
 </div>
 <div class="form-group row">
-<div ng-if="switchOptions['section4'] == 'i485-option'" ng-include="'/switches/switch-section5.html'"></div>
-<div ng-if="switchOptions['section5'] == 'i485-option'" ng-include="'/switches/switch-section6.html'"></div>
-<div ng-if="switchOptions['section6'] == 'i485-option'" ng-include="'/switches/switch-section7.html'"></div>
+<div ng-if="switchOptions['section4'] == 'i485-option'" class="col-xs-6 col-xs-offset-3" ng-controller="formController">
+    <a ui-sref="form.section5" class="btn btn-block btn-info" ng-click="catchData('form5', formData)">
+    Next Section 5 <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
 </div>
-<pre>
-  {{formData}}
-</pre>
+<div ng-if="switchOptions['section5'] == 'i485-option'" class="col-xs-6 col-xs-offset-3" ng-controller="formController">
+    <a ui-sref="form.section6" class="btn btn-block btn-info" ng-click="catchData('form5', formData)">
+    Next Section 6 <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+<div ng-if="switchOptions['section6'] == 'i485-option'" class="col-xs-6 col-xs-offset-3" ng-controller="formController">
+    <a ui-sref="form.section7" class="btn btn-block btn-info" ng-click="catchData('form5', formData)">
+    Next Section 7 <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+</div>

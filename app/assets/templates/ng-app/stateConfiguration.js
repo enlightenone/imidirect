@@ -154,8 +154,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
                       .then(function(tpl){
                         return tpl.data;
                       });
-            },
-            controller: 'formController'
+            }
         })
         .state('form.section9', {
             url: '/section9',
@@ -169,8 +168,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
                       .then(function(tpl){
                         return tpl.data;
                       });
-            },
-            controller: 'formController'
+            }
         });
 
     // catch all route

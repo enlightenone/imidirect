@@ -2,14 +2,17 @@
 <h4 style="color: white;">I-765 Form Option</h4>
 <div class="form-group">
     <label for="name">Previous Application</label>
-    <input type="text" class="form-control" name="name" ng-model="formData.previous_application">
+    <input type="text" class="form-control" name="previous_application" ng-model="formData.previous_application">
 </div>
 
 <div class="form-group">
     <label for="email">Office of Filing</label>
-    <input type="text" class="form-control" name="email" ng-model="formData.office">
+    <input type="text" class="form-control" name="office" ng-model="formData.office">
 </div>
 <div class="form-group row">
 <div ng-if="switchOptions['section4'] == 'i765-option'" ng-include="'/switches/switch-section5.html'"></div>
 <div ng-if="switchOptions['section5'] == 'i765-option'" ng-include="'/switches/switch-section6.html'"></div>
 <div ng-if="switchOptions['section6'] == 'i765-option'" ng-include="'/switches/switch-section7.html'"></div>
+<pre>
+  {{formData}}
+</pre>

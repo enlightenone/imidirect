@@ -1,5 +1,10 @@
 app.controller("formController", function($scope ,  $stateParams) {
 
+    //Form Data
+      $scope.formData = {};
+
+
+
     //Object containing I-130 relative application options 
     $scope.formOptions = {} ; 
     $scope.switchOptions = $stateParams ; // To retain form options after the fomr has been submitted.
@@ -7,6 +12,7 @@ app.controller("formController", function($scope ,  $stateParams) {
 
     //function to choose forms
     $scope.chooseForm = function(category) {
+    // $scope.formData = {};
 
     $scope.switchButtons = {}; //Create object to arrange form/section combination.
     var i = 3; 

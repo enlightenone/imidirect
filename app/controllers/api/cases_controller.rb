@@ -1,5 +1,5 @@
 module Api
-  class FormsController < ApplicationController
+  class CasesController < ApplicationController
     def index
     end
 

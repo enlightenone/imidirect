@@ -34,23 +34,23 @@ app.config(function($stateProvider, $urlRouterProvider) {
         // url will be nested (/form/profile)
         .state('form.section1', {
             url: '/section1',
-            // templateUrl: 'cases/i130/section1.html'
-            templateProvider: function($http, $stateParams){
+            templateUrl: 'cases/i130/section1.html',
+            // templateProvider: function($http, $stateParams){
 
-                var obj = $stateParams;
-                console.log("parameter type: " + obj.application_type )
-                console.log("parameter section: " + obj.section1 )
-                var templateName = "cases/" + obj.application_type + "/" + obj.section1 + ".html" ;
-                // var templateName = "cases/i130/i130-sponsor.html"
-                console.log("template Name: " + templateName);
+            //     var obj = $stateParams;
+            //     console.log("parameter type: " + obj.application_type )
+            //     console.log("parameter section: " + obj.section1 )
+            //     var templateName = "cases/" + obj.application_type + "/" + obj.section1 + ".html" ;
+            //     // var templateName = "cases/i130/i130-sponsor.html"
+            //     console.log("template Name: " + templateName);
                 
 
-                    return $http
-                      .get(templateName)
-                      .then(function(tpl){
-                        return tpl.data;
-                      });
-            },
+            //         return $http
+            //           .get(templateName)
+            //           .then(function(tpl){
+            //             return tpl.data;
+            //           });
+            // },
             controller: 'formController'
 
         })
@@ -58,24 +58,24 @@ app.config(function($stateProvider, $urlRouterProvider) {
         // url will be /form/interests
         .state('form.section2', {
             url: '/section2',
-             // templateUrl: 'cases/i130/section2.html'
+             templateUrl: 'cases/i130/section2.html',
 
-            templateProvider: function($http, $stateParams){
+            // templateProvider: function($http, $stateParams){
 
-                var obj = $stateParams;
-                console.log("parameter type: " + obj.application_type )
-                console.log("parameter section: " + obj.section2 )
-                var templateName = "cases/" + obj.application_type + "/" + obj.section2 + ".html" ;
-                // var templateName = "cases/i130/i130-sponsor.html"
-                console.log("template Name: " + templateName);
+            //     var obj = $stateParams;
+            //     console.log("parameter type: " + obj.application_type )
+            //     console.log("parameter section: " + obj.section2 )
+            //     var templateName = "cases/" + obj.application_type + "/" + obj.section2 + ".html" ;
+            //     // var templateName = "cases/i130/i130-sponsor.html"
+            //     console.log("template Name: " + templateName);
                 
 
-                    return $http
-                      .get(templateName)
-                      .then(function(tpl){
-                        return tpl.data;
-                      });
-            },
+            //         return $http
+            //           .get(templateName)
+            //           .then(function(tpl){
+            //             return tpl.data;
+            //           });
+            // },
             controller: 'formController'
 
         })
@@ -83,42 +83,42 @@ app.config(function($stateProvider, $urlRouterProvider) {
         // url will be /form/interests
         .state('form.section3', {
             url: '/section3',
-            // templateUrl: 'cases/i130/section3.html'
-            templateProvider: function($http, $stateParams){
+            templateUrl: 'cases/i130/section3.html',
+            // templateProvider: function($http, $stateParams){
 
-                var obj = $stateParams;
-                console.log("parameter type: " + obj.application_type)
-                var templateName = "cases/" + obj.application_type + "/" + obj.section3 +".html" ;
-                console.log("template Name: " + templateName);
+            //     var obj = $stateParams;
+            //     console.log("parameter type: " + obj.application_type)
+            //     var templateName = "cases/" + obj.application_type + "/" + obj.section3 +".html" ;
+            //     console.log("template Name: " + templateName);
                 
 
-                    return $http
-                      .get(templateName)
-                      .then(function(tpl){
-                        return tpl.data;
-                      });
-            },
+            //         return $http
+            //           .get(templateName)
+            //           .then(function(tpl){
+            //             return tpl.data;
+            //           });
+            // },
             controller: 'formController'
         })
 
         // url will be /form/interests
         .state('form.section4', {
             url: '/section4',
-            // templateUrl: 'cases/i130/section4.html'
-            templateProvider: function($http, $stateParams){
+            templateUrl: 'cases/i130/section4.html',
+            // templateProvider: function($http, $stateParams){
 
-                var obj = $stateParams;
-                console.log("parameter type: " + obj.application_type)
-                var templateName = "cases/" + obj.application_type + "/" + obj.section4 +".html" ;
-                console.log("template Name: " + templateName);
+            //     var obj = $stateParams;
+            //     console.log("parameter type: " + obj.application_type)
+            //     var templateName = "cases/" + obj.application_type + "/" + obj.section4 +".html" ;
+            //     console.log("template Name: " + templateName);
                 
 
-                    return $http
-                      .get(templateName)
-                      .then(function(tpl){
-                        return tpl.data;
-                      });
-            },
+            //         return $http
+            //           .get(templateName)
+            //           .then(function(tpl){
+            //             return tpl.data;
+            //           });
+            // },
             controller: 'formController'
 
         })
@@ -229,7 +229,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
 });
 
 
-app.controller("formController", function($scope ,  $stateParams) {
+app.controller("formController", function($scope ,  $stateParams) { 
+    var i ;
+    $scope.formData = {};
+    $scope.test = function(){
+        i++;
+        alert("hello");
+        console.log(i);
+    };
 
     //Object containing I-130 relative application options 
     $scope.formOptions = {} ; 

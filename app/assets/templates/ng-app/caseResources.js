@@ -1,6 +1,6 @@
 app.factory("Case", function($resource) {  
-   return $resource('/api/cases/:id', null,
+   return $resource('/api/cases', null,
                       {
-                        'update': {method: 'PUT'}
+                        'save': {method: 'POST'}
                       })
            });

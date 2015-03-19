@@ -11,7 +11,8 @@ module Api
       i130test = I130test.new(case_params)
 
       if i130test.save
-        redirect_to  "http://yahoo.com"
+        render json: i130test
+        # redirect_to  "http://yahoo.com"
       else
        redirect_to  "http://facebook.com"
       end

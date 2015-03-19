@@ -17,6 +17,5 @@
 //= require angular-resource
 //= require twitter/bootstrap
 //= require angular-rails-templates
-//= require turbolinks
 //= require ng-app/main
 //= require_tree ../templates

@@ -52,41 +52,59 @@ app.controller("formController", function($scope ,  $stateParams, $cookies, $coo
     
     // function to process the form
     $scope.processForm = function() {
-        var count = 1 ;
-        var individualFieldData = $cookieStore.get('form' + '1') ;
-        $scope.fieldData = {};
+        // var count = 1 ;
+        // var individualFieldData = $cookieStore.get('form' + '1') ;
+        // $scope.fieldData = {};
 
 
-        while (individualFieldData) {
-            for (var key in individualFieldData ) {
-                $scope.fieldData[key] = individualFieldData[key] ;
-             }
-            count++ ;
-            individualFieldData = $cookieStore.get('form' + count) ;
-        }
-        console.log($scope.fieldData);
+        // while (individualFieldData) {
+        //     for (var key in individualFieldData ) {
+        //         $scope.fieldData[key] = individualFieldData[key] ;
+        //      }
+        //     count++ ;
+        //     individualFieldData = $cookieStore.get('form' + count) ;
+        // }
+        // console.log($scope.fieldData[first_name]);
+
+
+            new Case(
+          {
+             first_name: "test",
+             last_name: "test",  
+             pod: "test",  
+             dob: "test",  
+             sponsor_name: "test",  
+             nationality: "test",  
+             country_of_destination: "test",  
+             date_of_return: "test",  
+             counsol: "test",  
+             spouse: "test",  
+             previous_application: "test",   
+             office: "test"
+          }
+       ).$save(function(data){
+            console.log(data);
+       });   
+
+       //  new Case(
+       //    {
+       //       first_name: $scope.fieldData.first_name,
+       //       last_name: $scope.fieldData.last_name,  
+       //       pod: $scope.fieldData.pod,  
+       //       dob: $scope.fieldData.dob,  
+       //       sponsor_name: $scope.fieldData.sponsor_name,  
+       //       nationality: $scope.fieldData.nationality,  
+       //       country_of_destination: $scope.fieldData.country_of_destination,  
+       //       date_of_return: $scope.fieldData.date_of_return,  
+       //       counsol: $scope.fieldData.counsol,  
+       //       spouse: $scope.fieldData.spouse,  
+       //       previous_application: $scope.fieldData.previous_application,   
+       //       office: $scope.fieldData.office
+       //    }
+       // ).$save(function(data){
+       //      console.log(data);
+       // });   
 
     };
-
-
-        new Case(
-      {
-         first_name: $scope.fieldData.first_name,
-         last_name: $scope.fieldData.last_name,  
-         pod: $scope.fieldData.pod,  
-         dob: $scope.fieldData.dob,  
-         sponsor_name: $scope.fieldData.sponsor_name,  
-         nationality: $scope.fieldData.nationality,  
-         country_of_destination: $scope.fieldData.country_of_destination,  
-         date_of_return: $scope.fieldData.date_of_return,  
-         counsol: $scope.fieldData.counsol,  
-         spouse: $scope.fieldData.spouse,  
-         previous_application: $scope.fieldData.previous_application,   
-         office: $scope.fieldData.office
-      }
-    ).$save(function(data){
-      console.log(data);
-    });
-
     
 });

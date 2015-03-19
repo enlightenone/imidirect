@@ -1,6 +1,8 @@
 module Api
   class CasesController < ApplicationController
     def index
+      cases = I130test.all 
+      render json: cases.to_json
     end
 
     def new
@@ -11,8 +13,8 @@ module Api
       i130test = I130test.new(case_params)
 
       if i130test.save
-        render json: i130test
-        # redirect_to  "http://yahoo.com"
+        # render json: i130tes
+        render forms_path 
       else
        redirect_to  "http://facebook.com"
       end

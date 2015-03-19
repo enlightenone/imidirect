@@ -1,15 +1,23 @@
-app.controller("formController", function($scope ,  $stateParams, $cookies, $cookieStore) {
+app.controller("formController", function($scope ,  $stateParams, $cookies, $cookieStore, Case) {
 
 
 
     //Object containing I-130 relative application options 
     $scope.formOptions = {} ; 
-    $scope.switchOptions = $stateParams ; // To retain form options after the fomr has been submitted.
+    $scope.switchOptions = $stateParams ; // To retain form options after the form has been submitted.
 
+    //remove cookie's content before form
+    $scope.restCookie = function(){
+        angular.forEach($cookies, function (v, k) {
+            $cookieStore.remove(k);
+        });
+    };
 
     //catch form fields data and assign to cookie
     $scope.catchData = function(name, form_data){
-         $cookieStore.put(name, form_data);
+         $cookieStore.put(name, form_data);;
+         var test = $cookieStore.get(name);
+         console.log(test);
     };
 
 
@@ -45,17 +53,40 @@ app.controller("formController", function($scope ,  $stateParams, $cookies, $coo
     // function to process the form
     $scope.processForm = function() {
         var count = 1 ;
-        var individualFieldData = $cookieStore.put('form' + '1') ;
-        $scope.fieldData = {} ;
-
-        while (individualFieldData){
+        var individualFieldData = $cookieStore.get('form' + '1') ;
+        $scope.fieldData = {};
 
 
-
+        while (individualFieldData) {
+            for (var key in individualFieldData ) {
+                $scope.fieldData[key] = individualFieldData[key] ;
+             }
+            count++ ;
+            individualFieldData = $cookieStore.get('form' + count) ;
         }
+        console.log($scope.fieldData);
 
-       // $scope.test = $cookieStore.get();
-       // console.log($scope.test);
     };
+
+
+        new Case(
+      {
+         first_name: $scope.fieldData.first_name,
+         last_name: $scope.fieldData.last_name,  
+         pod: $scope.fieldData.pod,  
+         dob: $scope.fieldData.dob,  
+         sponsor_name: $scope.fieldData.sponsor_name,  
+         nationality: $scope.fieldData.nationality,  
+         country_of_destination: $scope.fieldData.country_of_destination,  
+         date_of_return: $scope.fieldData.date_of_return,  
+         counsol: $scope.fieldData.counsol,  
+         spouse: $scope.fieldData.spouse,  
+         previous_application: $scope.fieldData.previous_application,   
+         office: $scope.fieldData.office
+      }
+    ).$save(function(data){
+      console.log(data);
+    });
+
     
 });

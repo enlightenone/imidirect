@@ -171,7 +171,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
                       });
             },
             controller: 'formController'
+        })
+        
+        //Payment route
+        .state('charge', {
+            url: '/charge',
+            templateUrl: 'charges/new.html',
+            controller: 'formController'
         });
+
 
     // catch all route
     // send users to the form page 

@@ -1,4 +1,4 @@
-app.controller("formController", function($scope ,  $stateParams, $cookies, $cookieStore, Case, $resource) {
+app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, Case, $resource) {
 
 
     //Object containing I-130 relative application options 
@@ -16,15 +16,25 @@ app.controller("formController", function($scope ,  $stateParams, $cookies, $coo
 
     //catch form fields data and assign to cookie
     $scope.catchData = function(name, form_data){
-         $cookieStore.put(name, form_data);;
-         var test = $cookieStore.get(name);
-         console.log(test);
+         $cookieStore.put(name, form_data);
     };
 
 
     //function to choose forms
     $scope.chooseForm = function(category) {
-    // $scope.formData = {};
+
+    //generate case id with random characters
+    function makeid()
+        {
+            var text = "";
+            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            for( var i=0; i < 5; i++ )
+                text += possible.charAt(Math.floor(Math.random() * possible.length));
+            return text;
+        }
+
+    $scope.case_id = makeid();
+    
 
     $scope.switchButtons = {}; //Create object to arrange form/section combination.
     var i = 3; 

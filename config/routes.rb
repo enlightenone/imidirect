@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :cases do
         resources :charges
       end
+      resources :ids
     end
 
     resources :apps

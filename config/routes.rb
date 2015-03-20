@@ -7,8 +7,9 @@ Rails.application.routes.draw do
     end
 
     namespace :api do
-      resources :cases
-      resources :charges
+      resources :cases do
+        resources :charges
+      end
     end
 
     resources :apps

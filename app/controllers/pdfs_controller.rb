@@ -1,12 +1,15 @@
+require 'SecureRandom'
 class PdfsController < ApplicationController
 
   def create 
       @user = User.find(1)
-      @current_case = @user.cases.find_by_case_id('85ca593dda42ad89bfdf4155618f4071')
+      @current_case_id = '85ca593dda42ad89bfdf4155618f4071'
+      @current_case = @user.cases.find_by_case_id(@current_case_id)
+      raise @current_case.inspect
+
 
     if @current_case
 
-        #generate pdf files
 
         #create new directory and output path
         @new_directory = "#{Rails.root}/tmp/pdfs/#{@current_case_id}"

@@ -28,8 +28,8 @@ module Api
 
 
         # render combined pdf file to browser
-        send_file @combined_pdf_path, type: 'application/pdf', disposition: 'inline'
-        # redirect_to "http://yahoo.com"
+        # send_file @combined_pdf_path, type: 'application/pdf', disposition: 'inline'
+        redirect_to pdfs_path
 
   rescue Stripe::CardError => e
     flash[:notice] = e.message

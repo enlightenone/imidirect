@@ -89,7 +89,7 @@ class FormsController < ApplicationController
         ###### List of Documentation ############
 
         list_of_documents_pdf = Prawn::Document.new # instantiate Prawn object
-        list_of_documents_pdf.text "List of Documentation", :align => :center, :size => 25  # List of Documentation Header
+        list_of_documents_pdf.text "List of Docu mentation", :align => :center, :size => 25  # List of Documentation Header
         list_of_documents_pdf.stroke_horizontal_rule # List of Documentation Header
         list_of_documents_pdf.move_down 20;
 

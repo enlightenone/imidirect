@@ -40,6 +40,8 @@ class PaymentsController < ApplicationController
   end
 
   def create
+
+
     @current_case_id = params[:form_id]
     @amount = 155000
 

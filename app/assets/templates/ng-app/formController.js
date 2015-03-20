@@ -5,6 +5,8 @@ app.controller("formController", function($scope ,  $stateParams, $cookies, $coo
     $scope.formOptions = {} ; 
     $scope.switchOptions = $stateParams ; // To retain form options after the form has been submitted.
 
+
+
     //remove cookie's content before form
     $scope.restCookie = function(){
         angular.forEach($cookies, function (v, k) {

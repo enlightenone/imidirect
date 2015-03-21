@@ -8,12 +8,12 @@ module Api
     end
 
     def create
-
       i130test = I130test.new(case_params)
+      optiontest = Optiontest.new(option_params)
 
-      if i130test.save
+      if optiontest.save && i130test.save
         # render json: i130tes
-        # render forms_path 
+        # redirect_to '#{Rails.root}/apps#/charge' 
       else
        redirect_to  "http://facebook.com"
       end
@@ -24,6 +24,10 @@ module Api
 
     def case_params
       params.require(:i130test).permit(:first_name, :last_name, :pod, :dob, :sponsor_name, :nationality, :country_of_destination, :date_of_return, :counsol, :spouse, :previous_application,  :office)
+    end
+
+    def option_params
+      params.require(:optiontest).permit(:name, :age)
     end
 
   end

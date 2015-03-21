@@ -4,7 +4,7 @@ app.factory("CaseInit", function($resource) {
                     {
                       init: {
                             method: 'POST',
-                            url: '/api/ids',
+                            url: '/api/ids/:id',
                             params:{case_id: case_id, category: category},
                             headers : {'Content-Type' : 'application/json'},
                           } 

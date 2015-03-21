@@ -46,32 +46,27 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
 
     // Choose required fields based of type of application.
 
+    if (category == "i130"){
         $scope.switchButtons["application_type"] = "i130";
         $scope.switchButtons["section1"] = "i130-applicant";
         $scope.switchButtons["section2"] = "i130-sponsor";
         $scope.switchButtons["section3"] = "i130-option";
-
-    // if (category == "i130"){
-    //     $scope.switchButtons["application_type"] = "i130";
-    //     $scope.switchButtons["section1"] = "i130-applicant";
-    //     $scope.switchButtons["section2"] = "i130-sponsor";
-    //     $scope.switchButtons["section3"] = "i130-option";
-    // } else if (category == "i765"){
-    //     $scope.switchButtons["application_type"] = "i765";
-    //     $scope.switchButtons["section1"] = "i765-applicant";
-    //     $scope.switchButtons["section2"] = "i765-sponsor";
-    //     $scope.switchButtons["section3"] = "i765-option";
-    // } else if (category == "i485"){
-    //     $scope.switchButtons["application_type"] = "i485";
-    //     $scope.switchButtons["section1"] = "i485-applicant";
-    //     $scope.switchButtons["section2"] = "i485-sponsor";
-    //     $scope.switchButtons["section3"] = "i485-option";
-    // } else if (category == "i131"){
-    //     $scope.switchButtons["application_type"] = "i131";
-    //     $scope.switchButtons["section1"] = "i131-applicant";
-    //     $scope.switchButtons["section2"] = "i131-sponsor";
-    //     $scope.switchButtons["section3"] = "i131-option";
-    // } 
+    } else if (category == "i765"){
+        $scope.switchButtons["application_type"] = "i765";
+        $scope.switchButtons["section1"] = "i765-applicant";
+        $scope.switchButtons["section2"] = "i765-sponsor";
+        $scope.switchButtons["section3"] = "i765-option";
+    } else if (category == "i485"){
+        $scope.switchButtons["application_type"] = "i485";
+        $scope.switchButtons["section1"] = "i485-applicant";
+        $scope.switchButtons["section2"] = "i485-sponsor";
+        $scope.switchButtons["section3"] = "i485-option";
+    } else if (category == "i131"){
+        $scope.switchButtons["application_type"] = "i131";
+        $scope.switchButtons["section1"] = "i131-applicant";
+        $scope.switchButtons["section2"] = "i131-sponsor";
+        $scope.switchButtons["section3"] = "i131-option";
+    } 
 
 
     // Loop through formOptions to assign form to specific switch button.
@@ -126,8 +121,8 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
              office: $scope.fieldData['office']}; 
 
             formFieldData.optiontest = {
-             name: "John",
-             age: "5"
+             name: "Jesse",
+             age: "1"
             }; 
 
         

@@ -8,12 +8,14 @@ module Api
     end
 
     def create
+
+
       i130test = I130test.new(case_params)
       optiontest = Optiontest.new(option_params)
 
       if optiontest.save && i130test.save
-        # render json: i130tes
-        # redirect_to '#{Rails.root}/apps#/charge' 
+
+
       else
        redirect_to  "http://facebook.com"
       end

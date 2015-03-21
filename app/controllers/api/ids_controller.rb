@@ -12,14 +12,9 @@ module Api
     end
     
     def create
-      user = User.first
-      case_id = params(:case_id)
-      application_id = Application.find_by_app_id(params[:category]).id
-
-      @case = user.cases.new(case_id: case_id, application_id: application_id)
-
-      if @case.save
-        render api_id_path
+      @case = Case.new(case_params)      
+      if @case.save 
+        @status = Status.create(filling: true, payment: false, complete: false, case_id: @case.id)
       else
         redirect_to "http://yahoo.com"
       end
@@ -28,7 +23,7 @@ module Api
 
   private
     def case_params
-      params.require(:case).permit(:case_id, :application_id)
+      params.require(:case).permit(:case_id, :application_id, :user_id)
     end
   end
 end

@@ -12,7 +12,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     
         // route to show our basic form (/form)section1&
         .state('form', {
-            url: '/form?application_type&section1&section2&section3&section4&section5&section6&section7&section8&section9',
+            url: '/form?case_id&application_type&section1&section2&section3&section4&section5&section6&section7&section8&section9',
             templateUrl: 'forms/form.html',
             controller: 'formController'
         })
@@ -183,5 +183,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     // catch all route
     // send users to the form page 
-    $urlRouterProvider.otherwise('form/section1?application_type=i130&section1&section2&section3&section4&section5&section6&section7&section8&section9');
+    $urlRouterProvider.otherwise('form/section1?case_id&application_type=i130&section1&section2&section3&section4&section5&section6&section7&section8&section9');
 });

@@ -19,7 +19,6 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
          $cookieStore.put(name, form_data);
     };
 
-
     //function to choose forms
     $scope.chooseForm = function(category) {
 
@@ -34,18 +33,21 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
         }
 
     $scope.case_id = makeid();
-    console.log($scope.case_id);
 
     //populate cases table
-    // var InitializeCase = CaseInit($scope.case_id, "f1pr");
-    // InitializeCase.init();
+    var InitializeCase = new CaseInit();
+            InitializeCase.case = {
+             case_id: $scope.case_id,
+             application_id: 1,
+             user_id: 1
+            }; 
 
+    InitializeCase.$save();  
 
     $scope.switchButtons = {}; //Create object to arrange form/section combination.
     var i = 3; 
 
     // Choose required fields based of type of application.
-
     if (category == "i130"){
         $scope.switchButtons["application_type"] = "i130";
         $scope.switchButtons["section1"] = "i130-applicant";
@@ -80,7 +82,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     i++;
     $scope.switchButtons["section" + i] = "submit";
 
-    location.assign('#form/section1?&application_type='+ $scope.switchButtons["application_type"] + '&section1=' + $scope.switchButtons["section1"] + '&section2=' + $scope.switchButtons["section2"]
+    location.assign('#form/section1?case_id=' + $scope.case_id +'&application_type='+ $scope.switchButtons["application_type"] + '&section1=' + $scope.switchButtons["section1"] + '&section2=' + $scope.switchButtons["section2"]
                 + '&section3=' + $scope.switchButtons["section3"] + '&section4=' + $scope.switchButtons["section4"] + '&section5=' + $scope.switchButtons["section5"] 
                 + '&section6=' + $scope.switchButtons["section6"] + '&section7=' + $scope.switchButtons["section7"] + '&section8=' + $scope.switchButtons["section8"] 
                 + '&section9=' + $scope.switchButtons["section9"]
@@ -121,14 +123,11 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
              office: $scope.fieldData['office']}; 
 
             formFieldData.optiontest = {
-             name: "Jesse",
-             age: "1"
+             name: "Joseph",
+             age: "3"
             }; 
-
         
-            formFieldData.$save(function(data){
-            console.log(data);
-            });  
+            formFieldData.$save();  
 
   
 

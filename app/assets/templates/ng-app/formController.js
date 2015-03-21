@@ -1,9 +1,10 @@
-app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, Case, $resource) {
+app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, Case, CaseInit, $resource) {
 
 
     //Object containing I-130 relative application options 
     $scope.formOptions = {} ; 
-    $scope.switchOptions = $stateParams ; // To retain form options after the form has been submitted.
+    // To retain form options after the form has been submitted to determine button options.
+    $scope.switchOptions = $stateParams ; 
 
 
 
@@ -28,33 +29,57 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
         {
             var text = "";
             var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            for( var i=0; i < 5; i++ )
+            for( var i=0; i < 10; i++ )
                 text += possible.charAt(Math.floor(Math.random() * possible.length));
             return text;
         }
 
     $scope.case_id = makeid();
-    
+
+    //populate cases table
+    var InitializeCase = CaseInit($scope.case_id, "f1pr");
+    InitializeCase.init();
+
 
     $scope.switchButtons = {}; //Create object to arrange form/section combination.
     var i = 3; 
 
-    $scope.switchButtons["application_type"] = "i130";
-    $scope.switchButtons["section1"] = "i130-applicant";
-    $scope.switchButtons["section2"] = "i130-sponsor";
-    $scope.switchButtons["section3"] = "i130-option";
+    // Choose required fields based of type of application.
+    if (category == "i130"){
+        $scope.switchButtons["application_type"] = "i130";
+        $scope.switchButtons["section1"] = "i130-applicant";
+        $scope.switchButtons["section2"] = "i130-sponsor";
+        $scope.switchButtons["section3"] = "i130-option";
+    } else if (category == "i765"){
+        $scope.switchButtons["application_type"] = "i765";
+        $scope.switchButtons["section1"] = "i765-applicant";
+        $scope.switchButtons["section2"] = "i765-sponsor";
+        $scope.switchButtons["section3"] = "i765-option";
+    } else if (category == "i485"){
+        $scope.switchButtons["application_type"] = "i485";
+        $scope.switchButtons["section1"] = "i485-applicant";
+        $scope.switchButtons["section2"] = "i485-sponsor";
+        $scope.switchButtons["section3"] = "i485-option";
+    } else if (category == "i131"){
+        $scope.switchButtons["application_type"] = "i131";
+        $scope.switchButtons["section1"] = "i131-applicant";
+        $scope.switchButtons["section2"] = "i131-sponsor";
+        $scope.switchButtons["section3"] = "i131-option";
+    } 
+
+
     // Loop through formOptions to assign form to specific switch button.
     for (key in $scope.formOptions){
         if($scope.formOptions[key] == true){
             i++;
-       $scope.switchButtons["section" + i] = key;  
-    }
+            $scope.switchButtons["section" + i] = key;  
+        }
     }
     // Assign submit button to the last section.
     i++;
     $scope.switchButtons["section" + i] = "submit";
 
-    location.assign('#form/section1?application_type='+ $scope.switchButtons["application_type"] + '&section1=' + $scope.switchButtons["section1"] + '&section2=' + $scope.switchButtons["section2"]
+    location.assign('#form/section1?case_id='+ $scope.case_id + '&application_type='+ $scope.switchButtons["application_type"] + '&section1=' + $scope.switchButtons["section1"] + '&section2=' + $scope.switchButtons["section2"]
                 + '&section3=' + $scope.switchButtons["section3"] + '&section4=' + $scope.switchButtons["section4"] + '&section5=' + $scope.switchButtons["section5"] 
                 + '&section6=' + $scope.switchButtons["section6"] + '&section7=' + $scope.switchButtons["section7"] + '&section8=' + $scope.switchButtons["section8"] 
                 + '&section9=' + $scope.switchButtons["section9"]
@@ -77,8 +102,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
         }
 
       $scope.restCookie();
-      console.log($scope.fieldData);
-      
+
       var formFieldData = new Case();
            formFieldData.i130test = {
              first_name: $scope.fieldData["firstname"] ,

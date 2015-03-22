@@ -15,6 +15,7 @@ module Api
       @case = Case.new(case_params)      
       if @case.save 
         @status = Status.create(filling: true, payment: false, complete: false, case_id: @case.id)
+        render 'create'
       else
         redirect_to "http://yahoo.com"
       end

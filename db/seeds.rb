@@ -20,6 +20,9 @@ applcation5 = Application.create(app_id: "f5us", description: "Siblings of US Ci
 applcation6 = Application.create(app_id: "f1pr", description: "Spouse of Permanent Resident", fee: 250.00)
 applcation7 = Application.create(app_id: "f2pr", description: "Unmarried child of Permanent Resident under age 21", fee: 450.00)
 applcation8 = Application.create(app_id: "f3pr", description: "Unmarried son or daughter of Resident  age 21 or older", fee: 500.00)
+applcation9 = Application.create(app_id: "ead", description: "Application For Employment Authorization", fee: 150.00)
+applcation10 = Application.create(app_id: "aos",  description: "Application For Adjustment of Status", fee: 200.00)
+
 
 
 AppForm.create(form_id: 1, application_id: 1)
@@ -38,6 +41,9 @@ AppForm.create(form_id: 1, application_id: 7)
 AppForm.create(form_id: 2, application_id: 7)
 AppForm.create(form_id: 1, application_id: 8)
 AppForm.create(form_id: 2, application_id: 8)
+AppForm.create(form_id: 2, application_id: 9)
+AppForm.create(form_id: 3, application_id: 10)
+
 
 
 Document.create(form_id: f130.id , application_id: applcation1.id , description: "A copy of your naturalization certificate or certificate of citizenship")

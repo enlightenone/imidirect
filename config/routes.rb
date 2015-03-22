@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     resources :forms
     # resources :pdfs
 
+    post 'apis/populate/:id' => 'api/cases#populate'
+    get 'apis/option/:id' => 'api/cases#option'
+
     # post 'forms/:id/new_case' => 'forms#new_case', as: :new_case 
     # get  'forms/:id/new_application_form' => 'forms#new_application_form', as: :new_application_form
 

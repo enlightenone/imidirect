@@ -1,4 +1,4 @@
-app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, Case, CaseInit, $resource) {
+app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, Case, CaseInit, testResource, $resource) {
 
 
     //Object containing I-130 relative application options 
@@ -34,11 +34,47 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
 
     $scope.case_id = makeid();
 
+    //convert application code to app_id in order to assign specific application to the case
+    switch (category) {
+    case "f1us":
+        $scope.app_id = 1;
+        break;
+    case "f2us":
+        $scope.app_id = 2;
+        break;
+    case "f3us":
+        $scope.app_id = 3;
+        break;
+    case "f4us":
+        $scope.app_id = 4;
+        break;
+    case "f5us":
+        $scope.app_id = 5;
+        break;
+    case "f1pr":
+        $scope.app_id = 6;
+        break;
+    case "f2pr":
+        $scope.app_id = 7;
+        break;
+    case "f3pr":
+        $scope.app_id = 8;
+        break;
+    case "ead":
+        $scope.app_id = 9;
+        break;
+    case "aos":
+        $scope.app_id = 10;
+        break;
+}
+
+
+
     //populate cases table
     var InitializeCase = new CaseInit();
             InitializeCase.case = {
              case_id: $scope.case_id,
-             application_id: 1,
+             application_id: $scope.app_id,
              user_id: 1
             }; 
 
@@ -95,10 +131,10 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
         var individualFieldData = $cookieStore.get('form' + '1') ;
         $scope.fieldData = {};
 
+        // pull data from partial forms from cookie and combine into one object.
         while (individualFieldData) {
-            for (var key in individualFieldData ) {
+            for (var key in individualFieldData) {
                 $scope.fieldData[key] = individualFieldData[key] ;
-
              }
             count++ ;
             individualFieldData = $cookieStore.get('form' + count) ;
@@ -106,8 +142,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
 
       $scope.restCookie();
 
-      var formFieldData = new Case();
-
+      var formFieldData = new testResource({id: 1});
            formFieldData.i130test = {
              first_name: $scope.fieldData["firstname"] ,
              last_name: $scope.fieldData["lastname"],  
@@ -126,6 +161,10 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
              name: "Joseph",
              age: "3"
             }; 
+
+            formFieldData.user = {
+                id: 1
+            };
         
             formFieldData.$save();  
 

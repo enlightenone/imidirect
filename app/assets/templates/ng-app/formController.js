@@ -21,7 +21,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     //function to choose forms
     $scope.chooseForm = function(category) {
 
-    console.log("formOptions: " + $scope.formOptions['i485-option']) ;
+
 
     //generate case id with random characters
     function makeid()
@@ -69,9 +69,6 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
         break;
 }
 
-    
-
-
 
     //populate cases table
     var InitializeCase = new CaseInit();
@@ -86,14 +83,11 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
 
     // Beginning Of the Option Block ///////////////////
 
-    var settings = OptionResource($scope.formOptions, $scope.case_id);
+    var settings = OptionResource($scope.formOptions, $scope.case_id );
 
-    $scope.results = settings.initiate({id:2}); 
+    $scope.results = settings.initiate({id:1}); 
     $scope.results.$promise.then(function(data) {
-    console.log("i485: " + data.answer);
-    // $scope.i485 = data['i485-option'];
-    // $scope.i131 = data['i131-option'];
-    // $scope.i765 = data['i765-option'];
+    console.log(data);
 
     });
 
@@ -147,6 +141,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     
     // function to process the form
     $scope.processForm = function() {
+        // $scope.current_case_id = $stateParams["case_id"] // 
         var count = 1 ;
         var individualFieldData = $cookieStore.get('form' + '1') ;
         $scope.fieldData = {};

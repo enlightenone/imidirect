@@ -1,7 +1,7 @@
 app.factory("OptionResource", function($resource) {
 
   return function(options, case_id){
-  var Resource = $resource('/apis/optiion/:id', {id: '@id'},
+  var Resource = $resource('/apis/option/:id', {id: '@id'},
                     {
                       initiate: {
                               method: 'GET',

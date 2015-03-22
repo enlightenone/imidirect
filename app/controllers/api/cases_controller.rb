@@ -18,8 +18,6 @@ module Api
       optiontest = Optiontest.new(option_params)
 
       if optiontest.save && i130test.save
-
-
       else
        redirect_to  "http://facebook.com"
       end
@@ -27,9 +25,22 @@ module Api
     end
 
     def option
-      @options = params[:options]
-      @option = @options['i485-option']
-      render json: {answer: @option}
+      @case_id = params[:case_id]
+      @case = Case.find_by_case_id(@case_id)
+      @options = JSON.parse(params[:options])
+      
+      @options.each do |key, value|
+        if key == 'i130-option' && value == true
+              @case.options.create(form_id: "i130", form: "I-130", include: true)
+        elsif key == 'i485-option' && value == true
+              @case.options.create(form_id: "i485", form: "I-485", include: true)
+        elsif key == 'i131-option' && value == true
+              @case.options.create(form_id: "i131", form: "I-131", include: true)
+        elsif key == 'i765-option' && value == true
+              @case.options.create(form_id: "i765", form: "I-765", include: true)
+        end
+      end
+      render json:  {answer: @test}
     end
 
     def create

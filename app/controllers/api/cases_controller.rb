@@ -28,7 +28,8 @@ module Api
 
     def option
       @options = params[:options]
-
+      @option = @options['i485-option']
+      render json: {answer: @option}
     end
 
     def create

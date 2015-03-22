@@ -1,19 +1,15 @@
 app.factory("OptionResource", function($resource) {
 
-  return function(options){
-
-  
+  return function(options, case_id){
   var Resource = $resource('/apis/optiion/:id', {id: '@id'},
                     {
-                      search: {
-                            method: 'GET',
-                            url: '/apis/option/:id',
-                            params:{options: options},
-                            headers : {'Content-Type' : 'application/json'},
+                      initiate: {
+                              method: 'GET',
+                              url: '/apis/option/:id',
+                              params:{options: options, case_id: case_id},
+                              headers : {'Content-Type' : 'application/json'},
                           } 
                     });
-
-   return Resource;
-
- }
+         return Resource;
+      }
   });

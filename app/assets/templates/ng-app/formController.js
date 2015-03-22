@@ -1,11 +1,10 @@
-app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, Case, CaseInit, testResource, $resource) {
+app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, Case, CaseInit, testResource, OptionResource, $resource) {
 
 
     //Object containing I-130 relative application options 
     $scope.formOptions = {} ; 
     // To retain form options after the form has been submitted to determine button options.
     $scope.switchOptions = $stateParams ; 
-
 
     //remove cookie's content before form
     $scope.restCookie = function(){
@@ -21,6 +20,8 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
 
     //function to choose forms
     $scope.chooseForm = function(category) {
+
+    console.log("formOptions: " + $scope.formOptions['i485-option']) ;
 
     //generate case id with random characters
     function makeid()
@@ -68,6 +69,8 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
         break;
 }
 
+    
+
 
 
     //populate cases table
@@ -79,6 +82,23 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
             }; 
 
     InitializeCase.$save();  
+
+
+    // Beginning Of the Option Block ///////////////////
+
+    var settings = OptionResource($scope.formOptions, $scope.case_id);
+
+    $scope.results = settings.initiate({id:2}); 
+    $scope.results.$promise.then(function(data) {
+    console.log("i485: " + data.answer);
+    // $scope.i485 = data['i485-option'];
+    // $scope.i131 = data['i131-option'];
+    // $scope.i765 = data['i765-option'];
+
+    });
+
+
+    // End of Option Block//////////////////////
 
     $scope.switchButtons = {}; //Create object to arrange form/section combination.
     var i = 3; 

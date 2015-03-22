@@ -2,7 +2,7 @@ module Api
   class ChargesController < ApplicationController
 
     def create
-      # @current_case_id = params[:current_case_id]
+      @current_case_id = params[:current_case_id]
 
     @amount = 155000
 

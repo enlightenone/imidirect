@@ -1,6 +1,6 @@
 app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, Case, CaseInit, testResource, OptionResource, $resource) {
 
-
+   $scope.current_case_id = $stateParams['case_id'] // 
     //Object containing I-130 relative application options 
     $scope.formOptions = {} ; 
     // To retain form options after the form has been submitted to determine button options.
@@ -74,7 +74,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     var InitializeCase = new CaseInit();
             InitializeCase.case = {
              case_id: $scope.case_id,
-             application_id: $scope.app_id,
+             application_id: 1,
              user_id: 1
             }; 
 
@@ -140,8 +140,9 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     };
     
     // function to process the form
-    $scope.processForm = function() {
-        // $scope.current_case_id = $stateParams["case_id"] // 
+    $scope.processForm = function(current_case_id) {
+        $scope.current_case_id = current_case_id; 
+
         var count = 1 ;
         var individualFieldData = $cookieStore.get('form' + '1') ;
         $scope.fieldData = {};
@@ -186,6 +187,11 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
   
 
      };
+
+    /*****************Total Fees Calculation Functions**********************/
+
+
+    /*****************End of Total Fees Calculation Functions***************/
 
 
 

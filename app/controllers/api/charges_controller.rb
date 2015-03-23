@@ -37,7 +37,11 @@ module Api
     end
 
     def create
+    # retrieve current case id from cookie
     @current_case_id = request.cookies["current_case_id"]
+
+    # take out extra double quote from current case id string
+    @current_case_id = @current_case_id.tr("\"","")
     
     @case = Case.find_by_case_id(@current_case_id)
     @amount = @case.total
@@ -50,8 +54,8 @@ module Api
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
-      :amount      => 21343,
-      :description => @current_case_id,
+      :amount      => @amount,
+      :description => "Immigration Case",
       :currency    => 'usd'
     )
 

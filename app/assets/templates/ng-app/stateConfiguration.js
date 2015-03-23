@@ -175,7 +175,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         
         //Payment route
         .state('charge', {
-            url: '/charge?case_id',
+            url: '/charge?case_id&fees_calculation_flag',
             templateUrl: 'charges/new.html',
             controller: 'formController'
         });

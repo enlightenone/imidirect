@@ -1,4 +1,4 @@
-app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, Case, CaseInit, testResource, OptionResource, FeesResource, $resource) {
+app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, Case, CaseInit, testResource, OptionResource, $resource) {
 
    $scope.current_case_id = $stateParams['case_id'] // 
     //Object containing I-130 relative application options 
@@ -82,7 +82,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
 
 
     // Beginning Of the Option Block ///////////////////
-
+    console.log("formOptions: " + $scope.formOptions);
     var settings = OptionResource($scope.formOptions, $scope.case_id );
 
     $scope.results = settings.initiate({id:1}); 
@@ -140,9 +140,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     };
     
     // function to process the form
-    $scope.processForm = function(current_case_id) {
-        $scope.current_case_id = current_case_id; 
-
+    $scope.processForm = function() {
         var count = 1 ;
         var individualFieldData = $cookieStore.get('form' + '1') ;
         $scope.fieldData = {};
@@ -174,8 +172,8 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
              office: $scope.fieldData['office']}; 
 
             formFieldData.optiontest = {
-             name: "Joseph",
-             age: "3"
+             name: $scope.current_case_id,
+             age: $scope.current_case_id
             }; 
 
             formFieldData.user = {
@@ -184,25 +182,32 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
         
             formFieldData.$save();  
 
-  
-
      };
 
     /*****************Total Fees Calculation Functions**********************/
 
-    // var totalFees = new FeesResource({case_id: '85ca593dda42ad89bfdf4155618f4071'});
-     // console.log("api call test: " + totalFees);
-        // totalFees.query({case_id: '85ca593dda42ad89bfdf4155618f4071'});
+      $scope.fees_calculation_flag = $stateParams['fees_calculation_flag'];
 
-     var Fee =  $resource('/api/cases/:case_id/charges/:case_id', {id:'@case_id'}) ;
+      // call fees calculation function when the calculation fee flag is activated.
 
-        Fee.get({case_id: '85ca593dda42ad89bfdf4155618f4071'}, function(data){
-            console.log("Rendered Test Data: " + data);
+
+     if ($scope.fees_calculation_flag == "true"){ 
+
+        $cookieStore.put("current_case_id", $scope.current_case_id);
+
+     var Fee =  $resource('/api/cases/1/charges/:id', {id:'@id'}) ;
+
+        Fee.get({id: $scope.current_case_id }, function(data){
+            console.log(data);
+            $scope.total_fee = data['total_fee'];
+            $scope.sub_total_fees = data['sub_total_fees'];
+
+            $scope.converted_total_fee = $scope.total_fee + "00";
+
+            //reset the fees calculation flag to null
+            $scopefees_calculation_flag = null ;
         });
-
-
-
-
+    }
     /*****************End of Total Fees Calculation Functions***************/
 
 

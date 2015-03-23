@@ -40,7 +40,7 @@ module Api
               @case.options.create(form_id: "i765", form: "I-765", include: true)
         end
       end
-      render json:  {answer: @test}
+      render json:  {log: "Options pupulation successes"}
     end
 
     def create

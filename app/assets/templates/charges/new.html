@@ -1,16 +1,38 @@
 <h1>Credit Card Transaction Settings</h1>
 
+<table style="width: 600px;" >
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Fee</th>
+    </tr>
+  </thead>
+    <tfoot>
+      <tr>
+        <td> Total </td>
+        <td> {{total_fee}}</td>
+      </tr>
+    </tfoot>
 
-<form action="/api/cases/{{current_case_id}}/charges" method="POST">
+    <tr ng-repeat="sub_fee in sub_total_fees ">
+      <td>{{sub_fee.description}}</td>
+      <td>{{sub_fee.fee}}</td>
+    </tr>
+
+</table>
+<form action="/api/cases/1/charges" method="POST">
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="pk_test_k1o7Q9FJKKZid5dn40XvAwBL"
     data-image="/img/documentation/checkout/marketplace.png"
     data-name="Stripe.com"
     data-description="2 widgets"
-    data-amount="155000">
+    data-amount="{{converted_total_fee}}">
   </script>
 </form>
+
 <pre>
-  Case Id: {{current_case_id}}
+Total Fee: {{converted_total_fee}}<br>
+Current Case Id: {{current_case_id}}<br>
+Cookie: {{test}}
 </pre>

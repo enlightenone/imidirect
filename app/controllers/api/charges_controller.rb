@@ -1,6 +1,15 @@
 module Api
   class ChargesController < ApplicationController
 
+    def show
+      #pull fees information from database
+
+      @case_id = params[:case_id]
+
+      # @case = Case.find_by_case_id(@case_id)
+      render json:  {result: @case_id}
+    end
+
     def create
       @current_case_id = params[:current_case_id]
 

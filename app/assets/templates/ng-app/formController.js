@@ -1,4 +1,4 @@
-app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, Case, CaseInit, testResource, OptionResource, $resource) {
+app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, Case, CaseInit, testResource, OptionResource, FeesResource, $resource) {
 
    $scope.current_case_id = $stateParams['case_id'] // 
     //Object containing I-130 relative application options 
@@ -189,6 +189,18 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
      };
 
     /*****************Total Fees Calculation Functions**********************/
+
+    // var totalFees = new FeesResource({case_id: '85ca593dda42ad89bfdf4155618f4071'});
+     // console.log("api call test: " + totalFees);
+        // totalFees.query({case_id: '85ca593dda42ad89bfdf4155618f4071'});
+
+     var Fee =  $resource('/api/cases/:case_id/charges/:case_id', {id:'@case_id'}) ;
+
+        Fee.get({case_id: '85ca593dda42ad89bfdf4155618f4071'}, function(data){
+            console.log("Rendered Test Data: " + data);
+        });
+
+
 
 
     /*****************End of Total Fees Calculation Functions***************/

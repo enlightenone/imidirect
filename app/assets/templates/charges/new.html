@@ -1,5 +1,4 @@
-<h1>Credit Card Transaction Settings</h1>
-
+<h1>Application Fee Summary</h1>
 <table style="width: 600px;" >
   <thead>
     <tr>
@@ -11,16 +10,12 @@
       <tr>
         <td> Total </td>
         <td> {{ total_fee | currency : symbol : fractionSize}}</td>
-
       </tr>
     </tfoot>
-
     <tr ng-repeat="sub_fee in sub_total_fees ">
       <td>{{sub_fee.description}}</td>
       <td>{{ sub_fee.fee | currency : symbol : fractionSize}}</td>
-
     </tr>
-
 </table>
 <form action="/api/cases/1/charges" method="POST">
   <script

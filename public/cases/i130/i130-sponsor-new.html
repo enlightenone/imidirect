@@ -1,0 +1,133 @@
+<h4 style="color: white;">I-130 Form Sponsor Information</h4>
+<h4>Sponsor Information</h4>
+<p>
+First Name: <br><br> 
+<input type="text" class="form-control" name="i130_sponsor_first_name" ng-model="formData.i130_sponsor_first_name">
+<br><br>
+Last Name: <br><br> 
+<input type="text" class="form-control" name="i130_sponsor_last_name" ng-model="formData.i130_sponsor_last_name">
+
+Middle Name: <br><br> 
+<input type="text" class="form-control" name="i130_sponsor_middle_name" ng-model="formData.i130_sponsor_middle_name">
+<br><br>
+Other Name: <br><br> 
+<input type="text" class="form-control" name="i130_sponsor_other_name" ng-model="formData.i130_sponsor_other_name">
+</p>
+<h4>Address</h4>
+<p>
+  CO: <br><br>
+<input type="text" class="form-control" name="i130_sponsor_co" ng-model="formData.i130_sponsor_co">
+</p>
+<p>
+Street: <br><br> 
+<input type="text" class="form-control" name="i130_sponsor_street" ng-model="formData.i130_sponsor_street">
+<br><br>
+Apt/Ste:<br><br>
+<input type="text" class="form-control" name="i130_sponsor_apt_sut" ng-model="formData.i130_sponsor_apt_suit">
+</p>
+<p>
+City: <br><br> 
+<input type="text" class="form-control" name="i130_sponsor_city" ng-model="formData.i130_sponsor_city">
+<br><br>
+State: <br><br> 
+City: <br><br> 
+<input type="text" class="form-control" name="i130_sponsor_state" ng-model="formData.i130_sponsor_state">
+<br><br>
+Zip Code:<br><br><br>  
+<input type="text" class="form-control" name="i130_sponsor_zip_code" ng-model="formData.i130_sponsor_zip_code">
+</p>
+<p>
+Telephone: <br><br> 
+<input type="text" class="form-control" name="i130_sponsor_phone" ng-model="formData.i130_sponsor_phone">
+</p>
+<p>
+ Date of Birth: <br><br> 
+<input type="text" class="form-control" name="i130_sponsor_dob" ng-model="formData.i130_sponsor_dob">
+ i130.text_field :i130_sponsor_dob%> 
+ Town/City of Birth:  i130.text_field :i130_sponsor_pob_town%> 
+ State/Province of Birth:  i130.text_field :i130_sponsor_pob_state%> 
+ Country of Birth:  i130.text_field :i130_sponsor_pob_country%> 
+</p>
+<p>
+  Nationality:  i130.text_field :i130_sponsor_nationality %> 
+</p>
+<p>
+   check_box_tag(:i130_sponsor_gender_male) %> Male  check_box_tag(:i130_sponsor_gender_female) %> Female 
+</p>
+<p>
+<h4>Marital Status</h4>
+   check_box_tag(:i130_sponsor_marital_status_married) %> Married  check_box_tag(:i130_sponsor_marital_status_widowed) %> Widowed 
+   check_box_tag(:i130_sponsor_marital_status_single) %> Single  check_box_tag(:i130_sponsor_marital_status_divorced) %> Divorced
+</p>
+<h4>Other Information</h4>
+<p>
+  Social Security Number:  i130.text_field :i130_sponsor_ssn %> 
+  Alien Registration Number:  i130.text_field :i130_sponsor_a_registration_number %> 
+</p>
+<h4>Marriage</h4>
+<p>
+Date of present marriage:  i130.text_field :i130_sponsor_date_of_present_marriage %> 
+Place of present marriage:  i130.text_field :i130_sponsor_place_of_present_marriage %>
+</p>
+<h4>Previous Spouse</h4>
+<p>
+Name of previous spouse:  i130.text_field :i130_sponsor_name_of_prior_spouse %>
+End date of previous marriage:  i130.text_field :i130_sponsor_date_of_end_of_prior_marriage %>
+</p>
+<h4>Citizenship</h4>
+<p>
+ check_box_tag(:i130_sponsor_citizenship_birth) %> Citizenship by birth
+ check_box_tag(:i130_sponsor_citizenship_naturalization) %> Citizenship by naturalization
+</p>
+<h4>Naturalization Information</h4>
+<p>
+Naturalization Number:  i130.text_field(:i130_sponsor_naturalization_number) %> 
+Naturalization Place of Issuance:  i130.text_field(:i130_sponsor_naturalization_place_of_issuance) %> 
+</p>
+<h4>Permanent Residence</h4>
+<p>
+Date of admission:  i130.text_field(:i130_sponsor_pr_date_of_admission) %> 
+Place of admission:  i130.text_field(:i130_sponsor_pr_place_of_admission) %> 
+Class of admission:  i130.text_field(:i130_sponsor_pr_class_of_admission) %> 
+</p>
+<h4>Sponsored relative's residency and address information</h4>
+<p>
+Sponsored relative's intended residency's city:  i130.text_field(:i130_sponsored_intended_residence_city) %> 
+Sponsored relative's intended residency's state:  i130.text_field(:i130_sponsored_intended_residence_state) %> 
+Sponsored relative's full address abroad:  i130.text_field(:i130_sponsored_full_address_abroad) %> 
+</p>
+
+<h4>Sponsored relative's native language information</h4>
+<p>
+Sponsored relative's full address in native language:  i130.text_field(:i130_sponsored_full_address_native_language) %> 
+Sponsored relative's name in native language:  i130.text_field(:i130_sponsored_name_native_language) %> 
+</p>
+<% end %>
+
+<% if @i765_option === true %>
+<hr>
+<h4>I765 Employment Authorization Application</h4>
+   f.fields_for :i765 do |i765| %>
+  <p>
+  I am applying for:<br>
+   i765.check_box_tag(:i765_application_employment) %> New Employment <br> 
+    i765.check_box_tag(:i765_application_replacement) %> Replacement <br> 
+    i765.check_box_tag(:i765_application_renew) %> Renewal 
+ </p>
+  <p>
+   Have you ever before applied for employment authorization from USCIS?<br>
+      i765.radio_button_tag(:i765_previous_application, "yes") %> Yes
+      i765.radio_button_tag(:i765_previous_application, "no") %>  No
+  </p>
+  <p>
+   Which UCSIS office did you file and what date?<br>
+   USCIS Office:  i765.text_field(:i765_office)%><br><br>
+   Date of filing:  i765.text_field(:i765_date_of_previous_application)%><br><br>
+   Result of filing:  i765.text_field(:i765_result_of_previous_application)%>
+
+
+  </p>
+  <% end %>
+<% end %>
+
+

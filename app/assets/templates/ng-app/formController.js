@@ -1,4 +1,4 @@
-app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, Case, CaseInit, testResource, OptionResource, $resource) {
+app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, myCache, Case, CaseInit, testResource, OptionResource, $resource) {
 
    $scope.current_case_id = $stateParams['case_id'] // 
     //Object containing I-130 relative application options 
@@ -14,10 +14,19 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     };
 
     //catch form fields data and assign to cookie
-    $scope.catchData = function(name, form_data){
-         $cookieStore.put(name, form_data);
-         $scope.test = $cookieStore.get(name);
-         console.log($scope.test)
+    $scope.catchData = function(name, form_data){         
+        var cache = myCache.get('myData');
+        var fieldsData = {} ;
+            fieldsData[name] = form_data;
+
+         if (cache){
+            $scope.PreviousFieldsCache = cache;
+            $scope.PreviousFieldsCache[name] = form_data;
+            myCache.put('myData', $scope.PreFieldsCache);
+
+         } else{
+            myCache.put('myData', fieldsData);
+         }
     };
 
     //function to choose forms
@@ -143,9 +152,10 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     
     // function to process the form
     $scope.processForm = function() {
+        $scope.previousSavedCache = myCache.get('myData');
         var count = 1 ;
-        var individualFieldData = $cookieStore.get('form' + '1') ;
-        $scope.fieldData = {};
+        var individualFieldData = $scope.previousSavedCache['form1'] ;
+        $scope.fieldData = {};(
 
         // pull data from partial forms from cookie and combine into one object.
         while (individualFieldData) {
@@ -153,7 +163,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
                 $scope.fieldData[key] = individualFieldData[key] ;
              }
             count++ ;
-            individualFieldData = $cookieStore.get('form' + count) ;
+            individualFieldData = $scope.previousSavedCache['form' + count] ;
         }
 
       $scope.restCookie();

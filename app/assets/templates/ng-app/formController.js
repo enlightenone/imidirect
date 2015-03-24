@@ -8,8 +8,9 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
 
     //remove cookie's content before form
     $scope.restCookie = function(){
-        angular.forEach($cookies, function (v, k) {
-            $cookieStore.remove(k);
+        var cache = myCache.get('myData');
+        angular.forEach(cache, function (v, k) {
+            cache.remove(k);
         });
     };
 
@@ -152,12 +153,13 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     
     // function to process the form
     $scope.processForm = function() {
+
         $scope.previousSavedCache = myCache.get('myData');
         var count = 1 ;
         var individualFieldData = $scope.previousSavedCache['form1'] ;
-        $scope.fieldData = {};(
+        $scope.fieldData = {};
 
-        // pull data from partial forms from cookie and combine into one object.
+        // // pull data from partial forms from cookie and combine into one object.
         while (individualFieldData) {
             for (var key in individualFieldData) {
                 $scope.fieldData[key] = individualFieldData[key] ;
@@ -165,6 +167,8 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
             count++ ;
             individualFieldData = $scope.previousSavedCache['form' + count] ;
         }
+
+        console.log("Combined Data: " + $scope.fieldData) ;
 
       $scope.restCookie();
 

@@ -1,19 +1,7 @@
-<!-- Relative Immigration Form Options -->
-<div class="row">
-<div class="col-sm-8 col-sm-offset-2">
-
-    <div id="form-container">
-
-        <div class="page-header text-center">
-            <h2>I-130 Application Options</h2>
-        
-        <!-- use ng-submit to catch the form submission and use our Angular function -->
-        <form id="signup-form" ng-submit="chooseForm('i130')">
-
-     
+ 
                 <!-- MULTIPLE CHECKBOXES -->
     <label>I-130 Applicaiton Options </label>
-    <div class="form-group">
+    <div class="form-group" style="color: white;">
         <label class="checkbox-inline">
             <input type="checkbox" name="formOptions" ng-model="formOptions['i485-option']"> 
             I-485 Adjustment of Status
@@ -32,9 +20,8 @@
         </label>
     </div>
         <button type="submit" class="btn btn-danger" ng-click="restCookie()">Submit</button>
-        </form>
 
-    </div>
-
-</div>
-</div>
+<pre>
+FormOptions :{{formOptions}}<br><br>
+FormCategories :{{formCategory}}
+</pre>

@@ -1,0 +1,24 @@
+<h4 style="color: white;">Please choose the category of your immigration application:</h4>
+
+<div class="form-group">
+<p>
+<input type="radio" ng-model="formData.i130_category" value="f1us"> Spouse of US Citizens
+<input type="radio" ng-model="formData.i130_category" value="f2us"> Unmarried child of US Citizens under age 21
+<input type="radio" ng-model="formData.i130_category" value="f3us"> Unmarried son or daughter of US Citizens age 21 or older
+
+
+<input type="radio" ng-model="formData.i130_category" value="f4us"> Married son or daughter of US Citizens of any age
+<input type="radio" ng-model="formData.i130_category" value="f5us"> Siblings of US Citizens
+<input type="radio" ng-model="formData.i130_category" value="f1pr"> Spouse of Permanent Resident
+
+<input type="radio" ng-model="formData.i130_category" value="f2pr"> Unmarried child of Permanent Resident under age 21
+<input type="radio" ng-model="formData.i130_category" value="f3pr"> Unmarried son or daughter of Resident  age 21 or older
+</p>
+
+<div class="form-group row">
+<div class="col-xs-6 col-xs-offset-3">
+    <a ui-sref="form.section2" class="btn btn-block btn-info" ng-click="catchData('form1',formData)">
+    Next Section<span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+</div>

@@ -9,9 +9,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     //remove cookie's content before form
     $scope.restCookie = function(){
         var cache = myCache.get('myData');
-        angular.forEach(cache, function (v, k) {
-            cache.remove(k);
-        });
+            cache.removeAll();
     };
 
     //catch form fields data and assign to cookie
@@ -168,24 +166,24 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
             individualFieldData = $scope.previousSavedCache['form' + count] ;
         }
 
-        console.log("Combined Data: " + $scope.fieldData) ;
+        console.log("Combined Data: " + $scope.fieldData['general_applicant_first_name']) ;
 
       $scope.restCookie();
 
       var formFieldData = new testResource({id: 1});
            formFieldData.i130test = {
-             first_name: $scope.fieldData["firstname"] ,
-             last_name: $scope.fieldData["lastname"],  
-             pod: $scope.fieldData['pod'],  
-             dob: $scope.fieldData['dob'],  
-             sponsor_name: $scope.fieldData['sponsor_name'],  
-             nationality: $scope.fieldData['nationality'],  
-             country_of_destination: $scope.fieldData['country_of_destination'],  
-             date_of_return: $scope.fieldData['date_of_return'],  
-             counsol: $scope.fieldData['counsol'],  
-             spouse: $scope.fieldData['spouse'],  
-             previous_application: $scope.fieldData['previous_application'],   
-             office: $scope.fieldData['office']}; 
+             first_name: $scope.fieldData["general_applicant_first_name"] ,
+             last_name: $scope.fieldData["general_applicant_last_name"],  
+             pod: $scope.fieldData['general_applicant_pob_town'],  
+             dob: $scope.fieldData['general_applicant_dob'],  
+             sponsor_name: $scope.fieldData['i130_sponsor_first_name"'],  
+             nationality: $scope.fieldData['i130_sponsor_nationality'],  
+             country_of_destination: $scope.fieldData['i130_sponsor_nationality'],  
+             date_of_return: $scope.fieldData['general_applicant_street'],  
+             counsol: $scope.fieldData["general_applicant_first_name"] ,  
+             spouse: $scope.fieldData["general_applicant_first_name"] ,  
+             previous_application: $scope.fieldData["general_applicant_first_name"] ,   
+             office: $scope.fieldData["general_applicant_first_name"] }; 
 
             formFieldData.optiontest = {
              name: $scope.current_case_id,

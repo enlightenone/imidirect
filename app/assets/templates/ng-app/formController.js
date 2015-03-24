@@ -110,9 +110,10 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     // Choose required fields based of type of application.
     if (category == "i130"){
         $scope.switchButtons["application_type"] = "i130";
-        $scope.switchButtons["section1"] = "i130-applicant";
-        $scope.switchButtons["section2"] = "i130-sponsor";
-        $scope.switchButtons["section3"] = "i130-option";
+        $scope.switchButtons["section1"] = "i130-category";
+        $scope.switchButtons["section2"] = "i130-applicant";
+        $scope.switchButtons["section3"] = "i130-sponsor";
+        $scope.switchButtons["section4"] = "i130-option";
     } else if (category == "i765"){
         $scope.switchButtons["application_type"] = "i765";
         $scope.switchButtons["section1"] = "i765-applicant";

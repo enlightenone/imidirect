@@ -16,6 +16,8 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     //catch form fields data and assign to cookie
     $scope.catchData = function(name, form_data){
          $cookieStore.put(name, form_data);
+         $scope.test = $cookieStore.get(name);
+         console.log($scope.test)
     };
 
     //function to choose forms

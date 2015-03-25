@@ -137,6 +137,9 @@ module Api
             if form_included
               #merge general information table with individual form table information
               general_information = @current_case.general_information
+
+              raise general_information.inspect
+              
               specific_case_attributes =  @current_case.send(form_id)
 
               general_information = general_information.serializable_hash 

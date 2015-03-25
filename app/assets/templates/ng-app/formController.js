@@ -96,7 +96,6 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
 
 
     // Beginning Of the Option Block ///////////////////
-    console.log("formOptions: " + $scope.formOptions);
     var settings = OptionResource($scope.formOptions, $scope.case_id );
 
     $scope.results = settings.initiate({id:1}); 
@@ -172,7 +171,100 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
 
       $scope.restCookie();
 
-      var formFieldData = new testResource({id: 1});
+      var formFieldData = new formsResource({id: 1});
+
+          formFieldData.case.general_information = {
+                                    general_applicant_child_first_name_1: $scope.fieldData[“general_applicant_child_first_name_1”], 
+                                    general_applicant_child_last_name_1:  $scope.fieldData[“general_applicant_child_last_name_1”], 
+                                    general_applicant_child_middle_name_1: $scope.fieldData[“general_applicant_child_middle_name_1”], 
+                                    general_applicant_child_relationship_1:  $scope.fieldData[“general_applicant_child_relationship_1”], 
+                                    general_applicant_child_dob_1:  $scope.fieldData[“general_applicant_child_dob_1”], 
+                                    general_applicant_child_cob_1:  $scope.fieldData[“general_applicant_child_cob_1”], 
+                                    general_applicant_child_a_number_1:  $scope.fieldData[“general_applicant_child_a_number_1”], 
+                                    general_applicant_child_application_1:  $scope.fieldData[“general_applicant_child_application_1”], 
+                                    general_applicant_child_first_name_2:  $scope.fieldData[“general_applicant_child_first_name_2”], 
+                                    general_applicant_child_last_name_2:  $scope.fieldData[“general_applicant_child_last_name_2”], 
+                                    general_applicant_child_middle_name_2:  $scope.fieldData[“general_applicant_child_middle_name_2”], 
+                                    general_applicant_child_relationship_2:  $scope.fieldData[“general_applicant_child_relationship_2”], 
+                                    general_applicant_child_dob_2:  $scope.fieldData[“general_applicant_child_dob_2”], 
+                                    general_applicant_child_cob_2:  $scope.fieldData[“general_applicant_child_cob_2”],
+                                    general_applicant_child_a_number_2:  $scope.fieldData[“general_applicant_child_a_number_2”], 
+                                    general_applicant_child_application_2:  $scope.fieldData[“general_applicant_child_application_2”], 
+                                    general_applicant_child_first_name_3:  $scope.fieldData[“general_applicant_child_first_name_3”], 
+                                    general_applicant_child_last_name_3:  $scope.fieldData[“general_applicant_child_last_name_3”], 
+                                    general_applicant_child_middle_name_3:  $scope.fieldData[“general_applicant_child_middle_name_3”], 
+                                    general_applicant_child_relationship_3:  $scope.fieldData[“general_applicant_child_relationship_3”], 
+                                    general_applicant_child_dob_3:  $scope.fieldData[“general_applicant_child_dob_3”], 
+                                    general_applicant_child_cob_3:  $scope.fieldData[“general_applicant_child_cob_3”], 
+                                    general_applicant_child_a_number_3:  $scope.fieldData[“general_applicant_child_a_number_3”], 
+                                    general_applicant_child_application_3:   $scope.fieldData[“general_applicant_child_application_3”],
+                                    general_applicant_child_first_name_4:  $scope.fieldData[“general_applicant_child_first_name_4”], 
+                                    general_applicant_child_last_name_4:   $scope.fieldData[“general_applicant_child_last_name_4”], 
+                                    general_applicant_child_middle_name_4:  $scope.fieldData[“general_applicant_child_middle_name_4”], 
+                                    general_applicant_child_relationship_4:  $scope.fieldData[“general_applicant_child_relationship_4”], 
+                                    general_applicant_child_dob_4:   $scope.fieldData[“general_applicant_child_dob_4”], 
+                                    general_applicant_child_cob_4:  $scope.fieldData[“general_applicant_child_cob_4”], 
+                                    general_applicant_child_a_number_4:  $scope.fieldData[“general_applicant_child_a_number_4”],
+                                    general_applicant_child_application_4:   $scope.fieldData[“general_applicant_child_application_4”],
+                                    general_applicant_child_first_name_5:  $scope.fieldData[“general_applicant_child_first_name_5”], 
+                                    general_applicant_child_last_name_5:  $scope.fieldData[“general_applicant_child_last_name_5”],
+                                    general_applicant_child_middle_name_5:  $scope.fieldData[“general_applicant_child_middle_name_5”], 
+                                    general_applicant_child_relationship_5:  $scope.fieldData[“general_applicant_child_relationship_5”], 
+                                    general_applicant_child_dob_5:  $scope.fieldData[“general_applicant_child_dob_5”], 
+                                    general_applicant_child_cob_5:  $scope.fieldData[“general_applicant_child_cob_5”], 
+                                    general_applicant_child_a_number_5:  $scope.fieldData[“general_applicant_child_a_number_5”], 
+                                    general_applicant_child_application_5:  $scope.fieldData[“general_applicant_child_application_5”], 
+                                    general_applicant_first_name:  $scope.fieldData[“general_applicant_first_name”], 
+                                    general_applicant_last_name:  $scope.fieldData[“general_applicant_last_name”], 
+                                    general_applicant_middle_name:   $scope.fieldData[“general_applicant_middle_name”], 
+                                    general_applicant_other_name:  $scope.fieldData[“general_applicant_other_name”], 
+                                    general_applicant_street:   $scope.fieldData[“general_applicant_street”], 
+                                    general_applicant_apt_suit:    $scope.fieldData[“general_applicant_apt_suit”], 
+                                    general_applicant_city:  $scope.fieldData[“general_applicant_city”], 
+                                    general_applicant_state:  $scope.fieldData[“general_applicant_state”], 
+                                    general_applicant_country:  $scope.fieldData[“general_applicant_country”],
+                                    general_applicant_zip_code:  $scope.fieldData[“general_applicant_zip_code”], 
+                                    general_applicant_co:  $scope.fieldData[“general_applicant_co”], 
+                                    general_applicant_phone:  $scope.fieldData[“general_applicant_phone”], 
+                                    general_applicant_dob:  $scope.fieldData[“general_applicant_dob”], 
+                                    general_applicant_pob_town:  $scope.fieldData[“general_applicant_pob_town”], 
+                                    general_applicant_pob_state:  
+                                    general_applicant_pob_country:  
+                                    general_applicant_nationality:  
+                                    general_applicant_gender_male:  
+                                    general_applicant_gender_female:  
+                                    general_applicant_marital_status_married:  
+                                    general_applicant_ssn:  
+                                    general_applicant_alien_number:  
+                                    general_applicant_i_94:  
+                                    general_applicant_date_of_last_arrival:  
+                                    general_applicant_uscis_status:  
+                                    general_applicant_status_expiration_date:  
+                                    general_applicant_visa_number:  
+                                    general_applicant_last_entry:  
+                                    general_applicant_place_of_last_entry:  
+                                    general_applicant_consulate:  
+                                    general_applicant_entry_inspection:  
+                                    general_applicant_date_present_marriage:  
+                                    general_applicant_place_present_marriage:  
+                                    general_applicant_spouse_first_name:  
+                                    general_applicant_spouse_last_name:  
+                                    general_applicant_spouse_middle_name:  
+                                    general_applicant_spouse_relationship:  
+                                    general_applicant_spouse_dob:  
+                                    general_applicant_spouse_cob:  
+                                    general_applicant_spouse_a_number:  
+                                    general_applicant_spouse_application:  
+                                    general_applicant_marital_status_single:  
+                                    general_applicant_marital_status_widowed:  
+                                    general_applicant_marital_status_divorced: 
+
+
+
+       
+           };
+
+
            formFieldData.i130test = {
              first_name: $scope.fieldData["general_applicant_first_name"] ,
              last_name: $scope.fieldData["general_applicant_last_name"],  

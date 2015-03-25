@@ -96,6 +96,16 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
 
 
     // Beginning Of the Option Block ///////////////////
+
+    // Add I-130 form option if I-130 category has been chosen
+    if (category == "i130"){
+        $scope.formOptions['i130-option'] = true ;
+    }
+
+    for (var key in $scope.formOptions) {
+        console.log( key + ": " + $scope.formOptions[key]); 
+    }
+
     var settings = OptionResource($scope.formOptions, $scope.case_id );
 
     $scope.results = settings.initiate({id:1}); 
@@ -131,7 +141,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
         $scope.switchButtons["section1"] = "i131-applicant";
         $scope.switchButtons["section2"] = "i131-sponsor";
         $scope.switchButtons["section3"] = "i131-option";
-    } 
+    }
 
 
     // Loop through formOptions to assign form to specific switch button.
@@ -164,7 +174,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
         while (individualFieldData) {
             for (var key in individualFieldData) {
                 $scope.fieldData[key] = individualFieldData[key] ;
-                console.log( key + ": " + $scope.fieldData[key] ); 
+                // console.log( key + ": " + $scope.fieldData[key] ); 
              }
             count++ ;
             individualFieldData = $scope.previousSavedCache['form' + count] ;

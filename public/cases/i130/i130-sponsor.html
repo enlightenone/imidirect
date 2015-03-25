@@ -1,5 +1,14 @@
 <h4 style="color: white;">I-130 Form Sponsor Information</h4>
+<p>
+<h4>I am applying for: </h4>
+<input type="checkbox" ng-model="formData.i130_spouse"> Spouse <br><br>
+<input type="checkbox" ng-model="formData.i130_parent"> Parent <br><br>
+<input type="checkbox" ng-model="formData.i130_BrotherSister"> Siblings<br><br>
+<input type="checkbox" ng-model="formData.i130_child"> Child
+</p>
+
 <h4>Sponsor Information</h4>
+
 <p>
 First Name: <br><br> 
 <input type="text" class="form-control" name="i130_sponsor_first_name" ng-model="formData.i130_sponsor_first_name">
@@ -30,11 +39,12 @@ City: <br><br>
 <input type="text" class="form-control" name="i130_sponsor_city" ng-model="formData.i130_sponsor_city">
 <br><br>
 State: <br><br> 
-City: <br><br> 
 <input type="text" class="form-control" name="i130_sponsor_state" ng-model="formData.i130_sponsor_state">
 <br><br>
 Zip Code:<br><br><br>  
 <input type="text" class="form-control" name="i130_sponsor_zip_code" ng-model="formData.i130_sponsor_zip_code">
+Country :<br><br><br>  
+<input type="text" class="form-control" name="i130_sponsor_country" ng-model="formData.i130_sponsor_country">
 </p>
 <p>
 Telephone: <br><br> 
@@ -96,7 +106,7 @@ End date of previous marriage: <br><br>
 <h4>Citizenship</h4>
 <p>
 <input type="checkbox" ng-model="formData.i130_sponsor_citizenship_birth"> Citizenship By Birth <br><br>
-<input type="checkbox" ng-model="formData.ii130_sponsor_citizenship_naturalization">Citizenship by naturalization
+<input type="checkbox" ng-model="formData.i130_sponsor_citizenship_naturalization">Citizenship by naturalization
 </p>
 <h4>Naturalization Information</h4>
 <p>
@@ -117,6 +127,9 @@ Class of admission: <br><br>
 </p>
 <h4>Sponsored relative's residency and address information</h4>
 <p>
+Sponsored relative's intended residency's address: <br><br> 
+<input type="text" class="form-control" name="i130_sponsored_intended_residence_adddress" ng-model="formData.i130_sponsored_intended_residence_adddress">
+<br><br>
 Sponsored relative's intended residency's city: <br><br> 
 <input type="text" class="form-control" name="i130_sponsored_intended_residence_city" ng-model="formData.i130_sponsored_intended_residence_city">
 <br><br>

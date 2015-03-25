@@ -134,9 +134,12 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
         $scope.switchButtons["section3"] = "i131-option";
     } 
 
-
+    console.log($scope.formOptions["i485-option"]);
+    console.log($scope.formOptions["i131-option"]);
+    console.log($scope.formOptions["i765-option"]);
     // Loop through formOptions to assign form to specific switch button.
     for (key in $scope.formOptions){
+         console.log("key :" + key );
         if($scope.formOptions[key] == true){
             i++;
             $scope.switchButtons["section" + i] = key;  

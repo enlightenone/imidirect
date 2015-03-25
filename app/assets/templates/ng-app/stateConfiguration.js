@@ -3,24 +3,30 @@
 app.config(function($stateProvider, $urlRouterProvider) {
     
     $stateProvider
-        .state('130option',{
+            .state('option',{
             url: '/option',
-            templateUrl: 'options/i-130/i130-form.html',
+            templateUrl: 'options/i130-option.html',
             controller: 'formController'
 
         })
-        .state('130option.option1',{
-            url: '/option1',
-            templateUrl: 'options/i-130/i130-category.html',
-            controller: 'formController'
+        // .state('130option',{
+        //     url: '/option',
+        //     templateUrl: 'options/i-130/i130-form.html',
+        //     controller: 'formController'
 
-        })
-        .state('130option.option2',{
-            url: '/option2',
-            templateUrl: 'options/i-130/i130-option.html',
-            controller: 'formController'
+        // })
+        // .state('130option.option1',{
+        //     url: '/option1',
+        //     templateUrl: 'options/i-130/i130-category.html',
+        //     controller: 'formController'
 
-        })
+        // })
+        // .state('130option.option2',{
+        //     url: '/option2',
+        //     templateUrl: 'options/i-130/i130-option.html',
+        //     controller: 'formController'
+
+        // })
     
         // route to show our basic form (/form)section1&
         .state('form', {

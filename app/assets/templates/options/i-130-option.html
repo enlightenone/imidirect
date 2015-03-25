@@ -1,0 +1,41 @@
+<!-- form.html -->
+<div class="row" >
+<div class="col-sm-8 col-sm-offset-2">
+
+    <div id="form-container" style="color: white;">
+        <div class="page-header text-center">
+            <h2>Relative Immigration Application</h2>
+        </div>
+        <!-- use ng-submit to catch the form submission and use our Angular function -->
+        <form id="signup-form" ng-submit="chooseForm('i130')">
+            <!-- our nested state views will be injected here -->
+    <div class="form-group" style="color: white;">
+        <label class="checkbox-inline">
+            <input type="checkbox" name="formOptions" ng-model="formOptions['i485-option']"> 
+            I-485 Adjustment of Status
+        </label>
+        <br>
+        <br>
+        <label class="checkbox-inline">
+            <input type="checkbox" name="formOptions" ng-model="formOptions['i765-option']"> 
+            I-765 Employment Permit
+        </label>
+        <br>
+        <br>
+        <label class="checkbox-inline">
+            <input type="checkbox" name="formOptions" ng-model="formOptions['i131-option']">
+            I-131 Application For Travel Document
+        </label>
+    </div>
+        <button type="submit" class="btn btn-danger" ng-click="restCookie()">Submit</button>
+        </form>
+
+    </div>
+
+
+</div>
+</div>
+
+<pre>
+    {{formData}}
+</pre>

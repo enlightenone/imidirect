@@ -3,38 +3,17 @@
 app.config(function($stateProvider, $urlRouterProvider) {
     
     $stateProvider
-            .state('option',{
+        .state('option',{
             url: '/option',
             templateUrl: 'options/i130-option.html',
             controller: 'formController'
-
         })
-        // .state('130option',{
-        //     url: '/option',
-        //     templateUrl: 'options/i-130/i130-form.html',
-        //     controller: 'formController'
-
-        // })
-        // .state('130option.option1',{
-        //     url: '/option1',
-        //     templateUrl: 'options/i-130/i130-category.html',
-        //     controller: 'formController'
-
-        // })
-        // .state('130option.option2',{
-        //     url: '/option2',
-        //     templateUrl: 'options/i-130/i130-option.html',
-        //     controller: 'formController'
-
-        // })
-    
         // route to show our basic form (/form)section1&
         .state('form', {
             url: '/form?case_id&application_type&section1&section2&section3&section4&section5&section6&section7&section8&section9',
             templateUrl: 'forms/form.html',
             controller: 'formController'
         })
-        
         // nested states 
         // each of these sections will have their own view
         // url will be nested (/form/profile)

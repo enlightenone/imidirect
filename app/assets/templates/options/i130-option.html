@@ -1,6 +1,14 @@
- 
-                <!-- MULTIPLE CHECKBOXES -->
-    <label>I-130 Applicaiton Options </label>
+<!-- form.html -->
+<div class="row" >
+<div class="col-sm-8 col-sm-offset-2">
+
+    <div id="form-container" style="color: white;">
+        <div class="page-header text-center">
+            <h2>Relative Immigration Application</h2>
+        </div>
+        <!-- use ng-submit to catch the form submission and use our Angular function -->
+        <form id="signup-form" ng-submit="chooseForm('i130')">
+            <!-- our nested state views will be injected here -->
     <div class="form-group" style="color: white;">
         <label class="checkbox-inline">
             <input type="checkbox" name="formOptions" ng-model="formOptions['i485-option']"> 
@@ -20,16 +28,14 @@
         </label>
     </div>
         <button type="submit" class="btn btn-danger" ng-click="restCookie()">Submit</button>
-        
-<div class="form-group row">
-<div class="col-xs-6 col-xs-offset-3">
-    <a ui-sref="form.section1" class="btn btn-block btn-info" ng-click="chooseForm('i130')">
-    Next Section<span class="glyphicon glyphicon-circle-arrow-right"></span>
-    </a>
+        </form>
+
+    </div>
+
+
 </div>
 </div>
 
 <pre>
-FormOptions :{{formOptions}}<br><br>
-FormCategories :{{formCategory}}
+    {{formData}}
 </pre>

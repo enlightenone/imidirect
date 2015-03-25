@@ -26,7 +26,14 @@ module Api
       @case_id = params[:case_id]
       @case = Case.find_by_case_id(@case_id)
       @options = JSON.parse(params[:options])
-      
+         
+      @application_id = @case.application_id #retrieve case id 
+      # Determine if the case require i-130 form for the application and assign additional I-130 option if necessary
+      if (1..8).include? @application_id 
+        @options['i130-option'] = true 
+      end
+
+
       @options.each do |key, value|
         if key == 'i130-option' && value == true
               @case.options.create(form_id: "i130", form: "I-130", include: true)
@@ -41,23 +48,6 @@ module Api
       render json:  {log: "Options pupulation successes"}
     end
 
-    def create
-      @user = User.find(user_params)
-      @user.firstname = "Dave"
-      @user.save
-
-
-      i130test = I130test.new(case_params)
-      optiontest = Optiontest.new(option_params)
-
-      if optiontest.save && i130test.save
-
-
-      else
-       redirect_to  "http://facebook.com"
-      end
-
-    end
  
   private
 

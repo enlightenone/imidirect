@@ -97,10 +97,6 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
 
     // Beginning Of the Option Block ///////////////////
 
-    // Add I-130 form option if I-130 category has been chosen
-    // if (category == "i130"){
-    //     $scope.formOptions['i130-option'] = true ;
-    // }
 
 
     var settings = OptionResource($scope.formOptions, $scope.case_id );
@@ -111,7 +107,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     });
 
 
-    // End of Option Block//////////////////////
+    // End of Option lock//////////////////////
 
     $scope.switchButtons = {}; //Create object to arrange form/section combination.
     var i = 3; 

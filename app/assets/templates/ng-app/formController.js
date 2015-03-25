@@ -98,9 +98,9 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     // Beginning Of the Option Block ///////////////////
 
     // Add I-130 form option if I-130 category has been chosen
-    if (category == "i130"){
-        $scope.formOptions['i130-option'] = true ;
-    }
+    // if (category == "i130"){
+    //     $scope.formOptions['i130-option'] = true ;
+    // }
 
 
     var settings = OptionResource($scope.formOptions, $scope.case_id );
@@ -108,7 +108,6 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     $scope.results = settings.initiate({id:1}); 
     $scope.results.$promise.then(function(data) {
     console.log(data);
-
     });
 
 
@@ -171,6 +170,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
         while (individualFieldData) {
             for (var key in individualFieldData) {
                 $scope.fieldData[key] = individualFieldData[key] ;
+                // console.log( key + ": " + $scope.fieldData[key] ); 
              }
             count++ ;
             individualFieldData = $scope.previousSavedCache['form' + count] ;
@@ -267,7 +267,6 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
                                     general_applicant_marital_status_widowed:  $scope.fieldData["general_applicant_marital_status_widowed"], 
                                     general_applicant_marital_status_divorced: $scope.fieldData["general_applicant_marital_status_divorced"]
                               },
-
                             i130: 
                               {
                                     i130_adoption: $scope.fieldData["i130_adoption"],

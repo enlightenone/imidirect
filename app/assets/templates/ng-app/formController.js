@@ -102,9 +102,6 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
         $scope.formOptions['i130-option'] = true ;
     }
 
-    for (var key in $scope.formOptions) {
-        console.log( key + ": " + $scope.formOptions[key]); 
-    }
 
     var settings = OptionResource($scope.formOptions, $scope.case_id );
 
@@ -174,13 +171,12 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
         while (individualFieldData) {
             for (var key in individualFieldData) {
                 $scope.fieldData[key] = individualFieldData[key] ;
-                // console.log( key + ": " + $scope.fieldData[key] ); 
              }
             count++ ;
             individualFieldData = $scope.previousSavedCache['form' + count] ;
         }
-        console.log($stateParams['case_id']);
-      // $scope.restCookie();
+
+      $scope.restCookie();
 
       var formFieldData = new formsResource({id: $stateParams['case_id']});
 
@@ -271,6 +267,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
                                     general_applicant_marital_status_widowed:  $scope.fieldData["general_applicant_marital_status_widowed"], 
                                     general_applicant_marital_status_divorced: $scope.fieldData["general_applicant_marital_status_divorced"]
                               },
+
                             i130: 
                               {
                                     i130_adoption: $scope.fieldData["i130_adoption"],
@@ -332,35 +329,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
                             }
 
                          };
-
-
-
-
-
-           // formFieldData.i130test = {
-           //   first_name: $scope.fieldData["general_applicant_first_name"] ,
-           //   last_name: $scope.fieldData["general_applicant_last_name"],  
-           //   pod: $scope.fieldData['general_applicant_pob_town'],  
-           //   dob: $scope.fieldData['general_applicant_dob'],  
-           //   sponsor_name: $scope.fieldData['i130_sponsor_first_name"'],  
-           //   nationality: $scope.fieldData['i130_sponsor_nationality'],  
-           //   country_of_destination: $scope.fieldData['i130_sponsor_nationality'],  
-           //   date_of_return: $scope.fieldData['general_applicant_street'],  
-           //   counsol: $scope.fieldData["general_applicant_first_name"] ,  
-           //   spouse: $scope.fieldData["general_applicant_first_name"] ,  
-           //   previous_application: $scope.fieldData["general_applicant_first_name"] ,   
-           //   office: $scope.fieldData["general_applicant_first_name"] }; 
-
-           //  formFieldData.optiontest = {
-           //   name: $scope.current_case_id,
-           //   age: $scope.current_case_id
-           //  }; 
-
-           //  formFieldData.user = {
-           //      id: 1
-           //  };
-        
-            formFieldData.$save();  
+                         formFieldData.$save();  
 
      };
 
@@ -369,7 +338,6 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
       $scope.fees_calculation_flag = $stateParams['fees_calculation_flag'];
 
       // call fees calculation function when the calculation fee flag is activated.
-
 
      if ($scope.fees_calculation_flag == "true"){ 
 

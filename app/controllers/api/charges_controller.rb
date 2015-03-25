@@ -34,9 +34,9 @@ module Api
     ################# End of Fee Pulling Function #######################
 
       render json: @fees_summary.to_json
-    end
+  end
 
-    def create
+  def create
     # retrieve current case id from cookie
     @current_case_id = request.cookies["current_case_id"]
 
@@ -60,14 +60,12 @@ module Api
     )
 
 
-   @user = User.find(1)
-      @current_case_id = '85ca593dda42ad89bfdf4155618f4071'
-      @current_case = @user.cases.find_by_case_id(@current_case_id)
+    @user = User.first
+    @current_case = @user.cases.find_by_case_id(@current_case_id)
 
     if @current_case
 
         #generate pdf files
-
         #create new directory and output path
         @new_directory = "#{Rails.root}/tmp/pdfs/#{@current_case_id}"
         Dir.mkdir(@new_directory) unless File.exists?(@new_directory)

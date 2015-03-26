@@ -172,9 +172,32 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
             individualFieldData = $scope.previousSavedCache['form' + count] ;
         }
 
-      $scope.restCookie();
+      // $scope.restCookie();
+      console.log("hello hello");
 
       var formFieldData = new formsResource({id: $stateParams['case_id']});
+
+           //  formFieldData.i130test = {
+           //   first_name: "hello" ,
+           //   last_name: "hello",  
+           //   pod: "hello",  
+           //   dob: "hello",  
+           //   sponsor_name: "hello",  
+           //   nationality: "hello",  
+           //   country_of_destination: "hello",  
+           //   date_of_return: "hello",  
+           //   counsol: "hello",  
+           //   spouse: "hello",  
+           //   previous_application: "hello",   
+           //   office: "hello"
+           // }; 
+
+           //  formFieldData.optiontest = {
+           //   name: $scope.current_case_id,
+           //   age: $scope.current_case_id
+           //  }; 
+
+       
 
       formFieldData.case = { general_information:
                                 {
@@ -414,9 +437,9 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
                             // }
 
                          };
-                         formFieldData.$save(function(data){
-                            console.log("population success")
-                         });  
+
+                         formFieldData.$save();  
+
 
      };//end of ProcessForm functions
 

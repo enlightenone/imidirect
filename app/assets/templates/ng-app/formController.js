@@ -195,7 +195,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
                                     general_applicant_child_a_number_2:  ($scope.fieldData["general_applicant_child_a_number_2"] ?$scope.fieldData["general_applicant_child_a_number_2"] : "null"), 
                                     general_applicant_child_application_2:  ($scope.fieldData["general_applicant_child_application_2"] ?$scope.fieldData["general_applicant_child_application_2"] : "null"), 
                                     general_applicant_child_first_name_3:  ($scope.fieldData["general_applicant_child_first_name_3"] ? $scope.fieldData["general_applicant_child_first_name_3"] : "null"), 
-                                    general_applicant_child_last_name_3:  ($scope.fieldData["general_applicant_child_last_name_3"] ? : "null"), 
+                                    general_applicant_child_last_name_3:  ($scope.fieldData["general_applicant_child_last_name_3"] ? $scope.fieldData["general_applicant_child_last_name_3"]: "null"), 
                                     general_applicant_child_middle_name_3:  ($scope.fieldData["general_applicant_child_middle_name_3"] ? $scope.fieldData["general_applicant_child_last_name_3"] : "null"), 
                                     general_applicant_child_relationship_3:  ($scope.fieldData["general_applicant_child_relationship_3"] ? $scope.fieldData["general_applicant_child_relationship_3"] : "null"), 
                                     general_applicant_child_dob_3:  ($scope.fieldData["general_applicant_child_dob_3"] ? $scope.fieldData["general_applicant_child_dob_3"] : "null"), 
@@ -266,62 +266,62 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
 
                             i130: 
                               {
-                                    i130_adoption: ($scope.fieldData["i130_adoption"]? $scope.fieldData["i130_adoption"]: "null")
-                                    i130_residence_through_adoption: ($scope.fieldData["i130_residence_through_adoption"]? $scope.fieldData["i130_residence_through_adoption"]: "null")
-                                    i130_sponsor_first_name: ($scope.fieldData["i130_sponsor_first_name"]? $scope.fieldData["i130_sponsor_first_name"]: "null")
-                                    i130_sponsor_last_name: ($scope.fieldData["i130_sponsor_last_name"]? $scope.fieldData["i130_sponsor_last_name"]: "null")
-                                    i130_sponsor_middle_name: ($scope.fieldData["i130_sponsor_middle_name"]? $scope.fieldData["i130_sponsor_middle_name"]: "null")
-                                    i130_sponsor_other_name: ($scope.fieldData["i130_sponsor_other_name"]? $scope.fieldData["i130_sponsor_other_name"]: "null")
-                                    i130_sponsor_street: ($scope.fieldData["i130_sponsor_street"]? $scope.fieldData["i130_sponsor_street"]: "null")
-                                    i130_sponsor_apt_suit:  ($scope.fieldData["i130_sponsor_apt_suit"]? $scope.fieldData["i130_sponsor_apt_suit"]: "null")
-                                    i130_sponsor_city: ($scope.fieldData["i130_sponsor_city"]? $scope.fieldData["i130_sponsor_city"]: "null")
-                                    i130_sponsor_state: ($scope.fieldData["i130_sponsor_state"]? $scope.fieldData["i130_sponsor_state"]: "null")
-                                    i130_sponsor_country: ($scope.fieldData["i130_sponsor_country"]? $scope.fieldData["i130_sponsor_country"] : "null")
-                                    i130_sponsor_zip_code:  ($scope.fieldData["i130_sponsor_zip_code"]? $scope.fieldData["i130_sponsor_zip_code"]: "null")
-                                    i130_sponsor_co: ($scope.fieldData["i130_sponsor_co"]? $scope.fieldData["i130_sponsor_co"]: "null")
-                                    i130_sponsor_phone: ($scope.fieldData["i130_sponsor_phone"]? $scope.fieldData["i130_sponsor_phone"]: "null")
-                                    i130_sponsor_dob:  ($scope.fieldData["i130_sponsor_dob"]? $scope.fieldData["i130_sponsor_dob"]: "null")
-                                    i130_sponsor_pob_town:  ($scope.fieldData["i130_sponsor_pob_town"]? $scope.fieldData["i130_sponsor_pob_town"]: "null")
-                                    i130_sponsor_pob_state: ($scope.fieldData["i130_sponsor_pob_state"]? $scope.fieldData["i130_sponsor_pob_state"]: "null")
-                                    i130_sponsor_pob_country: ($scope.fieldData["i130_sponsor_pob_country"]? $scope.fieldData["i130_sponsor_pob_country"]: "null")
-                                    i130_sponsor_nationality:  ($scope.fieldData["i130_sponsor_nationality"]? $scope.fieldData["i130_sponsor_nationality"]: "null")
-                                    i130_sponsor_gender_male: ($scope.fieldData["i130_sponsor_gender_male"]? $scope.fieldData["i130_sponsor_gender_male"]: "null")
-                                    i130_sponsor_gender_female: ($scope.fieldData["i130_sponsor_gender_female"]? $scope.fieldData["i130_sponsor_gender_female"]: "null")
-                                    i130_sponsor_marital_status_married: ($scope.fieldData["i130_sponsor_marital_status_married"]? $scope.fieldData["i130_sponsor_marital_status_married"]: "null")
-                                    i130_sponsor_marital_status_widowed: ($scope.fieldData["i130_sponsor_marital_status_widowed"]? $scope.fieldData["i130_sponsor_marital_status_widowed"]: "null")
-                                    i130_sponsor_marital_status_single:  ($scope.fieldData["i130_sponsor_marital_status_single"]? $scope.fieldData["i130_sponsor_marital_status_single"]: "null")
-                                    i130_sponsor_marital_status_divorced: ($scope.fieldData["i130_sponsor_marital_status_divorced"]? $scope.fieldData["i130_sponsor_marital_status_divorced"]: "null")
-                                    i130_sponsor_ssn: ($scope.fieldData["i130_sponsor_ssn"]? $scope.fieldData["i130_sponsor_ssn"]: "null")
-                                    i130_sponsor_a_registration_number: ($scope.fieldData["i130_sponsor_a_registration_number"]? : "null")
-                                    i130_sponsor_date_of_present_marriage:  ($scope.fieldData["i130_sponsor_date_of_present_marriage"]? $scope.fieldData["i130_sponsor_date_of_present_marriage"]: "null")
-                                    i130_sponsor_place_of_present_marriage: ($scope.fieldData["i130_sponsor_place_of_present_marriage"]? $scope.fieldData["i130_sponsor_place_of_present_marriage"]: "null")
-                                    i130_sponsor_name_of_prior_spouse: ($scope.fieldData["i130_sponsor_name_of_prior_spouse"]? $scope.fieldData["i130_sponsor_name_of_prior_spouse"]: "null")
-                                    i130_sponsor_date_of_end_of_prior_marriage: ($scope.fieldData["i130_sponsor_date_of_end_of_prior_marriage"]? $scope.fieldData["i130_sponsor_date_of_end_of_prior_marriage"]: "null")
-                                    i130_sponsor_citizenship_birth:($scope.fieldData["i130_sponsor_citizenship_birth"]? $scope.fieldData["i130_sponsor_citizenship_birth"]: "null")
-                                    i130_sponsor_citizenship_naturalization: ($scope.fieldData["i130_sponsor_citizenship_naturalization"]? $scope.fieldData["i130_sponsor_citizenship_naturalization"]: "null")
-                                    i130_sponsor_naturalization_number: ($scope.fieldData["i130_sponsor_naturalization_number"]? $scope.fieldData["i130_sponsor_naturalization_number"]: "null")
-                                    i130_sponsor_naturalization_place_of_issuance: ($scope.fieldData["i130_sponsor_naturalization_place_of_issuance"]? $scope.fieldData["i130_sponsor_naturalization_place_of_issuance"]: "null")
-                                    i130_sponsor_pr_date_of_admission:  ($scope.fieldData["i130_sponsor_pr_date_of_admission"]? $scope.fieldData["i130_sponsor_pr_date_of_admission"] : "null")
-                                    i130_sponsor_pr_place_of_admission: ($scope.fieldData["i130_sponsor_pr_place_of_admission"]? $scope.fieldData["i130_sponsor_pr_place_of_admission"]: "null")
-                                    i130_sponsor_pr_class_of_admission: ($scope.fieldData["i130_sponsor_pr_class_of_admission"]? $scope.fieldData["i130_sponsor_pr_class_of_admission"]: "null")
-                                    i130_sponsored_intended_residence_adddress: ($scope.fieldData["i130_sponsored_intended_residence_adddress"]? $scope.fieldData["i130_sponsored_intended_residence_adddress"]: "null")
-                                    i130_sponsored_intended_residence_city: ($scope.fieldData["i130_sponsored_intended_residence_city"]? $scope.fieldData["i130_sponsored_intended_residence_city"] : "null")
-                                    i130_sponsored_intended_residence_state: ($scope.fieldData["i130_sponsored_intended_residence_state"]? $scope.fieldData["i130_sponsored_intended_residence_state"]: "null")
-                                    i130_sponsored_full_address_abroad:  ($scope.fieldData["i130_sponsored_full_address_abroad"]? $scope.fieldData["i130_sponsored_full_address_abroad"]: "null")
-                                    i130_sponsored_full_address_native_language: ($scope.fieldData["i130_sponsored_full_address_native_language"]? $scope.fieldData["i130_sponsored_full_address_native_language"]: "null")
-                                    i130_sponsored_name_native_language: ($scope.fieldData["i130_sponsored_name_native_language"]? $scope.fieldData["i130_sponsored_name_native_language"] : "null")
-                                    i130_spouse: ($scope.fieldData["i130_spouse"]? $scope.fieldData["i130_spouse"]: "null")
-                                    i130_parent: ($scope.fieldData['i130_parent']? $scope.fieldData['i130_parent']: "null")
-                                    i130_BrotherSister: ($scope.fieldData['i130_BrotherSister']? $scope.fieldData['i130_BrotherSister'] : "null")
+                                    i130_adoption: ($scope.fieldData["i130_adoption"]? $scope.fieldData["i130_adoption"]: "null"),
+                                    i130_residence_through_adoption: ($scope.fieldData["i130_residence_through_adoption"]? $scope.fieldData["i130_residence_through_adoption"]: "null"),
+                                    i130_sponsor_first_name: ($scope.fieldData["i130_sponsor_first_name"]? $scope.fieldData["i130_sponsor_first_name"]: "null"),
+                                    i130_sponsor_last_name: ($scope.fieldData["i130_sponsor_last_name"]? $scope.fieldData["i130_sponsor_last_name"]: "null"),
+                                    i130_sponsor_middle_name: ($scope.fieldData["i130_sponsor_middle_name"]? $scope.fieldData["i130_sponsor_middle_name"]: "null"),
+                                    i130_sponsor_other_name: ($scope.fieldData["i130_sponsor_other_name"]? $scope.fieldData["i130_sponsor_other_name"]: "null"),
+                                    i130_sponsor_street: ($scope.fieldData["i130_sponsor_street"]? $scope.fieldData["i130_sponsor_street"]: "null"),
+                                    i130_sponsor_apt_suit:  ($scope.fieldData["i130_sponsor_apt_suit"]? $scope.fieldData["i130_sponsor_apt_suit"]: "null"),
+                                    i130_sponsor_city: ($scope.fieldData["i130_sponsor_city"]? $scope.fieldData["i130_sponsor_city"]: "null"),
+                                    i130_sponsor_state: ($scope.fieldData["i130_sponsor_state"]? $scope.fieldData["i130_sponsor_state"]: "null"),
+                                    i130_sponsor_country: ($scope.fieldData["i130_sponsor_country"]? $scope.fieldData["i130_sponsor_country"] : "null"),
+                                    i130_sponsor_zip_code:  ($scope.fieldData["i130_sponsor_zip_code"]? $scope.fieldData["i130_sponsor_zip_code"]: "null"),
+                                    i130_sponsor_co: ($scope.fieldData["i130_sponsor_co"]? $scope.fieldData["i130_sponsor_co"]: "null"),
+                                    i130_sponsor_phone: ($scope.fieldData["i130_sponsor_phone"]? $scope.fieldData["i130_sponsor_phone"]: "null"),
+                                    i130_sponsor_dob:  ($scope.fieldData["i130_sponsor_dob"]? $scope.fieldData["i130_sponsor_dob"]: "null"),
+                                    i130_sponsor_pob_town:  ($scope.fieldData["i130_sponsor_pob_town"]? $scope.fieldData["i130_sponsor_pob_town"]: "null"),
+                                    i130_sponsor_pob_state: ($scope.fieldData["i130_sponsor_pob_state"]? $scope.fieldData["i130_sponsor_pob_state"]: "null"),
+                                    i130_sponsor_pob_country: ($scope.fieldData["i130_sponsor_pob_country"]? $scope.fieldData["i130_sponsor_pob_country"]: "null"),
+                                    i130_sponsor_nationality:  ($scope.fieldData["i130_sponsor_nationality"]? $scope.fieldData["i130_sponsor_nationality"]: "null"),
+                                    i130_sponsor_gender_male: ($scope.fieldData["i130_sponsor_gender_male"]? $scope.fieldData["i130_sponsor_gender_male"]: "null"),
+                                    i130_sponsor_gender_female: ($scope.fieldData["i130_sponsor_gender_female"]? $scope.fieldData["i130_sponsor_gender_female"]: "null"),
+                                    i130_sponsor_marital_status_married: ($scope.fieldData["i130_sponsor_marital_status_married"]? $scope.fieldData["i130_sponsor_marital_status_married"]: "null"),
+                                    i130_sponsor_marital_status_widowed: ($scope.fieldData["i130_sponsor_marital_status_widowed"]? $scope.fieldData["i130_sponsor_marital_status_widowed"]: "null"),
+                                    i130_sponsor_marital_status_single:  ($scope.fieldData["i130_sponsor_marital_status_single"]? $scope.fieldData["i130_sponsor_marital_status_single"]: "null"),
+                                    i130_sponsor_marital_status_divorced: ($scope.fieldData["i130_sponsor_marital_status_divorced"]? $scope.fieldData["i130_sponsor_marital_status_divorced"]: "null"),
+                                    i130_sponsor_ssn: ($scope.fieldData["i130_sponsor_ssn"]? $scope.fieldData["i130_sponsor_ssn"]: "null"),
+                                    i130_sponsor_a_registration_number: ($scope.fieldData["i130_sponsor_a_registration_number"]? $scope.fieldData["i130_sponsor_a_registration_number"]: "null"),
+                                    i130_sponsor_date_of_present_marriage:  ($scope.fieldData["i130_sponsor_date_of_present_marriage"]? $scope.fieldData["i130_sponsor_date_of_present_marriage"]: "null"),
+                                    i130_sponsor_place_of_present_marriage: ($scope.fieldData["i130_sponsor_place_of_present_marriage"]? $scope.fieldData["i130_sponsor_place_of_present_marriage"]: "null"),
+                                    i130_sponsor_name_of_prior_spouse: ($scope.fieldData["i130_sponsor_name_of_prior_spouse"]? $scope.fieldData["i130_sponsor_name_of_prior_spouse"]: "null"),
+                                    i130_sponsor_date_of_end_of_prior_marriage: ($scope.fieldData["i130_sponsor_date_of_end_of_prior_marriage"]? $scope.fieldData["i130_sponsor_date_of_end_of_prior_marriage"]: "null"),
+                                    i130_sponsor_citizenship_birth:($scope.fieldData["i130_sponsor_citizenship_birth"]? $scope.fieldData["i130_sponsor_citizenship_birth"]: "null"),
+                                    i130_sponsor_citizenship_naturalization: ($scope.fieldData["i130_sponsor_citizenship_naturalization"]? $scope.fieldData["i130_sponsor_citizenship_naturalization"]: "null"),
+                                    i130_sponsor_naturalization_number: ($scope.fieldData["i130_sponsor_naturalization_number"]? $scope.fieldData["i130_sponsor_naturalization_number"]: "null"),
+                                    i130_sponsor_naturalization_place_of_issuance: ($scope.fieldData["i130_sponsor_naturalization_place_of_issuance"]? $scope.fieldData["i130_sponsor_naturalization_place_of_issuance"]: "null"),
+                                    i130_sponsor_pr_date_of_admission:  ($scope.fieldData["i130_sponsor_pr_date_of_admission"]? $scope.fieldData["i130_sponsor_pr_date_of_admission"] : "null"),
+                                    i130_sponsor_pr_place_of_admission: ($scope.fieldData["i130_sponsor_pr_place_of_admission"]? $scope.fieldData["i130_sponsor_pr_place_of_admission"]: "null"),
+                                    i130_sponsor_pr_class_of_admission: ($scope.fieldData["i130_sponsor_pr_class_of_admission"]? $scope.fieldData["i130_sponsor_pr_class_of_admission"]: "null"),
+                                    i130_sponsored_intended_residence_adddress: ($scope.fieldData["i130_sponsored_intended_residence_adddress"]? $scope.fieldData["i130_sponsored_intended_residence_adddress"]: "null"),
+                                    i130_sponsored_intended_residence_city: ($scope.fieldData["i130_sponsored_intended_residence_city"]? $scope.fieldData["i130_sponsored_intended_residence_city"] : "null"),
+                                    i130_sponsored_intended_residence_state: ($scope.fieldData["i130_sponsored_intended_residence_state"]? $scope.fieldData["i130_sponsored_intended_residence_state"]: "null"),
+                                    i130_sponsored_full_address_abroad:  ($scope.fieldData["i130_sponsored_full_address_abroad"]? $scope.fieldData["i130_sponsored_full_address_abroad"]: "null"),
+                                    i130_sponsored_full_address_native_language: ($scope.fieldData["i130_sponsored_full_address_native_language"]? $scope.fieldData["i130_sponsored_full_address_native_language"]: "null"),
+                                    i130_sponsored_name_native_language: ($scope.fieldData["i130_sponsored_name_native_language"]? $scope.fieldData["i130_sponsored_name_native_language"] : "null"),
+                                    i130_spouse: ($scope.fieldData["i130_spouse"]? $scope.fieldData["i130_spouse"]: "null"),
+                                    i130_parent: ($scope.fieldData['i130_parent']? $scope.fieldData['i130_parent']: "null"),
+                                    i130_BrotherSister: ($scope.fieldData['i130_BrotherSister']? $scope.fieldData['i130_BrotherSister'] : "null"),
                                     i130_child: ($scope.fieldData['i130_child'] ? $scope.fieldData['i130_child']  : "null")
                             },
                             i765: {
-                                    i765_previous_application: ($scope.fieldData["i765_previous_application"]? $scope.fieldData["i765_previous_application"]: "null")
-                                    i765_office: ($scope.fieldData["i765_office"]? $scope.fieldData["i765_office"]: "null")
-                                    i765_date_of_previous_application: ($scope.fieldData["i765_date_of_previous_application"]? $scope.fieldData["i765_date_of_previous_application"] : "null") 
-                                    i765_result_of_previous_application: ($scope.fieldData["i765_result_of_previous_application"]? $scope.fieldData["i765_result_of_previous_application"]: "null")
-                                    i765_application_employment: ($scope.fieldData["i765_application_employment"]? $scope.fieldData["i765_application_employment"]: "null")
-                                    i765_application_replacement:  ($scope.fieldData["i765_application_replacement"]? $scope.fieldData["i765_application_replacement"]: "null")
+                                    i765_previous_application: ($scope.fieldData["i765_previous_application"]? $scope.fieldData["i765_previous_application"]: "null"),
+                                    i765_office: ($scope.fieldData["i765_office"]? $scope.fieldData["i765_office"]: "null"),
+                                    i765_date_of_previous_application: ($scope.fieldData["i765_date_of_previous_application"]? $scope.fieldData["i765_date_of_previous_application"] : "null"), 
+                                    i765_result_of_previous_application: ($scope.fieldData["i765_result_of_previous_application"]? $scope.fieldData["i765_result_of_previous_application"]: "null"),
+                                    i765_application_employment: ($scope.fieldData["i765_application_employment"]? $scope.fieldData["i765_application_employment"]: "null"),
+                                    i765_application_replacement:  ($scope.fieldData["i765_application_replacement"]? $scope.fieldData["i765_application_replacement"]: "null"),
                                     i765_application_renewal:  ($scope.fieldData["i765_application_renewal"]? $scope.fieldData["i765_application_renewal"]: "null")
                             }
 

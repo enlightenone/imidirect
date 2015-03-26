@@ -12,104 +12,49 @@ module Api
       @current_case = @user.cases.find_by_case_id(params[:id])
       @current_case_id = params[:id]
 
-      # if general_information_params
-      #   @current_case.build_general_information(general_information_params)
-      # else
-      #   @current_case.build_general_information(
-      #                                                general_applicant_child_first_name_1: "", 
-      #                                                general_applicant_child_last_name_1: "", 
-      #                                                general_applicant_child_middle_name_1: "", 
-      #                                                general_applicant_child_relationship_1: "", 
-      #                                                general_applicant_child_dob_1: "", 
-      #                                                general_applicant_child_cob_1: "", 
-      #                                                general_applicant_child_a_number_1: "", 
-      #                                                general_applicant_child_application_1: "", 
-      #                                                general_applicant_child_first_name_2: "", 
-      #                                                general_applicant_child_last_name_2: "", 
-      #                                                general_applicant_child_middle_name_2: "", 
-      #                                                general_applicant_child_relationship_2: "", 
-      #                                                general_applicant_child_dob_2: "", 
-      #                                                general_applicant_child_cob_2: "", 
-      #                                                general_applicant_child_a_number_2: "", 
-      #                                                general_applicant_child_application_2: "", 
-      #                                                general_applicant_child_first_name_3: "", 
-      #                                                general_applicant_child_last_name_3: "", 
-      #                                                general_applicant_child_middle_name_3: "", 
-      #                                                general_applicant_child_relationship_3: "", 
-      #                                                general_applicant_child_dob_3: "", 
-      #                                                general_applicant_child_cob_3: "", 
-      #                                                general_applicant_child_a_number_3: "", 
-      #                                                general_applicant_child_application_3: "", 
-      #                                                general_applicant_child_first_name_4: "", 
-      #                                                general_applicant_child_last_name_4: "", 
-      #                                                general_applicant_child_middle_name_4: "", 
-      #                                                general_applicant_child_relationship_4: "", 
-      #                                                general_applicant_child_dob_4: "", 
-      #                                                general_applicant_child_cob_4: "", 
-      #                                                general_applicant_child_a_number_4: "", 
-      #                                                general_applicant_child_application_4: "", 
-      #                                                general_applicant_child_first_name_5: "", 
-      #                                                general_applicant_child_last_name_5: "", 
-      #                                                general_applicant_child_middle_name_5: "", 
-      #                                                general_applicant_child_relationship_5: "", 
-      #                                                general_applicant_child_dob_5: "", 
-      #                                                general_applicant_child_cob_5: "", 
-      #                                                general_applicant_child_a_number_5: "", 
-      #                                                general_applicant_child_application_5: "", 
-      #                                                general_applicant_first_name: "", 
-      #                                                general_applicant_last_name: "", 
-      #                                                general_applicant_middle_name: "", 
-      #                                                general_applicant_other_name: "", 
-      #                                                general_applicant_street: "", 
-      #                                                general_applicant_apt_suit: "", 
-      #                                                general_applicant_city: "", 
-      #                                                general_applicant_state: "", 
-      #                                                general_applicant_country: "", 
-      #                                                general_applicant_zip_code: "", 
-      #                                                general_applicant_co: "", 
-      #                                                general_applicant_phone: "", 
-      #                                                general_applicant_dob: "", 
-      #                                                general_applicant_pob_town: "", 
-      #                                                general_applicant_pob_state: "", 
-      #                                                general_applicant_pob_country: "", 
-      #                                                general_applicant_nationality: "", 
-      #                                                general_applicant_gender_male: "", 
-      #                                                general_applicant_gender_female: "", 
-      #                                                general_applicant_marital_status_married: "", 
-      #                                                general_applicant_ssn: "", 
-      #                                                general_applicant_alien_number: "", 
-      #                                                general_applicant_i_94: "", 
-      #                                                general_applicant_date_of_last_arrival: "", 
-      #                                                general_applicant_uscis_status: "", 
-      #                                                general_applicant_status_expiration_date: "", 
-      #                                                general_applicant_visa_number: "", 
-      #                                                general_applicant_last_entry: "", 
-      #                                                general_applicant_place_of_last_entry: "", 
-      #                                                general_applicant_consulate: "", 
-      #                                                general_applicant_entry_inspection: "", 
-      #                                                general_applicant_date_present_marriage: "", 
-      #                                                general_applicant_place_present_marriage: "", 
-      #                                                general_applicant_spouse_first_name: "", 
-      #                                                general_applicant_spouse_last_name: "", 
-      #                                                general_applicant_spouse_middle_name: "", 
-      #                                                general_applicant_spouse_relationship: "", 
-      #                                                general_applicant_spouse_dob: "", 
-      #                                                general_applicant_spouse_cob: "", 
-      #                                                general_applicant_spouse_a_number: "", 
-      #                                                general_applicant_spouse_application: "", 
-      #                                                general_applicant_marital_status_single: "", 
-      #                                                general_applicant_marital_status_widowed: "", 
-      #                                                general_applicant_marital_status_divorced: ""
-
-      #     )
-
-
-      # end
       @current_case.build_general_information(general_information_params)
       @current_case.build_i130(i130_params)
       # @current_case.build_i765(i765_params) if @current_case.options.find_by(form_id: "i765").include
 
       if @current_case.save
+          @current_case_general_information = @current_case.general_information
+          @current_case_i765 = @current_case.i765
+          @current_case_i130 = @current_case.i130
+
+          # Replace null string value with empty string in general informtion table to enable pdf form generation function
+          if @current_case_general_information
+            @current_case_general_information.attributes.each do |key, value|
+                if @current_case_general_information[key]== "null"
+                   @current_case_general_information[key] = ''
+                   @current_case_general_information.save
+                end
+            end
+          end
+
+           # Replace null string value with empty string in I765 table to enable pdf form generation function
+          if @current_case_i765
+            @current_case_i765.attributes.each do |key, value|
+                if @current_case_i765[key]== "null"
+                   @current_case_i765[key] = ''
+                   @current_case_i765.save
+                end
+            end
+          end
+
+           # Replace null string value with empty string in I-130 table to enable pdf form generation function
+          if @current_case_i130
+            @current_case_i130.attributes.each do |key, value|
+                if @current_case_i130[key]== "null"
+                   @current_case_i130[key] = ''
+                   @current_case_i130.save
+                end
+            end
+          end
+
+
+
+
+
         render json: {log: "Form fields population successed!"}
       else
         render json: {log: "Form fields population failed!"}

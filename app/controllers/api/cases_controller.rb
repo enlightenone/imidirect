@@ -9,17 +9,12 @@ module Api
 
     def populate
       @user = User.first 
-
       @current_case = @user.cases.find_by_case_id(params[:id])
       @current_case_id = params[:id]
       @current_case.build_general_information(general_information_params)
       @current_case.build_i130(i130_params)
       @current_case.build_i765(i765_params) if @current_case.options.find_by(form_id: "i765").include
 
-      # i130test = I130test.new(case_params)
-
-      # if i130test.save
-        # redirect_to  "http://yahoo.com"
       if @current_case.save
         render json: {log: "Form fields population successed!"}
       else

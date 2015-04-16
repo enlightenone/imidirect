@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Imidirect</title>
+  <title>AmeriDirect</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.js"></script>
@@ -12,13 +12,12 @@
   <header class="header">
     <div class="row">
       <div class="container"> 
-        ImiDirect
+        <%= image_tag "logo.gif" %>
       </div>
     </div>
   </header>
   <section class="container">
     <%= yield %>
   </section>
-
 </body>
 </html>

@@ -96,10 +96,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
 
     InitializeCase.$save();  
 
-
     // Beginning Of the Option Block ///////////////////
-
-
 
     var settings = OptionResource($scope.formOptions, $scope.case_id );
 

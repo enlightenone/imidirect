@@ -1,12 +1,9 @@
 <!-- form.html -->
 <div class="row" style="color: white;">
 <div class="col-sm-8 col-sm-offset-2">
-
     <div id="form-container">
-
         <div class="page-header text-center">
             <h2>Relative Immigration Application</h2>
-            
             <!-- the links to our nested states using relative paths -->
             <div id="status-buttons" class="text-center">
                 <a ui-sref-active="active" ui-sref=".section1"><span>1</span> Section 1</a>
@@ -20,20 +17,11 @@
             </div>
             <!-- add the active class if the state matches our ui-sref -->
         </div>
-        
         <!-- use ng-submit to catch the form submission and use our Angular function -->
         <form id="signup-form">
-
             <!-- our nested state views will be injected here -->
             <div id="form-views" ui-view></div>
         </form>
-
     </div>
-
-
 </div>
 </div>
-
-<pre>
-    {{formData}}
-</pre>

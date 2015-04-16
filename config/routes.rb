@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  
+
+   root 'home#index'
+
     get 'apps/index'
 
     resources :forms do

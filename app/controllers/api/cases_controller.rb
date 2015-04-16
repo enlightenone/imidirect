@@ -14,7 +14,7 @@ module Api
 
       @current_case.build_general_information(general_information_params)
       @current_case.build_i130(i130_params)
-      # @current_case.build_i765(i765_params) if @current_case.options.find_by(form_id: "i765").include
+      @current_case.build_i765(i765_params) if @current_case.options.find_by(form_id: "i765").include
 
       if @current_case.save
           @current_case_general_information = @current_case.general_information
@@ -84,6 +84,15 @@ module Api
               @case.options.create(form_id: "i765", form: "I-765", include: true)
         end
       end
+
+
+      # assign each options attribute is not defined.
+        @case.options.create(form_id: "i130", form: "I-130", include: false) unless @case.options.find_by_form_id("i130")
+        @case.options.create(form_id: "i485", form: "I-485", include: false) unless @case.options.find_by_form_id("i485")
+        @case.options.create(form_id: "i131", form: "I-131", include: false) unless @case.options.find_by_form_id("i131")
+        @case.options.create(form_id: "i765", form: "I-765", include: false) unless @case.options.find_by_form_id("i765")
+
+
       render json:  {log: "Options pupulation successes"}
     end
 

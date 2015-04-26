@@ -1,3 +1,13 @@
-<div style="background: image-url('statue-puzzle.jpg'); height: 300px; width: width: 100%; border: 1px solid black;">
-
+<div ng-controller="frmCntrl" style="height: 700px; width: width: 100%; border: 1px solid black;">
+  <form name="questionnaireForm" ng-submit="formFnc(frmOptions)">
+  <input type="radio" name="frmOptions.i130-status" value="pr">Permanent Resident<br>
+  <input type="radio" name="frmOptions.i130-status" value="citizen">US Citizen<br>
+  <input type="text" ng-model="frmOptions.test"><br>
+  <button type="submit">Next</button>
+  </form>
 </div>
+<br>
+{{frmOptions["test"]}}<br>
+
+
+        

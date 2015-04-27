@@ -1,13 +1,18 @@
-<div ng-controller="frmCntrl" style="height: 700px; width: width: 100%; border: 1px solid black;">
-  <form name="questionnaireForm" ng-submit="formFnc(frmOptions)">
-  <input type="radio" name="frmOptions.i130-status" value="pr">Permanent Resident<br>
-  <input type="radio" name="frmOptions.i130-status" value="citizen">US Citizen<br>
-  <input type="text" ng-model="frmOptions.test"><br>
-  <button type="submit">Next</button>
+<div ng-controller="frmCntrl">
+<div style="height: 250px; width: width: 100%; border: 1px solid black;">
+  <form name="questionnaireForm">
+    <ng-include src="formTemplate"></ng-include>
+  <!-- <button type="submit">Submit</button> -->
   </form>
 </div>
 <br>
-{{frmOptions["test"]}}<br>
+
+<pre>
+Form Template: {{formTemplate}}<br><br>
+Testing Variable: {{testVariable}}
+</pre>
+</div>
+
 
 
         

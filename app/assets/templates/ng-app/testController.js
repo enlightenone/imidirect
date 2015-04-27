@@ -1,6 +1,6 @@
 app.controller("frmCntrl", function($attrs, $scope,  $stateParams, $cookies, $cookieStore, myCache, Case, CaseInit, formsResource, OptionResource, $resource) {
 
-    $scope.frmOptions = {}; 
+     $scope.frmOptions= {};
 
     /* testing scope functionality*/
     $scope.testVariable = "hello"
@@ -13,10 +13,8 @@ app.controller("frmCntrl", function($attrs, $scope,  $stateParams, $cookies, $co
 
     
     /* End of Category Templates Section */
-    $scope.formFnc = function() {
-        $scope.testVariable = "Nihao" ;
-        console.log($scope.frmOptions.test);
-
+    $scope.formFnc = function(option) {
+        $scope.formTemplate = option == "pr" ? 'templates/i130/questionnaire/i130-pr.html' : 'templates/i130/questionnaire/i130-citizen.html'; 
     };
 });
 

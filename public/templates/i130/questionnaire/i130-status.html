@@ -1,4 +1,6 @@
-<input type="radio" name="frmOptions['i130-status']" value="pr">Permanent Resident<br>
-<input type="radio" name="frmOptions['i130-status']" value="citizen">US Citizen 
-<br>
-<button type="button" ng-click="formFnc()">Next</button><br>
+<label>What is your immigration status?</label>  <br><br>
+<input type="radio" name="i130_status" ng-model="frmOptions.i130_status" value="pr">Permanent Resident<br>
+<input type="radio" name="i130_status" ng-model="frmOptions.i130_status" value="citizen">US Citizen<br> 
+
+<button type="button" ng-click="formFnc(frmOptions.i130_status)">Next</button><br>
+

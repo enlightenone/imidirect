@@ -1,0 +1,16 @@
+<label>{{caseQualification}}</label> <br>
+
+<input type="radio" ng-model="frmOptions.qualification" value="yes"> Yes<br>
+<input type="radio" ng-model="frmOptions.qualification" value="no"> No<br><br>
+
+<div ng-if="frmOptions.qualification == 'yes' && quota">
+<h3>Is your quota current?</h3>
+<input type="radio" ng-model="frmOptions.quota" value="yes"> Yes<br>
+<input type="radio" ng-model="frmOptions.quota" value="no"> No<br><br>
+
+</div>
+
+
+<div ng-hide="frmOptions.qualification == 'yes' && quota">
+  <button ng-click="formFnc('i130', 'status')">Previous</button><button ng-click="formFnc3(frmOptions.qualification)">Next</button>
+</div>

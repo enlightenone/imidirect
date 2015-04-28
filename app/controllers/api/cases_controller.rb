@@ -8,7 +8,7 @@ module Api
     end
 
     def new
-      
+
     end
 
     def create
@@ -17,7 +17,7 @@ module Api
         @status = Status.create(filling: true, payment: false, complete: false, case_id: @case.id)
         render 'create'
       else
-        redirect_to "http://yahoo.com"
+        redirect_to root
       end
     end
 
@@ -47,7 +47,7 @@ module Api
 
            # Replace null string value with empty string in I765 table to enable pdf form generation function
           if @current_case_i765
-            @current_case_i765.attributes.each do |key, value|
+             @current_case_i765.attributes.each do |key, value|
                 if @current_case_i765[key]== "null"
                    @current_case_i765[key] = ''
                    @current_case_i765.save
@@ -64,11 +64,6 @@ module Api
                 end
             end
           end
-
-
-
-
-
         render json: {log: "Form fields population successed!"}
       else
         render json: {log: "Form fields population failed!"}
@@ -82,6 +77,8 @@ module Api
       @options = JSON.parse(params[:options])
          
       @application_id = @case.application_id #retrieve case id 
+
+
       # Determine if the case require i-130 form for the application and assign additional I-130 option if necessary
       if (1..8).include? @application_id 
         @options['i130-option'] = true 
@@ -96,29 +93,30 @@ module Api
               @case.options.create(form_id: "i131", form: "I-131", include: true)
         elsif key == 'i765-option' && value == true
               @case.options.create(form_id: "i765", form: "I-765", include: true)
+        elsif key == 'n400-option' && value == true
+              @case.options.create(form_id: "n400", form: "N-400", include: true)
         end
       end
 
-
-      # assign each options attribute is not defined.
+      # In case with I-130 multiple form application,  assign each options with false for each attribute is not defined. 
+      if @options['i130-option'] == true 
         @case.options.create(form_id: "i130", form: "I-130", include: false) unless @case.options.find_by_form_id("i130")
         @case.options.create(form_id: "i485", form: "I-485", include: false) unless @case.options.find_by_form_id("i485")
         @case.options.create(form_id: "i131", form: "I-131", include: false) unless @case.options.find_by_form_id("i131")
         @case.options.create(form_id: "i765", form: "I-765", include: false) unless @case.options.find_by_form_id("i765")
-
-
+      end
       render json:  {log: "Options pupulation successes"}
     end
 
  
-  private
+private
 
-def init_case_parms
-    params.require(:case).permit(:case_id, :application_id, :user_id)
-end
+    def case_parms
+        params.require(:case).permit(:case_id, :application_id, :user_id)
+    end
 
-def general_information_params
-  params.require(:case).require(:general_information).permit(
+    def general_information_params
+      params.require(:case).require(:general_information).permit(
                                                     :general_applicant_child_first_name_1,
                                                     :general_applicant_child_last_name_1,
                                                     :general_applicant_child_middle_name_1,
@@ -205,10 +203,10 @@ def general_information_params
                                                     :general_applicant_marital_status_divorced
                                                     )
   
-  end
+    end
 
-  def i130_params
-  params.require(:case).require(:i130).permit(
+    def i130_params
+    params.require(:case).require(:i130).permit(
                                                     :i130_adoption,
                                                     :i130_residence_through_adoption,
                                                     :i130_sponsor_first_name,
@@ -258,10 +256,10 @@ def general_information_params
                                                     :i130_BrotherSister,
                                                     :i130_child
                                                     ) 
-  end
+    end
 
-  def i765_params
-      params.require(:case).require(:i765).permit(
+    def i765_params
+        params.require(:case).require(:i765).permit(
                                                     :i765_previous_application,
                                                     :i765_office,
                                                     :i765_date_of_previous_application,
@@ -270,15 +268,15 @@ def general_information_params
                                                     :i765_application_replacement,
                                                     :i765_application_renewal
                                                   )
-  end
-
-    def case_params
-      params.require(:i130test).permit(:first_name, :last_name, :pod, :dob, :sponsor_name, :nationality, :country_of_destination, :date_of_return, :counsol, :spouse, :previous_application,  :office)
     end
 
-    def option_params
-      params.require(:optiontest).permit(:name, :age)
-    end
+    # def case_params
+    #   params.require(:i130test).permit(:first_name, :last_name, :pod, :dob, :sponsor_name, :nationality, :country_of_destination, :date_of_return, :counsol, :spouse, :previous_application,  :office)
+    # end
+
+    # def option_params
+    #   params.require(:optiontest).permit(:name, :age)
+    # end
 
   end
 end

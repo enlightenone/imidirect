@@ -1,4 +1,4 @@
-app.controller("frmCntrl", function($attrs, $scope,  $stateParams, $cookies, $cookieStore, myCache, Case, CaseInit, formsResource, OptionResource, $resource) {
+app.controller("frmCntrl", function($attrs, $scope,  $stateParams, $cookies, $cookieStore, myCache, CaseInit, formsResource, OptionResource, $resource) {
 
      $scope.frmOptions= {};
 

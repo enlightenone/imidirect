@@ -1,4 +1,4 @@
-app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, myCache, CaseInit, formsResource, OptionResource, $resource) {
+app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, myCache, Case, CaseInit, formsResource, OptionResource, $resource) {
 
    $scope.current_case_id = $stateParams['case_id']; // 
     //Object containing I-130 relative application options 

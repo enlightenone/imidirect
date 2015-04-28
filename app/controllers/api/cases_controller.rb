@@ -99,12 +99,12 @@ module Api
       end
 
       # In case with I-130 multiple form application,  assign each options with false for each attribute is not defined. 
-      if @options['i130-option'] == true 
+      # if @options['i130-option'] == true 
         @case.options.create(form_id: "i130", form: "I-130", include: false) unless @case.options.find_by_form_id("i130")
         @case.options.create(form_id: "i485", form: "I-485", include: false) unless @case.options.find_by_form_id("i485")
         @case.options.create(form_id: "i131", form: "I-131", include: false) unless @case.options.find_by_form_id("i131")
         @case.options.create(form_id: "i765", form: "I-765", include: false) unless @case.options.find_by_form_id("i765")
-      end
+      # end
       render json:  {log: "Options pupulation successes"}
     end
 

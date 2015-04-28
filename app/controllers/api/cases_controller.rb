@@ -7,6 +7,20 @@ module Api
       render json: @result
     end
 
+    def new
+      
+    end
+
+    def create
+      @case = Case.new(case_params)      
+      if @case.save 
+        @status = Status.create(filling: true, payment: false, complete: false, case_id: @case.id)
+        render 'create'
+      else
+        redirect_to "http://yahoo.com"
+      end
+    end
+
     def populate
       @user = User.first 
       @current_case = @user.cases.find_by_case_id(params[:id])
@@ -98,6 +112,10 @@ module Api
 
  
   private
+
+def init_case_parms
+    params.require(:case).permit(:case_id, :application_id, :user_id)
+end
 
 def general_information_params
   params.require(:case).require(:general_information).permit(

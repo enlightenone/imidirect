@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
-  
-  
-
    root 'home#index'
-
     get 'apps/index'
 
-    resources :forms do
-      resources :payments
-    end
-
+    # resources :forms do
+    #   resources :payments
+    # end
+    
     namespace :api do
       resources :cases do
         resources :charges
@@ -18,7 +14,7 @@ Rails.application.routes.draw do
     end
 
     resources :apps
-    resources :forms
+    # resources :forms
     # resources :pdfs
 
     post 'apis/populate/:id' => 'api/cases#populate'

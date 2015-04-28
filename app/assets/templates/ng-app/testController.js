@@ -4,7 +4,7 @@ app.controller("frmCntrl", function($attrs, $scope,  $stateParams, $cookies, $co
 
     /* Category Templates Section */
     /* default template */
-    if (!$scope.formTemplate){
+    if (!$scope.currentTemplate){
       $scope.currentTemplate ='templates/i130/questionnaire/i130-status.html' ;
     }
 

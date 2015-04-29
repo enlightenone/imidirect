@@ -17,7 +17,7 @@ module Api
         @status = Status.create(filling: true, payment: false, complete: false, case_id: @case.id)
         render 'create'
       else
-        redirect_to root
+        redirect_to "http://yahoo.com"
       end
     end
 
@@ -111,8 +111,8 @@ module Api
  
 private
 
-    def case_parms
-        params.require(:case).permit(:case_id, :application_id, :user_id)
+    def case_params
+      params.require(:case).permit(:case_id, :application_id, :user_id)
     end
 
     def general_information_params

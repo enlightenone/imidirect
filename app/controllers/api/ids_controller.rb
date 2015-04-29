@@ -17,7 +17,7 @@ module Api
         @status = Status.create(filling: true, payment: false, complete: false, case_id: @case.id)
         render 'create'
       else
-        redirect_to "http://yahoo.com"
+        redirect_to root
       end
 
     end

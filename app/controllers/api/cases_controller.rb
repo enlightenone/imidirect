@@ -29,11 +29,14 @@ module Api
       @current_case.build_general_information(general_information_params)
       @current_case.build_i130(i130_params)
       @current_case.build_i765(i765_params) if @current_case.options.find_by(form_id: "i765").include
+      @current_case.build_i485(i485_params) if @current_case.options.find_by(form_id: "i485").include
 
       if @current_case.save
           @current_case_general_information = @current_case.general_information
+          @current_case_i485 = @current_case.i485
           @current_case_i765 = @current_case.i765
           @current_case_i130 = @current_case.i130
+
 
           # Replace null string value with empty string in general informtion table to enable pdf form generation function
           if @current_case_general_information
@@ -64,6 +67,16 @@ module Api
                 end
             end
           end
+
+          if @current_case_i485
+            @current_case_i485.attributes.each do |key, value|
+                if @current_case_i485[key]== "null"
+                   @current_case_i485[key] = ''
+                   @current_case_i485.save
+                end
+            end
+          end
+
         render json: {log: "Form fields population successed!"}
       else
         render json: {log: "Form fields population failed!"}
@@ -267,6 +280,19 @@ private
                                                     :i765_application_employment,
                                                     :i765_application_replacement,
                                                     :i765_application_renewal
+                                                  )
+    end
+
+    def i485_params
+        params.require(:case).require(:i485).permit(
+                                                    :i485_applicant_visa_number_availability,
+                                                    :i485_applicant_visa_derivative_status,
+                                                    :i485_applicant_current_occupation,
+                                                    :i485_applicant_mother_first_name,
+                                                    :i485_applicant_father_first_name,
+                                                    :i485_applicant_i94_exact_name,
+                                                    :i485_applicant_previous_application,
+                                                    :i485_previous_filing_deposition
                                                   )
     end
 

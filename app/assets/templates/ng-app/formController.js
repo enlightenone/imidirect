@@ -321,6 +321,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
                                     i765_application_replacement:  ($scope.fieldData["i765_application_replacement"]? $scope.fieldData["i765_application_replacement"]: "null"),
                                     i765_application_renewal:  ($scope.fieldData["i765_application_renewal"]? $scope.fieldData["i765_application_renewal"]: "null")
                             },
+                            
                             i485: {
                                     i485_applicant_visa_number_availability: ($scope.fieldData["i485_applicant_visa_number_availability"]? $scope.fieldData["i485_applicant_visa_number_availability"] : "null"),
                                     i485_applicant_visa_derivative_status: ($scope.fieldData["i485_applicant_visa_derivative_status"]? $scope.fieldData["i485_applicant_visa_derivative_status"] : "null"),

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150321012128) do
+ActiveRecord::Schema.define(version: 20150429224703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -244,13 +244,17 @@ ActiveRecord::Schema.define(version: 20150321012128) do
   create_table "i485s", force: :cascade do |t|
     t.string   "address"
     t.integer  "case_id"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.string   "i485_application_type"
     t.string   "i485_applicant_current_occupation"
     t.string   "i485_applicant_mother_first_name"
     t.string   "i485_applicant_father_first_name"
     t.string   "i485_applicant_i94_exact_name"
+    t.string   "i485_applicant_visa_number_availability"
+    t.string   "i485_applicant_visa_derivative_status"
+    t.string   "i485_applicant_previous_application"
+    t.string   "i485_previous_filing_deposition"
   end
 
   add_index "i485s", ["case_id"], name: "index_i485s_on_case_id", using: :btree

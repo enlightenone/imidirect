@@ -6,8 +6,19 @@
 </div>
 
 <div class="form-group">
-    <label for="email">Email</label>
-    <input type="text" class="form-control" name="email" ng-model="formData.email">
+    <label for="i485_applicant_current_occupation">Current Occupation</label>
+    <input type="text" class="form-control" name="email" ng-model="formData.i485_applicant_current_occupation">
+    <label for="i485_applicant_mother_first_name">Applicant's Mother's First Name</label>
+    <input type="text" class="form-control" name="email" ng-model="formData.i485_applicant_mother_first_name">
+    <label for="i485_applicant_father_first_name">Applicant's Father's First Name</label>
+    <input type="text" class="form-control" name="email" ng-model="formData.i485_applicant_father_first_name">
+    <label for="i485_applicant_i94_exact_name">Exact Name on I-94 Form</label>
+    <input type="text" class="form-control" name="i485_applicant_i94_exact_name" ng-model="formData.i485_applicant_i94_exact_name">
+    <label for="i485_applicant_previous_application">Have you previously filed I-485 Application</label>
+    <input type="radio" ng-model="formData.i485_applicant_previous_application" value="yes"> Yes
+    <input type="radio" ng-model="formData.i485_applicant_previous_application" value="no"> No
+    <label type="text" >
+
 </div>
 <div class="form-group row">
 <div ng-if="switchOptions['section4'] == 'i485-option'" class="col-xs-6 col-xs-offset-3" ng-controller="formController">

@@ -320,18 +320,18 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
                                     i765_application_employment: ($scope.fieldData["i765_application_employment"]? $scope.fieldData["i765_application_employment"]: "null"),
                                     i765_application_replacement:  ($scope.fieldData["i765_application_replacement"]? $scope.fieldData["i765_application_replacement"]: "null"),
                                     i765_application_renewal:  ($scope.fieldData["i765_application_renewal"]? $scope.fieldData["i765_application_renewal"]: "null")
-                            },
-                            i485: {
-                                    i485_applicant_visa_number_availability: ($scope.fieldData["visa_number_availability"]? $scope.fieldData["visa_number_availability"] : "null"),
-                                    i485_applicant_visa_derivative_status: ($scope.fieldData["visa_derivative_status"]? $scope.fieldData["visa_derivative_status"] : "null"),
-                                    i485_applicant_current_occupation: ($scope.fieldData["i485_applicant_current_occupation"]? $scope.fieldData["i485_applicant_current_occupation"] : "null"),
-                                    i485_applicant_mother_first_name: ($scope.fieldData["i485_applicant_mother_first_name"]? $scope.fieldData["i485_applicant_mother_first_name"] : "null"),
-                                    i485_applicant_father_first_name: ($scope.fieldData["i485_applicant_father_first_name"]? $scope.fieldData["i485_applicant_father_first_name"] : "null"),
-                                    i485_applicant_i94_exact_name: ($scope.fieldData["i485_applicant_i94_exact_name"]? $scope.fieldData["i485_applicant_i94_exact_name"] : "null"),
-                                    i485_applicant_previous_application: ($scope.fieldData["i485_applicant_previous_application"]? $scope.fieldData["i485_applicant_previous_application"] : "null"),
-                                    i485_previous_filing_deposition: ($scope.fieldData["i485_previous_filing_deposition"]? $scope.fieldData["i485_previous_filing_deposition"] : "null")
-
                             }
+                            // i485: {
+                            //         i485_applicant_visa_number_availability: ($scope.fieldData["visa_number_availability"]? $scope.fieldData["visa_number_availability"] : "null"),
+                            //         i485_applicant_visa_derivative_status: ($scope.fieldData["visa_derivative_status"]? $scope.fieldData["visa_derivative_status"] : "null"),
+                            //         i485_applicant_current_occupation: ($scope.fieldData["i485_applicant_current_occupation"]? $scope.fieldData["i485_applicant_current_occupation"] : "null"),
+                            //         i485_applicant_mother_first_name: ($scope.fieldData["i485_applicant_mother_first_name"]? $scope.fieldData["i485_applicant_mother_first_name"] : "null"),
+                            //         i485_applicant_father_first_name: ($scope.fieldData["i485_applicant_father_first_name"]? $scope.fieldData["i485_applicant_father_first_name"] : "null"),
+                            //         i485_applicant_i94_exact_name: ($scope.fieldData["i485_applicant_i94_exact_name"]? $scope.fieldData["i485_applicant_i94_exact_name"] : "null"),
+                            //         i485_applicant_previous_application: ($scope.fieldData["i485_applicant_previous_application"]? $scope.fieldData["i485_applicant_previous_application"] : "null"),
+                            //         i485_previous_filing_deposition: ($scope.fieldData["i485_previous_filing_deposition"]? $scope.fieldData["i485_previous_filing_deposition"] : "null")
+
+                            // }
 
 
 

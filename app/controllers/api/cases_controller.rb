@@ -2,11 +2,8 @@ require 'SecureRandom' #set random
 include ParamsHelper # parameters helper
 include CasesHelper
 
-
 module Api 
   class CasesController < ApplicationController
-
-
     def index
      @result = params[:passedparams]
       render json: @result

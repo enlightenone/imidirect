@@ -1,7 +1,6 @@
 module ChargesHelper
 
   def fees_summary_display(case_id)
-
       @case = Case.find_by_case_id(case_id)
       @application_fee = @case.application.fee
       @app_description = @case.application.description
@@ -32,6 +31,25 @@ module ChargesHelper
     ################# End of Fee Pulling Function #######################
 
     return @fees_summary.to_json
+  end
+
+
+  def fees_transaciton(case_id)
+    @case = Case.find_by_case_id(case_id)
+    @amount = @case.total
+    @amount = (@amount*100).to_i
+
+    customer = Stripe::Customer.create(
+      :email => 'schow617@yahoo.com',
+      :card  => params[:stripeToken]
+    )
+
+    charge = Stripe::Charge.create(
+      :customer    => customer.id,
+      :amount      => @amount,
+      :description => "Immigration Case",
+      :currency    => 'usd'
+    )
 
   end
 

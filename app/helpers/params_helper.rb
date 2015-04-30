@@ -1,5 +1,5 @@
-module CasesHelper
-
+module ParamsHelper
+  # parameters methods 
   def g_params(option)
                                                   
     if option == "general"

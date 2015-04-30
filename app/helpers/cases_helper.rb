@@ -1,8 +1,9 @@
 module CasesHelper
-  
-  def params(option)
+
+  def g_params(option)
+                                                  
     if option == "general"
-            params.require(:case).require(:general_information).permit(
+        return  params.require(:case).require(:general_information).permit(
                                                     :general_applicant_child_first_name_1,
                                                     :general_applicant_child_last_name_1,
                                                     :general_applicant_child_middle_name_1,
@@ -89,7 +90,7 @@ module CasesHelper
                                                     :general_applicant_marital_status_divorced
                                                     )
     elsif option == "i130"
-    params.require(:case).require(:i130).permit(
+      return   params.require(:case).require(:i130).permit(
                                                     :i130_adoption,
                                                     :i130_residence_through_adoption,
                                                     :i130_sponsor_first_name,
@@ -140,7 +141,7 @@ module CasesHelper
                                                     :i130_child
                                                     ) 
     elsif option == "i765"
-        params.require(:case).require(:i765).permit(
+      return  params.require(:case).require(:i765).permit(
                                                     :i765_previous_application,
                                                     :i765_office,
                                                     :i765_date_of_previous_application,
@@ -150,7 +151,7 @@ module CasesHelper
                                                     :i765_application_renewal
                                                   )
     elsif option == "i485"  
-        params.require(:case).require(:i485).permit(
+       return params.require(:case).require(:i485).permit(
                                                     :i485_applicant_visa_number_availability,
                                                     :i485_applicant_visa_derivative_status,
                                                     :i485_applicant_current_occupation,

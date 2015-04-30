@@ -83,9 +83,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     case "aos":
         $scope.app_id = 10;
         break;
-    case "nat":
-        $scope.app_id = 11;
-        break;
+        
 }
 
 

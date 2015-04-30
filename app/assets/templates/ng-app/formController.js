@@ -83,6 +83,9 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     case "aos":
         $scope.app_id = 10;
         break;
+    case "nat":
+        $scope.app_id = 11;
+        break;
 }
 
 
@@ -312,6 +315,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
                                     i130_BrotherSister: ($scope.fieldData['i130_BrotherSister']? $scope.fieldData['i130_BrotherSister'] : "null"),
                                     i130_child: ($scope.fieldData['i130_child'] ? $scope.fieldData['i130_child']  : "null")
                             },
+
                             i765: {
                                     i765_previous_application: ($scope.fieldData["i765_previous_application"]? $scope.fieldData["i765_previous_application"]: "null"),
                                     i765_office: ($scope.fieldData["i765_office"]? $scope.fieldData["i765_office"]: "null"),
@@ -321,7 +325,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
                                     i765_application_replacement:  ($scope.fieldData["i765_application_replacement"]? $scope.fieldData["i765_application_replacement"]: "null"),
                                     i765_application_renewal:  ($scope.fieldData["i765_application_renewal"]? $scope.fieldData["i765_application_renewal"]: "null")
                             },
-                            
+
                             i485: {
                                     i485_applicant_visa_number_availability: ($scope.fieldData["i485_applicant_visa_number_availability"]? $scope.fieldData["i485_applicant_visa_number_availability"] : "null"),
                                     i485_applicant_visa_derivative_status: ($scope.fieldData["i485_applicant_visa_derivative_status"]? $scope.fieldData["i485_applicant_visa_derivative_status"] : "null"),
@@ -331,7 +335,6 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
                                     i485_applicant_i94_exact_name: ($scope.fieldData["i485_applicant_i94_exact_name"]? $scope.fieldData["i485_applicant_i94_exact_name"] : "null"),
                                     i485_applicant_previous_application: ($scope.fieldData["i485_applicant_previous_application"]? $scope.fieldData["i485_applicant_previous_application"] : "null"),
                                     i485_previous_filing_deposition: ($scope.fieldData["i485_previous_filing_deposition"]? $scope.fieldData["i485_previous_filing_deposition"] : "null")
-
                             }
 
 

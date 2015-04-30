@@ -2,6 +2,8 @@ require 'SecureRandom' #set random
 
 module Api 
   class CasesController < ApplicationController
+    include CasesHelper
+
     def index
      @result = params[:passedparams]
       render json: @result
@@ -11,15 +13,15 @@ module Api
 
     end
 
-    def create
-      @case = Case.new(case_params)      
-      if @case.save 
-        @status = Status.create(filling: true, payment: false, complete: false, case_id: @case.id)
-        render 'create'
-      else
-        redirect_to "http://yahoo.com"
-      end
-    end
+    # def create
+    #   @case = Case.new(case_params)      
+    #   if @case.save 
+    #     @status = Status.create(filling: true, payment: false, complete: false, case_id: @case.id)
+    #     render 'create'
+    #   else
+    #     redirect_to "http://yahoo.com"
+    #   end
+    # end
 
     def populate
       @user = User.first 
@@ -124,9 +126,9 @@ module Api
  
 private
 
-    def case_params
-      params.require(:case).permit(:case_id, :application_id, :user_id)
-    end
+    # def case_params
+    #   params.require(:case).permit(:case_id, :application_id, :user_id)
+    # end
 
     def general_information_params
       params.require(:case).require(:general_information).permit(

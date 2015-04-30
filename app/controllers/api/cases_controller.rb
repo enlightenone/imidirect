@@ -31,11 +31,11 @@ module Api
 private
     # strong parameters to populate 
     def general_information_params
-        g_params("general")
+      g_params("general")
     end
 
     def i130_params
-        g_params("i130")
+      g_params("i130")
     end
 
     def i765_params

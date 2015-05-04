@@ -342,6 +342,8 @@ div.resultdisplay::-moz-scrollbars-vertical {
 
 
 /* style.css */
+
+
 /* ANIMATION STYLINGS
 ============================================================================= */
 #signup-form            { position:relative; min-height:300px; overflow:hidden; padding:30px; }
@@ -367,6 +369,33 @@ div.resultdisplay::-moz-scrollbars-vertical {
     -moz-animation:slideOutLeft 0.5s both ease;
     animation:slideOutLeft 0.5s both ease;   
 }
+
+/* Exterior Form Animation */
+/* ========================================================================== */
+
+#section-container.ng-enter,
+#section-container.ng-leave {
+position:absolute; left:30px; right:30px;
+    transition:0.5s all ease; 
+    -moz-transition:0.5s all ease; 
+    -webkit-transition:0.5s all ease; 
+}
+
+#section-container.ng-enter {
+    -webkit-animation:slideInRight 0.5s both ease;
+    -moz-animation:slideInRight 0.5s both ease;
+    animation:slideInRight 0.5s both ease; 
+}
+
+#section-container.ng-leave {
+    -webkit-animation:slideOutLeft 0.5s both ease;
+    -moz-animation:slideOutLeft 0.5s both ease;
+    animation:slideOutLeft 0.5s both ease; 
+}
+
+
+/* End of Exterior Form Animation */
+/* ========================================================================== */
 
 /* ANIMATIONS
 ============================================================================= */

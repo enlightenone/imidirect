@@ -16,6 +16,29 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
         }
     };
 
+    // Initializing Case at the beginning of the case.
+    $scope.initCase = function() {
+        //generate case id with random characters
+        function makeid()
+        {
+          var text = "";
+          var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+          for( var i=0; i < 10; i++ )
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+          return text;
+        }
+        $scope.case_id = makeid();
+        console.log("initiating case id: " +$scope.case_id);
+        //populate cases table
+        var InitializeCase = new CaseInit();
+            InitializeCase.case = {
+                case_id: $scope.case_id,
+                application_id: 1,
+                user_id: 1
+            }; 
+        InitializeCase.$save(); 
+    };
+
     //catch form fields data and assign to cookie
     $scope.catchData = function(name, form_data){         
         var cache = myCache.get('myData');
@@ -37,19 +60,19 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     //function to choose forms
     $scope.chooseForm = function(category) {
 
-
+    console.log("Section debug case id: " + $scope.case_id);
 
     //generate case id with random characters
-    function makeid()
-        {
-            var text = "";
-            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            for( var i=0; i < 10; i++ )
-                text += possible.charAt(Math.floor(Math.random() * possible.length));
-            return text;
-        }
+    // function makeid()
+    //     {
+    //         var text = "";
+    //         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    //         for( var i=0; i < 10; i++ )
+    //             text += possible.charAt(Math.floor(Math.random() * possible.length));
+    //         return text;
+    //     }
 
-    $scope.case_id = makeid();
+    // $scope.case_id = makeid();
 
     //convert application code to app_id in order to assign specific application to the case
     switch (category) {
@@ -89,15 +112,15 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
 }
 
 
-    //populate cases table
-    var InitializeCase = new CaseInit();
-            InitializeCase.case = {
-             case_id: $scope.case_id,
-             application_id: 1,
-             user_id: 1
-            }; 
+    // //populate cases table
+    // var InitializeCase = new CaseInit();
+    //         InitializeCase.case = {
+    //          case_id: $scope.case_id,
+    //          application_id: 1,
+    //          user_id: 1
+    //         }; 
 
-    InitializeCase.$save();  
+    // InitializeCase.$save();  
 
     // Beginning Of the Option Block ///////////////////
 

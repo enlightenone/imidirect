@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150504044119) do
+ActiveRecord::Schema.define(version: 20150504062721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -299,7 +299,7 @@ ActiveRecord::Schema.define(version: 20150504044119) do
     t.integer  "case_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.string   "questionnaire"
+    t.boolean  "questionnaire"
   end
 
   add_index "statuses", ["case_id"], name: "index_statuses_on_case_id", using: :btree

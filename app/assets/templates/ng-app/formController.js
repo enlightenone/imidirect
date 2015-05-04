@@ -60,20 +60,6 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     //function to choose forms
     $scope.chooseForm = function(category) {
 
-    console.log("Section debug case id: " + $scope.case_id);
-
-    //generate case id with random characters
-    // function makeid()
-    //     {
-    //         var text = "";
-    //         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    //         for( var i=0; i < 10; i++ )
-    //             text += possible.charAt(Math.floor(Math.random() * possible.length));
-    //         return text;
-    //     }
-
-    // $scope.case_id = makeid();
-
     //convert application code to app_id in order to assign specific application to the case
     switch (category) {
     case "f1us":
@@ -109,28 +95,15 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     case "nat":
         $scope.app_id = 11;
         break;
-}
-
-
-    // //populate cases table
-    // var InitializeCase = new CaseInit();
-    //         InitializeCase.case = {
-    //          case_id: $scope.case_id,
-    //          application_id: 1,
-    //          user_id: 1
-    //         }; 
-
-    // InitializeCase.$save();  
-
+    }
+ 
     // Beginning Of the Option Block ///////////////////
-
+    
     var settings = OptionResource($scope.formOptions, $scope.case_id );
-
     $scope.results = settings.initiate({id:1}); 
     $scope.results.$promise.then(function(data) {
     console.log(data);
     });
-
 
     // End of Option lock//////////////////////
 

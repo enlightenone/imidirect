@@ -1,6 +1,12 @@
 app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, myCache, Case, CaseInit, formsResource, OptionResource, $resource) {
     
-   $scope.questionnaire_status_flag = true ; //Questionnaire status bar is highlighted by default;
+   $scope.questionnaire_status_fag = true ; //Questionnaire status bar is highlighted by default;
+   // if ($scope.forms_status_flag == true ) {
+   //  console.log("Form flag change to true");
+   // }
+   // $scope.forms_status_flag = false;
+    console.log("Outside of formController");
+
    $scope.current_case_id = $stateParams['case_id']; // 
     //Object containing I-130 relative application options 
     $scope.formOptions = {} ; 
@@ -21,11 +27,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     $scope.initCase = function() {
         //generate case id with random characters
 
-        $scope.flag = true;
-        $scope.flag2 = false;
-
-        console.log($scope.flag);
-
+        console.log("Inside of initCase Function");
         function makeid()
         {
           var text = "";
@@ -68,8 +70,8 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     $scope.chooseForm = function(category) {
 
     $scope.forms_status_flag = true ; 
+    console.log("inside of chooseForm Function");
 
-    console.log("Form flag: " + $scope.forms_status_flag);
     //convert application code to app_id in order to assign specific application to the case
     switch (category) {
     case "f1us":
@@ -165,6 +167,8 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     // function to process the form
     $scope.processForm = function() {
 
+
+        console.log("Inside of processForm Function");
         $scope.previousSavedCache = myCache.get('myData');
         var count = 1 ;
         var individualFieldData = $scope.previousSavedCache['form1'] ;

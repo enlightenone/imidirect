@@ -343,6 +343,19 @@ div.resultdisplay::-moz-scrollbars-vertical {
 
 /* style.css */
 
+/* status bar styling */
+
+.questionnaire_status {
+  color: blue;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.forms_status {
+  color: red;
+  font-size: 15px; 
+}
+/* end of progress bar  */
 
 /* ANIMATION STYLINGS
 ============================================================================= */

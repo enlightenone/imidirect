@@ -1,12 +1,17 @@
 <div class="container">
 
-<progressbar style="width: 800px; height: 30px; border: 2px solid black; display: block;">
-  <section style="border: 1px solid blue; height: 50px; width: 250px; display: inline; font-size: 15px; padding: 5px;"><span ng-class="status_highlight_int:, status_highlight:  ">Questionnaire</span></section>
-  <section style="border: 1px solid blue; height: 50px; width: 250px; display: inline; font-size: 15px; padding: 5px;"><span ng-class="status_highlight_int:, status_highlight:  ">Forms</span></section>
-  <section style="border: 1px solid blue; height: 50px; width: 250px; display: inline; font-size: 15px; padding: 5px;"><span ng-class="status_highlight_int:, status_highlight:  ">Transaction</span></section>
+<progressbar style="width: 600px; height: 30px; border: 2px solid black; display: block;">
+  <section style="border: 1px solid blue; height: 50px; width: 250px; display: inline; font-size: 15px; padding: 5px;"><span ng-class="{status_highlight_int: flag, status_highlight: flag2 }">Questionnaire</span></section>
+  <section style="border: 1px solid blue; height: 50px; width: 250px; display: inline; font-size: 15px; padding: 5px;"><span ng-class="{status_highlight_int: flag2, status_highlight: flag }">Forms</span></section>
+  <section style="border: 1px solid blue; height: 50px; width: 250px; display: inline; font-size: 15px; padding: 5px;"><span ng-class="{status_highlight_int: flag, status_highlight: flag2 }">Transaction</span></section>
 </progressbar>
 
   <!-- views will be injected here -->
  <div id="section-container" ui-view></div>
 
 </div>
+
+<pre>
+  Flag: {{flag2}}<br><br>
+  Flag2: {{flag}}
+</pre>

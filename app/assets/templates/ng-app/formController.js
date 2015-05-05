@@ -1,5 +1,6 @@
 app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, myCache, Case, CaseInit, formsResource, OptionResource, $resource) {
-
+    
+   $scope.flag = false ; 
    $scope.current_case_id = $stateParams['case_id']; // 
     //Object containing I-130 relative application options 
     $scope.formOptions = {} ; 
@@ -19,6 +20,12 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     // Initializing Case at the beginning of the case.
     $scope.initCase = function() {
         //generate case id with random characters
+
+        $scope.flag = true;
+        $scope.flag2 = false;
+
+        console.log($scope.flag);
+
         function makeid()
         {
           var text = "";

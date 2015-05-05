@@ -345,16 +345,30 @@ div.resultdisplay::-moz-scrollbars-vertical {
 
 /* status bar styling */
 
-.questionnaire_status {
+.status_highlight {
+  color: black;
+  font-size: 15px;
+}
+
+.status_highlight_int {
   color: blue;
   font-weight: bold;
   font-size: 15px;
 }
 
-.forms_status {
+.status_highlight_on {
   color: red;
-  font-size: 15px; 
+  font-weight: bold;
+  font-size: 15px;
 }
+
+
+
+
+
+
+
+
 /* end of progress bar  */
 
 /* ANIMATION STYLINGS

@@ -1,8 +1,8 @@
 <div class="container">
 
-<progressbar style="width: 600px; height: 30px; border: 2px solid black; display: block;">
-  <section style="border: 1px solid blue; height: 50px; width: 250px; display: inline; font-size: 15px; padding: 5px;"><span ng-class="{status_highlight_int: flag, status_highlight: flag2 }">Questionnaire</span></section>
-  <section style="border: 1px solid blue; height: 50px; width: 250px; display: inline; font-size: 15px; padding: 5px;"><span ng-class="{status_highlight_int: flag2, status_highlight: flag }">Forms</span></section>
+<progressbar style="width: px; height: 30px; border: 2px solid black; display: block;">
+  <section style="border: 1px solid blue; height: 50px; width: 250px; display: inline; font-size: 15px; padding: 5px;"><span ng-class="{status_highlight_int: questionnaire_status_flag }">Questionnaire</span></section>
+  <section style="border: 1px solid blue; height: 50px; width: 250px; display: inline; font-size: 15px; padding: 5px;"><span ng-class="{status_highlight_int: forms_status_flag }">Forms</span></section>
   <section style="border: 1px solid blue; height: 50px; width: 250px; display: inline; font-size: 15px; padding: 5px;"><span ng-class="{status_highlight_int: flag, status_highlight: flag2 }">Transaction</span></section>
 </progressbar>
 
@@ -13,5 +13,5 @@
 
 <pre>
   Flag: {{flag2}}<br><br>
-  Flag2: {{flag}}
+  Flag2: {{forms_status_flag}}
 </pre>

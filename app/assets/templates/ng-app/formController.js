@@ -1,6 +1,6 @@
 app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, myCache, Case, CaseInit, formsResource, OptionResource, $resource) {
     
-   $scope.flag = false ; 
+   $scope.questionnaire_status_flag = true ; //Questionnaire status bar is highlighted by default;
    $scope.current_case_id = $stateParams['case_id']; // 
     //Object containing I-130 relative application options 
     $scope.formOptions = {} ; 
@@ -67,6 +67,9 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     //function to choose forms
     $scope.chooseForm = function(category) {
 
+    $scope.forms_status_flag = true ; 
+
+    console.log("Form flag: " + $scope.forms_status_flag);
     //convert application code to app_id in order to assign specific application to the case
     switch (category) {
     case "f1us":

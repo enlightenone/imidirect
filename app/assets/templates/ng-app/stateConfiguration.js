@@ -2,13 +2,18 @@
 // =============================================================================
 app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
-        .state('option',{
+        .state('app',{
+            url: '',
+            templateUrl: 'apps/main-container.html',
+            controller: 'formController'
+        })
+        .state('app.option',{
             url: '/option',
             templateUrl: 'options/i130-option.html',
             controller: 'formController'
         })
         // route to show our basic form (/form)section1&
-        .state('form', {
+        .state('app.form', {
             url: '/form?case_id&application_type&section1&section2&section3&section4&section5&section6&section7&section8&section9',
             templateUrl: 'forms/form.html',
             controller: 'formController'
@@ -16,7 +21,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         // nested states 
         // each of these sections will have their own view
         // url will be nested (/form/profile)
-        .state('form.section1', {
+        .state('app.form.section1', {
             url: '/section1',
             templateProvider: function($http, $stateParams){
                 var obj = $stateParams;
@@ -30,7 +35,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'formController'
         })
         // url will be /form/interests
-        .state('form.section2', {
+        .state('app.form.section2', {
             url: '/section2',
             templateProvider: function($http, $stateParams){
                 var obj = $stateParams;
@@ -44,7 +49,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'formController'
         })
         // url will be /form/interests
-        .state('form.section3', {
+        .state('app.form.section3', {
             url: '/section3',
             templateProvider: function($http, $stateParams){
                 var obj = $stateParams;
@@ -58,7 +63,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'formController'
         })
         // url will be /form/interests
-        .state('form.section4', {
+        .state('app.form.section4', {
             url: '/section4',
             templateProvider: function($http, $stateParams){
                 var obj = $stateParams;
@@ -72,7 +77,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'formController'
         })
         // url will be /form/interests
-        .state('form.section5', {
+        .state('app.form.section5', {
             url: '/section5',
             templateProvider: function($http, $stateParams){
                 var obj = $stateParams;
@@ -86,7 +91,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'formController'
         })
         // url will be /form/interests
-        .state('form.section6', {
+        .state('app.form.section6', {
             url: '/section6',
             templateProvider: function($http, $stateParams){
                 var obj = $stateParams;
@@ -100,7 +105,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'formController'
         })
         // url will be /form/payment
-        .state('form.section7', {
+        .state('app.form.section7', {
             url: '/section7',
             templateProvider: function($http, $stateParams){
                 var obj = $stateParams;
@@ -114,7 +119,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'formController'
         })
         // url will be /form/payment
-        .state('form.section8', {
+        .state('app.form.section8', {
             url: '/section8',
             templateProvider: function($http, $stateParams){
                 var obj = $stateParams;
@@ -127,7 +132,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             },
             controller: 'formController'
         })
-        .state('form.section9', {
+        .state('app.form.section9', {
             url: '/section9',
             templateProvider: function($http, $stateParams){
                 var obj = $stateParams;
@@ -141,7 +146,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'formController'
         })
         //Payment route
-        .state('charge', {
+        .state('app.charge', {
             url: '/charge?case_id&fees_calculation_flag',
             templateUrl: 'charges/new.html',
             controller: 'formController'

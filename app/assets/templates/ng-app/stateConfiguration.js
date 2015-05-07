@@ -8,7 +8,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'formController'
         })
         .state('app.option',{
-            url: '/option',
+            url: '/option?questionnaire_flag',
             templateUrl: 'options/i130-option.html',
             controller: 'formController'
         })

@@ -1,6 +1,7 @@
-app.controller("formController", function($scope,  $stateParams, $cookies, $cookieStore, myCache, Case, CaseInit, formsResource, OptionResource, $resource) {
-    
-   // $scope.questionnaire_status_fag = true ; //Questionnaire status bar is highlighted by default;
+app.controller("formController", function($scope, $stateParams, $cookies, $cookieStore, myCache, Case, CaseInit, formsResource, OptionResource, $resource) {
+   
+
+   $scope.questionnaire_status_fag = true ; //Questionnaire status bar is highlighted by default;
    // if ($scope.forms_status_flag == true ) {
    //  console.log("Form flag change to true");
    // }
@@ -16,12 +17,22 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     $scope.formCategory = {}; 
 
 
+    // $scope.testFunction = function (variable){
+
+    //     $scope.$watch('variable', function(newVal, oldVal) {
+    //         $
+
+    //     })
+
+    // };
+
+
 
     //Setting status cooking
     $scope.statusFlag = function(status_name, flag ) {
         $cookieStore.put(status_name, flag);
         var test = $cookieStore.get(status_name);
-        console.log("Cookie Name:" + test);
+        console.log("Cookie Name:" + test); 
     }
 
     //remove cookie's content before form
@@ -40,31 +51,31 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     };
 
     // Assign the status on  status bar
-    $scope.statusBarFnc = function() {
+    // $scope.statusBarFnc = function() {
         
-        // default questionnaire first default
-        $scope.questionnaire_status_fag = true;
+    //     // default questionnaire first default
+    //     $scope.questionnaire_status_fag = true;
 
-        if ($cookieStore.get('forms') == true){
-            alert("form");
-           $scope.forms_status_flag = true;
-        } 
+    //     if ($cookieStore.get('forms') == true){
+    //         alert("form");
+    //        $scope.forms_status_flag = true;
+    //     } 
 
-        if ($cookieStore.get('transaction') == true){
-            alert("transaction");
-            $scope.transaction_status_flag = true;
-            $scope.restCookie();
-        }
-    };
+    //     if ($cookieStore.get('transaction') == true){
+    //         alert("transaction");
+    //         $scope.transaction_status_flag = true;
+    //         $scope.restCookie();
+    //     }
+    // };
 
      // activates status bar
-    $scope.statusBarFnc();
+    // $scope.statusBarFnc();
 
     // Initializing Case at the beginning of the case.
     $scope.initCase = function() {
 
         // setting of questionnaire status
-        $scope.statusFlag("questionnaire", true);
+        // $scope.statusFlag("questionnaire", true);
 
         console.log("Inside of initCase Function");
         //generate case id with random character
@@ -87,7 +98,6 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
             }; 
         InitializeCase.$save(); 
     };
-
     //catch form fields data and assign to cookie
     $scope.catchData = function(name, form_data){         
         var cache = myCache.get('myData');
@@ -108,9 +118,17 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
 
     //function to choose forms
     $scope.chooseForm = function(category) {
+   
+    console.log("chooseForm flag: " + $stateParams['flag']);
+
+   //  $scope.$watch('test_flag', function() {
+   //    $scope.forms_status_flag = true ;
+   //    alert(  $scope.forms_status_flag );
+   // });
+
 
     //setting cookie for forms status
-    $scope.statusFlag("forms", true);
+    // $scope.statusFlag("forms", true);
 
     //convert application code to app_id in order to assign specific application to the case
     switch (category) {
@@ -207,7 +225,7 @@ app.controller("formController", function($scope,  $stateParams, $cookies, $cook
     // function to process the form
     $scope.processForm = function() {
 
-        $scope.statusFlag("transaction", true);
+        // $scope.statusFlag("transaction", true);
         console.log("Inside of processForm Function");
         $scope.previousSavedCache = myCache.get('myData');
         var count = 1 ;

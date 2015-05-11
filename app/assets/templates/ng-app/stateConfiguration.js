@@ -5,16 +5,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('app',{
             url: '',
             templateUrl: 'apps/main-container.html',
-            controller: 'formController'
+            controller: 'statusController'
         })
         .state('app.option',{
-            url: '/option?questionnaire_flag',
+            url: '/option',
             templateUrl: 'options/i130-option.html',
             controller: 'formController'
         })
         // route to show our basic form (/form)section1&
         .state('app.form', {
-            url: '/form?case_id&application_type&section1&section2&section3&section4&section5&section6&section7&section8&section9',
+            url: '/form?case_id&form_flag&application_type&section1&section2&section3&section4&section5&section6&section7&section8&section9',
             templateUrl: 'forms/form.html',
             controller: 'formController'
         })
@@ -34,7 +34,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             },
             controller: 'formController'
         })
-        // url will be /form/interests
+        // url wil /form/interests
         .state('app.form.section2', {
             url: '/section2',
             templateProvider: function($http, $stateParams){
@@ -153,5 +153,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
         });
     // catch all route
     // send users to the form page 
-    $urlRouterProvider.otherwise('form/section1?case_id&application_type=i130&section1&section2&section3&section4&section5&section6&section7&section8&section9');
+    $urlRouterProvider.otherwise('form/section1?case_id&form_flag&application_type=i130&section1&section2&section3&section4&section5&section6&section7&section8&section9');
 });

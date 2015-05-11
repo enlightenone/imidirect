@@ -1,7 +1,8 @@
 app.controller("formController", function($scope, $stateParams, $cookies, $cookieStore, myCache, Case, CaseInit, formsResource, OptionResource, $resource) {
    
+    // console.log("Form Flag: " + $stateParams['form_flag']);
 
-   $scope.questionnaire_status_fag = true ; //Questionnaire status bar is highlighted by default;
+   // $scope.questionnaire_status_fag = true ; //Questionnaire status bar is highlighted by default;
    // if ($scope.forms_status_flag == true ) {
    //  console.log("Form flag change to true");
    // }
@@ -16,24 +17,14 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
     //Form Category
     $scope.formCategory = {}; 
 
+    // console.log("whole params content: " + $scope.switchOptions);
 
-    // $scope.testFunction = function (variable){
-
-    //     $scope.$watch('variable', function(newVal, oldVal) {
-    //         $
-
-    //     })
-
-    // };
-
-
-
-    //Setting status cooking
-    $scope.statusFlag = function(status_name, flag ) {
-        $cookieStore.put(status_name, flag);
-        var test = $cookieStore.get(status_name);
-        console.log("Cookie Name:" + test); 
-    }
+    // //Setting status cooking
+    // $scope.statusFlag = function(status_name, flag ) {
+    //     $cookieStore.put(status_name, flag);
+    //     var test = $cookieStore.get(status_name);
+    //     console.log("Cookie Name:" + test); 
+    // }
 
     //remove cookie's content before form
     $scope.restCookie = function(){
@@ -52,30 +43,33 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
 
     // Assign the status on  status bar
     // $scope.statusBarFnc = function() {
-        
+    //     // alert("I am inside of statusBarFnc!");
+    //     console.log("Inside statusBarFnc");
     //     // default questionnaire first default
     //     $scope.questionnaire_status_fag = true;
-
-    //     if ($cookieStore.get('forms') == true){
-    //         alert("form");
+    //     // $scope.forms_status_flag = true;
+    //      // $scope.forms_status_flag = true;
+    //     if ($stateParams['form_flag'] == 'true') {
+    //         // alert("statusBarFnc function is working");
+    //         console.log("Inside statusBarFnc conditional statement");
     //        $scope.forms_status_flag = true;
+    //        $scope.questionnaire_status_fag = false;
+    //         // console.log("Form status flag inside of statusBus function: " + $scope.forms_status_flag);
     //     } 
 
-    //     if ($cookieStore.get('transaction') == true){
-    //         alert("transaction");
+    //     if ($stateParams['transaction_flag'] == true) {
     //         $scope.transaction_status_flag = true;
-    //         $scope.restCookie();
     //     }
     // };
 
-     // activates status bar
     // $scope.statusBarFnc();
-
     // Initializing Case at the beginning of the case.
     $scope.initCase = function() {
 
         // setting of questionnaire status
         // $scope.statusFlag("questionnaire", true);
+
+        // $scope.$parent.questionnaire_status_flag = false;
 
         console.log("Inside of initCase Function");
         //generate case id with random character
@@ -118,8 +112,7 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
 
     //function to choose forms
     $scope.chooseForm = function(category) {
-   
-    console.log("chooseForm flag: " + $stateParams['flag']);
+   $scope.$parent.forms_status_flag = false;
 
    //  $scope.$watch('test_flag', function() {
    //    $scope.forms_status_flag = true ;
@@ -215,16 +208,26 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
     i++;
     $scope.switchButtons["section" + i] = "submit";
 
-    location.assign('#form/section1?case_id=' + $scope.case_id +'&application_type='+ $scope.switchButtons["application_type"] + '&section1=' + $scope.switchButtons["section1"] + '&section2=' + $scope.switchButtons["section2"]
+    location.assign('#form/section1?case_id=' + $scope.case_id + '&form_flag=true' + '&application_type='+ $scope.switchButtons["application_type"] + '&section1=' + $scope.switchButtons["section1"] + '&section2=' + $scope.switchButtons["section2"]
                 + '&section3=' + $scope.switchButtons["section3"] + '&section4=' + $scope.switchButtons["section4"] + '&section5=' + $scope.switchButtons["section5"] 
                 + '&section6=' + $scope.switchButtons["section6"] + '&section7=' + $scope.switchButtons["section7"] + '&section8=' + $scope.switchButtons["section8"] 
                 + '&section9=' + $scope.switchButtons["section9"]
                 );
     };
+
+    $scope.statusTestFnc = function() {
+         // alert("hello");
+         $scope.$parent.transaction_status_flag  = false;
+         console.log("statusTestFnc is activated!");
+    };
     
     // function to process the form
     $scope.processForm = function() {
 
+        // alert("hello");
+         // $scope.$parent.transaction_status_flag  = false;
+
+        // $scope.$parent.forms_status_flag = true;
         // $scope.statusFlag("transaction", true);
         console.log("Inside of processForm Function");
         $scope.previousSavedCache = myCache.get('myData');

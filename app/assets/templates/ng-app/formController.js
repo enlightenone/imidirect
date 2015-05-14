@@ -223,12 +223,6 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
     
     // function to process the form
     $scope.processForm = function() {
-
-        // alert("hello");
-         // $scope.$parent.transaction_status_flag  = false;
-
-        // $scope.$parent.forms_status_flag = true;
-        // $scope.statusFlag("transaction", true);
         console.log("Inside of processForm Function");
         $scope.previousSavedCache = myCache.get('myData');
         var count = 1 ;

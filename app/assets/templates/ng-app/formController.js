@@ -1,12 +1,5 @@
 app.controller("formController", function($scope, $stateParams, $cookies, $cookieStore, myCache, Case, CaseInit, formsResource, OptionResource, $resource) {
    
-    // console.log("Form Flag: " + $stateParams['form_flag']);
-
-   // $scope.questionnaire_status_fag = true ; //Questionnaire status bar is highlighted by default;
-   // if ($scope.forms_status_flag == true ) {
-   //  console.log("Form flag change to true");
-   // }
-   // $scope.forms_status_flag = false;
     console.log("Outside of formController");
 
    $scope.current_case_id = $stateParams['case_id']; // 
@@ -16,15 +9,6 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
     $scope.switchOptions = $stateParams ; 
     //Form Category
     $scope.formCategory = {}; 
-
-    // console.log("whole params content: " + $scope.switchOptions);
-
-    // //Setting status cooking
-    // $scope.statusFlag = function(status_name, flag ) {
-    //     $cookieStore.put(status_name, flag);
-    //     var test = $cookieStore.get(status_name);
-    //     console.log("Cookie Name:" + test); 
-    // }
 
     //remove cookie's content before form
     $scope.restCookie = function(){
@@ -41,35 +25,9 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
         });
     };
 
-    // Assign the status on  status bar
-    // $scope.statusBarFnc = function() {
-    //     // alert("I am inside of statusBarFnc!");
-    //     console.log("Inside statusBarFnc");
-    //     // default questionnaire first default
-    //     $scope.questionnaire_status_fag = true;
-    //     // $scope.forms_status_flag = true;
-    //      // $scope.forms_status_flag = true;
-    //     if ($stateParams['form_flag'] == 'true') {
-    //         // alert("statusBarFnc function is working");
-    //         console.log("Inside statusBarFnc conditional statement");
-    //        $scope.forms_status_flag = true;
-    //        $scope.questionnaire_status_fag = false;
-    //         // console.log("Form status flag inside of statusBus function: " + $scope.forms_status_flag);
-    //     } 
 
-    //     if ($stateParams['transaction_flag'] == true) {
-    //         $scope.transaction_status_flag = true;
-    //     }
-    // };
-
-    // $scope.statusBarFnc();
     // Initializing Case at the beginning of the case.
     $scope.initCase = function() {
-
-        // setting of questionnaire status
-        // $scope.statusFlag("questionnaire", true);
-
-        // $scope.$parent.questionnaire_status_flag = false;
 
         console.log("Inside of initCase Function");
         //generate case id with random character
@@ -114,14 +72,6 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
     $scope.chooseForm = function(category) {
    $scope.$parent.forms_status_flag = false;
 
-   //  $scope.$watch('test_flag', function() {
-   //    $scope.forms_status_flag = true ;
-   //    alert(  $scope.forms_status_flag );
-   // });
-
-
-    //setting cookie for forms status
-    // $scope.statusFlag("forms", true);
 
     //convert application code to app_id in order to assign specific application to the case
     switch (category) {

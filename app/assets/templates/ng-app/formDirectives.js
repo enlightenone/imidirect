@@ -2,6 +2,9 @@ app.directive('ngCaseForm', function(){
   return {
     restrict: "E",
     transclude: true, 
+    scope: {
+      case: '@'
+    },
     templateUrl: 'cases/i130/template.html'
   }
 })

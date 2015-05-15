@@ -29,14 +29,18 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
     //************** Case form selections **********//
 
     $scope.formTmpSelection = function(selections) {
-        switch (form_selection) {
-            case "i130-applicant":
-                $scope.form_template = 'i130-applicant';
-                break;
-            case "f2us":
-                $scope.form_template = 'i130-applicant';
-                break;
-        }
+        // $scope.application_type = selections['application_type'];
+        $scope.application_type = 'i130';
+        $scope.form_template = 'i130-applicant';
+
+        // switch (selections['section1']) {
+        //     case "i130-applicant":
+        //         $scope.form_template = 'i130-applicant';
+        //         break;
+        //     case "f2us":
+        //         $scope.form_template = 'i130-applicant';
+        //         break;
+        //}
 
         console.log("Inside of FormTmpSelection Function");
         console.log("form_template variable: " + $scope.form_template );

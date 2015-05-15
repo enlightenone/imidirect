@@ -28,7 +28,7 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
 
     //************** Case form selections **********//
 
-    $scope.formTmpSelection = function(form_selection) {
+    $scope.formTmpSelection = function(selections) {
         switch (form_selection) {
             case "i130-applicant":
                 $scope.form_template = 'i130-applicant';
@@ -42,13 +42,16 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
         console.log("form_template variable: " + $scope.form_template );
     };
 
-    var case_selection = $stateParams['section1'];
+   
 
-    console.log("Case selection value passed from params: " + case_selection );
+    console.log("Case selection value passed from params: " + $scope.switchOptions  );
 
-    $scope.formTmpSelection(case_selection);
+    $scope.formTmpSelection($scope.switchOptions );
 
      //********* End of Case form selections *******//
+
+
+
 
     // Initializing Case at the beginning of the case.
     $scope.initCase = function() {

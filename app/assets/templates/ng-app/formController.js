@@ -29,9 +29,16 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
     //************** Case form selections **********//
 
     $scope.formTmpSelection = function(selections) {
-        // $scope.application_type = selections['application_type'];
-        $scope.application_type = 'i130';
-        $scope.form_template = 'i130-applicant';
+        $scope.application_type = selections['application_type'];
+        $scope.form_templates = {};
+        var key;
+        for (i=1; i < 10 ; i++) {
+            key = 'section' + i ;
+            // console.log("key" + i + ": " + key);
+            // console.log("selections content" + i + ": " +  selections[key] );
+            $scope.form_templates[key] = selections[key] ;
+            // console.log("FORM TEMPLATES HOLD: " + $scope.form_templates[key] );
+        }
 
         // switch (selections['section1']) {
         //     case "i130-applicant":
@@ -40,10 +47,10 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
         //     case "f2us":
         //         $scope.form_template = 'i130-applicant';
         //         break;
-        //}
+        // }
 
-        console.log("Inside of FormTmpSelection Function");
-        console.log("form_template variable: " + $scope.form_template );
+        // console.log("Inside of FormTmpSelection Function");
+        // console.log("form_template variable: " + $scope.form_template );
     };
 
    

@@ -23,22 +23,22 @@ app.config(function($stateProvider, $urlRouterProvider) {
         // url will be nested (/form/profile)
         .state('app.form.section1', {
             url: '/section1',
-            templateUrl: 'templates/sections/section1.html'
-            ,
+            templateUrl: 'templates/sections/section1.html',
             controller: 'formController'
         })
         // url wil /form/interests
         .state('app.form.section2', {
             url: '/section2',
-            templateProvider: function($http, $stateParams){
-                var obj = $stateParams;
-                var templateName = "cases/" + obj.application_type + "/" + obj.section2 + ".html" ;
-                    return $http
-                      .get(templateName)
-                      .then(function(tpl){
-                        return tpl.data;
-                      });
-            },
+            templateUrl: 'templates/sections/section2.html',
+            // templateProvider: function($http, $stateParams){
+            //     var obj = $stateParams;
+            //     var templateName = "cases/" + obj.application_type + "/" + obj.section2 + ".html" ;
+            //         return $http
+            //           .get(templateName)
+            //           .then(function(tpl){
+            //             return tpl.data;
+            //           });
+            // },
             controller: 'formController'
         })
         // url will be /form/interests

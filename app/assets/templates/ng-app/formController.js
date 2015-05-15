@@ -2,6 +2,9 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
    
     console.log("Outside of formController");
 
+    //test function
+
+    $scope.parentClick = function () {alert("hello");};
 
    $scope.current_case_id = $stateParams['case_id']; // 
     //Object containing I-130 relative application options 
@@ -34,33 +37,15 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
         var key;
         for (i=1; i < 10 ; i++) {
             key = 'section' + i ;
-            // console.log("key" + i + ": " + key);
-            // console.log("selections content" + i + ": " +  selections[key] );
             $scope.form_templates[key] = selections[key] ;
-            // console.log("FORM TEMPLATES HOLD: " + $scope.form_templates[key] );
         }
-
-        // switch (selections['section1']) {
-        //     case "i130-applicant":
-        //         $scope.form_template = 'i130-applicant';
-        //         break;
-        //     case "f2us":
-        //         $scope.form_template = 'i130-applicant';
-        //         break;
-        // }
-
-        // console.log("Inside of FormTmpSelection Function");
-        // console.log("form_template variable: " + $scope.form_template );
     };
 
-   
-
-    console.log("Case selection value passed from params: " + $scope.switchOptions  );
+    // console.log("Case selection value passed from params: " + $scope.switchOptions  );
 
     $scope.formTmpSelection($scope.switchOptions );
 
      //********* End of Case form selections *******//
-
 
 
 
@@ -89,7 +74,7 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
         InitializeCase.$save(); 
     };
     //catch form fields data and assign to cookie
-    $scope.catchData = function(name, form_data){         
+    $scope.catchData = function(name, form_data){    
         var cache = myCache.get('myData');
         var fieldsData = {} ;
             fieldsData[name] = form_data;
@@ -213,6 +198,7 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
     $scope.processForm = function() {
         console.log("Inside of processForm Function");
         $scope.previousSavedCache = myCache.get('myData');
+        console.log("myData inside of processForm: " + $scope.previousSavedCache);
         var count = 1 ;
         var individualFieldData = $scope.previousSavedCache['form1'] ;
         $scope.fieldData = {};

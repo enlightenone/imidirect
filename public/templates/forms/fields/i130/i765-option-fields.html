@@ -1,0 +1,25 @@
+<!-- i765 option for i130 application -->
+<h4 style="color: white;">I765 Employment Authorization Application</h4>
+<div class="form-group">
+I am applying for:<br>
+<input type="checkbox" ng-model="formData.i765_application_employment">New Employment  <br><br>
+<input type="checkbox" ng-model="formData.i765_application_replacement">Replacement <br><br>
+<input type="checkbox" ng-model="formData.i765_application_renewal"> Renewal
+</div>
+<div class="form-group">
+ Have you ever before applied for employment authorization from USCIS?<br>
+<input type="radio" ng-model="formData.i765_previous_application" value="yes"> Yes
+<input type="radio" ng-model="formData.i765_previous_application" value="no"> No
+</div>
+<div class="form-group">
+Which UCSIS office did you file and what date?<br>
+   Which UCSIS office did you file and what date?<br>
+   USCIS Office: 
+<input type="text" class="form-control" name="i765_office" ng-model="formData.i765_office">
+  <br><br>
+   Date of filing: 
+<input type="text" class="form-control" name="i765_date_of_previous_application" ng-model="formData.i765_date_of_previous_application">
+<br><br>
+   Result of filing: 
+<input type="text" class="form-control" name="i765_result_of_previous_application" ng-model="formData.i765_result_of_previous_application">
+ </div>

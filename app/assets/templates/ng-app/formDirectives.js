@@ -24,12 +24,13 @@ app.directive('ngCaseForm', function(){
 // custom directive to dynamically assign form button
 .directive('ngCaseFormButton', function(){
   var fields_template, app_type; 
-  
+
   return {
     restrict: "E",
     scope: {
       applicationTypeButton: '=', 
-      formTemplateButton: '='
+      formTemplateButton: '=',
+      ngCatchData: '&'
     },
     link: function($scope) {
       $scope.$watch('formTemplateButton', function(formTemplateButton){

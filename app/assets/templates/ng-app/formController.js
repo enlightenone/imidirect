@@ -2,6 +2,7 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
    
     console.log("Outside of formController");
 
+
    $scope.current_case_id = $stateParams['case_id']; // 
     //Object containing I-130 relative application options 
     $scope.formOptions = {} ; 
@@ -25,6 +26,29 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
         });
     };
 
+    //************** Case form selections **********//
+
+    $scope.formTmpSelection = function(form_selection) {
+        switch (form_selection) {
+            case "i130-applicant":
+                $scope.form_template = 'i130-applicant';
+                break;
+            case "f2us":
+                $scope.form_template = 'i130-applicant';
+                break;
+        }
+
+        console.log("Inside of FormTmpSelection Function");
+        console.log("form_template variable: " + $scope.form_template );
+    };
+
+    var case_selection = $stateParams['section1'];
+
+    console.log("Case selection value passed from params: " + case_selection );
+
+    $scope.formTmpSelection(case_selection);
+
+     //********* End of Case form selections *******//
 
     // Initializing Case at the beginning of the case.
     $scope.initCase = function() {

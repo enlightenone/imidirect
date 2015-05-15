@@ -34,7 +34,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
             //           });
             // }
             ,
-
             controller: 'formController'
         })
         // url wil /form/interests

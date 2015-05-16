@@ -1,4 +1,4 @@
-app.controller("formController", function($scope, $stateParams, $cookies, $cookieStore, myCache, Case, CaseInit, formsResource, OptionResource, $resource) {
+app.controller("formController", function($scope, $stateParams, $cookies, $cookieStore, myCache, Case, CaseInit, fieldsData, formsResource, OptionResource, $resource) {
    
     console.log("Outside of formController");
 
@@ -70,22 +70,30 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
         InitializeCase.$save(); 
     };
     //catch form fields data and assign to cookie
-    $scope.catchData = function(name, form_data){    
-        var cache = myCache.get('myData');
-        var fieldsData = {} ;
-            fieldsData[name] = form_data;
-            console.log("name: " + name);
-            console.log("data: " + form_data);
-         if (cache){
-            $scope.PreviousFieldsCache = cache;
-            $scope.PreviousFieldsCache[name] = form_data;
-            myCache.put('myData', $scope.PreviousFieldsCache);
-            console.log("form 6: " + cache["form6"]["i765_date_of_previous_application"]);
+    // $scope.catchData = function(name, form_data){    
+    //     var cache = myCache.get('myData');
+    //     var fieldsData = {} ;
+    //         fieldsData[name] = form_data;
+    //         console.log("name: " + name);
+    //         console.log("data: " + form_data);
+    //      if (cache){
+    //         $scope.PreviousFieldsCache = cache;
+    //         $scope.PreviousFieldsCache[name] = form_data;
+    //         myCache.put('myData', $scope.PreviousFieldsCache);
+    //         console.log("form 6: " + cache["form6"]["i765_date_of_previous_application"]);
 
-         } else{
-            myCache.put('myData', fieldsData);
-         }
-    };
+    //      } else{
+    //         myCache.put('myData', fieldsData);
+    //      }
+    // };
+
+    // new solution with factory
+
+     $scope.catchData = function (name, form_data) {
+        fieldsData.catchData(name, form_data); 
+     };
+
+     
 
     //function to choose forms
     $scope.chooseForm = function(category) {

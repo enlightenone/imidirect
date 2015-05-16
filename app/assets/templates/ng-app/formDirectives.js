@@ -14,7 +14,7 @@ app.directive('ngCaseForm', function(){
       });
       $scope.$watch('applicationType', function(applicationType){ 
         app_type = applicationType ; 
-        $scope.contentUrl = 'templates/forms/fields/' + app_type + '/' + fields_template + '-fields.html'
+        $scope.contentUrl = 'templates/forms/' + app_type + '/' + fields_template + '.html'
       });      
     },
     template: '<ng-include src="contentUrl"></ng-include>'   
@@ -22,25 +22,25 @@ app.directive('ngCaseForm', function(){
 })
 
 // custom directive to dynamically assign form button
-.directive('ngCaseFormButton', function(){
-  var fields_template, app_type; 
+// .directive('ngCaseFormButton', function(){
+//   var fields_template, app_type; 
 
-  return {
-    restrict: "E",
-    scope: {
-      applicationTypeButton: '=', 
-      formTemplateButton: '=',
-      ngCatchData: '&'
-    },
-    link: function($scope) {
-      $scope.$watch('formTemplateButton', function(formTemplateButton){
-         fields_template = formTemplateButton;
-      });
-      $scope.$watch('applicationTypeButton', function(applicationTypeButton){
-         app_type = applicationTypeButton
-         $scope.content_button_url = 'templates/forms/buttons/' + app_type + '/' + fields_template + '-button.html'
-      });
-    },
-    template: '<ng-include src="content_button_url"></ng-include>'   
-  } // end of return
-});
+//   return {
+//     restrict: "E",
+//     scope: {
+//       applicationTypeButton: '=', 
+//       formTemplateButton: '=',
+//       ngCatchData: '&'
+//     },
+//     link: function($scope) {
+//       $scope.$watch('formTemplateButton', function(formTemplateButton){
+//          fields_template = formTemplateButton;
+//       });
+//       $scope.$watch('applicationTypeButton', function(applicationTypeButton){
+//          app_type = applicationTypeButton
+//          $scope.content_button_url = 'templates/forms/buttons/' + app_type + '/' + fields_template + '-button.html'
+//       });
+//     },
+//     template: '<ng-include src="content_button_url"></ng-include>'   
+//   } // end of return
+// });

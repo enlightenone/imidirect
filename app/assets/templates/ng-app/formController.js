@@ -2,10 +2,6 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
    
     console.log("Outside of formController");
 
-    //test function
-
-    $scope.parentClick = function () {alert("hello");};
-
    $scope.current_case_id = $stateParams['case_id']; // 
     //Object containing I-130 relative application options 
     $scope.formOptions = {} ; 

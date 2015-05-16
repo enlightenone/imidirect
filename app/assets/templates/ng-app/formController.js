@@ -83,7 +83,7 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
          if (cache){
             $scope.PreviousFieldsCache = cache;
             $scope.PreviousFieldsCache[name] = form_data;
-            myCache.put('myData', $scope.PreFieldsCache);
+            myCache.put('myData', $scope.PreviousFieldsCache);
             console.log("form 6: " + cache["form6"]["i765_date_of_previous_application"]);
 
          } else{

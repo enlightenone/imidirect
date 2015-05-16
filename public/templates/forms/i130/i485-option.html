@@ -1,0 +1,41 @@
+
+<!-- form-profile.html -->
+<h4 style="color: white;">I-485 Form Option</h4>
+<div class="form-group">
+    <label for="application_category">Application Type</label><br><br>
+    <input type="checkbox" name="i485_applicant_visa_number_availability" ng-model="formData.i485_applicant_vsisa_number_availability"> An immigrant petition giving me an immediately available immigrant visa number that has been approved.<br><br>
+    <input type="checkbox" name="i485_applicant_visa_derivative_status" ng-model="formData.i485_applicant_visa_derivative_status"> My spouse or parent applied for adjustment of status or was granted lawful permanent residence in an immigrant visa category that allows derivative status for spouses and children.
+
+</div>
+<div class="form-group">
+    <label for="i485_applicant_current_occupation">Current Occupation</label>
+    <input type="text" class="form-control" name="i485_applicant_current_occupation" ng-model="formData.i485_applicant_current_occupation"><br>
+    <label for="i485_applicant_mother_first_name">Applicant's Mother's First Name</label>
+    <input type="text" class="form-control" name="i485_applicant_mother_first_name" ng-model="formData.i485_applicant_mother_first_name"><br>
+    <label for="i485_applicant_father_first_name">Applicant's Father's First Name</label>
+    <input type="text" class="form-control" name="i485_applicant_father_first_name" ng-model="formData.i485_applicant_father_first_name"><br>
+    <label for="i485_applicant_i94_exact_name">Exact Name on I-94 Form</label>
+    <input type="text" class="form-control" name="i485_applicant_i94_exact_name" ng-model="formData.i485_applicant_i94_exact_name"><br>
+    <label for="i485_applicant_previous_application">Have you previously filed I-485 Application</label>
+    <input type="radio" ng-model="formData.i485_applicant_previous_application" value="yes"> Yes
+    <input type="radio" ng-model="formData.i485_applicant_previous_application" value="no"> No<br><br><br>
+    <label for="i485_previous_filing_deposition">Please give date of filing and result of final deposition</label>
+    <input type="text" class="form-control" name="i485_previous_filing_deposition" ng-model="formData.i485_previous_filing_deposition">
+</div>
+<div class="form-group row">
+<div ng-if="switchOptions['section4'] == 'i485-option'" class="col-xs-6 col-xs-offset-3" ng-controller="formController">
+    <a ui-sref="app.form.section5" class="btn btn-block btn-info" ng-click="catchData('form4', formData)">
+    Next Section 5 <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+<div ng-if="switchOptions['section5'] == 'i485-option'" class="col-xs-6 col-xs-offset-3" ng-controller="formController">
+    <a ui-sref="app.form.section6" class="btn btn-block btn-info" ng-click="catchData('form5', formData)">
+    Next Section 6 <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+<div ng-if="switchOptions['section6'] == 'i485-option'" class="col-xs-6 col-xs-offset-3" ng-controller="formController">
+    <a ui-sref="app.form.section7" class="btn btn-block btn-info" ng-click="catchData('form6', formData)">
+    Next Section 7 <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+</div>

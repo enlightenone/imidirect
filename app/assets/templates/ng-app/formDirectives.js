@@ -40,12 +40,17 @@ app.directive('ngCaseForm', function(){
       applicationTypeButton: '=', 
       formTemplateButton: '='
     },
-    controller: ['$scope', '$stateParams' ,'fieldsData',  function($scope, $stateParams, fieldsData){
+    controller: ['$scope', '$stateParams' ,'fieldsData', 'formsResource', 'processForm', function($scope, $stateParams, fieldsData, formsResource, processForm){
       $scope.formData = {}; //initiate the form field object
       $scope.switchOptions = $stateParams; 
+      var current_case_id = $stateParams['case_id'] ;
       console.log("Params content: " + $scope.switchOptions['section1'] ) ; 
       // invoke fields data cache factory to form data into cache
 
+      $scope.processForm = function(current_case_id) {
+         alert("Hello World!");
+        // processForm.storeData(current_case_id);
+      };
       $scope.CatchData = function (name, form_data) { // to assign form fields data to cache.
         fieldsData.catchData(name, form_data); 
       };

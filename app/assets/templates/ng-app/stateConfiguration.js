@@ -38,114 +38,120 @@ app.config(function($stateProvider, $urlRouterProvider) {
         // url wil /form/interests
         .state('app.form.section2', {
             url: '/section2',
-            // templateUrl: 'templates/sections/section2.html',
-            templateProvider: function($http, $stateParams){
-                var obj = $stateParams;
-                var templateName = "cases/" + obj.application_type + "/" + obj.section2 + ".html" ;
-                    return $http
-                      .get(templateName)
-                      .then(function(tpl){
-                        return tpl.data;
-                      });
-            },
+            templateUrl: 'templates/sections/section2.html',
+            // templateProvider: function($http, $stateParams){
+            //     var obj = $stateParams;
+            //     var templateName = "cases/" + obj.application_type + "/" + obj.section2 + ".html" ;
+            //         return $http
+            //           .get(templateName)
+            //           .then(function(tpl){
+            //             return tpl.data;
+            //           });
+            // },
             controller: 'formController'
         })
         // url will be /form/interests
         .state('app.form.section3', {
             url: '/section3',
-            // templateUrl: 'templates/sections/section3.html',
-            templateProvider: function($http, $stateParams){
-                var obj = $stateParams;
-                var templateName = "cases/" + obj.application_type + "/" + obj.section3 +".html" ;
-                    return $http
-                      .get(templateName)
-                      .then(function(tpl){
-                        return tpl.data;
-                      });
-            },
+            templateUrl: 'templates/sections/section3.html',
+            // templateProvider: function($http, $stateParams){
+            //     var obj = $stateParams;
+            //     var templateName = "cases/" + obj.application_type + "/" + obj.section3 +".html" ;
+            //         return $http
+            //           .get(templateName)
+            //           .then(function(tpl){
+            //             return tpl.data;
+            //           });
+            // },
             controller: 'formController'
         })
         // url will be /form/interests
         .state('app.form.section4', {
             url: '/section4',
-            templateProvider: function($http, $stateParams){
-                var obj = $stateParams;
-                var templateName = "cases/" + obj.application_type + "/" + obj.section4 +".html" ;
-                    return $http
-                      .get(templateName)
-                      .then(function(tpl){
-                        return tpl.data;
-                      });
-            },
+            templateUrl: 'templates/sections/section4.html',
+            // templateProvider: function($http, $stateParams){
+            //     var obj = $stateParams;
+            //     var templateName = "cases/" + obj.application_type + "/" + obj.section4 +".html" ;
+            //         return $http
+            //           .get(templateName)
+            //           .then(function(tpl){
+            //             return tpl.data;
+            //           });
+            // },
             controller: 'formController'
         })
         // url will be /form/interests
         .state('app.form.section5', {
             url: '/section5',
-            templateProvider: function($http, $stateParams){
-                var obj = $stateParams;
-                var templateName = "cases/" + obj.application_type + "/" + obj.section5 +".html" ;
-                    return $http
-                      .get(templateName)
-                      .then(function(tpl){
-                        return tpl.data;
-                      });
-            },
+            templateUrl: 'templates/sections/section5.html',
+            // templateProvider: function($http, $stateParams){
+            //     var obj = $stateParams;
+            //     var templateName = "cases/" + obj.application_type + "/" + obj.section5 +".html" ;
+            //         return $http
+            //           .get(templateName)
+            //           .then(function(tpl){
+            //             return tpl.data;
+            //           });
+            // },
             controller: 'formController'
         })
         // url will be /form/interests
         .state('app.form.section6', {
             url: '/section6',
-            templateProvider: function($http, $stateParams){
-                var obj = $stateParams;
-                var templateName = "cases/" + obj.application_type + "/" + obj.section6 +".html" ;
-                    return $http
-                      .get(templateName)
-                      .then(function(tpl){
-                        return tpl.data;
-                      });
-            },
+            templateUrl: 'templates/sections/section6.html',
+            // templateProvider: function($http, $stateParams){
+            //     var obj = $stateParams;
+            //     var templateName = "cases/" + obj.application_type + "/" + obj.section6 +".html" ;
+            //         return $http
+            //           .get(templateName)
+            //           .then(function(tpl){
+            //             return tpl.data;
+            //           });
+            // },
             controller: 'formController'
         })
         // url will be /form/payment
         .state('app.form.section7', {
             url: '/section7',
-            templateProvider: function($http, $stateParams){
-                var obj = $stateParams;
-                var templateName = "cases/" + obj.application_type + "/" + obj.section7 +".html" ;
-                    return $http
-                      .get(templateName)
-                      .then(function(tpl){
-                        return tpl.data;
-                      });
-            },
+            templateUrl: 'templates/sections/section7.html',
+            // templateProvider: function($http, $stateParams){
+            //     var obj = $stateParams;
+            //     var templateName = "cases/" + obj.application_type + "/" + obj.section7 +".html" ;
+            //         return $http
+            //           .get(templateName)
+            //           .then(function(tpl){
+            //             return tpl.data;
+            //           });
+            // },
             controller: 'formController'
         })
         // url will be /form/payment
         .state('app.form.section8', {
             url: '/section8',
-            templateProvider: function($http, $stateParams){
-                var obj = $stateParams;
-                var templateName = "cases/" + obj.application_type + "/" + obj.section8 +".html" ;
-                    return $http
-                      .get(templateName)
-                      .then(function(tpl){
-                        return tpl.data;
-                      });
-            },
+            templateUrl: 'templates/sections/section8.html',
+            // templateProvider: function($http, $stateParams){
+            //     var obj = $stateParams;
+            //     var templateName = "cases/" + obj.application_type + "/" + obj.section8 +".html" ;
+            //         return $http
+            //           .get(templateName)
+            //           .then(function(tpl){
+            //             return tpl.data;
+            //           });
+            // },
             controller: 'formController'
         })
         .state('app.form.section9', {
             url: '/section9',
-            templateProvider: function($http, $stateParams){
-                var obj = $stateParams;
-                var templateName = "cases/" + obj.application_type + "/" + obj.section9 +".html" ;
-                    return $http
-                      .get(templateName)
-                      .then(function(tpl){
-                        return tpl.data;
-                      });
-            },
+            templateUrl: 'templates/sections/section9.html',
+            // templateProvider: function($http, $stateParams){
+            //     var obj = $stateParams;
+            //     var templateName = "cases/" + obj.application_type + "/" + obj.section9 +".html" ;
+            //         return $http
+            //           .get(templateName)
+            //           .then(function(tpl){
+            //             return tpl.data;
+            //           });
+            // },
             controller: 'formController'
         })
         //Payment route

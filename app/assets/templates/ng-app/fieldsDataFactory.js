@@ -1,5 +1,5 @@
-app.factory('fieldsData', function($cacheFactory) {
-  var fetched_cache = $cacheFactory('myData').get('myData'); // Retrieve Cache
+app.factory('fieldsData', ['myCache', function(myCache) {
+  var fetched_cache = myCache.get('myData'); // Retrieve Cache
   var service = {}; // Object with methods and variables available for access
   var fields_data = {};  
   var previous_fields_cache ;
@@ -13,12 +13,12 @@ app.factory('fieldsData', function($cacheFactory) {
     if(fetched_cache) {
       previous_fields_cache = fetched_cache ;
       previous_fields_cache[name] = form_data ;
-      $cacheFactory('myData').put('myData', previous_fields_cache);
+      myCache.put('myData', previous_fields_cache);
       console.log("form 6: " + cache["form6"]["i765_date_of_previous_application"]);
     } else {
-      $cacheFactory('myData').put('myData', fields_data);
+      myCache.put('myData', fields_data);
     }
   };
 
  return service ;
-});
+}]);

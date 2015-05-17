@@ -12,18 +12,18 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
 
     //remove cookie's content before form
     $scope.restCookie = function(){
-        var cache = myCache.get('myData');
-        if (cache){
-            cache.removeAll();
-        }
+        // var cache = myCache.get('myData');
+        // if (cache){
+        //     cache.removeAll();
+        // }
     };
 
     //remove cookie's content before form
-    $scope.restCookie = function(){
-        angular.forEach($cookies, function (v, k) {
-            $cookieStore.remove(k);
-        });
-    };
+    // $scope.restCookie = function(){
+    //     angular.forEach($cookies, function (v, k) {
+    //         $cookieStore.remove(k);
+    //     });
+    // };
 
     //************** Case form selections **********//
 

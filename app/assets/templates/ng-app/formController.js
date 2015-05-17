@@ -409,7 +409,7 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
             $scope.converted_total_fee = $scope.total_fee + "00";
 
             //reset the fees calculation flag to null
-            $scopefees_calculation_flag = null ;
+            $scope.fees_calculation_flag = null ;
         });
     }
     /*****************End of Total Fees Calculation Functions***************/

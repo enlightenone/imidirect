@@ -8,6 +8,13 @@ app.directive('ngCaseForm', function(){
       applicationType: '=',
       formTemplate: '='
     },
+    controller: ['$scope', 'fieldsData',  function($scope, fieldsData){
+      // $scope.formData = {};
+      // invoke fields data cache factory to form data into cache
+      $scope.catchData = function (name, form_data) {
+        fieldsData.catchData(name, form_data); 
+      };
+    }],
     link: function($scope) {
       $scope.$watch('formTemplate', function(formTemplate){
         fields_template = formTemplate ;

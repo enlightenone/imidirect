@@ -23,7 +23,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         // url will be nested (/form/profile)
         .state('app.form.section1', {
             url: '/section1',
-            templateUrl: 'templates/sections/section1.html',
+            templateUrl: 'states/forms/sections/section1.html',
             // templateProvider: function($http, $stateParams){
             //     var obj = $stateParams;
             //     var templateName = "cases/" + obj.application_type + "/" + obj.section1 + ".html" ;

@@ -1,4 +1,6 @@
-app.controller("formController", function($scope, $stateParams, $cookies, $cookieStore, myCache, Case, CaseInit, fieldsData, formsResource, OptionResource, $resource) {
+app.controller("formController", function($scope, $stateParams, $cookies, 
+                                          $cookieStore, myCache, Case, CaseInit, fieldsData, formsResource, 
+                                          OptionResource, $resource) {
    
     console.log("Outside of formController");
 
@@ -42,7 +44,6 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
     $scope.formTmpSelection($scope.switchOptions );
 
      //********* End of Case form selections *******//
-
 
 
     // Initializing Case at the beginning of the case.
@@ -173,30 +174,6 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
          $scope.$parent.transaction_status_flag  = false;
          console.log("statusTestFnc is activated!");
     };
-    
-
-    /*****************Total Fees Calculation Functions**********************/
-
-      $scope.fees_calculation_flag = $stateParams['fees_calculation_flag'];
-
-      // call fees calculation function when the calculation fee flag is activated.
-
-     if ($scope.fees_calculation_flag == "true"){ 
-
-        $cookieStore.put("current_case_id", $scope.current_case_id);
-     var Fee =  $resource('/api/cases/1/charges/:id', {id:'@id'}) ;
-
-        Fee.get({id: $scope.current_case_id }, function(data){
-            $scope.total_fee = data['total_fee'];
-            $scope.sub_total_fees = data['sub_total_fees'];
-
-            $scope.converted_total_fee = $scope.total_fee + "00";
-
-            //reset the fees calculation flag to null
-            $scope.fees_calculation_flag = null ;
-        });
-    }
-    /*****************End of Total Fees Calculation Functions***************/
 
 
 }); // end of formController Controller

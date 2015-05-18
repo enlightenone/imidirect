@@ -372,14 +372,11 @@ app.controller("formController", function($scope, $stateParams, $cookies, $cooki
       // call fees calculation function when the calculation fee flag is activated.
 
      if ($scope.fees_calculation_flag == "true"){ 
-          console.log("Fee Flag is on Baby!!! Yea~~~");
 
         $cookieStore.put("current_case_id", $scope.current_case_id);
-
      var Fee =  $resource('/api/cases/1/charges/:id', {id:'@id'}) ;
 
         Fee.get({id: $scope.current_case_id }, function(data){
-            console.log("Total fee: " + data['total_fee']);
             $scope.total_fee = data['total_fee'];
             $scope.sub_total_fees = data['sub_total_fees'];
 

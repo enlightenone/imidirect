@@ -43,7 +43,7 @@ app.directive('ngCaseForm', function(){
     controller: ['$scope', '$stateParams' ,'fieldsData', 'processForm', function($scope, $stateParams, fieldsData, processForm){
       $scope.formData = {}; //initiate the form field object
       $scope.switchOptions = $stateParams; 
-      var current_case_id = $stateParams['case_id'] ;
+      $scope.current_case_id = $stateParams['case_id'] ;
 
       console.log("Params content: " + $scope.switchOptions['section1'] ) ; 
       // invoke fields data cache factory to form data into cache
@@ -52,7 +52,7 @@ app.directive('ngCaseForm', function(){
       };
 
       $scope.processForm = function() { 
-          processForm.storeData(current_case_id);
+          processForm.storeData($scope.current_case_id);
       };
     }],
     link: function($scope, elem, attrs, ngCaseFormCtrl) {

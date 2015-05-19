@@ -1,5 +1,5 @@
 app.directive('ngQuestionnaire', function(){
-var app_type
+var app_type ;
 // custom directive to dynamically assign form fields 
   return {
     restrict: "E",
@@ -9,8 +9,8 @@ var app_type
 
     }],
     link: function($scope) {
-        app_type = 'i130'
-        $scope.contentUrl = 'templates/questionnaires/' + $scope.option  + '/' + fields_template + '-fields.html' //content url as scope to be rendered on the directive template
+        app_type = 'i130' ;
+        $scope.contentUrl = 'templates/questionnaires/' + 'i130'  + '/' + 'i130-questionnaire-section1'  + '.html' //content url as scope to be rendered on the directive template
      
     },
     template: '<ng-include src="contentUrl"></ng-include>'   

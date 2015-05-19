@@ -1,35 +1,3 @@
- 
-                <!-- MULTIPLE CHECKBOXES -->
-    <label>I-130 Applicaiton Options </label>
-    <div class="form-group" style="color: white;">
-        <label class="checkbox-inline">
-            <input type="checkbox" name="formOptions" ng-model="formOptions['i485-option']"> 
-            I-485 Adjustment of Status
-        </label>
-        <br>
-        <br>
-        <label class="checkbox-inline">
-            <input type="checkbox" name="formOptions" ng-model="formOptions['i765-option']"> 
-            I-765 Employment Permit
-        </label>
-        <br>
-        <br>
-        <label class="checkbox-inline">
-            <input type="checkbox" name="formOptions" ng-model="formOptions['i131-option']">
-            I-131 Application For Travel Document
-        </label>
-    </div>
-        <button type="submit" class="btn btn-danger" ng-click="restCookie()">Submit</button>
-        
-<div class="form-group row">
-<div class="col-xs-6 col-xs-offset-3">
-    <a ui-sref="form.section1" class="btn btn-block btn-info" ng-click="chooseForm('i130')">
-    Next Section<span class="glyphicon glyphicon-circle-arrow-right"></span>
-    </a>
-</div>
-</div>
-
-<pre>
-FormOptions :{{formOptions}}<br><br>
-FormCategories :{{formCategory}}
-</pre>
+<!-- Questionnaire Template -- >
+<ng-questionnaire>
+</ng-questionnaire>

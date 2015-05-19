@@ -7,7 +7,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'states/apps/main-container.html',
             controller: 'statusController'
         })
-        .state('app.option',{
+        .state('app.option',
             url: '/option',
             templateUrl: 'options/i130-option.html',
             controller: 'formController'

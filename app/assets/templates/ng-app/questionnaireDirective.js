@@ -61,8 +61,6 @@ app.directive('ngQuestionnaire', function(){
           console.log("Age Flag in ageFnc Function: " +  $scope.i765_hide  );
         }
 
-
-
         $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
 
         };

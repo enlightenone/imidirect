@@ -19,14 +19,10 @@ app.directive('ngQuestionnaire', function(){
         $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/' + $scope.app_type + '-' + $scope.option  + '.html'
       };
 
-      $scope.optionFnc = function(template) {
-        $scope.option = template ; 
-        $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/' + $scope.option  + '.html'
-      };
-
       $scope.qualificationFnc = function(results, category){
           var disqualification_flag = false ; 
-          console.log("Category: " + category);
+          $scope.category = category;
+
         for(var key in results){
            if (results[key] === 'yes'){
             disqualification_flag = true ;
@@ -34,12 +30,11 @@ app.directive('ngQuestionnaire', function(){
         };
  
           if ( disqualification_flag === true ){
-            $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/' + $scope.app_type + '-' +'disqualification.html' ; 
+              $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/' + $scope.app_type + '-' +'disqualification.html' ; 
           } else {
-              if (category === 'us-spouse' ) {
+              if (category === 'citizen-spouse' ) {
                 $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
               } else if (category === 'citizen-married-child-any-age') {
-                $scope.category = category;
                 $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'quota.html' ;
               }
           }
@@ -54,14 +49,26 @@ app.directive('ngQuestionnaire', function(){
           } else {
             $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
           }
+        } else {
+            $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'dummy-form.html' ;
         }
        
       };
 
       $scope.ageFnc = function(qualification) {
-        console.log("Category inside of ageFnc:" + $scope.category);
+        if (qualification == 'no') {
+          $scope.i765_hide = true ;
+          console.log("Age Flag in ageFnc Function: " +  $scope.i765_hide  );
+        }
+
+
 
         $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
+
+        };
+       $scope.optionFnc = function(template) {
+        $scope.option = template ; 
+        $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/' + $scope.option  + '.html'
       };
 
     },

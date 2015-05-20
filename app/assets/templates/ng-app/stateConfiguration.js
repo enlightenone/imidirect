@@ -7,9 +7,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'states/apps/main-container.html',
             controller: 'statusController'
         })
-        .state('app.option',
+        .state('app.option',{
             url: '/option',
-            templateUrl: 'options/i130-option.html',
+            templateUrl: 'options/i130/i130-option.html',
             controller: 'formController'
         })
         // route to show our basic form (/form)section1&

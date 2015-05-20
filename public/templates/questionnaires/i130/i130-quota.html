@@ -1,0 +1,13 @@
+<h4>Visa Quota Status</h4>
+<div class="form-group" ng-init="category=category">
+<p>
+Is your visa quota current? <input type="radio" ng-model="quota_status" value="yes" > Yes <input ng-model="quota_status" type="radio" value="no"> No 
+</p>
+
+<div class="form-group row">
+<div class="col-xs-6 col-xs-offset-3">
+    <a class="btn btn-block btn-info" ng-click="quotaFnc(quota_status, category)">
+    Next Section<span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+</div>

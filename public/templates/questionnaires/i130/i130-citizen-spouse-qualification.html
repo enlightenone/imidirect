@@ -1,16 +1,18 @@
 <h4>Please answers the following questions regarding qualification:</h4>
-<div class="form-group" ng-init="category='us-spouse'">
-<p>
-Did you gain citizenship by virtue to a Us Citizen or Permanent Resident <input type="radio" ng-model="qualifications.spouse_qualification_1" value="yes" > Yes <input ng-model="qualifications.spouse_qualification_1" type="radio" value="no"> No <br>
-Were you and your sposue were not both physically present at the marriage ceremony, and the marrige was not consummated.
- <input type="radio" ng-model="qualifications.spouse_qualification_2" value="yes" > Yes <input ng-model="qualifications.spouse_qualification_2" type="radio" value="no"> No <br>
- Is your spouse the subject of an exclusion, deportation, removal, or rescission proceeding.
-<input type="radio" ng-model="qualifications.spouse_qualification_3" value="yes" > Yes <input ng-model="qualifications.spouse_qualification_3" type="radio" value="no"> No <br>
-</p>
+<div class="form-group">
 
+<p>
+  <form>
+Did you gain citizenship by virtue to a Us Citizen or Permanent Resident <input type="radio" name="qualifications.spouse_qualification_1" ng-model="qualifications.spouse_qualification_1" value="yes" > Yes <input name="qualifications.spouse_qualification_1" ng-model="qualifications.spouse_qualification_1" type="radio" value="no" checked> No <br>
+Were you and your sposue were not both physically present at the marriage ceremony, and the marrige was not consummated.
+ <input type="radio" name="qualifications.spouse_qualification_2"  ng-model="qualifications.spouse_qualification_2" value="yes" > Yes <input name="qualifications.spouse_qualification_2" ng-model="qualifications.spouse_qualification_2" type="radio" value="no" checked> No <br>
+ Is your spouse the subject of an exclusion, deportation, removal, or rescission proceeding.
+<input type="radio" name="qualifications.spouse_qualification_3"  ng-model="qualifications.spouse_qualification_3" value="yes" > Yes <input name="qualifications.spouse_qualification_3" ng-model="qualifications.spouse_qualification_3" type="radio" value="no" checked > No <br>
+</p>
+</form>
 <div class="form-group row">
 <div class="col-xs-6 col-xs-offset-3">
-    <a class="btn btn-block btn-info" ng-click="qualificationFnc(qualifications, category)">
+    <a class="btn btn-block btn-info" ng-click="qualificationFnc(qualifications, 'us-spouse')">
     Next Section<span class="glyphicon glyphicon-circle-arrow-right"></span>
     </a>
 </div>

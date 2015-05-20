@@ -25,30 +25,41 @@ app.directive('ngQuestionnaire', function(){
       };
 
       $scope.qualificationFnc = function(results, category){
+          var disqualification_flag = false ; 
+          console.log("Category: " + category);
         for(var key in results){
-          if (results[key] == 'yes'){
+           if (results[key] === 'yes'){
+            disqualification_flag = true ;
+           }
+        };
+ 
+          if ( disqualification_flag === true ){
             $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/' + $scope.app_type + '-' +'disqualification.html' ; 
-          } else if (results[key] == 'no'){
-              if (category == 'us-spouse' ) {
+          } else {
+              if (category === 'us-spouse' ) {
                 $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
-              } else if (category == 'citizen-married-child-any-age') {
+              } else if (category === 'citizen-married-child-any-age') {
                 $scope.category = category;
                 $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'quota.html' ;
               }
           }
         }
-      };
+     
 
       $scope.quotaFnc = function(quota_status, category) {
-        if ((category === "citizen-unmarried-child-under-21") || (category === "citizen-married-child-any-age" ) || (category === "pr-unmarried-child-under-21")) {
-          $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'child-age.html' ;
-        } else {
-          $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
+
+        if (quota_status == 'yes'){
+          if ((category === "citizen-unmarried-child-under-21") || (category === "citizen-married-child-any-age" ) || (category === "pr-unmarried-child-under-21")) {
+            $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'child-age.html' ;
+          } else {
+            $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
+          }
         }
        
       };
 
       $scope.ageFnc = function(qualification) {
+        console.log("Category inside of ageFnc:" + $scope.category);
 
         $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
       };

@@ -34,9 +34,9 @@ app.directive('ngQuestionnaire', function(){
           } else {
               if (category === 'citizen-spouse' ) {
                 $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
-              } else if (category == 'citizen-child-under-21') {
+              } else if ((category == 'citizen-child-under-21') || (category == 'citizen-sibling')) {
                  $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'child-age.html' ;
-              } else if ((category == 'citizen-married-child-any-age') || (category == 'citizen-child-over-21') ) {
+              } else if ((category == 'citizen-married-child-any-age') || (category == 'citizen-child-over-21') || (category == 'citizen-sibling')) {
                 $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'quota.html' ;
               }
           }
@@ -66,10 +66,7 @@ app.directive('ngQuestionnaire', function(){
         $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
 
         };
-       $scope.optionFnc = function(template) {
-        $scope.option = template ; 
-        $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/' + $scope.option  + '.html'
-      };
+
 
     },
     template: '<ng-include src="contentUrl"></ng-include>'   

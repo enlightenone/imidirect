@@ -34,18 +34,17 @@ app.directive('ngQuestionnaire', function(){
           } else {
               if (category === 'citizen-spouse' ) {
                 $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
-              } else if ( category == 'citizen-child-under-21') {
+              } else if ( (category == 'citizen-child-under-21') || (category == 'pr-child-under-21'))   {
                  $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'child-age.html' ;
               } else if ((category == 'citizen-married-child-any-age') || (category == 'citizen-child-over-21') 
-                 || (category == 'citizen-sibling') || (category == 'citizen-sibling') ) {
+                 || (category == 'citizen-sibling') || (category == 'citizen-sibling') || (category == 'citizen-parent')
+                 || (category == 'pr-spouse') || (category == 'pr-child-over-21') ) {
                 $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'quota.html' ;
               }
           }
         }
      
-
       $scope.quotaFnc = function(quota_status, category) {
-
         // Logic to Determine next section of which each option renders based upon different category
         if (quota_status == 'yes'){
           if ((category === "citizen-child-under-21") || (category === "citizen-married-child-any-age" ) 

@@ -1,0 +1,19 @@
+<h4>Please answers the following questions regarding qualification:</h4>
+<div class="form-group">
+
+<p>
+  <form>
+Did you gain permanent residency by virtue to a US Citizen or Permanent Resident ? <input type="radio" name="qualifications.option_1" ng-model="qualifications.option_1" value="yes" > Yes <input name="qualifications.option_1" ng-model="qualifications.option_1" type="radio" value="no" checked> No <br>
+Were you and your sposue were not both physically present at the marriage ceremony, and the marrige was not consummated ? 
+ <input type="radio" name="qualifications.option_2"  ng-model="qualifications.option_2" value="yes" > Yes <input name="qualifications.option_2" ng-model="qualifications.option_2" type="radio" value="no" checked> No <br>
+ Is your spouse the subject of an exclusion, deportation, removal, or rescission proceeding ? 
+<input type="radio" name="qualifications.option_3"  ng-model="qualifications.option_3" value="yes" > Yes <input name="qualifications.option_3" ng-model="qualifications.section_3" type="radio" value="no" checked > No <br>
+</p>
+</form>
+<div class="form-group row">
+<div class="col-xs-6 col-xs-offset-3">
+    <a class="btn btn-block btn-info" ng-click="qualificationFnc(qualifications, 'pr-spouse')">
+    Next Section<span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+</div>

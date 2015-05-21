@@ -34,9 +34,10 @@ app.directive('ngQuestionnaire', function(){
           } else {
               if (category === 'citizen-spouse' ) {
                 $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
-              } else if ((category == 'citizen-child-under-21') || (category == 'citizen-sibling')) {
+              } else if ( category == 'citizen-child-under-21') {
                  $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'child-age.html' ;
-              } else if ((category == 'citizen-married-child-any-age') || (category == 'citizen-child-over-21') || (category == 'citizen-sibling')) {
+              } else if ((category == 'citizen-married-child-any-age') || (category == 'citizen-child-over-21') 
+                 || (category == 'citizen-sibling') || (category == 'citizen-sibling') ) {
                 $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'quota.html' ;
               }
           }
@@ -45,8 +46,10 @@ app.directive('ngQuestionnaire', function(){
 
       $scope.quotaFnc = function(quota_status, category) {
 
+        // Logic to Determine next section of which each option renders based upon different category
         if (quota_status == 'yes'){
-          if ((category === "citizen-child-under-21") || (category === "citizen-married-child-any-age" ) || (category === "pr-child-under-21")) {
+          if ((category === "citizen-child-under-21") || (category === "citizen-married-child-any-age" ) 
+            || (category === "pr-child-under-21") || (category == 'citizen-sibling')) {
             $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'child-age.html' ;
           } else {
             $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
@@ -62,10 +65,8 @@ app.directive('ngQuestionnaire', function(){
           $scope.i765_hide = true ;
           console.log("Age Flag in ageFnc Function: " +  $scope.i765_hide  );
         }
-
         $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
-
-        };
+      };
 
 
     },

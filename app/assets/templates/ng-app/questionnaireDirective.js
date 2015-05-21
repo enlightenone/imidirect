@@ -34,7 +34,9 @@ app.directive('ngQuestionnaire', function(){
           } else {
               if (category === 'citizen-spouse' ) {
                 $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
-              } else if (category === 'citizen-married-child-any-age') {
+              } else if (category == 'citizen-child-under-21') {
+                 $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'child-age.html' ;
+              } else if ((category == 'citizen-married-child-any-age') || (category == 'citizen-child-over-21') ) {
                 $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'quota.html' ;
               }
           }
@@ -44,7 +46,7 @@ app.directive('ngQuestionnaire', function(){
       $scope.quotaFnc = function(quota_status, category) {
 
         if (quota_status == 'yes'){
-          if ((category === "citizen-unmarried-child-under-21") || (category === "citizen-married-child-any-age" ) || (category === "pr-unmarried-child-under-21")) {
+          if ((category === "citizen-child-under-21") || (category === "citizen-married-child-any-age" ) || (category === "pr-child-under-21")) {
             $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'child-age.html' ;
           } else {
             $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;

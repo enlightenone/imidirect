@@ -10,6 +10,7 @@ app.factory('questionsOption', function() {
 
   // Determin if the user is qualified for the case
   service.qualificationFnc = function(results, category, app_type){
+    console.log("Inside of qualificationFnc in Factory");
     var disqualification_flag = false ; 
     for(var key in results){
       if (results[key] === 'yes'){
@@ -32,6 +33,30 @@ app.factory('questionsOption', function() {
     }
   };   
 
+
+  service.quotaFnc = function(quota_status, category, app_type) {
+    // Logic to Determine next section of which each option renders based upon different category
+    if (quota_status == 'yes'){
+      if ((category === "citizen-child-under-21") || (category === "citizen-married-child-any-age" ) 
+        || (category === "pr-child-under-21") || (category == 'citizen-sibling')) {
+        return 'templates/questionnaires/' + app_type  + '/' + app_type + '-' + 'child-age.html' ;
+      } else {
+        return 'templates/questionnaires/' + app_type  + '/' + app_type + '-' + 'options.html' ;
+      }
+    } else {
+        return 'templates/questionnaires/' + app_type  + '/' + app_type + '-' + 'dummy-form.html' ;
+    }
+   
+  };
+
+  service.ageFnc = function(qualification, app_type) {
+    var results = {} ;
+    if (qualification == 'no') {
+      results['i765_hide'] = true ;
+    }
+    results['contentUrl'] = 'templates/questionnaires/' + app_type  + '/'   +  app_type + '-' + 'options.html' ;
+    return results ;
+  };
 
 return service ;
 });

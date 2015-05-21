@@ -1,5 +1,5 @@
 app.controller("formController", function($scope, $stateParams, $cookies, 
-                                          $cookieStore, myCache, Case, CaseInit, fieldsData, formsResource, 
+                                          $cookieStore, myCache, Case, CaseInit, generateCase, fieldsData, formsResource, 
                                           OptionResource, $resource) {
    
     console.log("Outside of formController");
@@ -41,41 +41,18 @@ app.controller("formController", function($scope, $stateParams, $cookies,
 
     // console.log("Case selection value passed from params: " + $scope.switchOptions  );
 
-    $scope.formTmpSelection($scope.switchOptions );
+    $scope.formTmpSelection($scope.switchOptions);
 
      //********* End of Case form selections *******//
 
-
     // Initializing Case at the beginning of the case.
-    $scope.initCase = function() {
-
-        console.log("Inside of initCase Function");
-        //generate case id with random character
-        function makeid()
-        {
-          var text = "";
-          var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-          for( var i=0; i < 10; i++ )
-            text += possible.charAt(Math.floor(Math.random() * possible.length));
-          return text;
-        }
-        $scope.case_id = makeid();
-        console.log("initiating case id: " +$scope.case_id);
-        //populate cases table
-        var InitializeCase = new CaseInit();
-            InitializeCase.case = {
-                case_id: $scope.case_id,
-                application_id: 1,
-                user_id: 1
-            }; 
-        InitializeCase.$save(); 
-    };
-     
+     // $scope.initCase = function (user_id, app_id ) {
+     //    generateCase.initiate(user_id, app_id); // generateCase factory method
+     // };
 
     //function to choose forms
     $scope.chooseForm = function(category) {
    $scope.$parent.forms_status_flag = false; // progress status flag
-
 
     //convert application code to app_id in order to assign specific application to the case
     switch (category) {

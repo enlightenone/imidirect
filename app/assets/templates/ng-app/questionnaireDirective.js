@@ -3,7 +3,7 @@ app.directive('ngQuestionnaire', function(){
 // custom directive to dynamically assign form fields 
   return {
     restrict: "E",
-    controller: ['$scope', function($scope){
+    controller: ['$scope','questionsOption' , function($scope, questionsOption){
       $scope.option = 'i130-questionnaire-section1' ;
       $scope.app_type = 'i130';
       $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/' + $scope.option  + '.html';
@@ -11,38 +11,45 @@ app.directive('ngQuestionnaire', function(){
       $scope.qualifications = {} ;
       $scope.category = "" ;
 
-    }],
-    link: function($scope) {
-
-      $scope.categoryFnc = function(template) {
-        $scope.option = template ; 
-        $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/' + $scope.app_type + '-' + $scope.option  + '.html'
+      $scope.categoryFnc =  function(template) {
+        // Return conten url based on corresponding option being chosen.
+        $scope.contentUrl = questionsOption.categoryFnc(template, $scope.app_type); 
       };
 
       $scope.qualificationFnc = function(results, category){
-          var disqualification_flag = false ; 
-          $scope.category = category;
+        $scope.category = category;
+        $scope.contentUrl = questionsOption.qualificationFnc(results, category ,$scope.app_type); 
+      };
 
-        for(var key in results){
-           if (results[key] === 'yes'){
-            disqualification_flag = true ;
-           }
-        };
+
+    }],
+    link: function($scope) {
+
+
+      // $scope.qualificationFnc = function(results, category){
+      //     var disqualification_flag = false ; 
+      //     $scope.category = category;
+
+      //   for(var key in results){
+      //      if (results[key] === 'yes'){
+      //       disqualification_flag = true ;
+      //      }
+      //   };
  
-          if ( disqualification_flag === true ){
-              $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/' + $scope.app_type + '-' +'disqualification.html' ; 
-          } else {
-              if (category === 'citizen-spouse' ) {
-                $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
-              } else if ( (category == 'citizen-child-under-21') || (category == 'pr-child-under-21'))   {
-                 $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'child-age.html' ;
-              } else if ((category == 'citizen-married-child-any-age') || (category == 'citizen-child-over-21') 
-                 || (category == 'citizen-sibling') || (category == 'citizen-sibling') || (category == 'citizen-parent')
-                 || (category == 'pr-spouse') || (category == 'pr-child-over-21') ) {
-                $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'quota.html' ;
-              }
-          }
-        }
+      //     if ( disqualification_flag === true ){
+      //         $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/' + $scope.app_type + '-' +'disqualification.html' ; 
+      //     } else {
+      //         if (category === 'citizen-spouse' ) {
+      //           $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'options.html' ;
+      //         } else if ( (category == 'citizen-child-under-21') || (category == 'pr-child-under-21'))   {
+      //            $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'child-age.html' ;
+      //         } else if ((category == 'citizen-married-child-any-age') || (category == 'citizen-child-over-21') 
+      //            || (category == 'citizen-sibling') || (category == 'citizen-sibling') || (category == 'citizen-parent')
+      //            || (category == 'pr-spouse') || (category == 'pr-child-over-21') ) {
+      //           $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/'   +  $scope.app_type + '-' + 'quota.html' ;
+      //         }
+      //     }
+      //   }
      
       $scope.quotaFnc = function(quota_status, category) {
         // Logic to Determine next section of which each option renders based upon different category

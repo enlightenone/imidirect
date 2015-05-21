@@ -74,7 +74,7 @@ app.controller("formController", function($scope, $stateParams, $cookies,
 
     //function to choose forms
     $scope.chooseForm = function(category) {
-   $scope.$parent.forms_status_flag = false;
+   $scope.$parent.forms_status_flag = false; // progress status flag
 
 
     //convert application code to app_id in order to assign specific application to the case

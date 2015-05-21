@@ -1,88 +1,44 @@
-app.controller("formController", function($scope, $stateParams, $cookies, 
-                                          $cookieStore, myCache, Case, CaseInit, generateCase, fieldsData, formsResource, 
-                                          OptionResource, $resource) {
-   
-    console.log("Outside of formController");
-
-   $scope.current_case_id = $stateParams['case_id']; // 
-    //Object containing I-130 relative application options 
-    $scope.formOptions = {} ; 
-    // To retain form options after the form has been submitted to determine button options.
-    $scope.switchOptions = $stateParams ; 
-    //Form Category
-    $scope.formCategory = {}; 
-
-    //remove cookie's content before form
-    $scope.restCookie = function(){
-        var cache = myCache.get('myData');
-        if (cache){
-            cache.removeAll();
-        }
-    };
-
-    //remove cookie's content before form
-    // $scope.restCookie = function(){
-    //     angular.forEach($cookies, function (v, k) {
-    //         $cookieStore.remove(k);
-    //     });
-    // };
-
-    //************** Case form selections **********//
-
-    $scope.formTmpSelection = function(selections) {
-        $scope.application_type = selections['application_type'];
-        $scope.form_templates = {};
-        var key;
-        for (i=1; i < 10 ; i++) {
-            key = 'section' + i ;
-            $scope.form_templates[key] = selections[key] ;
-        }
-    };
-
-    // console.log("Case selection value passed from params: " + $scope.switchOptions  );
-
-    $scope.formTmpSelection($scope.switchOptions);
-
-     //********* End of Case form selections *******//
-
-    //function to choose forms
-    $scope.chooseForm = function(category) {
-   $scope.$parent.forms_status_flag = false; // progress status flag
+// This factory is to generate form based on options chosen on questionnaire section.
+app.factory('createFormFactory', ['myCache', function(myCache) {
+  var service = {}; // Object with methods and variables available for access
+  var app_id
+ //function to choose forms
+    service.chooseForm = function(category, formOptions) {
 
     //convert application code to app_id in order to assign specific application to the case
     switch (category) {
     case "f1us":
-        $scope.app_id = 1;
+        app_id = 1;
         break;
     case "f2us":
-        $scope.app_id = 2;
+        app_id = 2;
         break;
     case "f3us":
-        $scope.app_id = 3;
+        app_id = 3;
         break;
     case "f4us":
-        $scope.app_id = 4;
+        app_id = 4;
         break;
     case "f5us":
-        $scope.app_id = 5;
+        app_id = 5;
         break;
     case "f1pr":
-        $scope.app_id = 6;
+        app_id = 6;
         break;
     case "f2pr":
-        $scope.app_id = 7;
+        app_id = 7;
         break;
     case "f3pr":
-        $scope.app_id = 8;
+        app_id = 8;
         break;
     case "ead":
-        $scope.app_id = 9;
+        app_id = 9;
         break;
     case "aos":
-        $scope.app_id = 10;
+        app_id = 10;
         break;
     case "nat":
-        $scope.app_id = 11;
+        app_id = 11;
         break;
     }
  
@@ -141,13 +97,7 @@ app.controller("formController", function($scope, $stateParams, $cookies,
                 );
     };
 
-    $scope.statusTestFnc = function() {
-         // alert("hello");
-         $scope.$parent.transaction_status_flag  = false;
-         console.log("statusTestFnc is activated!");
-    };
 
 
-}); // end of formController Controller
-    
-                                    
+ return service ;
+}]);

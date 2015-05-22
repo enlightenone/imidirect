@@ -1,11 +1,9 @@
 // This factory is to generate id per case and populate the case database.
-app.factory('generateCase', [ 'CaseInit', function(CaseInit) {
+app.factory('generateCase', ['CaseInit', function(CaseInit) {
   var case_id ;
   var service = {};
 
- service.initiate = function(user_id, app_id) {
-     console.log("Inside of initCase Function");
-     //generate case id with random character
+  // case id key generator
   function makeid()
      {
       var text = "";
@@ -14,10 +12,19 @@ app.factory('generateCase', [ 'CaseInit', function(CaseInit) {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
       return text;
     }
-    
+ 
+
+ service.initiate = function(user_id, app_id) {
+     console.log("Inside of initCase Function");
+     //generate case id with random character
     case_id = makeid();
-    console.log("initiating case id: " + case_id);
-    //populate cases table
+
+    // Method to return generated id to controller to be availabled for rest of views within the scope.
+    service.case_id = function(){
+      return case_id;
+    };
+
+    //Save the case info to database.
     var InitializeCase = new CaseInit();
         InitializeCase.case = {
             case_id: case_id,

@@ -3,13 +3,19 @@ app.directive('ngQuestionnaire', function(){
 // custom directive to dynamically assign form fields 
   return {
     restrict: "E",
-    controller: ['$scope','questionsOption' , function($scope, questionsOption){
+    controller: ['$scope','questionsOption', 'formFactory' ,  function($scope, questionsOption, formFactory){
       $scope.option = 'i130-questionnaire-section1' ;
       $scope.app_type = 'i130';
       $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/' + $scope.option  + '.html';
-
+      
       $scope.qualifications = {} ;
       $scope.category = "" ;
+      $scope.formOptions = {} ; 
+
+      // Method to generate form
+      $scope.chooseForm = function(category){
+        formFactory.generate(category, $scope.formOptions, $scope.case_id);
+      }
 
       $scope.categoryFnc =  function(template) {
         // Return conten url based on corresponding option being chosen.

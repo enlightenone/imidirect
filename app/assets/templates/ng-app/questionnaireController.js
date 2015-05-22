@@ -13,6 +13,7 @@ app.controller("questionnaireController", function($scope, $stateParams, $cookie
   // Initializing Case at the beginning of the case.
   $scope.initCase = function (user_id, app_id ) {
      generateCase.initiate(user_id, app_id); // generateCase factory method
+     $scope.case_id = generateCase.case_id(); 
   };
 }); // end of questionnaireController Controller
     

@@ -22,6 +22,10 @@ module Api
 
     end
 
+    def edit
+
+    end
+
   private
     def case_params
       params.require(:case).permit(:case_id, :application_id, :user_id)

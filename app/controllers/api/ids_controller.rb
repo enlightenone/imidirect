@@ -23,7 +23,12 @@ module Api
     end
 
     def edit
-
+      @case = Case.find_by(case_id: params[:case_id])
+      @case.application_id = params[:new_app_id]
+      
+      if @case.save
+         render json: {message: "Current case applicaiton id has been updated!"}
+      end 
     end
 
   private

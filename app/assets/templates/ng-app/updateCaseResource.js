@@ -1,4 +1,4 @@
-app.factory("updateCaseResource", function($resource) {
+app.factory("caseResource", function($resource) {
   return function(new_app_id, case_id){
   var Resource = $resource('/api/ids/:id', {id:'@id'},
                     {

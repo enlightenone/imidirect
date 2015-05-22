@@ -4,12 +4,7 @@ app.factory('formFactory', ['myCache', 'OptionResource',
   var service = {}; // Object with methods and variables available for access
   var app_id; 
  //function to choose forms
-    service.generate = function(category, formOptions, case_id) {
-      console.log("formFactory: category: " + category);
-      console.log("formFactory: formOptions: " + formOptions );
-      console.log("formFactory: formOptions: " + formOptions['i485-option'] );
-      console.log("formFactory: formOptions: " + formOptions['i765-option'] );
-      console.log("formFactory: case id: " + case_id)
+  service.generate = function(category, formOptions, case_id) {
 
     //convert application code to app_id in order to assign specific application to the case
     switch (category) {
@@ -91,7 +86,6 @@ app.factory('formFactory', ['myCache', 'OptionResource',
         if(formOptions[key] == true){
             i++;
             switchButtons["section" + i] = key; 
-            console.log("formFactory: switchButtons: " + switchButtons["section" + i] ); 
         }
     }
     // Assign submit button to the last section.
@@ -103,7 +97,7 @@ app.factory('formFactory', ['myCache', 'OptionResource',
                 + '&section6=' + switchButtons["section6"] + '&section7=' + switchButtons["section7"] + '&section8=' + switchButtons["section8"] 
                 + '&section9=' + switchButtons["section9"]
                 );
-    }; // end of ChooseForm method
+  }; // end of service.generate method
 
 
 

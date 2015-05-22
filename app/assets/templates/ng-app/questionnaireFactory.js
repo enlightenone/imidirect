@@ -48,7 +48,7 @@ app.factory('questionsOption', function() {
     }
    
   };
-
+  // Determine the age of the applicant to take off I765 option on I130 application.
   service.ageFnc = function(qualification, app_type) {
     var results = {} ;
     if (qualification == 'no') {

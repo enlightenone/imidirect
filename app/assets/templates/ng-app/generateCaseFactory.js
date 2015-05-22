@@ -27,7 +27,7 @@ app.factory('generateCase', ['CaseInit', function(CaseInit) {
     var InitializeCase = new CaseInit();
         InitializeCase.case = {
             case_id: case_id,
-            // application_id: app_id,
+            application_id: app_id,
             user_id: user_id
         }; 
     InitializeCase.$save(); 

@@ -1,5 +1,5 @@
 // This factory is to generate form based on options chosen on questionnaire section.
-app.factory('formFactory', ['myCache', 'OptionResource', 'caseResource',   
+app.factory('formFactory', ['myCache', 'OptionResource', 'updateCaseResource',   
                             function(myCache, OptionResource, updateCaseResource)  {
   var service = {}; // Object with methods and variables available for access
   var app_id; 
@@ -44,7 +44,7 @@ app.factory('formFactory', ['myCache', 'OptionResource', 'caseResource',
     }
 
     /********** Method to update application id *******************/
-    var current_case = caseUpdateResource(5, case_id);
+    var current_case = updateCaseResource(6, case_id);
     var updated_current_case = current_case.initiate({id:1}) ;
     updated_current_case.$promise.then(function(data) {
         console.log("Your current case's applicaiton id has successfully been updated!");

@@ -10,9 +10,10 @@ app.factory('questionsOption', function() {
 
   // Determin if the user is qualified for the case
   service.qualificationFnc = function(results, category, app_type){
-    console.log("Inside of qualificationFnc in Factory");
+
     var disqualification_flag = false ; 
     for(var key in results){
+      // loop through key in object to see if there is option being chosen for disqualification.
       if (results[key] === 'yes'){
        disqualification_flag = true ;
       }

@@ -9,7 +9,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('app.option',{
             url: '/option',
-            templateUrl: 'options/i130/i130-option.html',
+            templateUrl: 'states/questionnaires/questionnaire-main-template.html',
             controller: 'questionnaireController'
         })
         // route to show our basic form (/form)section1&

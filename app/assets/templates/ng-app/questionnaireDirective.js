@@ -28,7 +28,6 @@ app.directive('ngQuestionnaire', function(){
         $scope.contentUrl = questionsOption.qualificationFnc(results, category ,$scope.app_type); 
       };
 
-
       $scope.quotaFnc = function(quota_status, category){
         $scope.contentUrl = questionsOption.quotaFnc(quota_status, category ,$scope.app_type);
       };
@@ -38,8 +37,6 @@ app.directive('ngQuestionnaire', function(){
         $scope.i765_hide = $scope.results['i765_hide'] ;
         $scope.contentUrl = $scope.results['contentUrl'];
       };
-
-
     }],
     link: function($scope) {  
     },

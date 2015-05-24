@@ -7,19 +7,22 @@ app.factory('formFactory', ['myCache', 'OptionResource', 'updateCaseResource', '
   service.generate = function(category, formOptions, case_id, active_app_id) {
 
     /********** Method to update application id *******************/
-    i130AppId.compare(category, case_id, active_app_id); 
+     // This method is specifically designed to update i130 application's 
+        // application id to current version.
 
-    /********** end of Method to application id update method *****/
+    i130AppId.compare(category, case_id, active_app_id); // 
+
+    /********** Method to update application id *******************/
  
-    // Beginning Of the Option Block ///////////////////
+    /********** Beginning of Application form option setting ******/
     
     var settings = OptionResource(formOptions, case_id );
     var results = settings.initiate({id:case_id}); 
     results.$promise.then(function(data) {
-    console.log(data);
+    console.log("Options for the current case has successfully set");
     });
 
-    // End of Option lock//////////////////////
+    /********** End of application form setting block *******************/
 
     var switchButtons = {}; //Create object to arrange form/section combination.
 
@@ -65,8 +68,6 @@ app.factory('formFactory', ['myCache', 'OptionResource', 'updateCaseResource', '
                 + '&section9=' + switchButtons["section9"]
                 );
   }; // end of service.generate method
-
-
 
  return service ;
 }]);

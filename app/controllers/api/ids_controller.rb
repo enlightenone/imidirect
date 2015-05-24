@@ -12,7 +12,6 @@ module Api
     end
 
     def new
-
     end
     
     def create

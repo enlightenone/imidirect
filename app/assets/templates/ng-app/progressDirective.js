@@ -1,0 +1,51 @@
+app.directive('ngProgressBar', function(){
+// custom directive to dynamically assign form fields 
+  return {
+    restrict: "E",
+    controller: ['$scope', function($scope){
+      };
+    }],
+    link: function($scope) {
+    },
+    templateUrl: '<ng-include src="contentUrl"></ng-include>'   
+  } // end of return
+})
+
+// custom directive to dynamically assign form button
+.directive('ngCaseFormButton', function(){
+  var fields_template, app_type; 
+
+  return {
+    restrict: "E",
+    require: '^ngCaseForm',
+    scope: {
+      applicationTypeButton: '=', 
+      formTemplateButton: '='
+    },
+    controller: ['$scope', '$stateParams' ,'fieldsData', 'processForm', function($scope, $stateParams, fieldsData, processForm){
+      $scope.formData = {}; //initiate the form field object
+      $scope.switchOptions = $stateParams; //catch options to generate corresponding template forms
+      $scope.current_case_id = $stateParams['case_id'] ; // render case id to html template to be use to generate fee summary page
+ 
+      // invoke fields data cache factory to form data into cache
+      $scope.CatchData = function (name, form_data) { // to assign form fields data to cache.
+        fieldsData.catchData(name, form_data); 
+      };
+
+      $scope.processForm = function() { 
+          processForm.storeData($scope.current_case_id);
+      };
+    }],
+    link: function($scope, elem, attrs, ngCaseFormCtrl) {
+      $scope.formData = ngCaseFormCtrl.getData(); 
+      $scope.$watch('formTemplateButton', function(formTemplateButton){// determine form button template being set in main controller
+         fields_template = formTemplateButton;
+      });
+      $scope.$watch('applicationTypeButton', function(applicationTypeButton){ // determine the application type from the option being set in main controller
+         app_type = applicationTypeButton
+         $scope.content_button_url = 'templates/forms/buttons/' + app_type + '/' + fields_template + '-button.html'  //content url as scope to be rendered on the directive template
+      });
+    },
+    template: '<ng-include src="content_button_url"></ng-include>'   
+  } // end of return
+});

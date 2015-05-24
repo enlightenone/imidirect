@@ -8,20 +8,7 @@ app.factory('formFactory', ['myCache', 'OptionResource', 'updateCaseResource', '
 
     /********** Method to update application id *******************/
     i130AppId.compare(category, case_id, active_app_id); 
-    // var current_case = updateCaseResource(case_id);
-    // var fetched_result = current_case.applicationId({id:case_id}) ; // The application retrieve initial application id.
-    //  fetched_result.$promise.then(function(data){
-    //     var initial_application_id = data['application_id'] ;  
-    //     console.log("Fetched initial application id: " + initial_application_id );
-    //     console.log("Subsequent submitted application id: " + active_app_id);
-    //  });
 
-
-
-    // var updated_current_case = current_case.initiate({id:8}) ;
-    // updated_current_case.$promise.then(function(data) {
-    //     console.log(data['message']);
-    // });
     /********** end of Method to application id update method *****/
  
     // Beginning Of the Option Block ///////////////////
@@ -60,7 +47,6 @@ app.factory('formFactory', ['myCache', 'OptionResource', 'updateCaseResource', '
         switchButtons["section2"] = "i131-sponsor";
         switchButtons["section3"] = "i131-option";
     }
-
 
     // Loop through formOptions to assign form to specific switch button.
     for (key in formOptions){

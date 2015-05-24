@@ -5,6 +5,10 @@ module Api
     end
 
     def show
+       # Retrieve the application id being stored at state of initialization of the active case.
+       @case = Case.find_by(case_id: params[:case_id])
+       @application_id = @case.application_id 
+       render json: {:application_id => @application_id }
     end
 
     def new
@@ -25,10 +29,10 @@ module Api
     def edit
        # This is to specifically to update the application id for I130 form
       @case = Case.find_by(case_id: params[:case_id])
-      @case.application_id = params[:new_app_id]
+      @case.application_id = params[:id] # update the new application specifically for I130 application
       
       if @case.save
-         render json: {message: "Current case applicaiton id has been updated!"}
+         render json: { :message => "Current case applicaiton id has been updated!"}
       end 
     end
 

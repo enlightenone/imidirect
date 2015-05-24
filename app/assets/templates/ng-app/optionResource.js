@@ -7,7 +7,7 @@ app.factory("OptionResource", function($resource) {
                               url: '/apis/option/:id',
                               params:{options: options, case_id: case_id},
                               headers : {'Content-Type' : 'application/json'},
-                          } 
+                          }
                     });
          return Resource;
       }

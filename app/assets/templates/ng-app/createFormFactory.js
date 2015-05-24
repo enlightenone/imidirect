@@ -1,54 +1,29 @@
 // This factory is to generate form based on options chosen on questionnaire section.
-app.factory('formFactory', ['myCache', 'OptionResource', 'updateCaseResource',   
-                            function(myCache, OptionResource, updateCaseResource)  {
+app.factory('formFactory', ['myCache', 'OptionResource', 'updateCaseResource', 'i130AppId',   
+                            function(myCache, OptionResource, updateCaseResource, i130AppId)  {
   var service = {}; // Object with methods and variables available for access
   var app_id; 
  //function to choose forms
-  service.generate = function(category, formOptions, case_id) {
-
-    //convert application code to app_id in order to assign specific application to the case
-    switch (category) {
-    case "f1us":
-        app_id = 1;
-        break;
-    case "f2us":
-        app_id = 2;
-        break;
-    case "f3us":
-        app_id = 3;
-        break;
-    case "f4us":
-        app_id = 4;
-        break;
-    case "f5us":
-        app_id = 5;
-        break;
-    case "f1pr":
-        app_id = 6;
-        break;
-    case "f2pr":
-        app_id = 7;
-        break;
-    case "f3pr":
-        app_id = 8;
-        break;
-    case "ead":
-        app_id = 9;
-        break;
-    case "aos":
-        app_id = 10;
-        break;
-    case "nat":
-        app_id = 11;
-        break;
-    }
+  service.generate = function(category, formOptions, case_id, active_app_id) {
 
     /********** Method to update application id *******************/
-    var current_case = updateCaseResource(6, case_id);
-    var updated_current_case = current_case.initiate({id:1}) ;
-    updated_current_case.$promise.then(function(data) {
-        console.log("Your current case's applicaiton id has successfully been updated!");
-    });
+    
+
+    
+    // var current_case = updateCaseResource(case_id);
+    // var fetched_result = current_case.applicationId({id:case_id}) ; // The application retrieve initial application id.
+    //  fetched_result.$promise.then(function(data){
+    //     var initial_application_id = data['application_id'] ;  
+    //     console.log("Fetched initial application id: " + initial_application_id );
+    //     console.log("Subsequent submitted application id: " + active_app_id);
+    //  });
+
+
+
+    // var updated_current_case = current_case.initiate({id:8}) ;
+    // updated_current_case.$promise.then(function(data) {
+    //     console.log(data['message']);
+    // });
     /********** end of Method to application id update method *****/
  
     // Beginning Of the Option Block ///////////////////

@@ -3,7 +3,7 @@ app.factory('questionsOption', function() {
  var service = {}; // Object with methods and variables available for access
 
   // Determine the template for category option
-  service.categoryFnc = function(template,app_type) {
+  service.categoryFnc = function(template, app_type) {
         option = template ; 
         return 'templates/questionnaires/' + app_type  + '/' + app_type + '-' + option  + '.html' ;
   };

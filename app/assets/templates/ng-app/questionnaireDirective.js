@@ -13,8 +13,8 @@ app.directive('ngQuestionnaire', function(){
       $scope.formOptions = {} ; 
 
       // Method to generate form
-      $scope.chooseForm = function(category){
-        formFactory.generate(category, $scope.formOptions, $scope.case_id);
+      $scope.chooseForm = function(category, active_app_id){
+        formFactory.generate(category, $scope.formOptions, $scope.case_id, active_app_id);
       }
 
       $scope.categoryFnc =  function(template) {
@@ -22,9 +22,10 @@ app.directive('ngQuestionnaire', function(){
         $scope.contentUrl = questionsOption.categoryFnc(template, $scope.app_type); 
       };
 
-      $scope.qualificationFnc = function(results, category){
+      $scope.qualificationFnc = function(results, category, active_app_id){
         // This function determine if the user is qualified for the chosen case.
         $scope.category = category;
+        $scope.active_app_id = active_app_id ; // assign application id to corresponding application type specifically for I-130 application
         $scope.contentUrl = questionsOption.qualificationFnc(results, category ,$scope.app_type); 
       };
 

@@ -7,9 +7,7 @@ app.factory('formFactory', ['myCache', 'OptionResource', 'updateCaseResource', '
   service.generate = function(category, formOptions, case_id, active_app_id) {
 
     /********** Method to update application id *******************/
-    
-
-    
+    i130AppId.compare(category, case_id, active_app_id); 
     // var current_case = updateCaseResource(case_id);
     // var fetched_result = current_case.applicationId({id:case_id}) ; // The application retrieve initial application id.
     //  fetched_result.$promise.then(function(data){

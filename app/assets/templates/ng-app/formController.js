@@ -1,6 +1,9 @@
 app.controller("formController", function($scope, $stateParams, $cookies, 
                                           $cookieStore, myCache, Case, CaseInit, generateCase, fieldsData, formsResource, 
                                           OptionResource, $resource) {
+
+    $scope.$parent.forms_status_flag = true ;
+    console.log("Form Controller form flag: " + $scope.$parent.forms_status_flag);
    
     console.log("Outside of formController");
 
@@ -32,8 +35,6 @@ app.controller("formController", function($scope, $stateParams, $cookies,
             $scope.form_templates[key] = selections[key] ;
         }
     };
-
-    // console.log("Case selection value passed from params: " + $scope.switchOptions  );
 
     $scope.formTmpSelection($scope.switchOptions);
 

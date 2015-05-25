@@ -41,6 +41,7 @@ app.directive('ngCaseForm', function(){
       formTemplateButton: '='
     },
     controller: ['$scope', '$stateParams' ,'fieldsData', 'processForm', function($scope, $stateParams, fieldsData, processForm){
+
       $scope.formData = {}; //initiate the form field object
       $scope.switchOptions = $stateParams; //catch options to generate corresponding template forms
       $scope.current_case_id = $stateParams['case_id'] ; // render case id to html template to be use to generate fee summary page

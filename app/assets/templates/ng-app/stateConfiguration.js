@@ -77,9 +77,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('app.charge', {
             url: '/charge?case_id&fees_calculation_flag',
             templateUrl: 'states/fees/fees-summary.html',
-            controller: 'formController'
+            controller: 'feeController'
         });
     // catch all route
     // send users to the form page 
-    $urlRouterProvider.otherwise('form/section1?case_id&form_flag&application_type=i130&section1&section2&section3&section4&section5&section6&section7&section8&section9');
+    $urlRouterProvider.otherwise('');
 });

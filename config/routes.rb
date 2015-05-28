@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
     resources :apps
 
+    resources :users
+
     post 'apis/populate/:id' => 'api/cases#populate'
     get 'apis/option/:id' => 'api/cases#option'
 

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
     resources :users
 
+    get 'signup' => 'users#new'
     post 'apis/populate/:id' => 'api/cases#populate'
     get 'apis/option/:id' => 'api/cases#option'
 

@@ -10,11 +10,7 @@
 </head>
 <body ng-app="formApp">
   <header class="header">
-    <div class="row">
-      <div class="container"> 
-        <%= image_tag "logo.gif" %>
-      </div>
-    </div>
+    <%= render partial: "/header/header" %>
   </header>
   <section class="container">
     <%= yield %>

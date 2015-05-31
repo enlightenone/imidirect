@@ -11,9 +11,9 @@ Rails.application.routes.draw do
       resources :ids
     end
 
+    
     resources :apps
-
-    resources :users
+    resources :users 
 
     get 'signup' => 'users#new'
     get 'login' => 'sessions#new'

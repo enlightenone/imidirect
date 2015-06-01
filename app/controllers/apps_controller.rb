@@ -3,8 +3,10 @@ class AppsController < ApplicationController
   # before_action :correct_user
 
   def index
-    @current_url = request.original_url
-    @current_full_path = request.fullpath
+      @current_url = request.url
+  end
+
+  def show
   end
 
   def home

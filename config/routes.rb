@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
    root 'home#index'
-    get 'apps/index'
+    # get 'apps/index'
 
     namespace :api do
       resources :cases do
@@ -11,9 +11,14 @@ Rails.application.routes.draw do
       resources :ids
     end
 
-    
-    resources :apps
-    resources :users 
+    # resources :apps
+    # resources :users
+
+    resources :users do
+      resources :apps
+    end
+
+
 
     get 'signup' => 'users#new'
     get 'login' => 'sessions#new'
@@ -21,6 +26,8 @@ Rails.application.routes.draw do
     delete 'logout' => 'sessions#destroy'
     post 'apis/populate/:id' => 'api/cases#populate'
     get 'apis/option/:id' => 'api/cases#option'
+
+    get 'apps/:id/case' => 'apps#index'
 
 
     # post 'forms/:id/new_case' => 'forms#new_case', as: :new_case 

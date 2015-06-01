@@ -1,5 +1,6 @@
 app.controller("questionnaireController", function($scope, $stateParams, $cookies, 
                                           $cookieStore, myCache, generateCase) {
+
    
   console.log("Outside of questionnaireController");
   //remove cookie's content before form

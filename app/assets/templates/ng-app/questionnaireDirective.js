@@ -42,6 +42,6 @@ app.directive('ngQuestionnaire', function(){
     }],
     link: function($scope) {  
     },
-    template: '<ng-include src="contentUrl"></ng-include>'   
+    template: '<ng-include src="contentUrl"></ng-include>'    
   } // end of return
 })

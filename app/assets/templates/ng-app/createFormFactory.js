@@ -62,7 +62,7 @@ app.factory('formFactory', ['myCache', 'OptionResource', 'updateCaseResource', '
     i++;
     switchButtons["section" + i] = "submit";
 
-    location.assign('#form/section1?case_id=' + case_id + '&form_flag=true' + '&application_type='+ switchButtons["application_type"] + '&section1=' + switchButtons["section1"] + '&section2=' + switchButtons["section2"]
+    location.assign('#/main/form/section1?case_id=' + case_id + '&form_flag=true' + '&application_type='+ switchButtons["application_type"] + '&section1=' + switchButtons["section1"] + '&section2=' + switchButtons["section2"]
                 + '&section3=' + switchButtons["section3"] + '&section4=' + switchButtons["section4"] + '&section5=' + switchButtons["section5"] 
                 + '&section6=' + switchButtons["section6"] + '&section7=' + switchButtons["section7"] + '&section8=' + switchButtons["section8"] 
                 + '&section9=' + switchButtons["section9"]

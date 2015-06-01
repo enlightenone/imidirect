@@ -3,7 +3,7 @@
 app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('app',{
-            url: '',
+            url: '/main',
             templateUrl: 'states/apps/main-container.html',
             controller: 'statusController'
         })
@@ -81,5 +81,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         });
     // catch all route
     // send users to the form page 
-    $urlRouterProvider.otherwise('/option');
+    // $urlRouterProvider.when('', '/option');
+    $urlRouterProvider.otherwise('/main/option');
 });

@@ -1,7 +1,13 @@
-app.controller("questionnaireController", function($scope, $stateParams, $cookies, 
+app.controller("questionnaireController", function($scope, $stateParams, $cookies, $location, 
                                           $cookieStore, myCache, generateCase) {
 
-   
+   $scope.user_id = $stateParams['user_id'] ;
+   $scope.application_id = $stateParams['id'] ; 
+   $scope.url = $location.absUrl();
+
+   console.log("User id param:" + $scope.user_id);
+   console.log("Case id param:" + $scope.application_id);
+   console.log("Url: " + $scope.url);
   console.log("Outside of questionnaireController");
   //remove cookie's content before form
   $scope.restCookie = function(){

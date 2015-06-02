@@ -12,7 +12,7 @@ module Api
     end
 
     def new
-    end
+      
     
     def create
       @case = Case.new(case_params)      

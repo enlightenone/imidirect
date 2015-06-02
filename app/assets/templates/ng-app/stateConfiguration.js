@@ -81,6 +81,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
         });
     // catch all route
     // send users to the form page 
-    // $urlRouterProvider.when('', '/option');
     $urlRouterProvider.otherwise('/main/option');
 });

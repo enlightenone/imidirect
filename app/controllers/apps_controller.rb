@@ -7,7 +7,7 @@ class AppsController < ApplicationController
 
   def show
    @case = Case.new(user_id: params[:user_id], application_id: params[:id] ) 
-   @case.generate_case_id
+   @active_case_id = @case.generate_case_id
 
    if @case.save 
     @status = Status.create(questionnaire: true, filling: false, payment: false, complete: false, case_id: @case.id)

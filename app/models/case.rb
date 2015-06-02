@@ -21,6 +21,8 @@ class Case < ActiveRecord::Base
   def generate_case_id
     self.caseid = Case.new_case_id
     update_attribute(:case_id, self.caseid)
+
+    return self.caseid 
   end
 
 

@@ -1,5 +1,7 @@
+
 <h1>Show Template</h1>
-<div class="container">
+<div class="container" ng-controller="initCaseController">
   <!-- views will be injected here -->
- <div id="section-container" ui-view></div>
+ <div id="section-container" ui-view ng-init="assignCaseId('<%= @active_case_id %>')"></div>
 </div>
+

@@ -4,7 +4,6 @@ app.directive('ngQuestionnaire', function(){
   return {
     restrict: "E",
     controller: ['$scope','questionsOption', 'formFactory' ,  function($scope, questionsOption, formFactory){
-      
       $scope.option = 'i130-questionnaire-section1' ;
       $scope.app_type = 'i130';
       $scope.contentUrl = 'templates/questionnaires/' + $scope.app_type  + '/' + $scope.option  + '.html';
@@ -42,6 +41,6 @@ app.directive('ngQuestionnaire', function(){
     }],
     link: function($scope) {  
     },
-    template: '<ng-include src="contentUrl"></ng-include>'    
+    template: '<ng-include src="contentUrl"></ng-include>'   
   } // end of return
 })

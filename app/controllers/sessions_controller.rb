@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
      user = User.find_by(email: params[:session][:email].downcase )
      if user && user.authenticate(params[:session][:password])
       log_in user
+      is_user_id_inactive?
       redirect_back_or root_path
      else
       flash[:danger] = 'Invalid email/password combination'

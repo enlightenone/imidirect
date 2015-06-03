@@ -15,7 +15,7 @@ module PdfsHelper
 
          ####block to generate pdf form###
          def pdftk
-            @pdftk ||= PdfForms.new(ENV['PDFTK_PATH'] || '/usr/local/bin/pdftk') # On my Mac, the location of pdftk was different than on my linux server.
+            @pdftk ||= PdfForms.new(ENV['PDFTK_PATH'] || '/vendor/pdftk/bin/pdftk') # On my Mac, the location of pdftk was different than on my linux server.
          end
          ###### end of block ############
 

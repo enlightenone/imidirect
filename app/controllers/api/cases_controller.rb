@@ -1,4 +1,4 @@
-require 'securesandom' #set random 
+require 'securerandom' #set random 
 include ParamsHelper # parameters helper
 include CasesHelper
 

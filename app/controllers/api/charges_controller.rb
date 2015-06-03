@@ -10,18 +10,17 @@ module Api
   end
 
   def create
-    # retrieve current case id from cookie
-    @current_case_id = request.cookies["current_case_id"]
-    
-    # take out extra double quote from current case id string
-    @current_case_id = @current_case_id.tr("\"","")
-    fees_transaciton(@current_case_id)
 
-    @current_case = Case.find_by_case_id(@current_case_id)
+    #retrieve the current active case
+    @current_case = Case.last
+    @current_case_id = @current_case.case_id
     @user_id = @current_case.user_id
-
+    
+    # Process credit card transaction
+    fees_transaciton(@current_case_id)
+    
     if @current_case
-        pdf_generator(@user_id, @current_case_id)
+        pdf_generator(@user_id, @current_case_id) #generate pdf document
     else
       redirect_to root
     end

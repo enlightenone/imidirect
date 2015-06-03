@@ -16,7 +16,7 @@ module PdfsHelper
          ####block to generate pdf form###
          def pdftk
             # @pdftk ||= PdfForms.new(ENV['PDFTK_PATH'] || '#{Rails.root}/vendor/pdftk/bin/pdftk') # On my Mac, the location of pdftk was different than on my linux server.
-            @pdftk ||= PdfForms.new('#{Rails.root}/vendor/pdftk/bin/pdftk')
+            @pdftk ||= PdfForms.new('/app/vendor/pdftk/bin/pdftk')
          end
          ###### end of block ############
 

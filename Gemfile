@@ -26,8 +26,7 @@ gem 'angular-rails-templates'
 
 
 # Twitter-bootsrap
-# gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'bootstrap-sass', '~> 3.3.1'
 
@@ -56,8 +55,8 @@ gem 'combine_pdf'
 gem 'figaro'
 
 # Stripe payment gem
-# gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-gem 'stripe'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'

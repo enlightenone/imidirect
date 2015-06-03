@@ -8,21 +8,20 @@ module PdfsHelper
         #generate pdf files
         #create new directory and output path
         #update
-        # @new_directory = "#{Rails.root}/tmp/pdfs/#{@current_case_id}"
-        @new_directory = "/app/tmp/pdfs/#{@current_case_id}"
+        @new_directory = "#{Rails.root}/tmp/pdfs"
         Dir.mkdir(@new_directory) unless File.exists?(@new_directory)
 
         current_options = @current_case.options
 
          ####block to generate pdf form###
          def pdftk
-            @pdftk ||= PdfForms.new(ENV['PDFTK_PATH'] || '/app/vendor/pdftk/bin/pdftk') # On my Mac, the location of pdftk was different than on my linux server.
+            @pdftk ||= PdfForms.new(ENV['PDFTK_PATH'] || '/usr/local/bin/pdftk') # On my Mac, the location of pdftk was different than on my linux server.
          end
          ###### end of block ############
 
         def generate(new_directory, form, attributes, case_id)
 
-            template_path =  "/app/lib/pdf_templates/#{form}.pdf" 
+            template_path =  "#{Rails.root}/lib/pdf_templates/#{form}.pdf" 
             output_path = "#{@new_directory}/#{case_id}_#{form}.pdf" # make sure tmp/pdfs exists
             pdftk.fill_form template_path, output_path, attributes
             output_path
@@ -101,7 +100,7 @@ module PdfsHelper
         ####  End of PDF Form generation Block #####
 
         # combined pdf file path
-        combined_pdf_path = "/app/tmp/pdfs/#{@current_case_id}/#{@current_case_id}_combined.pdf"
+        combined_pdf_path = "#{Rails.root}/tmp/pdfs/#{@current_case_id}_combined.pdf"
 
         # generate combined pdf file
         combined_pdf_file.save combined_pdf_path

@@ -7,6 +7,7 @@ module PdfsHelper
 
         #generate pdf files
         #create new directory and output path
+        #update
         @new_directory = "#{Rails.root}/tmp/pdfs/#{@current_case_id}"
         Dir.mkdir(@new_directory) unless File.exists?(@new_directory)
 

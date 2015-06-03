@@ -10,6 +10,7 @@ app.directive('ngFeesSummary', function(){
       /*****************Total Fees Calculation Functions**********************/
      if ($scope.fees_calculation_flag == "true"){ 
         $cookieStore.put("current_case_id", $scope.current_case_id);
+
         FeesSummary.get({id: $scope.current_case_id }, function(data){
             $scope.total_fee = data['total_fee'];
             $scope.sub_total_fees = data['sub_total_fees'];
@@ -21,7 +22,7 @@ app.directive('ngFeesSummary', function(){
   /*****************End of Total Fees Calculation Functions***************/
     }],
     link: function($scope) {
-        $scope.contentUrl = 'templates/fees/fees-summary-template.html'; //content url as scope to be rendered on the directive template
+        $scope.contentUrl = '/templates/fees/fees-summary-template.html'; //content url as scope to be rendered on the directive template
     },
     template: '<ng-include src="contentUrl"></ng-include>'   
   } // end of return

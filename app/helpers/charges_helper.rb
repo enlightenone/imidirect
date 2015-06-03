@@ -1,6 +1,7 @@
 module ChargesHelper
 
   def fees_summary_display(case_id)
+      
       @case = Case.find_by_case_id(case_id)
       @application_fee = @case.application.fee
       @app_description = @case.application.description

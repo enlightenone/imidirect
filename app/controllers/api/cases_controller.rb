@@ -14,8 +14,9 @@ module Api
     end
 
     def populate
-      @user_id = 1
       @current_case_id = params[:id]
+      @current_case = Case.find_by_case_id(@current_case_id)
+      @user_id = @current_case.user_id
       populate_database(@current_case_id, @user_id)
     end
 

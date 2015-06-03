@@ -22,7 +22,7 @@ app.directive('ngCaseForm', function(){
       });
       $scope.$watch('applicationType', function(applicationType){ // determine the application type from the option being set in main controller
         app_type = applicationType ; 
-        $scope.contentUrl = 'templates/forms/fields/' + app_type + '/' + fields_template + '-fields.html' //content url as scope to be rendered on the directive template
+        $scope.contentUrl = '/templates/forms/fields/' + app_type + '/' + fields_template + '-fields.html' //content url as scope to be rendered on the directive template
       });      
     },
     template: '<ng-include src="contentUrl"></ng-include><ng-transclude></ng-transclude>'   
@@ -62,7 +62,7 @@ app.directive('ngCaseForm', function(){
       });
       $scope.$watch('applicationTypeButton', function(applicationTypeButton){ // determine the application type from the option being set in main controller
          app_type = applicationTypeButton
-         $scope.content_button_url = 'templates/forms/buttons/' + app_type + '/' + fields_template + '-button.html'  //content url as scope to be rendered on the directive template
+         $scope.content_button_url = '/templates/forms/buttons/' + app_type + '/' + fields_template + '-button.html'  //content url as scope to be rendered on the directive template
       });
     },
     template: '<ng-include src="content_button_url"></ng-include>'   

@@ -6,8 +6,6 @@ class AppsController < ApplicationController
   end
 
   def show
-
-    @url = request.url
    @case = Case.new(user_id: params[:user_id], application_id: params[:id] ) 
    @active_case_id = @case.generate_case_id
 

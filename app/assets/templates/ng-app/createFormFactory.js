@@ -9,6 +9,9 @@ app.factory('formFactory', ['myCache', 'OptionResource', 'updateCaseResource', '
     /********** Method to update application id *******************/
      // This method is specifically designed to update i130 application's 
         // application id to current version.
+    console.log("category: " + category );
+    console.log("case_id: " + case_id );
+    console.log("active_app_id: " + active_app_id );
 
     i130AppId.compare(category, case_id, active_app_id); // 
 

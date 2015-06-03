@@ -1,0 +1,29 @@
+<div ng-init="statusTestFnc()"></div>
+<h1>Application Fee Summary</h1>
+<table style="width: 600px;" >
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Fee</th>
+    </tr>
+  </thead>
+    <tfoot>
+      <tr>
+        <td> Total </td>
+        <td> {{ total_fee | currency : symbol : fractionSize }}</td>
+      </tr>
+    </tfoot>
+    <tr ng-repeat="sub_fee in sub_total_fees ">
+      <td>{{sub_fee.description}}</td>
+      <td>{{ sub_fee.fee | currency : symbol : fractionSize}}</td>
+    </tr>
+</table>
+<form action="/api/cases/{{{current_case_id}}/charges" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_k1o7Q9FJKKZid5dn40XvAwBL"
+    data-name="Immidrect"
+    data-description="Application Fee Transaction"
+    data-amount="{{converted_total_fee}}">
+  </script>
+</form>

@@ -1,6 +1,8 @@
     <div class="row">
       <div class="container"> 
-        <%= image_tag "logo.gif" %>
+        <header_logo>
+        <%= link_to(image_tag("logo.gif"), root_url) %>
+      </header_logo>
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <% if logged_in? %>

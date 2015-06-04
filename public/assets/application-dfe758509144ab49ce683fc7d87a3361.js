@@ -42774,7 +42774,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 // source: app/assets/templates/states/apps/main-container.html
 
 angular.module("templates").run(["$templateCache", function($templateCache) {
-  $templateCache.put("states/apps/main-container.html", " <!-- Main Container -->\n <ng-progress-bar></ng-progress-bar>\n <div ui-view></div>\n<pre>\n  Questionnaire: {{questionnaire_status_flag}}<br><br>\n  Forms: {{forms_status_flag}}<br><br>\n  Transaction: {{transaction_status_flag}}\n</pre>")
+  $templateCache.put("states/apps/main-container.html", " <!-- Main Container -->\n <ng-progress-bar></ng-progress-bar>\n <div ui-view></div>")
 }]);
 
 // Angular Rails Template

@@ -46,7 +46,7 @@ category_section ul {
 }
 
 
-home-image {
+.home-image {
   background-image: image-url("statue.jpg") ;
   background-size: cover;
   width: 100%;
@@ -345,12 +345,7 @@ div.resultdisplay::-moz-scrollbars-vertical {
 
 // log in page
 
-.login_background {
-  background-image: image-url("cat.jpg") ;
-  background-size: cover;
-  height: 700px;
-  text-align: center;
-}
+
 
 .front_page_message {
   color: white;

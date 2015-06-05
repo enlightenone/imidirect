@@ -32,6 +32,31 @@ header_logo {
   float: left;
 }
 
+category_section {
+  height: 250px; 
+  width: 100%; 
+  margin: 50px; 
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+category_section ul {
+  list-style-type: none;
+}
+
+
+home-image {
+  background-image: image-url("statue.jpg") ;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+  text-align: center;
+  display: block;
+
+}
+
+
 .map {
   width: 100%;
   height: 350px;

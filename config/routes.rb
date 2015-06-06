@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         resources :charges
       end
       resources :ids
+      resources :statuses
     end
 
     resources :users do

@@ -17,7 +17,6 @@ module PdfsHelper
   end
 
   def pdf_generator(user_id, current_case_id)
-
         @user = User.find(user_id)
         @current_case = @user.cases.find_by_case_id(current_case_id)
 
@@ -53,7 +52,6 @@ module PdfsHelper
         list_of_documents_pdf.stroke_horizontal_rule # List of Documentation Header
         list_of_documents_pdf.move_down 20;
 
-    
         current_options.each do |option|  # To identify which form is included
             form_included = option.include
             form_id = option.form_id
@@ -82,7 +80,6 @@ module PdfsHelper
         end
 
         list_of_documents_pdf.render_file "#{@new_directory}/#{@current_case_id}_list_of_document.pdf"
-
         combined_pdf_file << CombinePDF.new("#{@new_directory}/#{@current_case_id}_list_of_document.pdf") 
         ###### End of List of Documentation #########
 
@@ -94,9 +91,7 @@ module PdfsHelper
             if form_included
               #merge general information table with individual form table information
               general_information = @current_case.general_information
-              
               specific_case_attributes =  @current_case.send(form_id)
-
               general_information = general_information.serializable_hash 
               specific_case_attributes = specific_case_attributes.serializable_hash 
               attributes = general_information.merge(specific_case_attributes)

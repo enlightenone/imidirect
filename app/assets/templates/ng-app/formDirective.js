@@ -9,11 +9,9 @@ app.directive('ngCaseForm', function(){
       applicationType: '=',
       formTemplate: '='
     },
-    controller: ['$scope','$stateParams', 'StatusResource' , 'progressStatus', function($scope, $stateParams, StatusResource, progressStatus){
+    controller: ['$scope','$stateParams',  'progressStatus', function($scope, $stateParams, progressStatus){
       $scope.formData = {}; // field data from the form
-      $scope.current_case_id = $stateParams['case_id'] ; 
-
-      /********** Beginning of progress status updating  ******/
+      $scope.current_case_id = $stateParams['case_id'] ; // current active case id
 
       // this factory function is to update form progress status for active case
       progressStatus.update("filling", $scope.current_case_id );

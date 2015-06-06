@@ -1,5 +1,5 @@
 // This factory is to retrieve data input from the fields and store into database
-app.factory('processForm', ['myCache', 'formsResource', function(myCache, formsResource) {
+app.factory('processForm', ['myCache', 'formsResource', 'progressStatus', function(myCache, formsResource, progressStatus) {
 var service = {};
 
 service.storeData = function(case_id){

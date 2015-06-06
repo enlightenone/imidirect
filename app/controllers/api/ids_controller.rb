@@ -7,7 +7,6 @@ module Api
     def show
        # Retrieve the application id being stored at state of initialization of the active case.
        @case = Case.find_by_case_id(params[:case_id])
-       # @case = Case.find_by_case_id("3c4c31644f")
        @application_id = @case.application_id 
        render json: {:application_id => @application_id }
     end

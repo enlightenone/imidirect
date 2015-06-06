@@ -2,9 +2,14 @@ app.directive('ngFeesSummary', function(){
 // custom directive to dynamically assign form fields 
   return {
     restrict: "E",
-    controller: ['$scope', '$stateParams',  '$cookieStore', 'FeesSummary' , function($scope, $stateParams, 
-      $cookieStore, FeesSummary ){
+    controller: ['$scope', '$stateParams',  '$cookieStore', 'FeesSummary' , 'progressStatus' ,  function($scope, $stateParams, 
+      $cookieStore, FeesSummary, progressStatus ){
       $scope.fees_calculation_flag = $stateParams['fees_calculation_flag'];
+
+
+      // Update payment section status 
+      progressStatus.update("payment", $scope.current_case_id);
+      
       // call fees calculation function when the calculation fee flag is activated.
 
       /*****************Total Fees Calculation Functions**********************/

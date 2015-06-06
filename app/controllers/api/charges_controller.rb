@@ -21,6 +21,8 @@ module Api
     
     if @current_case
         pdf_generator(@user_id, @current_case_id) #generate pdf document
+        
+
     else
       redirect_to root
     end

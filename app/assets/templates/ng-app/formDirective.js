@@ -9,20 +9,14 @@ app.directive('ngCaseForm', function(){
       applicationType: '=',
       formTemplate: '='
     },
-    controller: ['$scope','$stateParams', 'StatusResource' , function($scope, $stateParams, StatusResource){
+    controller: ['$scope','$stateParams', 'StatusResource' , 'progressStatus', function($scope, $stateParams, StatusResource, progressStatus){
       $scope.formData = {}; // field data from the form
       $scope.current_case_id = $stateParams['case_id'] ; 
 
       /********** Beginning of progress status updating  ******/
 
-      // this function is to update form progress status for active case
-      var progress_status = StatusResource("filling", $scope.current_case_id );
-      var status_update_result = progress_status.update({id: $scope.current_case_id });
-
-      status_update_result.$promise.then(function(data) {
-          console.log(data["status_update_message"]);
-      });
-      /********** End of progress status updating *************/
+      // this factory function is to update form progress status for active case
+      progressStatus.update("filling", $scope.current_case_id );
 
       this.getData = function() { // get function to pass fields data to child directive.
         return $scope.formData;   

@@ -11,10 +11,10 @@ module Api
       if @status.save
          render json: {:status_update_message => "Status has been updated successfully" }
       else
-         render json: {:status_update_message => "Status upate was uns" }
+         render json: {:status_update_message => "Status upate was unsuccessful" }
       end
 
     end
-    
+
   end
 end

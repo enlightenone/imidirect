@@ -7,13 +7,11 @@ module PdfsHelper
       @case_id = @case.id
       @status = Status.find_by_case_id(@case_id)
       @status['complete'] = true
-
       if @status.save
          render json: {:status_update_message => "Final Stage Status has been updated successfully" }
       else
          render json: {:status_update_message => "Final Stage Status upate was unsuccessful" }
       end
-
   end
 
   def pdf_generator(user_id, current_case_id)
@@ -35,7 +33,6 @@ module PdfsHelper
          ###### end of block ############
 
         def generate(new_directory, form, attributes, case_id)
-
             template_path =  "#{Rails.root}/lib/pdf_templates/#{form}.pdf" 
             output_path = "#{@new_directory}/#{case_id}_#{form}.pdf" # make sure tmp/pdfs exists
             pdftk.fill_form template_path, output_path, attributes
@@ -96,7 +93,6 @@ module PdfsHelper
               specific_case_attributes = specific_case_attributes.serializable_hash 
               attributes = general_information.merge(specific_case_attributes)
 
-
             ####block to generate pdf form###
             prefilled_pdf_file = generate(@new_directory, form_id, attributes, @current_case_id )
             ###### end of block ############
@@ -120,9 +116,6 @@ module PdfsHelper
 
         # render combined pdf file to browser
         send_file combined_pdf_path, type: 'application/pdf', disposition: 'inline'
-
-
     # End of PDF block
-
   end
 end

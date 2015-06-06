@@ -14,11 +14,13 @@ app.directive('ngCaseForm', function(){
       $scope.current_case_id = $stateParams['case_id'] ; 
 
       /********** Beginning of progress status updating  ******/
+
+      // this function is to update form progress status for active case
       var progress_status = StatusResource("filling", $scope.current_case_id );
-      var status_update_result = progress_status.update({id: $scope.current_case_id })
+      var status_update_result = progress_status.update({id: $scope.current_case_id });
 
       status_update_result.$promise.then(function(data) {
-      console.log(data["status_update_message"]);
+          console.log(data["status_update_message"]);
       });
       /********** End of progress status updating *************/
 

@@ -6,7 +6,7 @@ app.controller("formController", function($scope, $stateParams, $cookies,
     console.log("Form Controller form flag: " + $scope.$parent.forms_status_flag);
    
     console.log("Outside of formController");
-
+    console.log("Case Id from Init Case controller: " + $scope.case_id);
    $scope.current_case_id = $stateParams['case_id']; // 
     //Object containing I-130 relative application options 
     $scope.formOptions = {} ; 

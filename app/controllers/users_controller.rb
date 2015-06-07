@@ -8,7 +8,10 @@ class UsersController < ApplicationController
   def new
     #new user registration method
     @user = User.new
+  end
 
+  def show
+    
   end
 
   def create

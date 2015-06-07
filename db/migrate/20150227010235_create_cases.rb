@@ -9,5 +9,6 @@ class CreateCases < ActiveRecord::Migration
       t.timestamps null: false
     end
     add_foreign_key :cases, :users
+    add_index :cases, [:user_id, :created_at]
   end
 end

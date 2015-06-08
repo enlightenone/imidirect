@@ -24,7 +24,6 @@ module Api
       end
 
       render json: {:active_case_status => @active_case_status }
-      # render json: {:active_case_id => @user.id }
     end
 
     def new

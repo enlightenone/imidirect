@@ -25,7 +25,7 @@ app.controller("initCaseController", function($scope, $http, ActiveCaseStatusRes
           generateCase.initiate($scope.current_user_id, app_id)
           location.assign( '/users/' + $scope.current_user_id + '/apps/1#/main/option?case_id=' + generateCase.case_id() + '&app_id=' + app_id);
        } else {
-          console.log("Active Case Exist");
+          console.log("Active Case Already Exist");
        }
   };//end of CaseStarts function 
 }); // end of initCaseController Controller

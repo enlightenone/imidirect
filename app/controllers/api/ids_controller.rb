@@ -32,7 +32,8 @@ module Api
     end
     
     def create
-      @case = Case.new(case_params)      
+      @case = Case.new(case_params)
+      @case.active = true       
       if @case.save 
         @status = Status.create(questionnaire: true, filling: false, payment: false, complete: false, case_id: @case.id)
         render 'create'

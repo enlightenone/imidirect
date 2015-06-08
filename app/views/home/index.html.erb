@@ -1,13 +1,16 @@
 <% provide(:title, "Home") %>
 
 <category_section ng-controller="initCaseController">
+<div ng-init="getCurrentUserId(<%= @current_user_id %>)"></div>
   Choose your immigraton Application
   <ul>
-  <li><a href="#" ng-click="caseStarts(1)">Relative Immigration Case New Link</a></li> 
+  <li><a href="#" ng-click="caseStarts()">Relative Immigration Case New Link</a></li> 
   <li><%= link_to "Relative Immigration Case", user_app_path(assign_user_id, 1) %></li>
   </ul>
 </category_section>
 
+
+<%= @current_user_id %>
 
 
         

@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     delete 'logout' => 'sessions#destroy'
     post 'apis/populate/:id' => 'api/cases#populate'
     get 'apis/option/:id' => 'api/cases#option'
+    get 'apis/active_status/:id' => 'api/ids#active_status'
+    get 'current_user' => 'users#show_current_user'
 
  
     # post 'forms/:id/new_case' => 'forms#new_case', as: :new_case 

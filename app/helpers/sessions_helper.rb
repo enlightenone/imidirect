@@ -37,9 +37,10 @@ module SessionsHelper
     forwarding_url = session[:forwarding_url]
     unless forwarding_url.nil?
       if forwarding_url.include? "inactive"
-        current_user_id = current_user.id
-        forwarding_url["inactive"] = current_user_id.to_s
         session[:forwarding_url] = forwarding_url
+        current_user_id = current_user.id
+        # Change inactive string in forwarding url to current user id
+        forwarding_url["inactive"] = current_user_id.to_s 
       end
     end
   end

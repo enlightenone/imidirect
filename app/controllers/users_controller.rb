@@ -10,6 +10,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show_current_user
+    render json: {:current_user => current_user}
+  end
+
   def show
     @user = User.find(params[:id])
     @first_name = @user.firstname
@@ -31,7 +35,7 @@ class UsersController < ApplicationController
       i += 1
       end
 
-    # render :json @fetched_statuses
+    render json: @fetched_statuses
 
   end
 

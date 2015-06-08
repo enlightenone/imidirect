@@ -1,6 +1,6 @@
 <% provide(:title, "Home") %>
 
-<category_section>
+<category_section ng-controller="initCaseController">
   Choose your immigraton Application
   <ul>
   <li><%= link_to "Relative Immigration Case", user_app_path(assign_user_id, 1) %></li>

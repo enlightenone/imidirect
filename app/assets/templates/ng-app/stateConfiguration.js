@@ -8,7 +8,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'statusController'
         })
         .state('app.option',{
-            url: '/option',
+            url: '/option?case_id&app_id',
             templateUrl: 'states/questionnaires/questionnaire-main-template.html',
             controller: 'questionnaireController'
         })

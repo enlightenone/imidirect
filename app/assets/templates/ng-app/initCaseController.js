@@ -1,59 +1,33 @@
+/* The main purpose of this controller is to provide functions to generate the application case id 
+   and to initiate the immigration application. */
 app.controller("initCaseController", function($scope, $http, ActiveCaseStatusResource, generateCase) {
-      //This method is to obtain most current user id.
+   /* This method is initiated at loading of the home index page. It will return user id if the active
+      user is logged in and determine if the active user has on going active case. */
    $scope.getCurrentUserId = function(current_user_id){
-     $scope.current_user_id = current_user_id;
+     $scope.current_user_id = current_user_id; // assign current logged in user id if available
+
+      // if the user log in, it will fetch active case state from the Rails API
+     if ($scope.current_user_id){
         ActiveCaseStatusResource.get({id: $scope.current_user_id }, function(data){ 
-          $scope.case_active_status = data["active_case_status"];
-           console.log("Case Active Status in InitCaseController: " + $scope.case_active_status);
-          // if($scope.current_user_id && ($scope.case_active_status == false)){
-          //   generateCase.initiate($scope.current_user_id, app_id)
-          //   location.assign( '/users/' + $scope.current_user_id + '/apps/1#/main/option?case_id=' + generateCase.case_id() + '&app_id=' + app_id);
-          // }else {
-          //   console.log("Active Case Exist")
-          // }
-        });
-   };
+          $scope.case_active_status = data["active_case_status"]; // fetch case status
+          console.log("Active Case status: " + $scope.case_active_status );
+        });// end of ActivCaeStatusResource method
+      } // end of if statement 
+   };// end of getCurrentUserId method
 
-   // ActiveCaseStatusResource.get({id: $scope.current_user_id }, function(data){ 
-   //        $scope.case_active_status = data["active_case_status"];
-
-   //        // if($scope.current_user_id && ($scope.case_active_status == false)){
-   //        //   generateCase.initiate($scope.current_user_id, app_id)
-   //        //   location.assign( '/users/' + $scope.current_user_id + '/apps/1#/main/option?case_id=' + generateCase.case_id() + '&app_id=' + app_id);
-   //        // }else {
-   //        //   console.log("Active Case Exist")
-   //        // }
-   //      });
-  
-
-
-
-   $scope.caseStarts = function(app_id){
-      alert($scope.case_active_status);
-       // if(!$scope.current_user_id){
-       //    location.assign('/sessions/new');
-       // }
-
-      // $http.get('/current_user').success(function(data){
-      //   $scope.current_user_id = data['current_user'].id ;
-      //   console.log("Current User Id in InitCaseController:" + $scope.current_user_id);
-      //   ActiveCaseStatusResource.get({id: $scope.current_user_id }, function(data){ 
-      //     $scope.case_active_status = data["active_case_status"];
-
-      //     if($scope.current_user_id && ($scope.case_active_status == false)){
-      //       generateCase.initiate($scope.current_user_id, app_id)
-      //       location.assign( '/users/' + $scope.current_user_id + '/apps/1#/main/option?case_id=' + generateCase.case_id() + '&app_id=' + app_id);
-      //     }else {
-      //       console.log("Active Case Exist")
-      //     }
-      //   });
-      // }).error(function(){
-      //   location.assign('/sessions/new');// if not logged in, redirect to the login page
-      // });
-
-      };//end of CaseStarts function 
-
-
+  /* This method is to initiate application process. It will reroute to the appropriate page based on
+     the active state of the user and case activity. If the user is not logged in, it will redirect
+     to log in page. The case id is generated if there is no active ongoing case under the user  */
+   $scope.applyMyCase = function(app_id){
+       if(!$scope.current_user_id){
+          location.assign('/sessions/new');
+       } else if($scope.current_user_id && ($scope.case_active_status == false)) {
+          generateCase.initiate($scope.current_user_id, app_id)
+          location.assign( '/users/' + $scope.current_user_id + '/apps/1#/main/option?case_id=' + generateCase.case_id() + '&app_id=' + app_id);
+       } else {
+          console.log("Active Case Exist");
+       }
+  };//end of CaseStarts function 
 }); // end of initCaseController Controller
     
                                     

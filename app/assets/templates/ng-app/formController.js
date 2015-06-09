@@ -6,7 +6,7 @@ app.controller("formController", function($scope, $stateParams, $cookies, progre
     $scope.current_case_id = $stateParams['case_id']; // obtain current case id from params
 
     // This update progress and assign url
-    progressStatus.update("filling", $scope.current_case_id, currentUrl.path() );
+    progressStatus.update("filling", $scope.current_case_id, currentUrl.path());
     console.log("Outside of formController");
 
     //Object containing I-130 relative application options 

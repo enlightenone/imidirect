@@ -34,7 +34,7 @@ module Api
       @case = Case.new(case_params)
       @case.active = true       
       if @case.save 
-        @status = Status.create(questionnaire: true, filling: false, payment: false, complete: false, case_id: @case.id)
+        @status = Status.create(questionnaire: false, filling: false, payment: false, complete: false, case_id: @case.id)
         render json: {:message => "New case has successfully created!"}
       else
         redirect_to root

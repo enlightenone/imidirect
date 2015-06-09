@@ -1,12 +1,12 @@
-app.controller("formController", function($scope, $stateParams, $cookies, $location, progressStatus, 
+app.controller("formController", function($scope, $stateParams, $cookies, progressStatus, 
                                           $cookieStore, myCache, Case, CaseInit, generateCase, fieldsData, formsResource, 
-                                          OptionResource, $resource) {
+                                          OptionResource, $resource, currentUrl) {
 
     $scope.$parent.forms_status_flag = true ; // update progress status for form
     $scope.current_case_id = $stateParams['case_id']; // obtain current case id from params
 
-    // progressStatus.retrieve($scope.current_case_id);
-    console.log("Fetched data result form controller: " + $scope.fetched_status_result ) ;
+    // This update progress and assign url
+    progressStatus.update("filling", $scope.current_case_id, currentUrl.path() );
     console.log("Outside of formController");
 
     //Object containing I-130 relative application options 

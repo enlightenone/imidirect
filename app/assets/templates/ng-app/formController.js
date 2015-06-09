@@ -2,8 +2,7 @@ app.controller("formController", function($scope, $stateParams, $cookies,
                                           $cookieStore, myCache, Case, CaseInit, generateCase, fieldsData, formsResource, 
                                           OptionResource, $resource) {
 
-    $scope.$parent.forms_status_flag = true ;
-    console.log("Form Controller form flag: " + $scope.$parent.forms_status_flag);
+    $scope.$parent.forms_status_flag = true ; // update progress status for form
    
     console.log("Outside of formController");
     console.log("Case Id from Init Case controller: " + $scope.case_id);

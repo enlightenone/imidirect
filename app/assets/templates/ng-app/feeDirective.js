@@ -14,8 +14,6 @@ app.directive('ngFeesSummary', function(){
 
       /*****************Total Fees Calculation Functions**********************/
      if ($scope.fees_calculation_flag == "true"){ 
-        $cookieStore.put("current_case_id", $scope.current_case_id);
-
         FeesSummary.get({id: $scope.current_case_id }, function(data){
             $scope.total_fee = data['total_fee'];
             $scope.sub_total_fees = data['sub_total_fees'];

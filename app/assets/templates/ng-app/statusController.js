@@ -1,4 +1,4 @@
-app.controller("statusController", function($scope,  $state, $stateParams, $cookies, $cookieStore, myCache, Case, CaseInit, formsResource, OptionResource, $resource) {
+app.controller("statusController", function($scope, $stateParams) {
     $scope.questionnaire_status_flag = true;
     $scope.forms_status_flag = false;
     $scope.transaction_status_flag = false;

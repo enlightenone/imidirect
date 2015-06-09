@@ -11,7 +11,6 @@ app.directive('ngCaseForm', function(){
     },
     controller: ['$scope','$stateParams',  'progressStatus', function($scope, $stateParams, progressStatus){
       $scope.formData = {}; // field data from the form
-      $scope.current_case_id = $stateParams['case_id'] ; // current active case id
 
       // this factory function is to update form progress status for active case
       progressStatus.update("filling", $scope.current_case_id );
@@ -45,10 +44,8 @@ app.directive('ngCaseForm', function(){
       formTemplateButton: '='
     },
     controller: ['$scope', '$stateParams' ,'fieldsData', 'processForm', function($scope, $stateParams, fieldsData, processForm){
-
       $scope.formData = {}; //initiate the form field object
       $scope.switchOptions = $stateParams; //catch options to generate corresponding template forms
-      $scope.current_case_id = $stateParams['case_id'] ; // render case id to html template to be use to generate fee summary page
  
       // invoke fields data cache factory to form data into cache
       $scope.CatchData = function (name, form_data) { // to assign form fields data to cache.

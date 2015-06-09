@@ -5,7 +5,6 @@ app.directive('ngFeesSummary', function(){
     controller: ['$scope', '$stateParams',  '$cookieStore', 'FeesSummary' , 'progressStatus' ,  function($scope, $stateParams, 
       $cookieStore, FeesSummary, progressStatus ){
       $scope.fees_calculation_flag = $stateParams['fees_calculation_flag'];
-       console.log("IniCase Controller case id inside of feeDirective: " + $scope.case_id);
 
       // Update payment section status 
       progressStatus.update("payment", $scope.current_case_id);

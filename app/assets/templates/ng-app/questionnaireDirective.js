@@ -13,7 +13,7 @@ app.directive('ngQuestionnaire', function(){
 
       // Method to generate form
       $scope.chooseForm = function(category, active_app_id){
-        formFactory.generate(category, $scope.formOptions, $scope.case_id, active_app_id);
+        formFactory.generate(category, $scope.formOptions, $scope.current_case_id, active_app_id);
       }
 
       $scope.categoryFnc =  function(template) {

@@ -1,12 +1,7 @@
 app.directive('ngProgressBar', function(){
-// custom directive to dynamically assign form fields 
+// custom directive for progress bar
   return {
     restrict: "E",
-    controller: ['$scope', function($scope){
-  
-    }],
-    link: function($scope) {
-    },
     templateUrl: 'states/progress/progress-bar-template.html'   
   } // end of return
 })

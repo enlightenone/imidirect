@@ -29,26 +29,28 @@ module Api
 
       if ( @status_to_be_updated == 'questionnaire' )
          if (!@questionnaire_stage && !@filling_stage && !@payment_stage && !@complete_stage )
-              # Update questionnaire status and assign current url
+              # Update questionnaire status and assign current url path
              @status.questionnaire = true
              @status.current_url = params[:current_url]         
          end 
       else if (@status_to_be_updated == 'filling')    
          if ( @questionnaire_stage && !@filling_stage && !@payment_stage && !@complete_stage )
-              # Update filling status and assign current url
+              # Update filling status and assign current url path
              @status.filling = true
              @status.current_url = params[:current_url]         
          end 
       else if (@status_to_be_updated == 'payment') 
          if ( @questionnaire_stage && @filling_stage && !@payment_stage && !@complete_stage )
-              # Update payment status and assign current url
+              # Update payment status and assign current url path
              @status.payment = true
              @status.current_url = params[:current_url]         
          end 
       else if (@status_to_be_updated == 'complete')
-              # Update complete status and assign current url
+              # Update complete status and assign current url path
+          if ( @questionnaire_stage && @filling_stage && @payment_stage && !@complete_stage )
              @status.complete = true
-             @status.current_url = params[:current_url]  
+             @status.current_url = params[:current_url]
+          end  
       end #end of if statment
 
 

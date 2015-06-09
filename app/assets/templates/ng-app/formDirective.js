@@ -13,9 +13,6 @@ app.directive('ngCaseForm', function(){
       $scope.formData = {}; // field data from the form
       $scope.current_case_id = $stateParams['case_id']; //assign current cae id 
 
-      // this factory function is to update form progress status for active case
-      progressStatus.update("filling", $scope.current_case_id );
-
       this.getData = function() { // get function to pass fields data to child directive.
         return $scope.formData;   
       };

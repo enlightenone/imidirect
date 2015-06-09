@@ -2,7 +2,15 @@ module Api
   class StatusesController < ApplicationController
 
     def show
-      
+      @case = Case.find_by_case_id(params[:id])
+      @case_id = @case.id
+      @status = Status.find_by_case_id(@case_id)
+
+      if @status
+        render json: @status 
+      else
+        render json: {:status_retrieve_message => "Status retrieve was unsuccessful" }
+      end
     end
 
     def update

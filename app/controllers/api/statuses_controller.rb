@@ -1,6 +1,10 @@
 module Api
   class StatusesController < ApplicationController
 
+    def show
+      
+    end
+
     def update
       #update progress status
       @case = Case.find_by_case_id(params[:id])

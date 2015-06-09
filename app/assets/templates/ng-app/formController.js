@@ -5,7 +5,7 @@ app.controller("formController", function($scope, $stateParams, $cookies,
     $scope.$parent.forms_status_flag = true ; // update progress status for form
    
     console.log("Outside of formController");
-   $scope.current_case_id = $stateParams['case_id']; // Current active case id assign from params of url
+
     //Object containing I-130 relative application options 
     $scope.formOptions = {} ; 
     // To retain form options after the form has been submitted to determine button options.

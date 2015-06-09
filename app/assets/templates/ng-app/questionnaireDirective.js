@@ -10,7 +10,7 @@ app.directive('ngQuestionnaire', function(){
       $scope.qualifications = {} ;
       $scope.category = "" ;
       $scope.formOptions = {} ; 
-
+      console.log("Inside of questionnaire controller case id: " + $scope.current_case_id ) ;
       // Method to generate form
       $scope.chooseForm = function(category, active_app_id){
         formFactory.generate(category, $scope.formOptions, $scope.current_case_id, active_app_id);

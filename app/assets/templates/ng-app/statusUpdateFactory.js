@@ -13,14 +13,5 @@ app.factory('progressStatus', ['StatusResource', function(StatusResource) {
     });
   };
 
-  //Retrieve progress status for requested case.
-  service.retrieve = function(current_case_id){
-    progress_status = StatusResource(status, current_case_id);
-    retrieved_status_result = progress_status.retrieve({id: current_case_id}); 
-    retrieved_status_result.$promise.then(function(data) {
-      console.log("fetched data result: " + data.complete);
-      return data.complete;
-    }); 
-  };
  return service ;
 }]);

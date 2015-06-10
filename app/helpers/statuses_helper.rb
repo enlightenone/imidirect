@@ -3,8 +3,8 @@ module StatusesHelper
 # url path to be used later when user logs back to continue with on-going case.
 def progress_status_update(case_generated_id, status, current_url)
       # Obtain the model generated case id to retrieve status
-      @case = Case.find_by_case_id(case_generated_id)
-      @case_id = @case.id
+      @current_case = Case.find_by_case_id(case_generated_id)
+      @case_id = @current_case.id
       @status = Status.find_by_case_id(@case_id)
 
       @status_to_be_updated = status
@@ -38,6 +38,8 @@ def progress_status_update(case_generated_id, status, current_url)
           if ( @questionnaire_stage && @filling_stage && @payment_stage && !@complete_stage )
              @status.complete = true
              @status.current_url = current_url
+             #Reset the active status of completed case to false
+             @current_case.assign_attributes(active: false) 
           end  
       end #end of if statment
 

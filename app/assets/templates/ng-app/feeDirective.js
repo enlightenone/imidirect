@@ -7,7 +7,7 @@ app.directive('ngFeesSummary', function(){
       $scope.fees_calculation_flag = $stateParams['fees_calculation_flag'];
 
       // Update payment section status 
-      // progressStatus.update("payment", $scope.current_case_id);
+      progressStatus.update("payment", $scope.current_case_id);
       
       // call fees calculation function when the calculation fee flag is activated.
 

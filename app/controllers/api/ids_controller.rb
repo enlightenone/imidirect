@@ -31,6 +31,7 @@ module Api
     end
     
     def create
+      # generate new application case when the user choose the application on the front page
       @case = Case.new(case_params)
       @case.active = true       
       if @case.save 

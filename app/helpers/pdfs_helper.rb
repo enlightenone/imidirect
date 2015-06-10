@@ -111,8 +111,11 @@ module PdfsHelper
 
         # generate combined pdf file and update the complete flag
         if combined_pdf_file.save combined_pdf_path
-            final_status_update(current_case_id)
+            # final_status_update(current_case_id)
+            progress_status_update(current_case_id, "complete", combined_pdf_path)
+            
         end
+
 
         # render combined pdf file to browser
         send_file combined_pdf_path, type: 'application/pdf', disposition: 'inline'

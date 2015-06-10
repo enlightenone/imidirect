@@ -1,3 +1,4 @@
+// This application is to set the forms to be used on the application.
 app.factory("OptionResource", function($resource) {
   return function(options, case_id){
   var Resource = $resource('/apis/option/:id', {id: '@id'},

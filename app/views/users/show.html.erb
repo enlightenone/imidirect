@@ -5,7 +5,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  font-size: 2em;
+  width: 700px;
 }
 .progress_status {
   display: inline;
@@ -22,10 +22,28 @@
 <ul id="case_list" >
   <li class="progress_status"><%= c['case_id'] %>  </li>
   <li class="progress_status"><%= c['application_type']%> </li>
-  <li class="progress_status"> Progress Bar</li>
+  <li class="progress_status">
+    <div style="width: 450px">
+   <progress_bar class="progress">
+    <sub_progress_bar class="progress-bar progress-bar-success" role="progressbar" 
+     style="width:40%">
+      Questionnaire
+    </sub_progress_bar>
+    <sub_progress_bar class="progress-bar progress-bar-warning" role="progressbar" 
+     style="width:40%">
+      Form Filling
+    </sub_progress_bar>
+    <sub_progress_bar class="progress-bar progress-bar-danger" role="progressbar" 
+     style="width:20%">
+      Payment
+    </sub_progress_bar>
+   </ progress_bar>
+   </div>
+  </li>
   <li class="progress_status"><%= link_to("Action", c['current_url'])%></li>
 </ul>
 <% end %>
+   
 
 
 

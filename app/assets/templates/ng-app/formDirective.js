@@ -1,6 +1,5 @@
 app.directive('ngCaseForm', function(){
   var fields_template, app_type; 
-
 // custom directive to dynamically assign form fields 
   return {
     restrict: "E",

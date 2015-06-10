@@ -24,7 +24,6 @@ app.controller("formController", function($scope, $stateParams, $cookies, progre
         }
     };
 
-
     //************** Case form selections **********//
 
     $scope.formTmpSelection = function(selections) {

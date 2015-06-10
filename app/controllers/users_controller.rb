@@ -28,14 +28,16 @@ class UsersController < ApplicationController
       @status_questionnaire = c.status.questionnaire
       @status_filling = c.status.filling
       @status_payment = c.status.payment 
-      @status
+      @status_complete = c.status.complete
+      @case_active_status = c.active
 
       @current_url = c.status.current_url ? '#{Rails.root}' + c.status.current_url : root_path
 
       @fetched_cases_results[i.to_s] = { "case_id" => c.case_id, "application_type" => @application_type,
-           "status_questionnaire" => c.status.questionnaire, "status_filling" => c.status.filling,
-           "status_payment" => c.status.payment, "status_complete" => c.status.complete, 
-           "current_url" => @current_url }
+           "case_active_status" => @case_active_status,
+           "status_questionnaire" => @status_questionnaire, "status_filling" => @status_filling,
+           "status_payment" => @status_payment, "status_complete" => @status_complete, 
+           "current_url" => @current_url}
       i += 1
     end
 

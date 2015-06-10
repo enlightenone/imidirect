@@ -1,4 +1,31 @@
 <h1><%= @first_name %> <%= @last_name %>'s Cases</h1>
+<style>
+ 
+#case_list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+}
+.progress_status {
+  display: inline;
+  padding: 0px 30px;
+}
+</style>
+<ul id="case_list" >
+  <li class="progress_status"> Case Id  </li>
+  <li class="progress_status"> Application Type </li>
+   <li class="progress_status"> Progress Bar </li>
+  <li class="progress_status"> Action </li>
+</ul>
+<% @fetched_cases_results.each do |k, c|%>
+<ul id="case_list" >
+  <li class="progress_status"><%= c['case_id'] %>  </li>
+  <li class="progress_status"><%= c['application_type']%> </li>
+  <li class="progress_status"> Progress Bar</li>
+  <li class="progress_status"><%= link_to("Action", c['current_url'])%></li>
+</ul>
+<% end %>
 
-<%= @fetched_statuses %>
+
 

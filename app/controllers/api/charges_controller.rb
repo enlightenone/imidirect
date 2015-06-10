@@ -5,7 +5,6 @@ module Api
   class ChargesController < ApplicationController
     def show
       @case_id = params[:id]
-      # cookies.permanent[:caseid]= @case_id
       render json: fees_summary_display(@case_id) #pull fees summary of the active case from database
   end
 

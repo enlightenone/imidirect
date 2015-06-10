@@ -20,22 +20,23 @@ class UsersController < ApplicationController
     @last_name = @user.lastname
 
     @cases = @user.cases.first(10)
-    @fetched_statuses = Hash.new
+    @fetched_cases_results = Hash.new
     i = 1
 
-  
     @cases.each do |c|
+      @application_type = c.application.app_id
       @status_questionnaire = c.status.questionnaire
       @status_filling = c.status.filling
       @status_payment = c.status.payment 
 
-      @fetched_statuses[i.to_s] = { "case_id" => c.case_id, 
+      @current_url = c.status.current_url ? '#{Rails.root}' + c.status.current_url : root_path
+
+      @fetched_cases_results[i.to_s] = { "case_id" => c.case_id, "application_type" => @application_type,
            "status_questionnaire" => c.status.questionnaire, "status_filling" => c.status.filling,
-           "status_payment" => c.status.payment, "status_complete" => c.status.complete}
+           "status_payment" => c.status.payment, "status_complete" => c.status.complete, 
+           "current_url" => @current_url }
       i += 1
       end
-
-    render json: @fetched_statuses
 
   end
 

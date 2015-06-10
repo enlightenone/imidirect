@@ -28,6 +28,7 @@ class UsersController < ApplicationController
       @status_questionnaire = c.status.questionnaire
       @status_filling = c.status.filling
       @status_payment = c.status.payment 
+      @status
 
       @current_url = c.status.current_url ? '#{Rails.root}' + c.status.current_url : root_path
 
@@ -36,7 +37,8 @@ class UsersController < ApplicationController
            "status_payment" => c.status.payment, "status_complete" => c.status.complete, 
            "current_url" => @current_url }
       i += 1
-      end
+    end
+
 
   end
 

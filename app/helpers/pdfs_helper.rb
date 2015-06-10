@@ -112,8 +112,7 @@ module PdfsHelper
         # generate combined pdf file and update the complete flag
         if combined_pdf_file.save combined_pdf_path
             # final_status_update(current_case_id)
-            progress_status_update(current_case_id, "complete", combined_pdf_path)
-            
+            progress_status_update(@current_case_id, "complete", combined_pdf_path)
         end
 
 

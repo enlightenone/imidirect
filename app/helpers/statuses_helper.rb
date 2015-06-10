@@ -13,8 +13,9 @@ def progress_status_update(case_generated_id, status, current_url)
       @questionnaire_stage = @status.questionnaire
       @filling_stage = @status.filling
       @payment_stage = @status.payment
-      @complete_stage = @status.payment
+      @complete_stage = @status.complete
 
+      # These logics are to prevent wrongly update on progress status
       if ( @status_to_be_updated == 'questionnaire' )
          if (!@questionnaire_stage && !@filling_stage && !@payment_stage && !@complete_stage )
               # Update questionnaire status and assign current url path
@@ -38,8 +39,9 @@ def progress_status_update(case_generated_id, status, current_url)
           if ( @questionnaire_stage && @filling_stage && @payment_stage && !@complete_stage )
              @status.complete = true
              @status.current_url = current_url
-             #Reset the active status of completed case to false
-             @current_case.assign_attributes(active: false) 
+             #Reset the active status of completed case to false so that the user can later apply for new case
+             @current_case.assign_attributes(active: false)
+             @current_case.save
           end  
       end #end of if statment
 

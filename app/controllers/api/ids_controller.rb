@@ -16,12 +16,12 @@ module Api
       @user = User.find(params[:id])
       @cases = Case.where(user_id: @user.id.to_s )
       @active_case = @cases.find_by_active(true)
-      @active_case_id = @active_case.id
-      @status = Status.find_by_case_id(@active_case_id)
-      @current_url = @status.current_url ? @status.current_url : root_path # Assign root path if there is no value available as defualt
 
       if @active_case
           @active_case_status = @active_case.active
+          @active_case_id = @active_case.id
+          @status = Status.find_by_case_id(@active_case_id)
+          @current_url = @status.current_url ? @status.current_url : root_path # Assign root path if there is no value available as defualt
       else
           @active_case_status = false
       end

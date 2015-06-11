@@ -31,7 +31,7 @@ class UsersController < ApplicationController
       @status_complete = c.status.complete
       @case_active_status = c.active 
 
-      @current_url = c.status.current_url ? '#{Rails.root}' + c.status.current_url : root_path
+      @current_url = c.status.current_url ? c.status.current_url : root_path
 
       @fetched_cases_results[i.to_s] = { "case_id" => c.case_id, "application_type" => @application_type,
            "case_active_status" => @case_active_status,

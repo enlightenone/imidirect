@@ -6,15 +6,7 @@ class AppsController < ApplicationController
   end
 
   def show
-   # @case = Case.new(user_id: params[:user_id], application_id: params[:id] ) 
-   # @active_case_id = @case.generate_case_id
 
-   # if @case.save 
-   #  @status = Status.create(questionnaire: true, filling: false, payment: false, complete: false, case_id: @case.id)
-   #  # render 'create'
-   # else
-   #  redirect_to root
-   # end
   end
 
   def home

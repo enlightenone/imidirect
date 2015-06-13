@@ -14,7 +14,7 @@ module Api
     def active_status
       #To detect if there is an active status case.
       @user = User.find(params[:id])
-      @cases = Case.where(user_id: @user.id.to_s )
+      @cases = Case.where(user_id: @user.id )
       @active_case = @cases.find_by_active(true)
 
       if @active_case

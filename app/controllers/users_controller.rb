@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @first_name = @user.firstname
     @last_name = @user.lastname
 
-    @cases = @user.cases.first(10)
+    @cases = @user.cases.last(10).reverse! #change to decending order on list of cases
     @fetched_cases_results = Hash.new
     i = 1
 
@@ -40,7 +40,6 @@ class UsersController < ApplicationController
            "current_url" => @current_url, "case_active" => @case_active_status }
       i += 1
     end
-
 
   end
 

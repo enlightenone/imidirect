@@ -8,6 +8,11 @@ app.factory("StatusResource", function($resource) {
                               url: '/api/statuses/:id',
                               params:{status: status, case_id: case_id, current_url: current_url},
                               headers : {'Content-Type' : 'application/json'}
+                          },
+                       get: {
+                              method: 'GET', 
+                              url: '/api/statuses/:id',
+                              headers : {'Content-Type' : 'application/json'}
                           }
                     });
          return Resource;

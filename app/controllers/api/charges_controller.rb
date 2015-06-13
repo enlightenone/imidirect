@@ -11,7 +11,7 @@ module Api
   def create
 
     #retrieve the current active case
-    @current_case = Case.last
+    @current_case = Case.find_by_active(true)
     @current_case_id = @current_case.case_id
     @user_id = @current_case.user_id
     

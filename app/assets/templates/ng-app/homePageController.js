@@ -1,6 +1,6 @@
 /* The main purpose of this controller is to provide functions to generate the application case id 
    and to initiate the immigration application. */
-app.controller("homePageController", function($scope, $http, ActiveCaseStatusResource, generateCase) {
+app.controller("homePageController", function($scope, ActiveCaseStatusResource, generateCase) {
    /* This method is initiated at loading of the home index page. It will return user id if the active
       user is logged in and determine if the active user has on going active case. */
    $scope.getCurrentUserId = function(current_user_id){

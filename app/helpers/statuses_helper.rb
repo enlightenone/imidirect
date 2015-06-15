@@ -6,9 +6,7 @@ def progress_status_update(case_generated_id, status, current_url)
       @current_case = Case.find_by_case_id(case_generated_id)
       @case_id = @current_case.id
       @status = Status.find_by_case_id(@case_id)
-
       @status_to_be_updated = status
-
 
       # Status variables of individual stages
       @questionnaire_stage = @status.questionnaire

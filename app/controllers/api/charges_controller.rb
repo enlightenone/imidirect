@@ -20,7 +20,7 @@ module Api
     
     if @current_case
       pdf_generator(@user_id, @current_case_id) #generate pdf document
-      redirect_to '/users/' + @user_id.to_s + '/apps/1#/main/complete?case_id=' + @current_case_id     
+      redirect_to '/users/' + @user_id.to_s + '/apps/1#/main/complete?case_id=' + @current_case_id + '&user_id=' +  @user_id.to_s  
     else
       redirect_to root
     end

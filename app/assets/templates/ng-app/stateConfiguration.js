@@ -75,7 +75,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         // url to fee summary display and link to credit card
         .state('app.complete', {
-            url: '/complete?case_id',
+            url: '/complete?case_id&user_id',
             templateUrl: 'states/pdfs/complete-page.html',
             controller: 'pdfController'
         });

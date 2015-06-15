@@ -1,19 +1,5 @@
 module ChargesHelper
   
-  def final_status_update(case_id)
-      # This method is to update the status flag when the pdf is generalated to signal the pdf is generated 
-      # the case is completed.
-      @status = Status.find_by_case_id(case_id)
-      @status['complete'] = true
-
-      if @status.save
-         render json: {:status_update_message => "Final Stage Status has been updated successfully" }
-      else
-         render json: {:status_update_message => "Final Stage Status upate was unsuccessful" }
-      end
-
-  end
-
   def fees_summary_display(case_id)
       
       @case = Case.find_by_case_id(case_id)

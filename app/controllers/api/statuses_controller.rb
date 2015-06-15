@@ -3,7 +3,6 @@ module Api
   class StatusesController < ApplicationController
 
     def show
-
       @case = Case.find_by_case_id(params[:id])
       @case_id = @case.id
       @case_active_status = @case.active ? @case.active : false 

@@ -24,10 +24,6 @@ module Api
     else
       redirect_to root
     end
-
-  # rescue Stripe::CardError => e
-  #   flash[:notice] = e.message
-  #   redirect_to root
   end
 
   end

@@ -46,7 +46,7 @@
   </li>
   <li class="progress_status">
     <!-- This will set name of link based on case active status -->
-    <%= link_to_if(!c['case_active'],  "Immigration Package", c['current_url']) do
+    <%= link_to_if(!c['case_active'],  "Immigration Package", c['current_url'], :target => "_blank") do
        link_to("Continue",c['current_url'] )
     end %>
   </li>

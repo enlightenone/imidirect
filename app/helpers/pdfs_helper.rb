@@ -1,19 +1,5 @@
 module PdfsHelper
 
-  def final_status_update(current_case_id)
-      # This method is to update the status flag when the pdf is generalated to signal the pdf is generated 
-      # the case is completed.
-      @case = Case.find_by_case_id(current_case_id)
-      @case_id = @case.id
-      @status = Status.find_by_case_id(@case_id)
-      @status['complete'] = true
-      if @status.save
-         render json: {:status_update_message => "Final Stage Status has been updated successfully" }
-      else
-         render json: {:status_update_message => "Final Stage Status upate was unsuccessful" }
-      end
-  end
-
   def pdf_generator(user_id, current_case_id)
         @user = User.find(user_id)
         @current_case = @user.cases.find_by_case_id(current_case_id)
@@ -109,13 +95,6 @@ module PdfsHelper
         # combined pdf file path
         combined_pdf_path = "#{Rails.root}/public/generated_pdfs/#{@current_case_id}_combined.pdf"
         combined_pdf_file.save combined_pdf_path
-        # generate combined pdf file and update the complete flag
-        # if combined_pdf_file.save combined_pdf_path
-            # final_status_update(current_case_id)
-            # progress_status_update(@current_case_id, "complete", url_path)
-        # end
-        # render combined pdf file to browser
-        # send_file combined_pdf_path, type: 'application/pdf', disposition: 'inline'
     # End of PDF block
   end
 end

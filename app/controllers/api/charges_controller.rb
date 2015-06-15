@@ -16,7 +16,7 @@ module Api
     @user_id = @current_case.user_id
     
     # Process credit card transaction
-    fees_transaciton(@current_case_id)
+    # fees_transaciton(@current_case_id)
     
     if @current_case
       pdf_generator(@user_id, @current_case_id) #generate pdf document

@@ -9,6 +9,7 @@ def progress_status_update(case_generated_id, status, current_url)
 
       @status_to_be_updated = status
 
+
       # Status variables of individual stages
       @questionnaire_stage = @status.questionnaire
       @filling_stage = @status.filling
@@ -40,10 +41,20 @@ def progress_status_update(case_generated_id, status, current_url)
              @status.complete = true
              @status.current_url = current_url
              #Reset the active status of completed case to false so that the user can later apply for new case
+             @current_case.save
+          end  
+      elsif (@status_to_be_updated == 'close')
+              # Update complete status and assign current url path
+          if ( @questionnaire_stage && @filling_stage && @payment_stage && @complete_stage )
+             @status.current_url = current_url
+             #Reset the active status of completed case to false so that the user can later apply for new case
              @current_case.assign_attributes(active: false)
              @current_case.save
           end  
-      end #end of if statment
+      end 
+
+
+      #end of if statment
 
       if @status.save
          return {:status_update_message => "Status has been updated successfully" }

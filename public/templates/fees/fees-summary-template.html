@@ -1,9 +1,8 @@
-<div ng-init="statusTestFnc()"></div>
-<h1>Application Fee Summary</h1>
+<h1>Application Fee Summary asdf</h1>
 <table style="width: 600px;" >
   <thead>
     <tr>
-      <th>Description</th>
+      <th>Descriptions</th>
       <th>Fee</th>
     </tr>
   </thead>
@@ -18,7 +17,8 @@
       <td>{{ sub_fee.fee | currency : symbol : fractionSize}}</td>
     </tr>
 </table>
-<form action="/api/cases/1/charges" method="POST">
+
+<form action="{{urlPath}}" method="POST">
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="pk_test_k1o7Q9FJKKZid5dn40XvAwBL"

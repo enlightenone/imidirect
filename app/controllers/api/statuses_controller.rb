@@ -19,6 +19,7 @@ module Api
     def update
       @case_generated_id =params[:id]
       @status = params[:status]
+
       @current_url = params[:current_url]
       #Update the final pdf and fee transaction stage.
       render json: progress_status_update(@case_generated_id, @status,  @current_url)

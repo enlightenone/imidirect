@@ -9,17 +9,18 @@ module Api
   end
 
   def create
-
+    @current_case_id = params[:case_id]
     #retrieve the current active case
-    @current_case = Case.find_by_active(true)
+    @current_case = Case.find_by_case_id(@current_case_id)
     @current_case_id = @current_case.case_id
     @user_id = @current_case.user_id
     
     # Process credit card transaction
-    # fees_transaciton(@current_case_id)
+    fees_transaciton(@current_case_id)
     
     if @current_case
-        pdf_generator(@user_id, @current_case_id) #generate pdf document
+      pdf_generator(@user_id, @current_case_id) #generate pdf document
+      redirect_to '/users/' + @user_id.to_s + '/apps/1#/main/complete?case_id=' + @current_case_id     
     else
       redirect_to root
     end

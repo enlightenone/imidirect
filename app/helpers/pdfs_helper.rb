@@ -107,15 +107,15 @@ module PdfsHelper
         ####  End of PDF Form generation Block #####
 
         # combined pdf file path
-        combined_pdf_path = "#{Rails.root}/tmp/pdfs/#{@current_case_id}_combined.pdf"
-
+        combined_pdf_path = "#{Rails.root}/public/generated_pdfs/#{@current_case_id}_combined.pdf"
+        combined_pdf_file.save combined_pdf_path
         # generate combined pdf file and update the complete flag
-        if combined_pdf_file.save combined_pdf_path
+        # if combined_pdf_file.save combined_pdf_path
             # final_status_update(current_case_id)
-            progress_status_update(@current_case_id, "complete", combined_pdf_path)
-        end
+            # progress_status_update(@current_case_id, "complete", url_path)
+        # end
         # render combined pdf file to browser
-        send_file combined_pdf_path, type: 'application/pdf', disposition: 'inline'
+        # send_file combined_pdf_path, type: 'application/pdf', disposition: 'inline'
     # End of PDF block
   end
 end

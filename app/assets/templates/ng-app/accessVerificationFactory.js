@@ -36,6 +36,10 @@ app.factory('accessVerification', ['StatusResource', 'ActiveCaseStatusResource',
                 ) {
                 location.assign('/');
              }      
+          } else if (status == 'complete') {
+            if (!data['status'].complete) {
+                location.assign('/');
+             }      
           }
        });
   };

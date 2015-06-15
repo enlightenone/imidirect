@@ -6,6 +6,7 @@ app.factory('progressStatus', ['StatusResource', 'accessVerification',  function
   var retrieved_status_result ;
   //Update progress status of each stage of the application
   service.update = function(status, current_case_id, current_url){
+    console.log("Progress Status in complete: " + status)
     progress_status = StatusResource(status, current_case_id, current_url );
     status_update_result = progress_status.update({id: current_case_id});  
     status_update_result.$promise.then(function(data) {

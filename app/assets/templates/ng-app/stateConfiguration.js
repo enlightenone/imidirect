@@ -72,6 +72,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/charge?case_id&fees_calculation_flag',
             templateUrl: 'states/fees/fees-summary.html',
             controller: 'feeController'
+        })
+        // url to fee summary display and link to credit card
+        .state('app.complete', {
+            url: '/complete?case_id',
+            templateUrl: 'states/pdfs/complete-page.html',
+            controller: 'pdfController'
         });
     // Default Raout
     $urlRouterProvider.otherwise('');

@@ -1,26 +1,52 @@
-    <div class="row">
-      <div class="container"> 
-        <header-logo> 
-        <%= link_to(image_tag("logo.gif"), root_url) %>
-        </header-logo>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <% if logged_in? %>
-              <li><%= link_to "Profile", user_path(current_user)%></li>
-              <li><%= link_to "Settings", edit_user_path(current_user)%></li>
-              <li>
-                <%= link_to "Log out", logout_path, method: "delete" %>
-              </li>
-            <% else %>
-              <li>
-                <%= link_to "Log in", login_path %>
-              </li>
-              <li>
-                <%= link_to "Sign Up", signup_path %>
-              </li>
-            <% end %>
-
-          </ul>
-        </nav>
+<div class="upper_top_bar_wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+           <span class="moto-text-block">World Premiere Immigration Online Process Center</span>
+        </div>
+        <div class="col-md-6">
+           <ul class="profile-access-menu">
+        <% if logged_in? %>
+          <li><%= link_to "Profile", user_path(current_user)%></li>
+          <li><%= link_to "Settings", edit_user_path(current_user)%></li>
+          <li>
+            <%= link_to "Log out", logout_path, method: "delete" %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "Log in", login_path %>
+          </li>
+          <li>
+            <%= link_to "Sign Up", signup_path %>
+          </li>
+        <% end %>
+           </ul>
+        </div>
       </div>
     </div>
+</div><!--  End of top bar block -->
+<div class="container" >
+  <div class="row">
+    <div class="col-md-6">
+       <%= link_to(image_tag("ameridirect-logo.png"), root_url) %>
+    </div> <!-- End of left second top bar -->
+    <div class="col-md-6">
+      <div class="navbar">
+         <ul class="nav navbar-nav navbar-right main-nav-block">
+            <li><%= link_to "About", user_path(current_user) %></li>
+            <li><a href="#">Family Petition</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Individual Petitions <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Work Permit</a></li>
+                <li><a href="#">Travel Permit</a></li>
+                <li><a href="#">Adjustment Of Status</a></li>
+              </ul>
+            </li>
+          </ul> <!--  End of right nav menu block -->
+      </div>
+    </div> <!-- End of right second top bar -->
+  </div>
+</div>
+
+

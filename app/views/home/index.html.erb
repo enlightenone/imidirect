@@ -1,8 +1,99 @@
 <% provide(:title, "Home") %>
-<!-- Applications front page --> 
+      <!--  Image Slider Section -->
+  <image-slider> 
+   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!--  Carousel items -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <%= link_to(image_tag("people-slider.jpg"), root_url) %>
+          </div>
+          <div class="item">
+            <%= link_to(image_tag("declaration-independent-slider.jpg"), root_url) %>
+          </div>
+          <div class="item">
+            <%= link_to(image_tag("presidential-ing-slider.jpg"), root_url) %>
+          </div>
+          <div class="item">
+            <%= link_to(image_tag("status-of-liberty-slider.jpg"), root_url) %>
+          </div>
+        </div> <!-- End of carousel-inner div -->
+        <!--  End of Carousel items -->
+          <!-- Carousel nav -->
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+    </div>
+  </image-slider>
+<!--        End of Image Slider Section -->
+<!--        Graphic Instruction Section -->
+  <graphic-instruction class="container">
+    <div id="inst_title">
+      <h1>AmeriDirect Makes things Easy</h1>
+      <h2> THIS IS HOW IT WORK!</h2>
+    </div>
+   <div class="row">
+      <div class="col-md-3 inst_col inst_col_wrapper">
+       <span class="inst_icon"><i class="fa fa-sign-in"></i></span>
+       <p>
+          <span class="inst_step_number">1</span>
+       </p>
+       <h5>Sign Up Online</h5>
+       <p class="inst_step_text">
+        Get started by open an account.
+       </p>
+      </div>
+      <div class="col-md-3 inst_col inst_col_wrapper">
+        <span class="inst_icon"><i class="fa fa-gavel"></i></span>
+        <p>
+          <span class="inst_step_number">2</span>
+        </p>
+         <h5>Answer Questionnaire</h5>
+         <p class="inst_step_text">
+          Find out if you are qualified by answers few simple questions.
+         </p>
+      </div>
+      <div class="col-md-3 inst_col inst_col_wrapper">
+       <span class="inst_icon"><i class="fa fa-pencil-square-o"></i></span>
+        <p>
+          <span class="inst_step_number">3</span>
+        </p>
+        <h5>Fill Out Form</h5>
+        <p class="inst_step_text">
+          Fill out information to generate the immigration forms.
+        </p>
+      </div>
+      <div class="col-md-3 inst_col inst_col_wrapper">
+       <span class="inst_icon"><i class="fa fa-credit-card"></i></span>
+        <p>
+          <span class="inst_step_number">4</span>
+        </p>
+        <h5>Make Payment</h5>
+        <p>
+          Simple payment method with your credit card.
+        </p>
+      </div>
+      <div class="col-md-3 inst_col inst_col_wrapper">
+        <span class="inst_icon"><i class="fa fa-envelope"></i></span>
+        <p>
+          <span class="inst_step_number">5</span>
+        </p>
+         <h5>Submit Documentation</h5>
+         <p>
+          Simply print out the documents and mail to USCIS.
+         </p>
+      </div>
+   </div><!--  End of row div -->
+  </graphic-instruction>
+<!--       End of Graphic Instructin Section -->
 <category_section ng-controller="homePageController" ng-init="getCurrentUserId(<%= @current_user_id %>)">
   <div ng-hide="case_active_status">
-    Choose your immigraton Application
+    <span class="test_test">Choose your immigraton Application </span>
     <ul>
     <li><a href="#" ng-click="applyMyCase(1)">Relative Immigration Application</a></li> 
     </ul>

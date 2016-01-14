@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     get 'apis/option/:id' => 'api/cases#option'
     get 'apis/active_status/:id' => 'api/ids#active_status'
     get 'current_user' => 'users#show_current_user'
+    get 'about' => 'home#about', as: :about 
 
  
     # post 'forms/:id/new_case' => 'forms#new_case', as: :new_case 

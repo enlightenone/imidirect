@@ -4,4 +4,7 @@ class HomeController < ApplicationController
     # Assign user id when log in or assign default value to prevent rails from breaking
     @current_user_id = (current_user)? current_user.id : "inactive" 
   end
+
+  def about
+  end
 end

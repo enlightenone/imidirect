@@ -17,3 +17,42 @@ breadcrumb-bar {
   bottom: 0px;
 
 }
+
+.breadcrumb-wrapper {
+  text-align:left; 
+  line-height: 30px;
+}
+
+.breadcrumb-wrapper span {
+  color:white; 
+  font-size: 15px;
+}
+
+.custom-button {
+    background-color: rgb(163, 10, 35);
+    padding: 10px 30px;
+    border-radius: 50px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.custom-button:hover{
+   cursor: pointer;
+}
+
+#category-col-left {
+  padding: 25px;
+  height: 200px;
+}
+
+#category-col-right {
+  line-height: 100px;
+  padding: 25px; 
+  text-align: center; 
+  height: 200px;
+}
+
+category-section {
+  display: block;
+}

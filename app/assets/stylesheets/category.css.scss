@@ -1,0 +1,19 @@
+family-image {
+  background-image: image-url("family-2.jpg") ;
+  background-size: cover;
+  width: 100%;
+  height: 420px;
+  text-align: center;
+  display: block;
+  position: relative;
+}
+
+breadcrumb-bar {
+  height: 30px;
+  display: block;
+  width: 100%;
+  background-color: rgba(43, 133, 187, 0.62);
+  position:absolute;
+  bottom: 0px;
+
+}

@@ -1,3 +1,17 @@
+<% provide(:title, "Family Petition") %>
+
+<family-image>
+  <breadcrumb-bar>
+   <div class="container">
+    <div class="row" style="text-align:left; line-height: 30px;">
+      <span style="color:white; font-size: 15px;"><%= link_to("home", root_url, style: 'color:#FFFFFF; text-decoration:none;') %> / family petition</span>
+    </div>
+   </div>
+
+  </breadcrumb-bar>
+</family-image>
+
+
 <category_section ng-controller="homePageController" ng-init="getCurrentUserId(<%= @current_user_id %>)">
   <div ng-hide="case_active_status">
     <span class="test_test">Choose your immigraton Application </span>

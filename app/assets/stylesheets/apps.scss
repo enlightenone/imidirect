@@ -109,7 +109,7 @@ questionnaire-block {
   //vertical-align: middle;
 }
 
-.radio-block:hover {
+.radio-block:hover, .options-checkbox-block:hover {
   background-color: #E3E5E7;
   cursor: pointer;
 }

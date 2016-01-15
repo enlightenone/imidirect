@@ -1,11 +1,51 @@
 <h4>Please answers the following questions regarding qualification:</h4>
+<h3>Did you gain citizenship by virtue to a Us Citizen or Permanent Resident?</h3>
+<div class="row">
+  <div class="col-md-11">
+    <div class="radio-block">
+      <input type="radio" name="qualifications.option_1" ng-model="qualifications.option_1" value="yes" > Yes
+    </div>
+    <div class="radio-block">
+      <input name="qualifications.option_1" ng-model="qualifications.option_1" type="radio" value="no" checked> No
+    </div>
+  </div>
+</div>
+<h3>Were you and your sposue were not both physically present at the marriage ceremony, and the marrige was not consummated?</h3>
+<div class="row">
+  <div class="col-md-11">
+    <div class="radio-block">
+       <input type="radio" name="qualifications.option_2"  ng-model="qualifications.option_2" value="yes" > Yes 
+    </div>
+    <div class="radio-block">
+       <input name="qualifications.option_2" ng-model="qualifications.option_2" type="radio" value="no" checked> No
+    </div>
+  </div>
+</div>
+<h3>Is your spouse the subject of an exclusion, deportation, removal, or rescission proceeding?</h3>
+<div class="row">
+  <div class="col-md-11">
+    <div class="radio-block">
+      <input type="radio" name="qualifications.option_3"  ng-model="qualifications.option_3" value="yes" > Yes
+    </div>
+    <div class="radio-block">
+       <input name="qualifications.option_3" ng-model="qualifications.section_3" type="radio" value="no" checked > No
+    </div>
+  </div>
+</div>
+ <button type="button" class="btn btn-info " ng-click="qualificationFnc(qualifications, 'citizen-spouse', 1)">Next</button>
+
+<!-- ******************************** -->
+
 <div class="form-group">
 
 <p>
   <form>
 Did you gain citizenship by virtue to a Us Citizen or Permanent Resident <input type="radio" name="qualifications.option_1" ng-model="qualifications.option_1" value="yes" > Yes <input name="qualifications.option_1" ng-model="qualifications.option_1" type="radio" value="no" checked> No <br>
+
 Were you and your sposue were not both physically present at the marriage ceremony, and the marrige was not consummated.
  <input type="radio" name="qualifications.option_2"  ng-model="qualifications.option_2" value="yes" > Yes <input name="qualifications.option_2" ng-model="qualifications.option_2" type="radio" value="no" checked> No <br>
+
+
  Is your spouse the subject of an exclusion, deportation, removal, or rescission proceeding.
 <input type="radio" name="qualifications.option_3"  ng-model="qualifications.option_3" value="yes" > Yes <input name="qualifications.option_3" ng-model="qualifications.section_3" type="radio" value="no" checked > No <br>
 </p>

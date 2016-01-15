@@ -94,14 +94,14 @@ progress-bar {
 }
 /* End of Status Bar Styling Block*/
 
-// Questionnaire Styling Block
+// Questionnaire and form styling Block
 questionnaire-block {
   display:block;
   width: 100%;
   padding: 25px 0px;
 }
 
-.radio-block {
+.radio-block, .options-checkbox-block {
   width:100%; 
   background-color:#F6F7F8;
   padding:5px; 
@@ -114,8 +114,13 @@ questionnaire-block {
   cursor: pointer;
 }
 
- .radio-block input[type="radio"] {
+ .radio-block input[type="radio"], .options-checkbox-block input[type="checkbox"] {
   margin: 0px 10px;
   width: 30px;
 }
-// End of Questionnaire Styling Block
+
+.title-text-center {
+  text-align: center;
+}
+// End of Questionnaire and form styling block
+

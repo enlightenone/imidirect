@@ -1,13 +1,16 @@
 <!-- The qualification template for category I130 Citizen Over 21 -->
 <h4>Please answers the following questions regarding qualification:</h4>
-<div class="form-group">
-<p>
-Are you and the person you are filing for related by adoption? <input type="radio" ng-model="qualifications.option" value="yes" > Yes <input ng-model="qualifications.option" type="radio" value="no"> No 
-</p>
-<div class="form-group row">
-<div class="col-xs-6 col-xs-offset-3">
-    <a class="btn btn-block btn-info" ng-click="qualificationFnc(qualifications, 'citizen-child-over-21', 3)">
-    Next Section<span class="glyphicon glyphicon-circle-arrow-right"></span>
-    </a>
-</div>
-</div>
+<h3>Are you and the person you are filing for related by adoption?</h3>
+<div class="row">
+  <div class="col-md-11">
+    <div class="radio-block">
+       <input type="radio" ng-model="qualifications.option" value="yes" > Yes
+    </div>
+    <div class="radio-block">
+      <input ng-model="qualifications.option" type="radio" value="no"> No 
+    </div>
+  </div>
+ </div>
+<button type="button" class="btn btn-info " ng-click="qualificationFnc(qualifications, 'citizen-child-over-21', 3)">Next</button>
+
+

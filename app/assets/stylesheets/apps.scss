@@ -93,3 +93,29 @@ progress-bar {
   color: #fff !important;
 }
 /* End of Status Bar Styling Block*/
+
+// Questionnaire Styling Block
+questionnaire-block {
+  display:block;
+  width: 100%;
+  padding: 25px 0px;
+}
+
+.radio-block {
+  width:100%; 
+  background-color:#F6F7F8;
+  padding:5px; 
+  margin-bottom: 10px;
+  //vertical-align: middle;
+}
+
+.radio-block:hover {
+  background-color: #E3E5E7;
+  cursor: pointer;
+}
+
+ .radio-block input[type="radio"] {
+  margin: 0px 10px;
+  width: 30px;
+}
+// End of Questionnaire Styling Block

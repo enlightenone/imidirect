@@ -1,5 +1,5 @@
 <!-- Qualification page template for i130 Citizen married children over 21 -->
-<h3>Please answers the following questions regarding qualification:</h3>
+<h3 class="title-text-center">Please answers the following questions regarding qualification:</h3>
 <h4>Are you and the sibling you are filing for related through adoption by your parent?</h4>
 <div class="row">
   <div class="col-md-11">
@@ -24,22 +24,4 @@
 </div>
 <div class="title-text-center">
    <button type="button" class="btn btn-info " ng-click="qualificationFnc(qualifications, 'citizen-sibling', 5)">Next</button>
-</div>
-
-
-<!-- ******************* -->
-<div class="form-group">
-<p>
-Are you and the sibling you are filing for related through adoption by your parent? <input type="radio" ng-model="qualifications.option_1" value="yes" > Yes <input ng-model="qualifications.option_1" type="radio" value="no"> No 
-</p>
-<p>
-Are you the sponsor 21 years old or older? <input type="radio" ng-model="qualifications.option_2" value="yes" > Yes <input ng-model="qualifications.option_2" type="radio" value="no"> No 
-</p>
-
-<div class="form-group row">
-<div class="col-xs-6 col-xs-offset-3">
-    <a class="btn btn-block btn-info" ng-click="qualificationFnc(qualifications, 'citizen-sibling', 5)">
-    Next Section<span class="glyphicon glyphicon-circle-arrow-right"></span>
-    </a>
-</div>
 </div>

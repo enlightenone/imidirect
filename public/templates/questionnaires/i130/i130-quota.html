@@ -1,14 +1,15 @@
-<!-- I130 quota status question page template -->
-<h4>Visa Quota Status</h4>
-<div class="form-group" >
-<p>
-Is your visa quota current? <input type="radio" ng-model="quota_status" value="yes" > Yes <input ng-model="quota_status" type="radio" value="no"> No 
-</p>
-
-<div class="form-group row">
-<div class="col-xs-6 col-xs-offset-3">
-    <a class="btn btn-block btn-info" ng-click="quotaFnc(quota_status, category)">
-    Next Section<span class="glyphicon glyphicon-circle-arrow-right"></span>
-    </a>
+<h3 class="title-text-center">Visa Quota Status</h3>
+<h4>Is your visa quota current?</h4>
+<div class="row">
+  <div class="col-md-11">
+    <div class="radio-block">
+      <input type="radio" ng-model="quota_status" value="yes" > Yes
+    </div>
+    <div class="radio-block">
+      <input ng-model="quota_status" type="radio" value="no"> No 
+    </div>
+  </div>
 </div>
+<div class="title-text-center">
+   <button type="button" class="btn btn-info " ng-click="quotaFnc(quota_status, category)">Next</button>
 </div>

@@ -1,3 +1,68 @@
 // Place all the styles related to the forms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+form-block {
+  display:block;
+  border: 2px solid blue;
+}
+
+#main-container {
+  border: 1px solid #666; 
+  padding: 20px; 
+  margin: 0 0 0 259px;
+}
+
+/*Tabs and Processing form Styling*/
+
+#content {
+  padding: 20px; 
+  overflow: auto;
+}
+
+#tab-container {
+  float:left; 
+  float:left; 
+  width: 260px;
+}
+
+#tab-container ul {
+   list-style: none;
+   text-align: center;
+}
+
+#tab-container ul li{
+   border-top: 1px solid #666;
+   //border-right: 1px solid #666;
+   border-bottom: 1px solid #666;
+   background-color: #ddd;
+   margin: 8px 0;
+
+}
+
+#tab-container ul li a {
+  border-left: 8px solid #666;
+  border-right: 1px solid #666;
+  text-decoration: none;
+  display: block;
+  padding: 10px 5px;
+  font-weight: bold;
+  //border: 3px solid red;
+}
+
+#tab-container ul li a.active {
+  background: #fff;
+  border-right:none; 
+  border-left: 8px solid #006699;
+}
+#tab-container ul li a:hover {
+  cursor: pointer;
+}
+
+#tab-selected {
+   border-right: none;
+  background-color: #fff;
+  border-left: 8px solid #006699;
+}
+
+/* End of Tabs and Processing form Styling*/

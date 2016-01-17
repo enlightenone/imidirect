@@ -1,17 +1,16 @@
 <h5>I am applying for: </h5>
 <div class="row fields-block"> 
-  <div class="col-md-9">
-    <label></label><br>
-    <label class="radio-inline"> 
+  <div class="col-md-12">
+    <label class="checkbox-inline"> 
       <input type="checkbox" ng-model="formData.i130_spouse"> Spouse
     </label>
-    <label class="radio-inline">
+    <label class="checkbox-inline">
       <input type="checkbox" ng-model="formData.i130_parent"> Parent
     </label>
-    <label class="radio-inline">
+    <label class="checkbox-inline">
       <input type="checkbox" ng-model="formData.i130_BrotherSister"> Siblings
     </label>
-    <label class="radio-inline">
+    <label class="checkbox-inline">
       <input type="checkbox" ng-model="formData.i130_child"> Child
     </label>
   </div>
@@ -42,16 +41,18 @@
 <hr>
 <div class="row fields-block">
   <div class="row">
-    <label for="i130_sponsor_co">C/O</label>
-    <input type="text" class="form-control" name="i130_sponsor_co" ng-model="formData.i130_sponsor_co">
+    <div class="col-md-5">
+      <label for="i130_sponsor_co">C/O</label>
+      <input type="text" class="form-control" name="i130_sponsor_co" ng-model="formData.i130_sponsor_co">
+    </div>
   </div>
 </div>
-<div class="row">
+<div class="row fields-block">
   <div class="col-md-10">
     <label for="i130_sponsor_street">Street</label>
      <input type="text" class="form-control" name="i130_sponsor_street" ng-model="formData.i130_sponsor_street">
   </div>
-  <div class="col-md-8">
+  <div class="col-md-2">
     <label for="i130_sponsor_apt_sut">Apt/St</label>
     <input type="text" class="form-control" name="i130_sponsor_apt_sut" ng-model="formData.i130_sponsor_apt_suit">
   </div>
@@ -88,7 +89,6 @@
     <label for="i130_sponsor_dob">Date of Birth</label>
     <input type="text" class="form-control" name="i130_sponsor_dob" ng-model="formData.i130_sponsor_dob">
   </div>
-  </div>s
   <div class="col-md-3">
     <label for="i130_sponsor_pob_town">Town/City of Birth</label>
    <input type="text" class="form-control" name="i130_sponsor_pob_town" ng-model="formData.i130_sponsor_pob_town">
@@ -100,6 +100,106 @@
   <div class="col-md-3">
     <label for="i130_sponsor_pob_country">Country of Birth</label>
     <input type="text" class="form-control" name="i130_sponsor_pob_country" ng-model="formData.i130_sponsor_pob_country">
+  </div>
+</div>
+
+<div class="row fields-block">
+  <div class="col-md-6">
+    <label for="i130_sponsor_nationality">Nationality</label>
+    <input type="text" class="form-control" name="i130_sponsor_nationality" ng-model="formData.i130_sponsor_nationality">
+  </div>
+</div>
+
+<div class="row fields-block">
+  <div class="col-md-6">
+   <label>Gender</label><br>
+   <label class="checkbox-inline">
+    <input type="checkbox" ng-model="formData.general_applicant_gender_male">Male 
+   </label>
+   <label class="checkbox-inline">
+    <input type="checkbox" ng-model="formData.i130_sponsor_gender_female">Female
+   </label>
+  </div>
+   <div class="col-md-6">
+    <label>Marital Status</label><br>
+    <label class="checkbox-inline">
+      <input type="checkbox" ng-model="formData.i130_sponsor_marital_status_single"> Single
+    </label>
+     <label class="checkbox-inline">
+      <input type="checkbox" ng-model="formData.i130_sponsor_marital_status_married"> Married 
+    </label>  
+     <label class="checkbox-inline">
+      <input type="checkbox" ng-model="formData.i130_sponsor_marital_status_widowed"> Widowed
+    </label> 
+     <label class="checkbox-inline">
+      <input type="checkbox" ng-model="formData.i130_sponsor_marital_status_divorced"> Divorced
+    </label> 
+  </div>
+</div> <!-- End of row fields-block class div block -->
+
+<div class="row fields-block">
+  <div class="row">
+    <div class="col-md-4">
+      <label for="i130_sponsor_ssn">Social Security Number</label>
+      <input type="text" class="form-control" name="i130_sponsor_ssn" ng-model="formData.i130_sponsor_ssn">
+    </div>
+    <div class="col-md-4">
+     <label for="i130_sponsor_alien_number">Alien Number</label>
+     <input type="text" class="form-control" name="i130_sponsor_alien_number" ng-model="formData.i130_sponsor_alien_number">
+    </div>
+    <div class="col-md-4">
+      <label for="i130_sponsora_registration_number">Alien Registration Number</label>
+      <input type="text" class="form-control" name="i130_sponsora_registration_number" ng-model="formData.i130_sponsora_registration_number">
+    </div>
+  </div>
+</div>
+
+<h4>Marriage</h4>
+<hr>
+<div class="row fields-block">
+  <div class="col-md-4">
+    <label for="i130_sponsor_date_of_present_marriage">Date of present marriage</label>
+    <input type="text" class="form-control" name="i130_sponsor_date_of_present_marriage" ng-model="formData.i130_sponsor_date_of_present_marriage">
+  </div>
+  <div class="col-md-4">
+    <label for="i130_sponsor_place_of_present_marriage">Place of present marriage</label>
+    <input type="text" class="form-control" name="i130_sponsor_place_of_present_marriage" ng-model="formData.i130_sponsor_place_of_present_marriage">
+  </div>
+</div>
+
+<h4>Previous Spouse</h4>
+<hr>
+<div class="row fields-block">
+  <div class="col-md-5">
+    <label for="i130_sponsor_name_of_prior_spouse">Name of previous spouse</label>
+    <input type="text" class="form-control" name="i130_sponsor_name_of_prior_spouse" ng-model="formData.i130_sponsor_name_of_prior_spouse">
+  </div>
+  <div class="col-md-4">
+    <label for="i130_sponsor_date_of_end_of_prior_marriage">End date of previous marriage</label>
+    <input type="text" class="form-control" name="i130_sponsor_date_of_end_of_prior_marriage" ng-model="formData.i130_sponsor_date_of_end_of_prior_marriage">
+  </div>
+</div>
+
+<h4>Citizenship And Naturalization</h4>
+<hr>
+<div class="row fields-block">
+  <div class="col-md-8">
+    <div class="checkbox-inline">
+      <input type="checkbox" ng-model="formData.i130_sponsor_citizenship_birth"> Citizenship By Birth 
+    </div>    
+    <div class="checkbox-inline">
+      <input type="checkbox" ng-model="formData.i130_sponsor_citizenship_naturalization">Citizenship by naturalization
+    </div>
+  </div>
+</div>
+<div class="row fields-block">
+  <div class="col-md-4">
+    <label for="i130_sponsor_naturalization_number">Naturalization Number</label>
+    <input type="text" class="form-control" name="i130_sponsor_naturalization_number" ng-model="formData.i130_sponsor_naturalization_number">
+  </div>
+  <div class="col-md-4">
+    <label for="i130_sponsor_naturalization_place_of_issuance">Naturalization Place of Issuance</label>
+    <input type="text" class="form-control" name="i130_sponsor_naturalization_place_of_issuance" ng-model="formData.i130_sponsor_naturalization_place_of_issuance">
   </div>
 </div>
 

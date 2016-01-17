@@ -1,12 +1,78 @@
 <h5>I am applying for: </h5>
-<div class="row"> 
+<div class="row fields-block"> 
   <div class="col-md-9">
     <label></label><br>
     <label class="radio-inline"> 
       <input type="checkbox" ng-model="formData.i130_spouse"> Spouse
     </label>
+    <label class="radio-inline">
+      <input type="checkbox" ng-model="formData.i130_parent"> Parent
+    </label>
+    <label class="radio-inline">
+      <input type="checkbox" ng-model="formData.i130_BrotherSister"> Siblings
+    </label>
+    <label class="radio-inline">
+      <input type="checkbox" ng-model="formData.i130_child"> Child
+    </label>
   </div>
 </div> <!-- End of row div block -->
+
+<h4>Sponsor Information:</h4>
+<hr>
+<div class="row fields-block">
+  <div class="col-md-3">
+    <label for="i130_sponsor_first_name">First Name</label>
+    <input type="text" class="form-control" name="i130_sponsor_first_name" ng-model="formData.i130_sponsor_first_name">
+  </div>
+  <div class="col-md-3">
+    <label for="i130_sponsor_last_name">Last Name</label>
+    <input type="text" class="form-control" name="i130_sponsor_last_name" ng-model="formData.i130_sponsor_last_name">
+  </div>
+  <div class="col-md-3">
+    <label for="i130_sponsor_middle_name">Middle Name</label>
+    <input type="text" class="form-control" name="i130_sponsor_middle_name" ng-model="formData.i130_sponsor_middle_name">
+  </div>
+  <div class="col-md-3">
+    <label for="i130_sponsor_other_name">Other Name</label>
+    <input type="text" class="form-control" name="i130_sponsor_other_name" ng-model="formData.i130_sponsor_other_name">
+  </div>
+</div>
+
+<h4>Address:</h4>
+<hr>
+<div class="row fields-block">
+  <div class="row">
+    <label for="i130_sponsor_co">C/O</label>
+    <input type="text" class="form-control" name="i130_sponsor_co" ng-model="formData.i130_sponsor_co">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-10">
+    <label for="i130_sponsor_street">Street</label>
+     <input type="text" class="form-control" name="i130_sponsor_street" ng-model="formData.i130_sponsor_street">
+  </div>
+  <div class="col-md-8">
+    <label for="i130_sponsor_apt_sut">Apt/St</label>
+    <input type="text" class="form-control" name="i130_sponsor_apt_sut" ng-model="formData.i130_sponsor_apt_suit">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <label for="i130_sponsor_city">City</label>
+    <input type="text" class="form-control" name="i130_sponsor_city" ng-model="formData.i130_sponsor_city">
+  </div>
+  <div class="col-md-3">
+    <label for="i130_sponsor_state">State</label>
+    <input type="text" class="form-control" name="i130_sponsor_state" ng-model="formData.i130_sponsor_state">
+
+  </div>
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-3">
+  </div>
+</div>
+
+
 <!-- *************************** -->
 <!-- i130-sponsor fields template -->
 <h4 style="color: white;">I-130 Form Sponsor Information</h4>
@@ -19,7 +85,9 @@
 </p>
 <h4>Sponsor Information</h4>
 <p>
+
 First Name: <br><br> 
+
 <input type="text" class="form-control" name="i130_sponsor_first_name" ng-model="formData.i130_sponsor_first_name">
 <br><br>
 Last Name: <br><br> 

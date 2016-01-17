@@ -1,45 +1,43 @@
 <!-- form.html -->
-    <form-block class="container">
-      <div class="row"> 
-        <div class="col-md-12">
-          <div id="content">
-            <div id="tab-container">
-              <ul>
-                <li style="margin-top:0px" >
-                    <a ui-sref-active="active" ui-sref=".section1">Applicant Information</a>
-                </li>
-                <li>
-                    <a ui-sref-active="active" ui-sref=".section2">Sponsor Information</a>
-                </li>
-                <li>
-                    <a ui-sref-active="active" ui-sref=".section3">I-130 Additional Information</a>
-                </li>
-                <li>
-                    <a ui-sref-active="active" ui-sref=".section4">I-485 Form Information</a>
-                </li>
-                <li>
-                    <a ui-sref-active="active" ui-sref=".section5">I-131 Form Information</a>
-                </li>
-                <li>
-                    <a ui-sref-active="active" ui-sref=".section6">I-765 Form Information</a>
-                </li>
-                <li>
-                    <a ui-sref-active="active" ui-sref=".section7">Section 7</a>
-                </li>
-                <li>
-                    <a ui-sref-active="active" ui-sref=".section8">Section 8</a>
-                </li>
-              </ul>
-            </div> <!--  End of tab-container div block -->
-            <div id="main-container">
-            <form id="signup-form" >
-            <!-- our nested state views will be injected here -->
-              <div id="form-views" ui-view></div>
-             </form>
-            </div> 
-          </div> <!-- End of content div block -->
-        </div> <!-- End of col-md-12 div -->
-     </div> <!-- End of class row div -->
+<form-block class="container">
+  <div class="row"> 
+    <div class="col-md-12">
+      <div id="content">
+        <div id="tab-container">
+          <ul>
+            <li style="margin-top:0px" >
+                <a ui-sref-active="active" ui-sref=".section1">Applicant Information</a>
+            </li>
+            <li>
+                <a ui-sref-active="active" ui-sref=".section2">Sponsor Information</a>
+            </li>
+            <li>
+                <a ui-sref-active="active" ui-sref=".section3">I-130 Additional Information</a>
+            </li>
+            <li>
+                <a ui-sref-active="active" ui-sref=".section4">I-485 Form Information</a>
+            </li>
+            <li>
+                <a ui-sref-active="active" ui-sref=".section5">I-131 Form Information</a>
+            </li>
+            <li>
+                <a ui-sref-active="active" ui-sref=".section6">I-765 Form Information</a>
+            </li>
+            <li>
+                <a ui-sref-active="active" ui-sref=".section7">Section 7</a>
+            </li>
+            <li>
+                <a ui-sref-active="active" ui-sref=".section8">Section 8</a>
+            </li>
+          </ul>
+        </div> <!--  End of tab-container div block -->
+        <div id="main-container">
+           <!-- our nested state views will be injected here -->
+          <div id="form-views" ui-view></div>
+        </div> <!-- End of main-container div block -->
+      </div> <!-- End of content div block -->
+    </div> <!-- End of col-md-12 div -->
+ </div> <!-- End of class row div -->
 </form-block>
 <!--  ********************************* -->
 

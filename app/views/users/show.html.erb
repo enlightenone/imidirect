@@ -1,17 +1,62 @@
+
+<div class="container" style="border: 1px solid blue;">
+  <h3 id="case-status-title"><span id="case-status-underline"><%= @first_name %> <%= @last_name %>'s Cases Status</span></h3>
+  <div class="row">
+    <div class="col-md-12" style="border: 2px solid blue;">
+      <table class="case-table-container">
+        <tr>
+          <th>Case ID</th>
+          <th>Category</th>
+          <th>Questionnaire</th>
+          <th>Form Filling</th>
+          <th>Payment</th>
+          <th>Complete</th>
+          <th>Action</th>
+        </tr>
+
+<% @fetched_cases_results.each do |k, c|%>
+        <tr>
+          <td><%= c['case_id'] %> </td>
+          <td><%= c['application_type']%> </td>
+          <td>    
+            <sub_progress_bar class="progress-bar progress-bar-success" role="progressbar" style="width:35%" ng-show="<%= c['status_questionnaire']%>">
+                Questionnaire
+            </sub_progress_bar>
+          </td>
+          <td>
+            <sub_progress_bar class="progress-bar progress-bar-warning" role="progressbar" 
+             style="width:35%" ng-show="<%= c['status_filling']%>">
+              Form Filling
+            </sub_progress_bar>
+          </td>
+          <td>
+            <sub_progress_bar class="progress-bar progress-bar-danger" role="progressbar" 
+             style="width:15%" ng-show="<%= c['status_payment']%>">
+              Payment
+            </sub_progress_bar>
+          </td>
+          <td>
+            <sub_progress_bar class="progress-bar progress-bar-success" role="progressbar" 
+             style="width:15%" ng-show="<%=  c['status_complete']%>">
+              Complete
+            </sub_progress_bar>
+          </td>
+          <td>
+            <%= link_to_if(!c['case_active'],  "Immigration Package", c['current_url'], :target => "_blank") do
+       link_to("Continue",c['current_url'] )
+            end %>
+          </td>
+        </tr>
+<% end %>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- **************************** -->
 <h1><%= @first_name %> <%= @last_name %>'s Cases</h1>
-<style>
- 
-#case_list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 700px;
-}
-.progress_status {
-  display: inline;
-  padding: 0px 30px;
-}
-</style>
 <ul id="case_list" >
   <li class="progress_status"> Case Id  </li>
   <li class="progress_status"> Application Type </li>

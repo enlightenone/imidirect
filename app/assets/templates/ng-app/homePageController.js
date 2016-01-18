@@ -5,7 +5,6 @@ app.controller("homePageController", function($scope, ActiveCaseStatusResource, 
       user is logged in and determine if the active user has on going active case. */
    $scope.getCurrentUserId = function(current_user_id){
      $scope.current_user_id = current_user_id; // assign current logged in user id if available
-
       // if the user log in, it will fetch active case state from the Rails API
      if ($scope.current_user_id){
         ActiveCaseStatusResource.get({id: $scope.current_user_id }, function(data){ 

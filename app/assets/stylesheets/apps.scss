@@ -1,3 +1,134 @@
 // Place all the styles related to the apps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+banner {
+  display:block;
+  width: 100%; 
+  height: 120px; 
+  background: black;
+  position: relative;
+}
+
+#banner-text-wrapper {
+  color:white; 
+  height:85px;
+}
+
+process-breadcrumb-bar {
+  height: 30px;
+  display: block;
+  width: 100%;
+  background-color: rgba(43, 133, 187, 0.67);
+  position:absolute;
+  bottom: 0px;
+
+}
+
+.process-breadcrumb-wrapper {
+  text-align:left; 
+  line-height: 30px;
+}
+
+.process-breadcrumb-wrapper span {
+  color:white; 
+  font-size: 15px;
+}
+
+
+//Progress Bar Styling
+progress-bar {
+  display: block;
+  text-align: center;
+}
+
+
+.progress_bar_wrapper {
+  list-style-type: none;
+  display: inline-block;
+  height: 50px;
+}
+
+.progress_bar_wrapper li {
+  float:left; 
+  margin: 8px 7px;
+  color: #262626;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.progress_bar_left {
+  border: 1.5px solid #C4C8CE;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  padding: 10px;
+  background:#e3e5e7; 
+  text-align: center;
+  height: 45px;
+  width: 160px;
+}
+
+.progress_bar_right {
+  border: 1.5px solid #C4C8CE;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  padding: 10px;
+  background:#e3e5e7; 
+  text-align: center;
+  height: 45px;
+  width: 160px;
+}
+
+.progress_bar {
+  border: 1.5px solid #C4C8CE;
+  background:#e3e5e7; 
+  height: 45px;
+  width: 160px;
+  padding: 10px;
+  text-align: center;
+}
+
+.progress_bar_active {
+  background:#4995C7 !important; 
+  color: #fff !important;
+}
+/* End of Status Bar Styling Block*/
+
+// Questionnaire and form styling Block
+questionnaire-block {
+  display:block;
+  width: 100%;
+  padding: 25px 0px;
+}
+
+.radio-block, .options-checkbox-block {
+  width:100%; 
+  background-color:#F6F7F8;
+  padding:5px; 
+  margin-bottom: 10px;
+  //vertical-align: middle;
+}
+
+.radio-block:hover, .options-checkbox-block:hover {
+  background-color: #E3E5E7;
+  cursor: pointer;
+}
+
+ .radio-block input[type="radio"], .options-checkbox-block input[type="checkbox"] {
+  margin: 0px 10px;
+  width: 30px;
+}
+
+.title-text-center {
+  text-align: center;
+}
+
+.disqualified-message {
+  padding: 50px;
+  text-align: center;
+}
+.disqualified-message p {
+  font-size: 25px;
+}
+// End of Questionnaire and form styling block
+

@@ -1,0 +1,41 @@
+/*Upper top bar styling block*/
+.upper_top_bar_wrapper {
+  width: 100%; 
+  background-color:#006AA8;
+  height: 30px;
+}
+
+
+.moto-text-block {
+  color: #FFF;
+  font-weight: bold;
+  background-color: #BA102D;
+  height: 30px;
+  padding: 6.6px 25px;
+  line-height: 30px;
+}
+
+
+ /*Profile Access Styling Block*/
+.profile-access-menu{
+  display:inline-block; 
+  float: right; 
+  list-style-type:none;
+}
+
+.profile-access-menu li {
+  float:left; 
+  margin: 3px 25px;
+  color: #fff;
+}
+.profile-access-menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+
+/*Main Navigation Menu Block*/
+.main-nav-block li {
+  font-size: 20px;
+}

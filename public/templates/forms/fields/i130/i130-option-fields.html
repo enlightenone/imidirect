@@ -1,14 +1,23 @@
 <!-- i130-option fields template -->
-<h4 style="color: white;">I-130 Form Information</h4>
-<div class="form-group">
-<p>
-Did you gain permanent residence through adoption?<br><br>
-<input type="radio" ng-model="formData.i130_adoption" value="yes"> Yes
-<input type="radio" ng-model="formData.i130_adoption" value="no"> No
-</p>
-<p>
-Are you related by adoption?<br><br>
-<input type="radio" ng-model="formData.i130_residence_through_adoption" value="yes"> Yes
-<input type="radio" ng-model="formData.i130_residence_through_adoption" value="no"> No
-</p>
-</div>
+<div class="row fields-block">
+  <div class="col-md-9">
+    <label>Did you gain permanent residence through adoption?</label><br>
+    <label class="radio-inline">
+      <input type="radio" ng-model="formData.i130_adoption" value="yes"> Yes
+    </label>
+    <label class="radio-inline">
+      <input type="radio" ng-model="formData.i130_adoption" value="no"> No
+    </label>
+  </div> <!-- End of col-md-9 div block -->
+</div><!--  End of row div block -->
+<div class="row fields-block">
+  <div class="col-md-9">
+    <label>Are you related by adoption?</label><br>
+    <label class="radio-inline">
+      <input type="radio" ng-model="formData.i130_residence_through_adoption" value="yes"> Yes
+    </label>
+    <label class="radio-inline">
+      <input type="radio" ng-model="formData.i130_residence_through_adoption" value="no"> No
+    </label>
+  </div> <!-- End of col-md-9 div block -->
+</div><!--  End of row div block -->

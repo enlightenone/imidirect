@@ -1,3 +1,44 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Graphics Instructions Styling Block*/
+graphic-instruction {
+  display:block; 
+  margin: 30px auto;
+}
+ 
+#inst_title{
+}
+#inst_title > h1, #inst_title > h2{
+  text-align: center;
+}
+.inst_col_wrapper {
+   text-align: center;
+   padding: 1em 0em;
+}
+
+.inst_icon {
+   font-size: 5em;
+   color: #0171B3;
+}
+.inst_col {
+   width: 20% !important;
+}
+
+.inst_step_number {
+  background-color: #BD102C;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  border-radius: 20px;
+  height: 40px;
+  width: 40px;
+  display: block;
+  margin: auto;
+}
+
+.inst_step_text {
+  text-align: center;
+}
+/*  End of Graphics Instructions Styling Block*/

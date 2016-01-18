@@ -1,233 +1,443 @@
-<h4 style="color: white;">I-130 Form Applicant Information </h4>
-<label for="general_applicant_first_name">First Name</label>
-<input type="text" class="form-control" name="general_applicant_first_name" ng-model="formData.general_applicant_first_name" >
-<label for="general_applicant_last_name">Last Name</label>
-<input type="text" class="form-control" name="general_applicant_last_name" ng-model="formData.general_applicant_last_name">
-<label for="general_applicant_middle_name">Middle Name</label>
-<input type="text" class="form-control" name="general_applicant_middle_name" ng-model="formData.general_applicant_middle_name">
-<label for="general_applicant_other_name">Other Name</label>
-<input type="text" class="form-control" name="general_applicant_other_name" ng-model="formData.general_applicant_other_name">
-<label for="general_applicant_co">CO</label>
-<input type="text" class="form-control" name="general_applicant_co" ng-model="formData.general_applicant_co">
-<label for="general_applicant_street">Street</label>
-<input type="text" class="form-control" name="general_applicant_street" ng-model="formData.general_applicant_street">
- Apt/St: <br> 
-<input type="text" class="form-control" name="general_applicant_apt_suit" ng-model="formData.general_applicant_apt_suit">
-City: <br>
-<input type="text" class="form-control" name="general_applicant_city" ng-model="formData.general_applicant_city">
-State: <br>
-<input type="text" class="form-control" name="general_applicant_state" ng-model="formData.general_applicant_state">
-<br>
-Zip Code: <br> 
-<input type="text" class="form-control" name="general_applicant_zip_code" ng-model="formData.general_applicant_zip_code">
-<br>
-Country: <br>
-<input type="text" class="form-control" name="general_applicant_country" ng-model="formData.general_applicant_country">
-<p>Phone: <br>
-<input type="text" class="form-control" name="general_applicant_phone" ng-model="formData.general_applicant_phone">
-<h3>Other Information</h3>
-<p>Date of Birth: <br>
-<input type="text" class="form-control" name="general_applicant_dob" ng-model="formData.general_applicant_dob">
-</p>
-<p>Town/City of Birth:<br>
-<input type="text" class="form-control" name="general_applicant_pob_town" ng-model="formData.general_applicant_pob_town">
-State/Province of Birth: <br> 
-<input type="text" class="form-control" name="general_applicant_pob_state" ng-model="formData.general_applicant_pob_state">
-Country of Birth: <br>
-<input type="text" class="form-control" name="general_applicant_pob_country" ng-model="formData.general_applicant_pob_country">
-</p>
-<h3>Gender</h3>
-<p>
-<input type="checkbox" ng-model="formData.general_applicant_gender_male">Male  <br><br>
-<input type="checkbox" ng-model="formData.general_applicant_gender_female">Female
-</p>
-<h3>Marital Status</h3>
-<p> 
-<input type="checkbox" ng-model="formData.general_applicant_marital_status_single"> Single  <br><br>
-<input type="checkbox" ng-model="formData.general_applicant_marital_status_married"> Married  <br><br>
-<input type="checkbox" ng-model="formData.general_applicant_marital_status_widowed"> Widowed <br><br>
-<input type="checkbox" ng-model="formData.general_applicant_marital_status_divorced"> Divorced <br><br>
-</p>
-<h3>Immigration Information</h3>
-<p>
-Social Security Number: <br><br>
-<input type="text" class="form-control" name="general_applicant_ssn" ng-model="formData.general_applicant_ssn">
-<br><br> 
-Alien Number:<br><br>
-<input type="text" class="form-control" name="general_applicant_alien_number" ng-model="formData.general_applicant_alien_number">
-I-94:<br><br>
-<input type="text" class="form-control" name="general_applicant_i_94" ng-model="formData.general_applicant_i_94">
-Date of Last Arrival: <br><br>
-<input type="text" class="form-control" name="general_applicant_date_of_last_arrival" ng-model="formData.general_applicant_date_of_last_arrival">
-</p>
-<p>
-USCIS Status: <br><br>
-<input type="text" class="form-control" name="general_applicant_uscis_status" ng-model="formData.general_applicant_uscis_status">
-Expiration Date: <br><br> 
-<input type="text" class="form-control" name="general_applicant_status_expiration_date" ng-model="formData.general_applicant_status_expiration_date">
-Visa Number:<br><br>  
-<input type="text" class="form-control" name="general_applicant_visa_number" ng-model="formData.general_applicant_visa_number">
-</p>
-<p>
-Place of Last Entry: <br><br>
-<input type="text" class="form-control" name="general_applicant_place_of_last_entry" ng-model="formData.general_applicant_place_of_last_entry">
-Consulate: <br><br>
-<input type="text" class="form-control" name="general_applicant_consulate" ng-model="formData.general_applicant_consulate">
-Entry of Inspection: <br><br> 
-<input type="text" class="form-control" name="general_applicant_entry_inspection" ng-model="formData.general_applicant_entry_inspection">
-</p>
-<h3>Dependants Information</h3>
-<h4>Spouse</h4>
-  <p> 
-  First Name: <br><br>
-  <input type="text" class="form-control" name="general_applicant_spouse_first_name" ng-model="formData.general_applicant_spouse_first_name">
-  Last Name: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_spouse_last_name" ng-model="formData.general_applicant_spouse_last_name">
-  Middle Name: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_spouse_middle_name" ng-model="formData.general_applicant_spouse_middle_name">
-  </p>
-  <p>
-  Date of Birth of your spouse: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_spouse_dob" ng-model="formData.general_applicant_spouse_dob">
-  Country of Birth of your spouse:<br><br>  
-  <input type="text" class="form-control" name="general_applicant_spouse_cob" ng-model="formData.general_applicant_spouse_cob">
-  </p>
-  <p>
-  Alien Number of your spouse: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_spouse_a_number" ng-model="formData.general_applicant_spouse_a_number">
-  Application of your spouse: <br><br>  
-  <input type="text" class="form-control" name="general_applicant_spouse_application" ng-model="formData.general_applicant_spouse_application">
-  </p>
-  <p>
-   Relationship: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_spouse_relationship" ng-model="formData.general_applicant_spouse_relationship">
-  </p>
-  <p>
-  <h4>Marriage</h4>
-  Date of Present Marriage: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_date_present_marriage" ng-model="formData.general_applicant_date_present_marriage"><br><br>
-  Place of Present Marriage: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_place_present_marriage" ng-model="formData.general_applicant_place_present_marriage">
-  </p>
 
-  <h4>Children</h4>
-  <h5>Child 1</h5>
-  <p>
-  First Name: <br><br>
-  <input type="text" class="form-control" name="general_applicant_child_first_name_1" ng-model="formData.general_applicant_child_first_name_1"><br><br> 
-  Last Name: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_last_name_1" ng-model="formData.general_applicant_child_last_name_1"><br><br> 
-  Middle Name:  <input type="text" class="form-control" name="general_applicant_child_middle_name_1" ng-model="formData.general_applicant_child_middle_name_1"><br><br> 
-  </p>
-  <p>
-  Child Relationship: <br><br> 
-   <input type="text" class="form-control" name="general_applicant_child_relationship_1" ng-model="formData.general_applicant_child_relationship_1"><br><br> 
-  Date of Birth <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_dob_1" ng-model="formData.general_applicant_child_dob_1"><br><br> 
-  Coutry of Birth: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_cob_1" ng-model="formData.general_applicant_child_cob_1"><br><br>
-  </p>
-  <p>
-  Alien Number: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_a_number_1" ng-model="formData.general_applicant_child_a_number_1"><br><br>
-  Application <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_application_1" ng-model="formData.general_applicant_child_application_1"><br><br>
-  </p>
-  <h5>Child 2</h5>
-  <p>
-  First Name: <br><br>
-  <input type="text" class="form-control" name="general_applicant_child_first_name_2" ng-model="formData.general_applicant_child_first_name_2"><br><br> 
-  Last Name: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_last_name_2" ng-model="formData.general_applicant_child_last_name_2"><br><br> 
-  Middle Name:  <input type="text" class="form-control" name="general_applicant_child_middle_name_2" ng-model="formData.general_applicant_child_middle_name_2"><br><br> 
-  </p>
-  <p>
-  Child Relationship: <br><br> 
-   <input type="text" class="form-control" name="general_applicant_child_relationship_2" ng-model="formData.general_applicant_child_relationship_2"><br><br> 
-  Date of Birth <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_dob_2" ng-model="formData.general_applicant_child_dob_2"><br><br> 
-  Coutry of Birth: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_cob_2" ng-model="formData.general_applicant_child_cob_2"><br><br>
-  </p>
-  <p>
-  Alien Number: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_a_number_2" ng-model="formData.general_applicant_child_a_number_2"><br><br>
-  Application <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_application_2" ng-model="formData.general_applicant_child_application_2"><br><br>
-  </p>
- <h5>Child 3</h5>
-  <p>
-  First Name: <br><br>
-  <input type="text" class="form-control" name="general_applicant_child_first_name_3" ng-model="formData.general_applicant_child_first_name_3"><br><br> 
-  Last Name: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_last_name_3" ng-model="formData.general_applicant_child_last_name_3"><br><br> 
-  Middle Name:  <input type="text" class="form-control" name="general_applicant_child_middle_name_3" ng-model="formData.general_applicant_child_middle_name_3"><br><br> 
-  </p>
-  <p>
-  Child Relationship: <br><br> 
-   <input type="text" class="form-control" name="general_applicant_child_relationship_3" ng-model="formData.general_applicant_child_relationship_3"><br><br> 
-  Date of Birth <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_dob_3" ng-model="formData.general_applicant_child_dob_3"><br><br> 
-  Coutry of Birth: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_cob_3" ng-model="formData.general_applicant_child_cob_3"><br><br>
-  </p>
-  <p>
-  Alien Number: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_a_number_3" ng-model="formData.general_applicant_child_a_number_3"><br><br>
-  Application <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_application_3" ng-model="formData.general_applicant_child_application_3"><br><br>
-  </p>
-    <h5>Child 4</h5>
-  <p>
-  First Name: <br><br>
-  <input type="text" class="form-control" name="general_applicant_child_first_name_4" ng-model="formData.general_applicant_child_first_name_4"><br><br> 
-  Last Name: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_last_name_4" ng-model="formData.general_applicant_child_last_name_4"><br><br> 
-  Middle Name:  <input type="text" class="form-control" name="general_applicant_child_middle_name_4" ng-model="formData.general_applicant_child_middle_name_4"><br><br> 
-  </p>
-  <p>
-  Child Relationship: <br><br> 
-   <input type="text" class="form-control" name="general_applicant_child_relationship_4" ng-model="formData.general_applicant_child_relationship_4"><br><br> 
-  Date of Birth <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_dob_4" ng-model="formData.general_applicant_child_dob_4"><br><br> 
-  Coutry of Birth: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_cob_4" ng-model="formData.general_applicant_child_cob_4"><br><br>
-  </p>
-  <p>
-  Alien Number: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_a_number_4" ng-model="formData.general_applicant_child_a_number_4"><br><br>
-  Application <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_application_4" ng-model="formData.general_applicant_child_application_4"><br><br>
-  </p>
-  <h5>Child 5</h5>
-  <p>
-  First Name: <br><br>
-  <input type="text" class="form-control" name="general_applicant_child_first_name_5" ng-model="formData.general_applicant_child_first_name_5"><br><br> 
-  Last Name: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_last_name_5" ng-model="formData.general_applicant_child_last_name_5"><br><br> 
-  Middle Name:  <input type="text" class="form-control" name="general_applicant_child_middle_name_5" ng-model="formData.general_applicant_child_middle_name_5"><br><br> 
-  </p>
-  <p>
-  Child Relationship: <br><br> 
-   <input type="text" class="form-control" name="general_applicant_child_relationship_5" ng-model="formData.general_applicant_child_relationship_5"><br><br> 
-  Date of Birth <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_dob_5" ng-model="formData.general_applicant_child_dob_5"><br><br> 
-  Coutry of Birth: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_cob_5" ng-model="formData.general_applicant_child_cob5"><br><br>
-  </p>
-  <p>
-  Alien Number: <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_a_number_5" ng-model="formData.general_applicant_child_a_numaber_5"><br><br>
-  Application <br><br> 
-  <input type="text" class="form-control" name="general_applicant_child_application_5" ng-model="formData.general_applicant_child_application_5"><br><br>
-  </p>
+<!--  ********* Form Fields Block ********** -->
+<h4>Full Name:</h4>
+<hr>
+<div class="row fields-block">
+  <div class="col-sm-3">
+      <label for="general_applicant_first_name">First Name</label>
+      <input type="text" class="form-control" name="general_applicant_first_name" placeholder="First Name" ng-model="formData.general_applicant_first_name">
+  </div> <!-- End of first name form group block -->
+  <div class="col-sm-3">
+      <label for="general_applicant_middle_name">Middle Name</label>
+      <input type="text" class="form-control" name="general_applicant_middle_name" placeholder="Middle Name" ng-model="formData.general_applicant_middle_name">
+ </div>
+  <div class="col-sm-3">
+      <label for="general_applicant_last_name">Last Name</label>
+      <input type="text" class="form-control" name="general_applicant_last_name" placeholder="Last Name" ng-model="formData.general_applicant_last_name">
+  </div>
+  <div class="col-sm-3">
+      <label for="general_applicant_other_name">Other Name</label>
+      <input type="text" class="form-control" name="general_applicant_other_name" placeholder="Other Name" ng-model="formData.general_applicant_other_name">
+  </div>
+</div>  <!-- End of row div -->
+
+<h4>Address:</h4>
+<hr>
+<div class="row fields-block">
+  <div class="col-md-4">
+    <label for="general_applicant_co">C/O</label>
+    <input type="text" class="form-control" name="general_applicant_co"  ng-model="formData.general_applicant_co">
+  </div>
+</div> <!-- End of row div -->
+<div class="row fields-block">
+  <div class="col-md-10">
+    <label for="general_applicant_street">Street</label>
+    <input type="text" class="form-control" name="general_applicant_street" placeholder="Street" ng-model="formData.general_applicant_street">
+  </div>
+  <div class="col-md-2">
+    <label for="general_applicant_apt_suit">Apt/St</label>
+    <input type="text" class="form-control" name="general_applicant_apt_suit" placeholder="Number or Suit" ng-model="formData.general_applicant_apt_suit">
+  </div>
+</div> <!-- End of row div -->
+<div class="row fields-block">
+  <div class="col-md-3">
+    <label for="general_applicant_city">City</label>
+    <input type="text" class="form-control" name="general_applicant_city" placeholder="City" ng-model="formData.general_applicant_city">
+  </div>
+  <div class="col-md-3">
+    <label for="general_applicant_state">State</label>
+    <input type="text" class="form-control" name="general_applicant_state" placeholder="State" ng-model="formData.general_applicant_state">
+  </div>
+  <div class="col-md-3">
+    <label for="general_applicant_zip_code">Zip Code</label>
+    <input type="text" class="form-control" name="general_applicant_zip_code" placeholder="Zip Code" ng-model="formData.general_applicant_zip_code">
+  </div>
+  <div class="col-md-3">
+    <label for="general_applicant_country">Country</label>
+    <input type="text" class="form-control" name="general_applicant_country" placeholder="Country" ng-model="formData.general_applicant_country">
+  </div>
+</div> <!-- End of row div -->
+
+<h4>Other Information:</h4>
+<hr>
+<div class="row fields-block">
+  <div class="col-md-4">
+    <label for="general_applicant_phone">Phone</label>
+     <input type="text" class="form-control" name="general_applicant_phone" placeholder="Phone Number"  ng-model="formData.general_applicant_phone">
+  </div>
+</div> <!-- End of row div -->
+
+<div class="row fields-block">
+  <div class="col-md-4">
+    <label for="general_applicant_dob">Date Of Birth</label>
+    <input type="text" class="form-control" name="general_applicant_dob" placeholder="Date Of Birth" ng-model="formData.general_applicant_dob">
+  </div> <!-- End of general_applicant_dob div -->
+  <div class="col-md-4">
+    <label for="general_applicant_pob_town">Town/City Of Birth</label>
+    <input type="text" class="form-control" name="general_applicant_pob_town" placeholder="Town/City Of Birth" ng-model="formData.general_applicant_pob_town">
+  </div> <!-- End of general_applicant_pob_town div -->
+  <div class="col-md-4">
+    <label for="general_applicant_pob_state">State/Province Of Birth</label>
+    <input type="text" class="form-control" name="general_applicant_pob_state" placeholder="State/Province Of Birth" ng-model="formData.general_applicant_pob_state">
+  </div> <!-- End of general_applicant_pob_state div -->
+  <div class="col-md-4">
+    <label for="general_applicant_pob_country">Country Of Birth</label>
+    <input type="text" class="form-control" name="general_applicant_pob_country" placeholder="Country Of Birth" ng-model="formData.general_applicant_pob_country">
+  </div>  <!-- End of general_applicant_pob_country div -->
+</div> <!-- End of row div -->
+
+<div class="row fields-block">
+  <div class="col-md-6">
+   <label>Gender</label><br>
+   <label class="checkbox-inline">
+    <input type="checkbox" ng-model="formData.general_applicant_gender_male">Male 
+   </label> 
+   <label class="checkbox-inline">
+    <input type="checkbox" ng-model="formData.general_applicant_gender_female">Female
+   </label> 
+  </div><!--  End of Gender div-->
+  <div class="col-md-6">
+   <label>Marital Status</label><br>
+   <label class="checkbox-inline">
+    <input type="checkbox" ng-model="formData.general_applicant_marital_status_single"> Single
+   </label> 
+   <label class="checkbox-inline">
+    <input type="checkbox" ng-model="formData.general_applicant_marital_status_married"> Married
+   </label> 
+   <label class="checkbox-inline">
+    <input type="checkbox" ng-model="formData.general_applicant_marital_status_widowed"> Widowed
+   </label> 
+   <label class="checkbox-inline">
+    <input type="checkbox" ng-model="formData.general_applicant_marital_status_divorced"> Divorced
+   </label> 
+  </div> <!-- End of Marital Status div -->
+</div><!--  End of row div -->
+
+<h4>Immigration Information:</h4>
+<hr>
+<div class="row fields-block">
+  <div class="col-md-3">
+    <label for="general_applicant_ssn">Social Security Number</label>
+    <input type="text" class="form-control" name="general_applicant_ssn" placeholder="Social Security Number" ng-model="formData.general_applicant_ssn">
+ </div> <!--  End of Social Security Number div -->
+  <div class="col-md-2">
+    <label for="general_applicant_alien_number">Alien Number</label>
+    <input type="text" class="form-control" name="general_applicant_alien_number" placeholder="Alien Number" ng-model="formData.general_applicant_alien_number">
+ </div> <!-- End of Alien Number block div -->
+ <div class="col-md-2"> 
+    <label for="general_applicant_i_94">I-94 Number</label>
+    <input type="text" class="form-control" name="general_applicant_i_94" placeholder="I-94 Number" ng-model="formData.general_applicant_i_94">
+ </div> <!--  End of I-94 Number Block -->
+ <div class="col-md-3">
+    <label for="general_applicant_date_of_last_arrival">Date of Last Arrival</label>
+    <input type="text" class="form-control" name="general_applicant_date_of_last_arrival" placeholder="Date of Last Arrival" ng-model="formData.general_applicant_date_of_last_arrival">
+ </div><!--  End of Date of last arrival block -->
+ <div class="col-md-2">
+    <label for="general_applicant_uscis_status">USCIS Status</label>
+    <input type="text" class="form-control" name="general_applicant_uscis_status" placeholder="USCIS Status" ng-model="formData.general_applicant_uscis_status">
+ </div><!--  End of USCIS Status Block -->
+</div> <!-- End of row div -->
+
+<div class="row fields-block">
+  <div class="col-md-2">
+    <label for="general_applicant_status_expiration_date">Expiration Date</label>
+    <input type="text" class="form-control" name="general_applicant_status_expiration_date" placeholder="Expriation Date" ng-model="formData.general_applicant_status_expiration_date">
+ </div> <!--  End of Social Security Number div -->
+  <div class="col-md-2">
+    <label for="general_applicant_visa_number">Vsia Number</label>
+    <input type="text" class="form-control" name="general_applicant_visa_number" placeholder="Visa Number" ng-model="formData.general_applicant_visa_number">
+ </div> <!-- End of Alien Number block div -->
+ <div class="col-md-3"> 
+    <label for="general_applicant_place_of_last_entry">Place Of Last Entry</label>
+    <input type="text" class="form-control" name="general_applicant_place_of_last_entry" placeholder="Place Of Last Entry" ng-model="formData.general_applicant_place_of_last_entry">
+ </div> <!--  End of I-94 Number Block -->
+ <div class="col-md-2">
+    <label for="general_applicant_consoulate">Consulate</label>
+    <input type="text" class="form-control" name="general_applicant_consulate" placeholder="Consulate" ng-model="formData.general_applicant_consulate">
+ </div><!--  End of Date of last arrival block -->
+ <div class="col-md-3">
+    <label for="general_applicant_entry_inspection">Entry Of Inspection</label>
+    <input type="text" class="form-control" name="general_applicant_entry_inspection" placeholder="Entry of Inspection" ng-model="formData.general_applicant_entry_inspection">
+ </div><!--  End of USCIS Status Block -->
+</div> <!-- End of row div -->
+
+ <h4>Dependants Information</h4>
+ <hr>
+ <h4>Spouse</h4>
+  <h5>Full Name:</h5>
+  <hr>
+  <div class="row fields-block">
+    <div class="col-md-3">
+        <label for="general_applicant__spouse_first_name">First Name</label>
+        <input type="text" class="form-control" name="general_applicant_spouse_first_name" placeholder="First Name" ng-model="formData.general_applicant_spouse_first_name">
+    </div> <!-- End of first name form group block -->
+    <div class="col-md-3">
+        <label for="general_applicant_spouse_middle_name">Middle Name</label>
+        <input type="text" class="form-control" name="general_applicant_spouse_middle_name" placeholder="Middle Name" ng-model="formData.general_applicant_spouse_middle_name">
+   </div>
+<div class="col-md-3">
+    <label for="general_applicant_spouse_last_name">Last Name</label>
+    <input type="text" class="form-control" name="general_applicant_spouse_last_name" placeholder="Last Name" ng-model="formData.general_applicant_spouse_last_name">
+</div>
+</div>  <!-- End of row div -->
+
+<div class="row fields-block">
+<div class="col-md-3">
+  <label for="general_applicant_spouse_dob">Date Of Birth</label>
+   <input type="text" class="form-control" name="general_applicant_spouse_dob" placeholder="Date Of Birth" ng-model="formData.general_applicant_spouse_dob">
+</div> <!-- End of Spouse's DOB -->
+<div class="col-md-3">
+  <label for="general_applicant_spouse_cob">Country Of Birth</label>
+  <input type="text" class="form-control" name="general_applicant_spouse_cob" placeholder="Country Of Birth" ng-model="formData.general_applicant_spouse_cob">
+</div> <!--  End of Spouse's COB -->
+<div class="col-md-3">
+  <label for="general_applicant_spouse_a_number">Alien Number</label>
+  <input type="text" class="form-control" name="general_applicant_spouse_a_number" placeholder="Alien Number" ng-model="formData.general_applicant_spouse_a_number">
+</div> <!-- End of Spouse's Alien Number -->
+<div class="col-md-3">
+  <label for="general_applicant_spouse_application">Application</label>
+  <input type="text" class="form-control" name="general_applicant_spouse_application" placeholder="Type Of Application" ng-model="formData.general_applicant_spouse_application">
+</div><!--  End of Spouse's Application -->
+</div><!--  End of row div -->
+
+<div class="row fields-block">
+<div class="col-md-4">
+  <label for="general_applicant_spouse_relationship">Relationship To Dependant</label>
+  <input type="text" class="form-control" name="general_applicant_spouse_relationship" placeholder="Type Of Relationship" ng-model="formData.general_applicant_spouse_relationship">
+</div>
+</div> <!--  End of row div -->
+<h4>Marriage:</h4>
+<div class="row fields-block">
+<div class="col-md-3">
+  <label for="general_applicant_date_present_marriage">Date of Present Marriage</label>
+   <input type="text" class="form-control" name="general_applicant_date_present_marriage" placeholder="Date Of Present Marriage" ng-model="formData.general_applicant_date_present_marriage">
+</div><!--  End of date of present marriage div -->
+<div class="col-md-3">
+    <label for="general_applicant_place_present_marriage">Place of Present Marriage</label>
+   <input type="text" class="form-control" name="general_applicant_place_present_marriage" placeholder="Place Of Present Marriage" ng-model="formData.general_applicant_place_present_marriage"> 
+</div> <!--  End  of place of present marriage div -->
+</div> <!-- End of row div -->
+
+<h4>Children:</h4>
+<hr>
+<h5>Child 1:</h5>
+<h5>Full Name:</h5>
+
+<div class="row fields-block">
+<div class="col-md-3">
+    <label for="general_applicant_child_first_name_1">First Name</label>
+    <input type="text" class="form-control" name="general_applicant_child_first_name_1" placeholder="First Name" ng-model="formData.general_applicant_child_first_name_1">
+</div> <!-- End of child 1 first name field block -->
+<div class="col-md-3">
+    <label for="general_applicant_child_middle_name_1">Middle Name</label>
+    <input type="text" class="form-control" name="general_applicant_child_middle_name_1" placeholder="Middle Name"  ng-model="formData.general_applicant_child_middle_name_1">
+</div><!--  End of child 1 middle name field block -->
+<div class="col-md-3">"
+    <label for="general_applicant_child_last_name_1">Last Name</label>
+    <input type="text" class="form-control" name="general_applicant_child_last_name_1" placeholder="Last Name" ng-model="formData.general_applicant_child_last_name_1">
+</div> <!--  End of child 1 last name field block -->
+</div>  <!-- End of row div -->
+
+<div class="row fields-block">
+  <div class="col-md-3">
+      <label for="general_applicant_child_relationship_1">Child Relationship</label>
+      <input type="text" class="form-control" name="general_applicant_child_relationship_1" placeholder="Child Relationship" ng-model="formData.general_applicant_child_relationship_1">
+  </div> <!--  End of child 1 relationship field block -->
+</div><!--  End of row div -->
+
+<div class="row fields-block">
+  <div class="col-md-3">
+      <label for="general_applicant_child_dob_1">Date Of Birth</label>
+      <input type="text" class="form-control" name="general_applicant_child_dob_1" placeholder="Child Date Of Birth" ng-model="formData.general_applicant_child_dob_1">
+  </div> <!-- End of child 1's date of birth field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_cob_1">Country Of Birth</label>
+      <input type="text" class="form-control" name="general_applicant_child_cob_1" placeholder="Child Country Of Birth" ng-model="formData.general_applicant_child_cob_1">
+  </div> <!-- End of child 1's date of birth field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_a_number_1">Alien Number</label>
+      <input type="text" class="form-control" name="general_applicant_child_a_number_1" placeholder="Alien Number" ng-model="formData.eneral_applicant_child_a_number_1" >
+  </div> <!-- End of child 1's alien number block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_application_1">Application</label>
+      <input type="text" class="form-control" name="general_applicant_child_application_1" placeholder="Type Of Application" ng-model="formData.general_applicant_child_application_1"> 
+  </div> <!-- End of child 1's application block -->
+</div> <!-- End of row div -->
 
 
+<h5>Child 2:</h5>
+<h5>Full Name:</h5>
 
+<div class="row fields-block">
+  <div class="col-md-3">
+      <label for="general_applicant_child_first_name_2">First Name</label>
+      <input type="text" class="form-control" name="general_applicant_child_first_name_2" placeholder="First Name"  ng-model="formData.general_applicant_child_first_name_2">
+  </div> <!-- End of child 2 first name field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_middle_name_2">Middle Name</label>
+      <input type="text" class="form-control" name="general_applicant_child_middle_name_2" placeholder="Middle Name" ng-model="formData.general_applicant_child_middle_name_2">
+ </div><!--  End of child 2 middle name field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_last_name_2">Last Name</label>
+      <input type="text" class="form-control" name="general_applicant_child_last_name_2" placeholder="Last Name" ng-model="formData.general_applicant_child_last_name_2">
+  </div> <!--  End of child 2 last name field block -->
+</div>  <!-- End of row div -->
 
+<div class="row fields-block">
+  <div class="col-md-3">
+      <label for="general_applicant_child_relationship_2">Child Relationship</label>
+      <input type="text" class="form-control" name="general_applicant_child_relationship_2" placeholder="Child Relationship" ng-model="formData.general_applicant_child_relationship_2">
+  </div> <!--  End of child 2 relationship field block -->
+</div><!--  End of row div -->
 
+<div class="row fields-block">
+  <div class="col-md-3">
+      <label for="general_applicant_child_dob_2">Date Of Birth</label>
+      <input type="text" class="form-control" name="general_applicant_child_dob_2" placeholder="Child Date Of Birth" ng-model="formData.general_applicant_child_dob_2">
+  </div> <!-- End of child 2's date of birth field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_cob_2">Country Of Birth</label>
+      <input type="text" class="form-control" name="general_applicant_child_cob_2" placeholder="Child Country Of Birth" ng-model="formData.general_applicant_child_cob_2">
+  </div> <!-- End of child 2's date of birth field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_a_number_2">Alien Number</label>
+      <input type="text" class="form-control" name="general_applicant_child_a_number_2" placeholder="Alien Number" ng-model="formData.general_applicant_child_a_number_2" >
+  </div> <!-- End of child 2's alien number block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_application_2">Application</label>
+      <input type="text" class="form-control" name="general_applicant_child_a_number_2" placeholder="Type Of Application" ng-model="formData.general_applicant_child_a_number_2"> 
+  </div> <!-- End of child 2's application block -->
+</div> <!-- End of row div -->
 
+<h5>Child 3:</h5>
+<h5>Full Name:</h5>
 
+<div class="row fields-block">
+  <div class="col-md-3">
+      <label for="general_applicant_child_first_name_3">First Name</label>
+      <input type="text" class="form-control" name="general_applicant_child_first_name_3" placeholder="First Name" ng-model="formData.general_applicant_child_first_name_3">
+  </div> <!-- End of child 3 first name field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_middle_name_3">Middle Name</label>
+      <input type="text" class="form-control" name="general_applicant_child_middle_name_3" placeholder="Middle Name" ng-model="formData.general_applicant_child_middle_name_3">
+ </div><!--  End of child 3 middle name field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_last_name_3">Last Name</label>
+      <input type="text" class="form-control" name="general_applicant_child_last_name_3" placeholder="Last Name" ng-model="formData.general_applicant_child_last_name_3">
+  </div> <!--  End of child 3 last name field block -->
+</div>  <!-- End of row div -->
 
+<div class="row fields-block">
+  <div class="col-md-3">
+      <label for="general_applicant_child_relationship_3">Child Relationship</label>
+      <input type="text" class="form-control" name="general_applicant_child_relationship_3" placeholder="Child Relationship" ng-model="formData.general_applicant_child_relationship_3">
+  </div> <!--  End of child 3 relationship field block -->
+</div><!--  End of row div -->
 
+<div class="row fields-block">
+  <div class="col-md-3">
+      <label for="general_applicant_child_dob_3">Date Of Birth</label>
+      <input type="text" class="form-control" name="general_applicant_child_dob_3" placeholder="Child Date Of Birth" ng-model="formData.general_applicant_child_dob_3">
+  </div> <!-- End of child 3's date of birth field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_cob_3">Country Of Birth</label>
+      <input type="text" class="form-control" name="general_applicant_child_cob_3" placeholder="Child Country Of Birth" ng-model="formData.general_applicant_child_cob_3">
+  </div> <!-- End of child 3's date of birth field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_a_number_3" ng-model="formData.general_applicant_child_a_number_3">Alien Number</label>
+      <input type="text" class="form-control" name="general_applicant_child_a_number_3" placeholder="Alien Number"  ng-model="formData.general_applicant_child_a_number_3">
+  </div> <!-- End of child 3's alien number block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_application_3">Application</label>
+      <input type="text" class="form-control" name="general_applicant_child_a_number_3" placeholder="Type Of Application" ng-model="formData.general_applicant_child_a_number_3" > 
+  </div> <!-- End of child 3's application block -->
+</div> <!-- End of row div -->
 
+<h5>Child 4:</h5>
+<h5>Full Name:</h5>
+
+<div class="row fields-block">
+  <div class="col-md-3">
+      <label for="general_applicant_child_first_name_4">First Name</label>
+      <input type="text" class="form-control" name="general_applicant_child_first_name_4" placeholder="First Name" ng-model="formData.general_applicant_child_first_name_4">
+  </div> <!-- End of child 4 first name field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_middle_name_4">Middle Name</label>
+      <input type="text" class="form-control" name="general_applicant_child_middle_name_4" placeholder="Middle Name"  ng-model="formData.general_applicant_child_middle_name_4">
+ </div><!--  End of child 4 middle name field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_last_name_4">Last Name</label>
+      <input type="text" class="form-control" name="general_applicant_child_last_name_4" placeholder="Last Name" ng-model="formData.general_applicant_child_last_name_4">
+  </div> <!--  End of child 4 last name field block -->
+</div>  <!-- End of row div -->
+
+<div class="row fields-block">
+  <div class="col-md-3">
+      <label for="general_applicant_child_relationship_4">Child Relationship</label>
+      <input type="text" class="form-control" name="general_applicant_child_relationship_4" placeholder="Child Relationship" ng-model="formData.general_applicant_child_relationship_4">
+  </div> <!--  End of child 4 relationship field block -->
+</div><!--  End of row div -->
+
+<div class="row fields-block">
+  <div class="col-md-3">
+      <label for="general_applicant_child_dob_4">Date Of Birth</label>
+      <input type="text" class="form-control" name="general_applicant_child_dob_4" placeholder="Child Date Of Birth" ng-model="formData.general_applicant_child_dob_4">
+  </div> <!-- End of child 4's date of birth field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_cob_4">Country Of Birth</label>
+      <input type="text" class="form-control" name="general_applicant_child_cob_4" placeholder="Child Country Of Birth" ng-model="formData.general_applicant_child_cob_4" >
+  </div> <!-- End of child 4's date of birth field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_a_number_4">Alien Number</label>
+      <input type="text" class="form-control" name="general_applicant_child_a_number_4" placeholder="Alien Number" ng-model="formData.general_applicant_child_a_number_4">
+  </div> <!-- End of child 4's alien number block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_application_4">Application</label>
+      <input type="text" class="form-control" name="general_applicant_child_a_number_4" placeholder="Type Of Application" ng-model="formData.general_applicant_child_a_number_4" > 
+  </div> <!-- End of child 4's application block -->
+</div> <!-- End of row div -->
+
+<h5>Child 5:</h5>
+<h5>Full Name:</h5>
+
+<div class="row fields-block">
+  <div class="col-md-3">
+      <label for="general_applicant_child_first_name_5">First Name</label>
+      <input type="text" class="form-control" name="general_applicant_child_first_name_5" placeholder="First Name" ng-model="formData.general_applicant_child_first_name_5">
+  </div> <!-- End of child 5 first name field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_middle_name_5" ng-model="formData.general_applicant_child_middle_name_5">Middle Name</label>
+      <input type="text" class="form-control" name="general_applicant_child_middle_name_5" placeholder="Middle Name" ng-model="formData.general_applicant_child_middle_name_5">
+ </div><!--  End of child 5 middle name field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_last_name_5">Last Name</label>
+      <input type="text" class="form-control" name="general_applicant_child_last_name_5" placeholder="Last Name" ng-model="formData.general_applicant_child_last_name_5">
+  </div> <!--  End of child 5 last name field block -->
+</div>  <!-- End of row div -->
+
+<div class="row fields-block">
+  <div class="col-md-3">
+      <label for="general_applicant_child_relationship_5">Child Relationship</label>
+      <input type="text" class="form-control" name="general_applicant_child_relationship_5" placeholder="Child Relationship" ng-model="formData.general_applicant_child_relationship_5">
+  </div> <!--  End of child 5 relationship field block -->
+</div><!--  End of row div -->
+
+<div class="row fields-block">
+  <div class="col-md-3">
+      <label for="general_applicant_child_dob_5">Date Of Birth</label>
+      <input type="text" class="form-control" name="general_applicant_child_dob_5" placeholder="Child Date Of Birth" ng-model="formData.general_applicant_child_dob_5">
+  </div> <!-- End of child 5's date of birth field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_cob_5">Country Of Birth</label>
+      <input type="text" class="form-control" name="general_applicant_child_cob_5" placeholder="Child Country Of Birth" ng-model="formData.general_applicant_child_cob_5">
+  </div> <!-- End of child 5's date of birth field block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_a_number_5">Alien Number</label>
+      <input type="text" class="form-control" name="general_applicant_child_a_number_5" placeholder="Alien Number" ng-model="formData.general_applicant_child_a_number_5">
+  </div> <!-- End of child 5's alien number block -->
+  <div class="col-md-3">
+      <label for="general_applicant_child_application_5">Application</label>
+      <input type="text" class="form-control" name="general_applicant_child_a_number_5" placeholder="Type Of Application" ng-model="formData.general_applicant_child_a_number_5"> 
+  </div> <!-- End of child 5's application block -->
+</div> <!-- End of row div -->
+<!--  ********* End of Form Fields Block ********** -->

@@ -1,13 +1,15 @@
-<h4>Age Qualification:</h4>
-<div class="form-group" >
-<p>
-Are you over age 18? <input type="radio" ng-model="age_qualification" value="yes" > Yes <input ng-model="age_qualification" type="radio" value="no"> No 
-</p>
-
-<div class="form-group row">
-<div class="col-xs-6 col-xs-offset-3">
-    <a class="btn btn-block btn-info" ng-click="ageFnc(age_qualification)">
-    Next Section<span class="glyphicon glyphicon-circle-arrow-right"></span>
-    </a>
+<h3 class="title-text-center">Age Qualification:</h3>
+<h4>Are you over age 18?</h4>
+<div class="row">
+  <div class="col-md-11">
+    <div class="radio-block">
+      <input type="radio" ng-model="age_qualification" value="yes" checked="checked"> Yes 
+    </div>
+    <div class="radio-block">
+      <input ng-model="age_qualification" type="radio" value="no"> No 
+    </div>
+  </div>
 </div>
+<div class="title-text-center">
+   <button type="button" class="btn btn-info " ng-click="ageFnc(age_qualification)">Next</button>
 </div>

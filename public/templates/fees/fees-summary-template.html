@@ -1,29 +1,42 @@
-<h1>Application Fee Summary asdf</h1>
-<table style="width: 600px;" >
-  <thead>
-    <tr>
-      <th>Descriptions</th>
-      <th>Fee</th>
-    </tr>
-  </thead>
-    <tfoot>
-      <tr>
-        <td> Total </td>
-        <td> {{ total_fee | currency : symbol : fractionSize }}</td>
-      </tr>
-    </tfoot>
-    <tr ng-repeat="sub_fee in sub_total_fees ">
-      <td>{{sub_fee.description}}</td>
-      <td>{{ sub_fee.fee | currency : symbol : fractionSize}}</td>
-    </tr>
-</table>
 
-<form action="{{urlPath}}" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_k1o7Q9FJKKZid5dn40XvAwBL"
-    data-name="Immidrect"
-    data-description="Application Fee Transaction"
-    data-amount="{{converted_total_fee}}">
-  </script>
-</form>
+   <payment-block class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h1 id="fee-summary-title">Application Fees Summary</h1>
+            <table id="fee-summary-table-wrapper">
+              <thead id="fee-summary-header">
+                <tr>
+                  <th>Descriptions</th>
+                  <th>Fee</th>
+                </tr>
+              </thead>
+                <tr ng-repeat="sub_fee in sub_total_fees " class="fee-listing">
+                  <td>{{sub_fee.description}}</td>
+                  <td>{{ sub_fee.fee | currency : symbol : fractionSize}}</td>
+                </tr>
+
+               <tfoot id="fee-summary-footer">
+                  <tr>
+                    <td><span id="total-text"> Total</span> </td>
+                    <td>{{ total_fee | currency : symbol : fractionSize }}</td>
+                  </tr>
+               </tfoot>
+            </table>
+            <div id="credit-card-submit-wrapper">
+              <form action="{{urlPath}}" method="POST">
+                <script
+                  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="pk_test_k1o7Q9FJKKZid5dn40XvAwBL"
+                  data-name="AmeriDirect"
+                  data-description="Card # is 4242424242424242"
+                  data-amount="{{converted_total_fee}}">
+                </script>
+              </form>
+            <div>
+              <span id="cc-icons-wrapper"><i class="fa fa-cc-mastercard"></i> <i class="fa fa-cc-discover"></i> <i class="fa fa-cc-amex"></i> <i class="fa fa-cc-visa"></i></span>
+              </div>
+            </div>
+        </div>
+      </div> <!-- End of row div block -->
+    </payment-block>
+    

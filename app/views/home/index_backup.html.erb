@@ -1,0 +1,13 @@
+<% provide(:title, "Home") %>
+<!-- Applications front page --> 
+<category_section ng-controller="homePageController" ng-init="getCurrentUserId(<%= @current_user_id %>)">
+  <div ng-hide="case_active_status">
+    <span class="test_test">Choose your immigraton Application </span>
+    <ul>
+    <li><a href="#" ng-click="applyMyCase(1)">Relative Immigration Application</a></li> 
+    </ul>
+ </div>
+ <div ng-show="case_active_status">
+    <h1><a href="{{current_url}}">Active Case</a></h1>
+ </div>
+</category_section>

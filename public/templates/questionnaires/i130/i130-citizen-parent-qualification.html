@@ -1,14 +1,16 @@
 <!-- Qualification page template for i130 Citizen's Parent -->
-<h4>Please answers the following questions regarding qualification:</h4>
-<div class="form-group">
-<p>
-Did you gain your citizenship via adoption? <input type="radio" ng-model="qualifications.option" value="yes" > Yes <input ng-model="qualifications.option" type="radio" value="no"> No 
-</p>
-
-<div class="form-group row">
-<div class="col-xs-6 col-xs-offset-3">
-    <a class="btn btn-block btn-info" ng-click="qualificationFnc(qualifications, 'citizen-parent', 11 )">
-    Next Section<span class="glyphicon glyphicon-circle-arrow-right"></span>
-    </a>
+<h3 class="title-text-center">Please answers the following questions regarding qualification:</h3>
+<h4>Did you gain your citizenship via adoption?</h4>
+<div class="row">
+  <div class="col-md-11">
+    <div class="radio-block">
+      <input type="radio" ng-model="qualifications.option" value="yes" > Yes
+    </div>
+    <div class="radio-block">
+      <input ng-model="qualifications.option" type="radio" value="no"> No 
+    </div>
+  </div>
 </div>
+<div class="title-text-center">
+   <button type="button" class="btn btn-info " ng-click="qualificationFnc(qualifications, 'citizen-parent', 11 )">Next</button>
 </div>

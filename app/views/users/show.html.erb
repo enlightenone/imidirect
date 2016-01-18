@@ -1,46 +1,43 @@
+<% provide(:title, "User profile")%>
+<% provide(:current_user_page, "Profile")%>
 
-<div class="container" style="border: 1px solid blue;">
-  <h3 id="case-status-title"><span id="case-status-underline"><%= @first_name %> <%= @last_name %>'s Cases Status</span></h3>
+ <%= render partial: "user_header" %>
+<div class="container">
+  <h3 id="case-status-title"><span class="profile-header-underline">Cases Status</span></h3>
   <div class="row">
-    <div class="col-md-12" style="border: 2px solid blue;">
+    <div class="col-md-12">
       <table class="case-table-container">
         <tr>
           <th>Case ID</th>
           <th>Category</th>
-          <th>Questionnaire</th>
-          <th>Form Filling</th>
-          <th>Payment</th>
-          <th>Complete</th>
+          <th>Progress</th>
           <th>Action</th>
         </tr>
 
 <% @fetched_cases_results.each do |k, c|%>
-        <tr>
+        <tr class="individual-case-bar">
           <td><%= c['case_id'] %> </td>
           <td><%= c['application_type']%> </td>
-          <td>    
-            <sub_progress_bar class="progress-bar progress-bar-success" role="progressbar" style="width:35%" ng-show="<%= c['status_questionnaire']%>">
+          <td>
+             <progress_bar class="progress">
+              <sub_progress_bar class="progress-bar progress-bar-success" role="progressbar" 
+               style="width:35%" ng-show="<%= c['status_questionnaire']%>">
                 Questionnaire
-            </sub_progress_bar>
-          </td>
-          <td>
-            <sub_progress_bar class="progress-bar progress-bar-warning" role="progressbar" 
-             style="width:35%" ng-show="<%= c['status_filling']%>">
-              Form Filling
-            </sub_progress_bar>
-          </td>
-          <td>
-            <sub_progress_bar class="progress-bar progress-bar-danger" role="progressbar" 
-             style="width:15%" ng-show="<%= c['status_payment']%>">
-              Payment
-            </sub_progress_bar>
-          </td>
-          <td>
-            <sub_progress_bar class="progress-bar progress-bar-success" role="progressbar" 
-             style="width:15%" ng-show="<%=  c['status_complete']%>">
-              Complete
-            </sub_progress_bar>
-          </td>
+              </sub_progress_bar>
+              <sub_progress_bar class="progress-bar progress-bar-warning" role="progressbar" 
+               style="width:35%" ng-show="<%= c['status_filling']%>">
+                Form Filling
+              </sub_progress_bar>
+              <sub_progress_bar class="progress-bar progress-bar-danger" role="progressbar" 
+               style="width:15%" ng-show="<%= c['status_payment']%>">
+                Payment
+              </sub_progress_bar>
+              <sub_progress_bar class="progress-bar progress-bar-success" role="progressbar" 
+               style="width:15%" ng-show="<%=  c['status_complete']%>">
+                Complete
+              </sub_progress_bar>
+             </ progress_bar>
+           </td>
           <td>
             <%= link_to_if(!c['case_active'],  "Immigration Package", c['current_url'], :target => "_blank") do
        link_to("Continue",c['current_url'] )
@@ -49,55 +46,9 @@
         </tr>
 <% end %>
       </table>
-
     </div>
   </div>
 </div>
-
-
-<!-- **************************** -->
-<h1><%= @first_name %> <%= @last_name %>'s Cases</h1>
-<ul id="case_list" >
-  <li class="progress_status"> Case Id  </li>
-  <li class="progress_status"> Application Type </li>
-   <li class="progress_status"> Progress Bar </li>
-  <li class="progress_status"> Action </li>
-</ul>
-<% @fetched_cases_results.each do |k, c|%>
-<ul id="case_list" >
-  <li class="progress_status"><%= c['case_id'] %>  </li>
-  <li class="progress_status"><%= c['application_type']%> </li>
-  <li class="progress_status">
-    <div style="width: 450px">
-   <progress_bar class="progress">
-    <sub_progress_bar class="progress-bar progress-bar-success" role="progressbar" 
-     style="width:35%" ng-show="<%= c['status_questionnaire']%>">
-      Questionnaire
-    </sub_progress_bar>
-    <sub_progress_bar class="progress-bar progress-bar-warning" role="progressbar" 
-     style="width:35%" ng-show="<%= c['status_filling']%>">
-      Form Filling
-    </sub_progress_bar>
-    <sub_progress_bar class="progress-bar progress-bar-danger" role="progressbar" 
-     style="width:15%" ng-show="<%= c['status_payment']%>">
-      Payment
-    </sub_progress_bar>
-    <sub_progress_bar class="progress-bar progress-bar-success" role="progressbar" 
-     style="width:15%" ng-show="<%=  c['status_complete']%>">
-      Complete
-    </sub_progress_bar>
-   </ progress_bar>
-   </div>
-  </li>
-  <li class="progress_status">
-    <!-- This will set name of link based on case active status -->
-    <%= link_to_if(!c['case_active'],  "Immigration Package", c['current_url'], :target => "_blank") do
-       link_to("Continue",c['current_url'] )
-    end %>
-  </li>
-</ul>
-<% end %>
-
 
 
 

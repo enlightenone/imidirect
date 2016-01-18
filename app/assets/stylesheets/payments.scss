@@ -1,3 +1,43 @@
 // Place all the styles related to the payments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/*Payment Styling*/
+payment-block{
+  display: block;
+}
+
+#fee-summary-title {
+  text-align: center;
+}
+#fee-summary-table-wrapper {
+  width: 100%;
+}
+
+#fee-summary-header {
+  border-bottom: 1px solid #4995C7;
+}
+#fee-summary-footer {
+  border-top: 1px solid #4995C7;
+}
+#total-text {
+  font-weight: bold;
+}
+
+.fee-listing:nth-child(odd) {
+  background-color: #F2F2F2;
+}
+
+.fee-listing:nth-child(even) {
+  background-color: #fff;
+}
+
+#credit-card-submit-wrapper {
+  text-align: center; 
+  padding: 30px;
+}
+
+#cc-icons-wrapper {
+  font-size:20px;
+}

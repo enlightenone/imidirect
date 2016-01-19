@@ -26,27 +26,62 @@ app.controller("formController", function($scope, $stateParams, $cookies, progre
 
     //************** Case form selections **********//
 
+    $scope.selectOptionsText = function(selection){
+        var selectionText;
+        switch(selection){
+            case "i130-applicant":
+                selectionText = "Applicant Information";
+                break;
+            case "i130-sponsor":
+                selectionText = "Sponsor Information";
+                break;
+            case "i130-option":
+                selectionText = "I-130 Form Information";
+                break;
+            case "i485-option":
+                selectionText = "I-485 Form Information";
+                break;
+            case "i131-option":
+                selectionText = "I-131 Form Information";
+                break;
+            case "i765-option":
+                selectionText = "I-1765 Form Information";
+                break;
+        } // End of switch block
+        return selectionText; 
+    } // End of $scope.selectOptionsTexts function
+
     $scope.formTmpSelection = function(selections) {
-        console.log("Object parameters test");
+        $scope.filteredSelects = {};
+        $scope.formSelections = [];
+        var optionsTerms = {};
+
         for(var key in selections){
-            console.log(selections[key]);
-
+            if(selections[key] != "undefined" ){
+              $scope.filteredSelects[key] = selections[key];
+            }
         } //end of for loop block
-        $scope.filteredSelects = [];
 
-
-        $scope.application_type = selections['application_type'];
+        $scope.application_type = $scope.filteredSelects['application_type'];
         $scope.form_templates = {};
-        var key;
+        var key, selection_txt;
         for (i=1; i < 10 ; i++) {
             key = 'section' + i ;
-            $scope.form_templates[key] = selections[key] ;
-        }
+            $scope.form_templates[key] = $scope.filteredSelects[key] ;
+            selection_txt = $scope.selectOptionsText($scope.filteredSelects[key]); 
+
+            optionsTerms[key] = key ;
+            optionsTerms['optionText'] = selection_txt; 
+            console.log(optionsTerms);
+            // $scope.formSelectoins.push(optionsTerms);
+        } // End of for loop 
+        console.log("Options Object");
+        // console.log($scope.formSelectoins);
     };
 
     $scope.formTmpSelection($scope.switchOptions);
 
-     //********* End of Case form selections *******//
+    //********* End of Case form selections *******//
 
 }); // end of formController Controller
     

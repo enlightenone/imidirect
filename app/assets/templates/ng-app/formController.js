@@ -47,6 +47,9 @@ app.controller("formController", function($scope, $stateParams, $cookies, progre
             case "i765-option":
                 selectionText = "I-1765 Form Information";
                 break;
+            case "submit":
+                selectionText = "Submit";
+                break;
         } // End of switch block
         return selectionText; 
     } // End of $scope.selectOptionsTexts function
@@ -64,19 +67,18 @@ app.controller("formController", function($scope, $stateParams, $cookies, progre
 
         $scope.application_type = $scope.filteredSelects['application_type'];
         $scope.form_templates = {};
-        var key, selection_txt;
+        var key, selection_txt, select_term;
         for (i=1; i < 10 ; i++) {
-            key = 'section' + i ;
-            $scope.form_templates[key] = $scope.filteredSelects[key] ;
-            selection_txt = $scope.selectOptionsText($scope.filteredSelects[key]); 
+          key = 'section' + i ;
+          $scope.form_templates[key] = $scope.filteredSelects[key] ;
+          selection_txt = $scope.selectOptionsText($scope.filteredSelects[key]); 
 
-            optionsTerms[key] = key ;
-            optionsTerms['optionText'] = selection_txt; 
-            console.log(optionsTerms);
-            // $scope.formSelectoins.push(optionsTerms);
+          if(selection_txt != undefined){
+            select_term = "." + key;
+            $scope.formSelections.push({section: select_term, optionText: selection_txt});
+          }
         } // End of for loop 
-        console.log("Options Object");
-        // console.log($scope.formSelectoins);
+        console.log($scope.formSelections);
     };
 
     $scope.formTmpSelection($scope.switchOptions);

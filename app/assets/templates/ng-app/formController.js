@@ -27,6 +27,14 @@ app.controller("formController", function($scope, $stateParams, $cookies, progre
     //************** Case form selections **********//
 
     $scope.formTmpSelection = function(selections) {
+        console.log("Object parameters test");
+        for(var key in selections){
+            console.log(selections[key]);
+
+        } //end of for loop block
+        $scope.filteredSelects = [];
+
+
         $scope.application_type = selections['application_type'];
         $scope.form_templates = {};
         var key;

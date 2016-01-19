@@ -7,15 +7,15 @@
         <div class="signup-form-wrapper">
           <%= form_for(@user) do |f|%>
           <%= render 'shared/error_messages' %>
-            <%= f.label :firstname %>
+            <%= f.label :firstname, "First Name" %>
             <%= f.text_field :firstname %>
-            <%= f.label :lastname %>
+            <%= f.label :lastname, "Last Name" %>
             <%= f.text_field :lastname %>
-            <%= f.label :email %>
+            <%= f.label :email, "Email Address" %>
             <%= f.text_field :email %>
-            <%= f.label :password%>
+            <%= f.label :password, "Password" %>
             <%= f.password_field :password %>
-            <%= f.label :password_confirmation, "Comfirmation" %>
+            <%= f.label :password_confirmation, "Password Comfirmation" %>
             <%= f.password_field :password_confirmation %>
             <%= f.submit "Create my account", class: "btn btn-primary" %>
           <% end %>

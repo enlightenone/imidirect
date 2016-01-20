@@ -374,13 +374,6 @@ div.resultdisplay::-moz-scrollbars-vertical {
   font-size: 15px;
 }
 
-
-
-
-
-
-
-
 /* end of progress bar  */
 
 /* ANIMATION STYLINGS
@@ -388,25 +381,25 @@ div.resultdisplay::-moz-scrollbars-vertical {
 #signup-form            { position:relative; min-height:300px; overflow:hidden; padding:30px; }
 #form-views             { width:auto; }
 
-/* basic styling for entering and leaving */
-/* left and right added to ensure full width */
+
 #form-views.ng-enter,
-#form-views.ng-leave      { position:absolute; left:30px; right:30px;
+#form-views.ng-leave      {
     transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease; 
 }
+
     
 /* enter animation */
 #form-views.ng-enter            { 
-    -webkit-animation:slideInRight 0.5s both ease;
-    -moz-animation:slideInRight 0.5s both ease;
-    animation:slideInRight 0.5s both ease; 
+    -webkit-animation: fadeIn 0.5s both ease;
+    -moz-animation: fadeIn 0.5s both ease;
+    animation: fadeIn 0.5s both ease; 
 }
 
 /* leave animation */
 #form-views.ng-leave            { 
-    -webkit-animation:slideOutLeft 0.5s both ease;
-    -moz-animation:slideOutLeft 0.5s both ease;
-    animation:slideOutLeft 0.5s both ease;   
+    -webkit-animation:fadeOut 0.5s both ease;
+    -moz-animation:fadeOut 0.5s both ease;
+    animation:fadeOut 0.5s both ease;   
 }
 
 /* Exterior Form Animation */
@@ -421,15 +414,15 @@ position:absolute; left:30px; right:30px;
 }
 
 #section-container.ng-enter {
-    -webkit-animation:slideInRight 0.5s both ease;
-    -moz-animation:slideInRight 0.5s both ease;
-    animation:slideInRight 0.5s both ease; 
+    -webkit-animation:fadeIn 0.5s both ease;
+    -moz-animation:fadeIn 0.5s both ease;
+    animation:fadeIn 0.5s both ease; 
 }
 
 #section-container.ng-leave {
-    -webkit-animation:slideOutLeft 0.5s both ease;
-    -moz-animation:slideOutLeft 0.5s both ease;
-    animation:slideOutLeft 0.5s both ease; 
+    -webkit-animation:fadeOut 0.5s both ease;
+    -moz-animation:fadeOut 0.5s both ease;
+    animation:fadeOut 0.5s both ease; 
 }
 
 
@@ -439,26 +432,33 @@ position:absolute; left:30px; right:30px;
 /* ANIMATIONS
 ============================================================================= */
 /* slide out to the left */
-@keyframes slideOutLeft {
-    to      { transform: translateX(-200%); }
-}
-@-moz-keyframes slideOutLeft {  
-    to      { -moz-transform: translateX(-200%); }
-}
-@-webkit-keyframes slideOutLeft {
-    to      { -webkit-transform: translateX(-200%); }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* slide in from the right */
-@keyframes slideInRight {
-    from    { transform:translateX(200%); }
-    to      { transform: translateX(0); }
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
-@-moz-keyframes slideInRight {
-    from    { -moz-transform:translateX(200%); }
-    to      { -moz-transform: translateX(0); }
+
+@-moz-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
-@-webkit-keyframes slideInRight {
-    from    { -webkit-transform:translateX(200%); }
-    to      { -webkit-transform: translateX(0); }
+
+@-moz-keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@-webkit-keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }

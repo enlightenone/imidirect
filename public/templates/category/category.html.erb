@@ -1,0 +1,27 @@
+<family-image>
+  <breadcrumb-bar>
+   <div class="container">
+    <div class="row breadcrumb-wrapper">
+      <span><%= link_to("home", root_url, style: 'color:#FFFFFF; text-decoration:none;') %> / family petition</span>
+    </div>
+   </div>
+  </breadcrumb-bar>
+</family-image>
+<category-section class="container" ng-controller="homePageController" ng-init="getCurrentUserId(<%= @current_user_id %>)">
+  <div class="row">
+    <div id="category-col-left" class="col-md-8">
+      <h3>The Future of Green Card processing</h3>
+      <p>
+        If you are a U.S. citizen or legal permanent resident, then a family based green card can help you reunite with your loved ones by bringing them to the U.S. as legal residents
+      </p>
+    </div>
+    <div id="category-col-right" class="col-md-4">
+      <span ng-hide="case_active_status" class="custom-button" ng-click="applyMyCase(1)"> 
+        Start Your Application <i class="fa fa-play-circle"></i>
+      </span>
+      <span ng-show="case_active_status" class="custom-button"> 
+       <a href="{{current_url}}"> Active Case <i class="fa fa-play-circle"></i></a>
+      </span>
+    </div>
+  </div>
+</category-section>

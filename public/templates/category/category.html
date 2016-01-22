@@ -1,0 +1,25 @@
+<div ng-class="{'i130-image': i130_option.flag, 'i765-image': i765_option.flag, 'i485-image': i485_option.flag}">
+  <breadcrumb-bar>
+   <div class="container">
+    <div class="row breadcrumb-wrapper">
+      <span> <a id="breadcrumb-home-link" ng-href="{{root_url}}">Home</a> / {{bread_crumb_category}}</span>
+    </div>
+   </div>
+  </breadcrumb-bar>
+</div class=family-image>
+<category-section class="container" ng-init="getCurrentUserId()">
+  <div class="row">
+    <div id="category-col-left" class="col-md-8">
+      <div ng-include="category_text">
+      </div>
+    </div>
+    <div id="category-col-right" class="col-md-4">
+      <span ng-hide="case_active_status" class="custom-button" ng-click="applyMyCase()"> 
+        Start Your Application <i class="fa fa-play-circle"></i>
+      </span>
+      <span ng-show="case_active_status" class="custom-button"> 
+       <a href="{{current_url}}"> Active Case <i class="fa fa-play-circle"></i></a>
+      </span>
+    </div>
+  </div>
+</category-section>

@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     get 'apis/active_status/:id' => 'api/ids#active_status'
     get 'current_user' => 'users#show_current_user'
     get 'about' => 'home#about', as: :about 
-    get 'category' => 'home#category', as: :category
+    get 'category' => 'home#category/:case_id', as: :category
 
  
     # post 'forms/:id/new_case' => 'forms#new_case', as: :new_case 

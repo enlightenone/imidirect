@@ -6,7 +6,6 @@ app.factory('i130AppId', ['updateCaseResource', function(updateCaseResource) {
   var service = {};
 
   service.compare = function(category, case_id, active_app_id){ 
-    console.log("Inside of i130Appid");
     if(category === 'i130'){
       var current_case = updateCaseResource(case_id);
       var fetched_result = current_case.applicationId({id:case_id}) ; // The application retrieve initial application id.

@@ -4,17 +4,12 @@ app.controller("homePageController", function($scope, ActiveCaseStatusResource, 
    /* This method is initiated at loading of the home index page. It will return user id if the active
       user is logged in and determine if the active user has on going active case. */
    $scope.getCurrentUserId = function(current_user_id){
-     console.log("Inside of getCurrentUseId function");
      $scope.current_user_id = current_user_id; // assign current logged in user id if available
-     console.log("Current User Id is");
-     console.log($scope.current_user_id);
       // if the user log in, it will fetch active case state from the Rails API
      if ($scope.current_user_id){
         ActiveCaseStatusResource.get({id: $scope.current_user_id }, function(data){ 
          
           $scope.case_active_status = data["active_case_status"]; // fetch case status
-          console.log("Active case status");
-          console.log($scope.case_active_status);
           $scope.current_url = data["current_url"]; // fetch current url path of active case
           console.log("Active Case status: " + $scope.case_active_status );
         });// end of ActivCaeStatusResource method
@@ -35,9 +30,12 @@ app.controller("homePageController", function($scope, ActiveCaseStatusResource, 
           var url_host = location.host;
           var url_protocol = location.protocol;
 
+          // Firefox has issue with reroute to questionnaire page. The following block
+          // will add protocol and host to the url link in order for Firefox to route
+          // properly to questionnaire page.
           if (firefox_detection != -1){
             form_url = url_protocol + "//"+ url_host + form_url ;
-          } // ENnd of if statement.
+          } // End of if statement.
 
           location.assign(form_url);
 

@@ -14,7 +14,6 @@ app.factory('generateCase', ['CaseInit', function(CaseInit) {
     }
  
  service.initiate = function(user_id, app_id) {
-     console.log("Inside of initCase Function");
      //generate case id with random character
     case_id = makeid();
 

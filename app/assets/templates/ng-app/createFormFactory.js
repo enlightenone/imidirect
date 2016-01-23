@@ -29,7 +29,7 @@ app.factory('formFactory', ['myCache', 'OptionResource', 'updateCaseResource', '
 
     var switchButtons = {}; //Create object to arrange form/section combination.
 
-    var i = 3; 
+    var i; 
 
     // Choose required fields based of type of application.
     if (category == "i130"){
@@ -37,11 +37,12 @@ app.factory('formFactory', ['myCache', 'OptionResource', 'updateCaseResource', '
         switchButtons["section1"] = "i130-applicant";
         switchButtons["section2"] = "i130-sponsor";
         switchButtons["section3"] = "i130-option";
+        i = 3;
     } else if (category == "i765"){
         switchButtons["application_type"] = "i765";
         switchButtons["section1"] = "i765-applicant";
-        switchButtons["section2"] = "i765-sponsor";
-        switchButtons["section3"] = "i765-option";
+        switchButtons["section2"] = "i765-option";
+        i = 2;
     } else if (category == "i485"){
         switchButtons["application_type"] = "i485";
         switchButtons["section1"] = "i485-applicant";

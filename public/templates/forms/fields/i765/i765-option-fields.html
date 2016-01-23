@@ -1,0 +1,43 @@
+<!-- i765 option for i130 application -->
+<div class="row fields-block">
+  <div class="col-md-12">
+    <label>I am applying for</label><br>
+    <label class="checkbox-inline">
+      <input type="checkbox" ng-model="formData.i765_application_employment">New Employment 
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" ng-model="formData.i765_application_replacement">Replacement
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" ng-model="formData.i765_application_renewal"> Renewal
+    </label>
+  </div>
+</div>
+
+<div class="row fields-block">
+  <div class="col-md-12">
+    <label>Have you ever before applied for employment authorization from USCIS?</label><br>
+    <label class="radio-inline">
+      <input type="radio" ng-model="formData.i765_previous_application" value="yes"> Yes
+    </label>
+    <label class="radio-inline">
+      <input type="radio" ng-model="formData.i765_previous_application" value="no"> No
+    </label>
+  </div>
+</div>
+<h4>Which UCSIS office did you file and what date?</h4>
+<hr>
+<div class="row fields-block">
+  <div class="col-md-4">
+    <label for="i765_office">USCIS Office</label>
+    <input type="text" class="form-control" name="i765_office" ng-model="formData.i765_office">
+  </div>
+  <div class="col-md-4">
+    <label for="i765_date_of_previous_application">Date of filing</label>
+    <input type="text" class="form-control" name="i765_date_of_previous_application" ng-model="formData.i765_date_of_previous_application">
+  </div>
+  <div class="col-md-4">
+    <label for="i765_result_of_previous_application">Result of filing</label>
+    <input type="text" class="form-control" name="i765_result_of_previous_application" ng-model="formData.i765_result_of_previous_application">
+  </div>
+</div>

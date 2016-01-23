@@ -3,9 +3,19 @@ app.directive('ngQuestionnaire', function(){
 // custom directive to dynamically assign form fields 
   return {
     restrict: "E",
-    controller: ['$scope','questionsOption', 'formFactory' ,  function($scope, questionsOption, formFactory){
-      $scope.option = 'i130-questionnaire-section1' ;
-      $scope.app_type = 'i130';
+    controller: ['$scope','$stateParams','questionsOption', 'formFactory' ,  function($scope, $stateParams, questionsOption, formFactory){
+      var app_id = $stateParams['app_id'];
+
+      if (app_id == 1){
+        $scope.option = 'i130-questionnaire-section1' ;
+        $scope.app_type = 'i130';
+        console.log("App id 1");
+      } else if (app_id == 9 ){
+        $scope.option = 'i765-questionnaire-section1' ;
+        $scope.app_type = 'i765';
+        console.log("App id 9");
+      } // End of app_id if conditional statment block
+
       $scope.contentUrl = '/templates/questionnaires/' + $scope.app_type  + '/' + $scope.option  + '.html';
       $scope.qualifications = {} ;
       $scope.category = "" ;

@@ -14,15 +14,25 @@ app.directive('ngQuestionnaire', function(){
         $scope.option = 'i765-questionnaire-section1' ;
         $scope.app_type = 'i765';
         console.log("App id 9");
+      } else if (app_id == 10 ){
+        $scope.option = 'i485-questionnaire-section1' ;
+        $scope.app_type = 'i485';
+        console.log("App id 10");
       } // End of app_id if conditional statment block
 
       $scope.contentUrl = '/templates/questionnaires/' + $scope.app_type  + '/' + $scope.option  + '.html';
       $scope.qualifications = {} ;
+      //$scope.individualQualifications = [];
       $scope.category = "" ;
       $scope.formOptions = {} ; 
       console.log("Inside of questionnaire controller case id: " + $scope.current_case_id ) ;
       // Method to generate form
       $scope.chooseForm = function(category, active_app_id){
+        if(category == "i765") {
+          $scope.formOptions['i765-option'] = true;
+        } else if (category == "i485") {
+          $scope.formOptions['i485-option'] = true;
+        } // End of i765 block
         formFactory.generate(category, $scope.formOptions, $scope.current_case_id, active_app_id);
       }
 
@@ -30,6 +40,15 @@ app.directive('ngQuestionnaire', function(){
         // Return conten url based on corresponding option being chosen.
         $scope.contentUrl = questionsOption.categoryFnc(template, $scope.app_type); 
       };
+
+      $scope.qualificaitonIndividualFnc = function(option, app_type, active_app_id){
+
+        if(option == "no"){
+           $scope.contentUrl = '/templates/questionnaires/' + app_type + '/' + app_type + '-' +'disqualification.html' ; 
+        } else {
+           $scope.chooseForm(app_type, active_app_id);
+        } //  End of if option conditional block
+      } // End of  $scope.qualificaitonIndividualFnc  function
 
       $scope.qualificationFnc = function(results, category, active_app_id){
         // This function determine if the user is qualified for the chosen case.

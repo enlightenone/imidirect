@@ -41,13 +41,11 @@ app.factory('formFactory', ['myCache', 'OptionResource', 'updateCaseResource', '
     } else if (category == "i765"){
         switchButtons["application_type"] = "i765";
         switchButtons["section1"] = "i765-applicant";
-        switchButtons["section2"] = "i765-option";
-        i = 2;
+        i = 1;
     } else if (category == "i485"){
         switchButtons["application_type"] = "i485";
         switchButtons["section1"] = "i485-applicant";
-        switchButtons["section2"] = "i485-sponsor";
-        switchButtons["section3"] = "i485-option";
+        i = 1;
     } else if (category == "i131"){
         switchButtons["application_type"] = "i131";
         switchButtons["section1"] = "i131-applicant";

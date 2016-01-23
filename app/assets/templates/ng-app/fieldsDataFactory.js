@@ -9,6 +9,7 @@ app.factory('fieldsData', ['myCache', function(myCache) {
     fields_data[name] = form_data;
     console.log("name: " + name);
     console.log("data: " + form_data);
+    console.log(form_data);
 
     if(fetched_cache) {
       previous_fields_cache = fetched_cache ;

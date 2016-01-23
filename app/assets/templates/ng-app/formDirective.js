@@ -47,6 +47,8 @@ app.directive('ngCaseForm', function(){
 
       // invoke fields data cache factory to form data into cache
       $scope.CatchData = function (name, form_data) { // to assign form fields data to cache.
+        console.log("CatchData function directive");
+        console.log($scope.formData);
         fieldsData.catchData(name, form_data); 
       };
 

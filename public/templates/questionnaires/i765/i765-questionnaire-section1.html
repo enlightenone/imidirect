@@ -1,17 +1,22 @@
 <!-- form.html -->
 <!-- Initializing the case id at the beginning of the application-->
+<h3>Please choose the category of which you are applying for your work permit:</h3>
 <div class="row">
-<div class="col-sm-8 col-sm-offset-2">
-
-    <div id="form-container" style="color: white;">
-        <div class="page-header text-center">
-            <h2>Work Permit Application</h2>
+    <div clss="col-md-9">
+        <div class="radio-block">
+           <input type="radio" ng-model="i765_option" value="yes1"> Optional Practical Training
         </div>
-        <!-- use ng-submit to catch the form submission and use our Angular function -->
-        <form id="signup-form" ng-submit="chooseForm('i765')">
-            <!-- our nested state views will be injected here -->
-            <button type="submit" class="btn btn-danger" ng-click="restCookie()">Submit</button>
-        </form>
+        <div class="radio-block">
+          <input ng-model="i765_option" type="radio" value="yes2"> I-140 Immigration Case Is Pending
+        </div>
+        <div class="radio-block">
+           <input type="radio" ng-model="i765_option" value="yes3"> I-485 Adjustment Of Status
+        </div>
+        <div class="radio-block">
+          <input ng-model="i765_option" type="radio" value="no"> None Of the Above
+        </div>
     </div>
 </div>
-</div>
+ <div class="title-text-center">
+  <button type="button" class="btn btn-info " ng-click="qualificaitonIndividualFnc(i765_option, 'i765', 9)">Next</button>
+ </div>

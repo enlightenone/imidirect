@@ -8,6 +8,7 @@ app.factory('questionsOption', function() {
         return '/templates/questionnaires/' + app_type  + '/' + app_type + '-' + option  + '.html' ;
   };
 
+
   // Determin if the user is qualified for the case
   service.qualificationFnc = function(results, category, app_type){
 
@@ -18,6 +19,7 @@ app.factory('questionsOption', function() {
        disqualification_flag = true ;
       }
     }
+
        
     if ( disqualification_flag === true ){
       return '/templates/questionnaires/' + app_type  + '/' + app_type + '-' +'disqualification.html' ; 

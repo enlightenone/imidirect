@@ -1,0 +1,22 @@
+<!-- form.html -->
+<!-- Initializing the case id at the beginning of the application-->
+<h3>Please choose the category of which your adjustment of status is based on:</h3>
+<div class="row">
+    <div clss="col-md-9">
+        <div class="radio-block">
+           <input type="radio" ng-model="i485_option" value="yes1"> Family Base Immigration
+        </div>
+        <div class="radio-block">
+          <input ng-model="i485_option" type="radio" value="yes2"> Employment Base Immigration
+        </div>
+        <div class="radio-block">
+           <input type="radio" ng-model="i485_option" value="yes3"> Asylum
+        </div>
+        <div class="radio-block">
+          <input ng-model="i485_option" type="radio" value="no"> None Of the Above
+        </div>
+    </div>
+</div>
+ <div class="title-text-center">
+  <button type="button" class="btn btn-info " ng-click="qualificaitonIndividualFnc(i485_option, 'i485', 10)">Next</button>
+ </div>

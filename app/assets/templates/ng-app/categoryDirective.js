@@ -69,7 +69,8 @@ return {
           // will add protocol and host to the url link in order for Firefox to route
           // properly to questionnaire page.
           if (firefox_detection != -1){
-            form_url = url_protocol + "//"+ url_host + form_url ;
+            //form_url = url_protocol + "//"+ url_host + form_url ;
+            form_url = url_host + form_url ;
           } // End of if statement.
 
           location.assign(form_url);

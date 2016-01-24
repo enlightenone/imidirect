@@ -57,8 +57,12 @@ app.directive('ngQuestionnaire', function(){
         $scope.contentUrl = questionsOption.qualificationFnc(results, category ,$scope.app_type); 
       };
 
-      $scope.quotaFnc = function(quota_status, category){
-        $scope.contentUrl = questionsOption.quotaFnc(quota_status, category ,$scope.app_type);
+      $scope.quotaFnc = function(quota_status, category, active_app_id){
+        if (quota_status == "yes"){
+          $scope.contentUrl = questionsOption.quotaFnc(quota_status, category ,$scope.app_type);
+        } else {
+          $scope.chooseForm($scope.app_type, active_app_id);
+        }
       };
 
       $scope.ageFnc = function(qualification){

@@ -1,10 +1,5 @@
 <!-- I485 opion button template for i130 application -->
 <div class="form-group row">
-<div ng-if="switchOptions['section4'] == 'i485-option'" class="col-xs-6 col-xs-offset-3" ng-controller="formController">
-    <a ui-sref="app.form.section5" class="btn btn-block btn-info" ng-click="catchData('form4', formData)">
-    Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
-    </a>
-</div>
 <div ng-if="switchOptions['section5'] == 'i485-option'" class="col-xs-6 col-xs-offset-3" ng-controller="formController">
     <a ui-sref="app.form.section6" class="btn btn-block btn-info" ng-click="catchData('form5', formData)">
     Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
@@ -12,6 +7,11 @@
 </div>
 <div ng-if="switchOptions['section6'] == 'i485-option'" class="col-xs-6 col-xs-offset-3" ng-controller="formController">
     <a ui-sref="app.form.section7" class="btn btn-block btn-info" ng-click="catchData('form6', formData)">
+    Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+<div ng-if="switchOptions['section7'] == 'i485-option'" class="col-xs-6 col-xs-offset-3" ng-controller="formController">
+    <a ui-sref="app.form.section8" class="btn btn-block btn-info" ng-click="catchData('form7', formData)">
     Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
     </a>
 </div>

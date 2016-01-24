@@ -32,11 +32,20 @@ app.controller("formController", function($scope, $stateParams, $cookies, progre
             case "i130-applicant":
                 selectionText = "Applicant Information";
                 break;
+            case "i130-applicant-dependants":
+                selectionText = "Applicant Dependants Information";
+                break;
             case "i765-applicant":
                 selectionText = "Applicant Information";
                 break;
+            case "i765-applicant-dependants":
+                selectionText = "Applicant Dependants Information";
+                break;
             case "i485-applicant":
                 selectionText = "Applicant Information";
+                break;
+            case "i485-applicant-dependants":
+                selectionText = "Applicant Dependants Information";
                 break;
             case "i130-sponsor":
                 selectionText = "Sponsor Information";

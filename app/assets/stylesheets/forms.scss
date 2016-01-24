@@ -4,7 +4,6 @@
 
 form-block {
   display:block;
-  border: 2px solid blue;
 }
 
 #main-container {
@@ -17,7 +16,7 @@ form-block {
 
 #content {
   padding: 20px; 
-  overflow: auto;
+  overflow: hidden;
 }
 
 #tab-container {

@@ -1,5 +1,11 @@
 module PdfsHelper
 
+  def remove_pdf_file(case_id)
+    @case_id = case_id
+    @pdf_file =  "#{Rails.root}/public/generated_pdfs/#{@case_id}_combined.pdf"
+    File.delete(@file_path) if File.exists?(@pdf_file)
+  end
+
   def pdf_generator(user_id, current_case_id)
         @user = User.find(user_id)
         @current_case = @user.cases.find_by_case_id(current_case_id)

@@ -30,13 +30,16 @@ module Api
     end
 
     def destroy
+      # This function will remove an active case along with related records from other tables upon
+      # the request from the user
       @case_id = params[:case_id]
       @current_user = current_user
       @active_case = Case.find(@case_id);
+      @encrypted_case_id = @active_case.case_id
+
       @delete_result = @active_case.destroy
-
-
       if @delete_result
+        remove_pdf_file(@encrypted_case_id)
         flash[:success] = "Case has successfully been deleted"
       else
         flash[:danger] = "Case has successfully been deleted"

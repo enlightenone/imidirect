@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
       @current_url = c.status.current_url ? c.status.current_url : root_path
 
-      @fetched_cases_results[i.to_s] = { "case_id" => c.case_id, "application_type" => @application_type,
+      @fetched_cases_results[i.to_s] = { "id" => c.id, "case_id" => c.case_id, "application_type" => @application_type,
            "case_active_status" => @case_active_status,
            "status_questionnaire" => @status_questionnaire, "status_filling" => @status_filling,
            "status_payment" => @status_payment, "status_complete" => @status_complete, 

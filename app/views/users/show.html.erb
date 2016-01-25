@@ -12,6 +12,7 @@
           <th>Category</th>
           <th>Progress</th>
           <th>Action</th>
+          <th>Delete</th>
         </tr>
 
 <% @fetched_cases_results.each do |k, c|%>
@@ -42,6 +43,9 @@
             <%= link_to_if(!c['case_active'],  "Immigration Package", c['current_url'], :target => "_blank") do
        link_to("Continue",c['current_url'] )
             end %>
+          </td>
+          <td>
+            <%= link_to "Delete", delete_case_path(c['id'])%>
           </td>
         </tr>
 <% end %>

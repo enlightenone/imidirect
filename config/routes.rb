@@ -19,9 +19,9 @@ Rails.application.routes.draw do
     get 'signup' => 'users#new'
     get 'login' => 'sessions#new'
     post 'login' => 'sessions#create'
-    delete 'logout' => 'sessions#destroy'
+    get 'logout' => 'sessions#destroy'
     post 'apis/populate/:id' => 'api/cases#populate'
-    delete 'apis/delete/:case_id' => 'api/cases#destroy', as: :delete_case
+    get 'apis/delete/:case_id' => 'api/cases#destroy', as: :delete_case
     get 'apis/option/:id' => 'api/cases#option'
     get 'apis/active_status/:id' => 'api/ids#active_status'
     get 'current_user' => 'users#show_current_user'

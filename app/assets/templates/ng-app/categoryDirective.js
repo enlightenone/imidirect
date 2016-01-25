@@ -68,12 +68,15 @@ return {
           // will add protocol and host to the url link in order for Firefox to route
           // properly to questionnaire page.
           if (firefox_detection != -1){
-            //form_url = url_protocol + "//"+ url_host + form_url ;
-            form_url =  url_protocol + "//" +url_host + form_url ;
-            console.log(form_url);
+            var fire_fox_form_url = url_protocol + "//"+ url_host + form_url ;
+            alert(fire_fox_form_url);
+           location.assign(fire_fox_form_url);
+
+          } else {
+            location.assign(form_url);
           } // End of if statement.
 
-          // location.assign(form_url);
+          
 
           //location.assign( '/users/' + $scope.current_user_id + '/apps/1#/main/option?case_id=' + generateCase.case_id() + '&app_id=' + app_id);
        } else {

@@ -56,7 +56,7 @@ return {
    $scope.applyMyCase = function(){
        if(!$scope.current_user_id){
           location.assign('/sessions/new');
-       } else if($scope.current_user_id && (!$scope.case_active_status)) {
+       } else if($scope.current_user_id && ($scope.case_active_status == false)) {
           generateCase.initiate($scope.current_user_id, $scope.app_id);
         
           var form_url =  '/users/' + $scope.current_user_id + '/apps/1#/main/option?case_id=' + generateCase.case_id() + '&app_id=' + $scope.app_id;
@@ -69,10 +69,11 @@ return {
           // properly to questionnaire page.
           if (firefox_detection != -1){
             //form_url = url_protocol + "//"+ url_host + form_url ;
-            form_url = url_host + form_url ;
+            form_url =  url_protocol + "//" +url_host + form_url ;
+            console.log(form_url);
           } // End of if statement.
 
-          location.assign(form_url);
+          // location.assign(form_url);
 
           //location.assign( '/users/' + $scope.current_user_id + '/apps/1#/main/option?case_id=' + generateCase.case_id() + '&app_id=' + app_id);
        } else {

@@ -43,7 +43,6 @@ return {
       // if the user log in, it will fetch active case state from the Rails API
      if ($scope.current_user_id){
         ActiveCaseStatusResource.get({id: $scope.current_user_id }, function(data){ 
-         
           $scope.case_active_status = data["active_case_status"]; // fetch case status
           $scope.current_url = data["current_url"]; // fetch current url path of active case
           console.log("Active Case status: " + $scope.case_active_status );
@@ -57,7 +56,7 @@ return {
    $scope.applyMyCase = function(){
        if(!$scope.current_user_id){
           location.assign('/sessions/new');
-       } else if($scope.current_user_id && ($scope.case_active_status == false)) {
+       } else if($scope.current_user_id && (!$scope.case_active_status)) {
           generateCase.initiate($scope.current_user_id, $scope.app_id);
         
           var form_url =  '/users/' + $scope.current_user_id + '/apps/1#/main/option?case_id=' + generateCase.case_id() + '&app_id=' + $scope.app_id;

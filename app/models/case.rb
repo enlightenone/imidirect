@@ -4,13 +4,13 @@ class Case < ActiveRecord::Base
   attr_accessor :caseid
   belongs_to :user
   belongs_to :application
-  has_one :general_information
-  has_one :status
-  has_one :i130
-  has_one :i131
-  has_one :i485
-  has_one :i765
-  has_many :options
+  has_one :general_information, dependent: :destroy
+  has_one :status, dependent: :destroy
+  has_one :i130, dependent: :destroy
+  has_one :i131, dependent: :destroy
+  has_one :i485, dependent: :destroy
+  has_one :i765, dependent: :destroy
+  has_many :options, dependent: :destroy
 
   # Return random case id
   def Case.new_case_id

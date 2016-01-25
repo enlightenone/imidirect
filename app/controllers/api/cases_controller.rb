@@ -34,7 +34,7 @@ module Api
       # the request from the user
       @case_id = params[:case_id]
       @current_user = current_user
-      @active_case = Case.find(@case_id);
+      @active_case = Case.find(@case_id)
       @encrypted_case_id = @active_case.case_id
 
       @delete_result = @active_case.destroy

@@ -76,3 +76,9 @@ form-block {
   margin: 20px 0px;
 }
 // End of processing form styling
+
+.radio-inline input[type="radio"],
+.checkbox-inline input[type="checkbox"]
+ {
+  width: 4%;
+}

@@ -2,7 +2,7 @@ app.directive('scNgCategory', function(){
 // custom directive to dynamycally display the content of category page based on individual case
 return {
     restrict: "E",
-    controller: ['$scope', '$stateParams', 'ActiveCaseStatusResource', 'generateCase', function($scope, $stateParams, ActiveCaseStatusResource, generateCase){
+    controller: ['$scope', '$stateParams', '$location','ActiveCaseStatusResource', 'generateCase', function($scope, $stateParams, $location, ActiveCaseStatusResource, generateCase){
          /* This method is initiated at loading of the home index page. It will return user id if the active
       user is logged in and determine if the active user has on going active case. */
     $scope.root_url = location.origin;
@@ -68,12 +68,13 @@ return {
           // will add protocol and host to the url link in order for Firefox to route
           // properly to questionnaire page.
           if (firefox_detection != -1){
-            var fire_fox_form_url = url_protocol + "//"+ url_host + form_url ;
-            alert(fire_fox_form_url);
-           location.assign(fire_fox_form_url);
-
+            var firefox_reroute_url =  "/ff_reroute/" 
+                                      + $scope.current_user_id + "/" + generateCase.case_id() 
+                                      + "/" +  $scope.app_id ;
+ 
+            location.assign(firefox_reroute_url);
           } else {
-            location.assign(form_url);
+            // location.assign(form_url);
           } // End of if statement.
 
           

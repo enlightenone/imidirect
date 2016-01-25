@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     get 'login' => 'sessions#new'
     post 'login' => 'sessions#create'
     get 'logout' => 'sessions#destroy'
+    get  'ff_reroute/:user_id/:case_id/:app_id' => "users#reroute"
     post 'apis/populate/:id' => 'api/cases#populate'
     get 'apis/delete/:case_id' => 'api/cases#destroy', as: :delete_case
     get 'apis/option/:id' => 'api/cases#option'

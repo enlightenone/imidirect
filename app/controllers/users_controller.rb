@@ -14,6 +14,27 @@ class UsersController < ApplicationController
     render json: {:current_user => current_user}
   end
 
+  def reroute
+     @user_id = params[:user_id]
+     @case_id = params[:case_id]
+     @app_id = params[:app_id]
+     puts "User Id:"
+     puts @user_id
+     puts "Case Id"
+     puts @case_id
+     puts "App Id"
+     puts @app_id
+     puts "Url path"
+   
+
+     @form_url = "#{root_url}users/#{@user_id}/apps/1#/main/option?case_id=#{@case_id}&app_id=#{@app_id}"
+      redirect_to @form_url
+     #{Rails.root}/public/generated_pdfs/#{@case_id}_combined.pdf"
+
+    # firefax_url =  "http://localhost:3000/users/2/apps/1#/main/option?case_id=4sEMEdczvh&app_id=1"
+    # redirect_to firefax_url
+  end
+
   def show
     @user = User.find(params[:id])
     @first_name = @user.firstname

@@ -25,6 +25,10 @@ module Api
       @options = JSON.parse(params[:options])
       options_settings(@case_id, @options)
     end
+
+    def destroy
+      
+    end
  
 private
     # strong parameters to populate 

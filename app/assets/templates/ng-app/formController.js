@@ -8,6 +8,7 @@ app.controller("formController", function($scope, $stateParams, $cookies, progre
             var form_key = "form" + form_index ;
             var form_data = fieldsData.retrieveData();
             fieldsData.catchData(form_key, form_data); 
+            console.log(form_data);
        } // End of if conditional statement
      } // End of tabCatchData function.
 

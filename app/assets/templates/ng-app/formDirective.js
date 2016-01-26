@@ -1,4 +1,4 @@
-app.directive('ngCaseForm', function(){
+app.directive('ngCaseForm', function(fieldsData){
   var fields_template, app_type; 
 // custom directive to dynamically assign form fields 
   return {
@@ -8,13 +8,13 @@ app.directive('ngCaseForm', function(){
       applicationType: '=',
       formTemplate: '='
     },
-    controller: ['$scope','$stateParams',  'progressStatus', function($scope, $stateParams, progressStatus){
+    controller: ['$scope','$stateParams',  'progressStatus', 'fieldsData', function($scope, $stateParams, progressStatus, fieldsData){
       $scope.formData = {}; // field data from the form
       $scope.current_case_id = $stateParams['case_id']; //assign current cae id 
 
       this.getData = function() { // get function to pass fields data to child directive.
         return $scope.formData;   
-      };
+      };fieldsData
     }],
     link: function($scope) {
       $scope.$watch('formTemplate', function(formTemplate){ // determine form template being set in main controller
@@ -52,12 +52,18 @@ app.directive('ngCaseForm', function(){
         fieldsData.catchData(name, form_data); 
       };
 
+        //This $watch service will bind form fields data between two controller
+      $scope.$watch('formData', function(formData){
+          fieldsData.assignData(formData);
+      });
+
       $scope.processForm = function() { 
           processForm.storeData($scope.current_case_id);
       };
     }],
     link: function($scope, elem, attrs, ngCaseFormCtrl) {
       $scope.formData = ngCaseFormCtrl.getData(); 
+
       $scope.$watch('formTemplateButton', function(formTemplateButton){// determine form button template being set in main controller
          fields_template = formTemplateButton;
       });

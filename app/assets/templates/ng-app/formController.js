@@ -2,6 +2,14 @@ app.controller("formController", function($scope, $stateParams, $cookies, progre
                                           $cookieStore, myCache, Case, CaseInit, generateCase, fieldsData, formsResource, 
                                           OptionResource, $resource, currentUrl) {
 
+    $scope.testFnc = function(){
+
+        console.log("Inside of tetFnc");
+        var fields = fieldsData.retrieveData();
+        alert(fields);
+        console.log(fields);
+    }
+
     $scope.$parent.forms_status_flag = true ; // update progress status for form
     $scope.current_case_id = $stateParams['case_id']; // obtain current case id from params
 

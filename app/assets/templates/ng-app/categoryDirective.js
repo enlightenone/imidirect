@@ -71,15 +71,10 @@ return {
             var firefox_reroute_url =  "/ff_reroute/" 
                                       + $scope.current_user_id + "/" + generateCase.case_id() 
                                       + "/" +  $scope.app_id ;
- 
             location.assign(firefox_reroute_url);
           } else {
-            // location.assign(form_url);
+            location.assign(form_url);
           } // End of if statement.
-
-          
-
-          //location.assign( '/users/' + $scope.current_user_id + '/apps/1#/main/option?case_id=' + generateCase.case_id() + '&app_id=' + app_id);
        } else {
           console.log("Active Case Already Exist");
        }

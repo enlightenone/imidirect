@@ -77,8 +77,9 @@ form-block {
 }
 // End of processing form styling
 
+// Fix to radio and checkbox misalign issue.
 .radio-inline input[type="radio"],
 .checkbox-inline input[type="checkbox"]
  {
-  width: 4%;
+  width: 2.8%;
 }

@@ -3,9 +3,15 @@ module PdfsHelper
   def remove_pdf_file(case_id)
     @case_id = case_id
     @pdf_file =  "#{Rails.root}/public/generated_pdfs/#{@case_id}_combined.pdf"
-
     File.delete(@pdf_file) if File.exists?(@pdf_file)
   end
+
+  def remove_individual_pdf_file(case_id, form)
+    @case_id = case_id
+    @new_directory = "#{Rails.root}/tmp/pdfs"
+    @pdf_file = "#{@new_directory}/#{case_id}_#{form}.pdf" # make sure tmp/pdfs exists
+    File.delete(@pdf_file) if File.exists?(@pdf_file)
+  end 
 
   def pdf_generator(user_id, current_case_id)
         @user = User.find(user_id)
@@ -102,6 +108,11 @@ module PdfsHelper
         # combined pdf file path
         combined_pdf_path = "#{Rails.root}/public/generated_pdfs/#{@current_case_id}_combined.pdf"
         combined_pdf_file.save combined_pdf_path
+        remove_individual_pdf_file(@current_case_id, "i765")
+        remove_individual_pdf_file(@current_case_id, "i485")
+        remove_individual_pdf_file(@current_case_id, "i130")
+        remove_individual_pdf_file(@current_case_id, "list_of_document")
+
     # End of PDF block
   end
 end

@@ -4,6 +4,9 @@ app.factory('fieldsData', ['myCache', function(myCache) {
   var fields_data = {};  
   var previous_fields_cache ;
 
+  service.formFieldData = {}; // This object is to store form fields being shared between two scopes.
+
+
   //Assign input data to cache from form fields submitted by the user;
   service.catchData = function(name, form_data){
     fields_data[name] = form_data;
@@ -20,6 +23,8 @@ app.factory('fieldsData', ['myCache', function(myCache) {
       myCache.put('myData', fields_data);
     }
   };
+
+
 
  return service ;
 }]);

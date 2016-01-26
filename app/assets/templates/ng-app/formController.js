@@ -2,13 +2,14 @@ app.controller("formController", function($scope, $stateParams, $cookies, progre
                                           $cookieStore, myCache, Case, CaseInit, generateCase, fieldsData, formsResource, 
                                           OptionResource, $resource, currentUrl) {
 
-    $scope.testFnc = function(){
-
-        console.log("Inside of tetFnc");
-        var fields = fieldsData.retrieveData();
-        alert(fields);
-        console.log(fields);
-    }
+    $scope.tabCatchData = function(index, section){
+        if(section != "Submit"){
+            var form_index = index + 1;
+            var form_key = "form" + form_index ;
+            var form_data = fieldsData.retrieveData();
+            fieldsData.catchData(form_key, form_data); 
+       } // End of if conditional statement
+     } // End of tabCatchData function.
 
     $scope.$parent.forms_status_flag = true ; // update progress status for form
     $scope.current_case_id = $stateParams['case_id']; // obtain current case id from params

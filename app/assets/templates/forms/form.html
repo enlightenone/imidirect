@@ -1,7 +1,4 @@
 <!-- form.html -->
-<div style="border: 1px solid red; width: 100px; height: 100px;">
-  <span style="border-radius: 50px; height:20px; width: 80px; background:blue; color:white; padding:10px; cursor: pointer;" ng-click="testFnc()">Launch</span>
-</div>
 <form-block class="container">
   <div class="row"> 
     <div class="col-md-12">
@@ -9,7 +6,7 @@
         <div id="tab-container">
           <ul>
             <li ng-repeat="section in formSelections">
-             <a ui-sref-active="active" ui-sref="{{section.section}}">{{section.optionText}}</a>
+             <a ui-sref-active="active" ui-sref="{{section.section}}" ng-click="tabCatchData($index, section.optionText)">{{section.optionText}}</a>
             </li>          
           </ul>
         </div> <!--  End of tab-container div block -->
